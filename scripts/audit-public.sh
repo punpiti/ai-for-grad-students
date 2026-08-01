@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+site_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+allowed_pattern='^(\.nojekyll|404\.html|index\.html|prepare\.html|robots\.txt|PUBLIC_CONTENT_POLICY\.md|assets/(styles\.css|app\.js)|scripts/audit-public\.sh|\.github/workflows/pages\.yml)$'
+
+status=0
+while IFS= read -r path; do
+  relative="${path#"${site_root}/"}"
+  if [[ ! "${relative}" =~ ${allowed_pattern} ]]; then
+    echo "Unexpected public file: ${relative}" >&2
+    status=1
+  fi
+done < <(find "${site_root}" -type f -not -path '*/.git/*' | sort)
+
+forbidden='(API[_ -]?KEY|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|04_review_notes|SESSION_LOG|PROJECT_STATE|pricing strategy|participant data)'
+if grep -RInE "${forbidden}" "${site_root}" \
+  --exclude='audit-public.sh' \
+  --exclude='PUBLIC_CONTENT_POLICY.md' \
+  --exclude-dir='.git'; then
+  echo "Potential private/internal content found in public files." >&2
+  status=1
+fi
+
+exit "${status}"
+

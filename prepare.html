@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="เตรียม AI research workspace สำหรับหลักสูตร AI for Grad Students">
+  <meta name="theme-color" content="#102a2d">
+  <title>Prepare Workspace — AI for Grad Students</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body class="prepare-page">
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Grad Students</span></a>
+    <nav aria-label="เมนูหลัก"><a href="index.html">หน้าหลัก</a><a href="#check">ตรวจเครื่อง</a><a href="#setup">ติดตั้ง</a></nav>
+  </header>
+
+  <main id="main">
+    <section class="prepare-hero">
+      <p class="eyebrow">Module 0 · Before class</p>
+      <h1>Prepare Your<br>AI Research Workspace</h1>
+      <p>ติดตั้งครั้งเดียว เปิดมาเจอหน้า AI และตรวจว่าเครื่องพร้อมทำกิจกรรมจริง</p>
+    </section>
+
+    <section class="section readiness" id="check">
+      <div class="section-heading compact"><p class="eyebrow">Step 1</p><h2>ตรวจเครื่องก่อนดาวน์โหลด</h2></div>
+      <div class="check-grid">
+        <div><span>OS</span><strong>Windows 11<br>หรือ supported macOS</strong></div>
+        <div><span>Memory</span><strong>8 GB minimum<br>16 GB recommended</strong></div>
+        <div><span>Storage</span><strong>20 GB<br>free space</strong></div>
+        <div><span>Access</span><strong>Install permission<br>+ stable internet</strong></div>
+      </div>
+      <p class="muted">Chromebook, tablet และเครื่องที่ติดตั้งซอฟต์แวร์ไม่ได้ไม่เหมาะกับกิจกรรมนี้</p>
+    </section>
+
+    <section class="section platform-section" id="setup">
+      <div class="section-heading compact"><p class="eyebrow">Step 2</p><h2>เลือกเครื่องที่คุณใช้</h2></div>
+      <div class="platform-grid">
+        <article class="platform-card">
+          <p class="platform-label">Windows</p>
+          <h3>Windows 11 · 64-bit</h3>
+          <p>ติดตั้งผ่าน PowerShell และ WinGet พร้อม VS Code learner profile และ starter project</p>
+          <button class="button primary disabled" type="button" disabled>Installer — coming soon</button>
+          <small>WSL2 ไม่ใช่ค่าเริ่มต้น</small>
+        </article>
+        <article class="platform-card">
+          <p class="platform-label">macOS</p>
+          <h3>Apple silicon / Intel</h3>
+          <p>script จะตรวจ architecture และเลือก installation path ที่ผ่านการทดสอบ</p>
+          <button class="button primary disabled" type="button" disabled>Installer — coming soon</button>
+          <small>ไม่ติดตั้ง Rosetta หรือ Homebrew โดยไม่ขออนุญาต</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="section after-setup">
+      <div class="section-heading compact"><p class="eyebrow">Step 3</p><h2>สิ่งที่ต้องทำให้ผ่าน</h2></div>
+      <ol class="readiness-steps">
+        <li><span>01</span>เปิด VS Code แล้วพบหน้า AI agent</li>
+        <li><span>02</span>แก้และ preview ไฟล์ Markdown</li>
+        <li><span>03</span>ให้ agent อ่านและสร้างไฟล์ใน project</li>
+        <li><span>04</span>สร้าง PDF และอ่านข้อความกลับจาก PDF</li>
+        <li><span>05</span>ส่ง readiness evidence ก่อนวันอบรม</li>
+      </ol>
+      <div class="notice"><strong>ยังไม่ต้องติดตั้งตอนนี้:</strong> installer และรายการ software ที่ผ่าน compatibility test จะเปิดให้ดาวน์โหลดก่อนรอบ pilot</div>
+    </section>
+  </main>
+  <footer><p>AI for Grad Students</p><p><a href="index.html">กลับหน้าหลัก</a></p></footer>
+</body>
+</html>
+
