@@ -89,7 +89,7 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
 .check-grid span { font-family: Inter, sans-serif; color: var(--mint); font-size: .74rem; text-transform: uppercase; }
 .check-grid strong { font-weight: 500; font-size: 1.05rem; }
 .muted { color: var(--ink-soft); }
-.platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
 .platform-card { padding: 2rem; border: 1px solid var(--line); border-radius: 1.2rem; background: var(--white); }
 .platform-card h3 { font-size: 1.8rem; }
 .platform-card .button { width: 100%; margin: 1rem 0; }
@@ -104,6 +104,7 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
   .hero-panel { box-shadow: .7rem .7rem 0 var(--mint); }
   .module-grid { grid-template-columns: 1fr 1fr; }
   .check-grid { grid-template-columns: 1fr 1fr; }
+  .platform-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
   .site-header { padding: .8rem 1rem; }
@@ -117,4 +118,3 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
-
