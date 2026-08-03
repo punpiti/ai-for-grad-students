@@ -1,12 +1,17 @@
 [CmdletBinding()]
 param(
-  [ValidateSet('Check','Install','Repair')][string]$Mode = 'Check',
+  [ValidateSet('Check','InstallSystem','SetupUser','Repair')][string]$Mode = 'Check',
   [ValidateSet('codex','claude','antigravity')][string]$Agent,
   [string]$CourseDir = (Join-Path $HOME 'ai-for-grad-students-workspace')
 )
 $ErrorActionPreference = 'Stop'
 function Log([string]$Message) { Write-Host "[ai-grad] $Message" }
 function Has([string]$Command) { return [bool](Get-Command $Command -ErrorAction SilentlyContinue) }
+function Is-Admin {
+  $identity = [Security.Principal.WindowsIdentity]::GetCurrent()
+  $principal = [Security.Principal.WindowsPrincipal]::new($identity)
+  return $principal.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+}
 function Check-Tools {
   $os = Get-CimInstance Win32_OperatingSystem
   Log "windows=$($os.Version) arch=$env:PROCESSOR_ARCHITECTURE"
@@ -25,9 +30,10 @@ function New-CourseWorkspace {
   if (-not (Test-Path $readme)) { Set-Content -Encoding utf8 $readme "# AI for Grad Students`n`nKeep permitted inputs in input/ and generated work in output/.`n" }
   Log "workspace=$CourseDir"
 }
-function Install-Tools {
+function Install-SystemTools {
+  if (-not (Is-Admin)) { throw 'InstallSystem requires PowerShell opened with Run as administrator.' }
   if (-not (Has 'winget')) { throw 'WinGet is required. Update App Installer from Microsoft Store and rerun.' }
-  Log 'This installs VS Code, Git, Node.js LTS, uv, Pandoc and MiKTeX using WinGet.'
+  Log 'ADMIN PHASE: installs VS Code, Git, Node.js LTS, uv, Pandoc and MiKTeX using WinGet.'
   $answer = Read-Host 'Continue? [y/N]'
   if ($answer -notmatch '^[Yy]$') { return }
   $packages = @(
@@ -37,6 +43,13 @@ function Install-Tools {
   foreach ($id in $packages) {
     winget install --id $id --exact --accept-package-agreements --accept-source-agreements --silent
   }
+  Log 'System installation finished. This Administrator terminal will close in 5 seconds.'
+  Log 'Next: open a normal PowerShell window and run SetupUser. Do not run agents as Administrator.'
+  Start-Sleep -Seconds 5
+  exit 0
+}
+function Install-UserTools {
+  if (Is-Admin) { throw 'SetupUser must run in a normal, non-Administrator PowerShell. Close this window and open PowerShell normally.' }
   if (-not $Agent) { $Agent = Read-Host 'Choose agent [codex/claude/antigravity]' }
   if (Has 'npm') {
     switch ($Agent) {
@@ -55,5 +68,9 @@ function Install-Tools {
   else { Log 'Node/npm was installed but this shell has not refreshed PATH. Reopen PowerShell and rerun with -Mode Repair.' }
   New-CourseWorkspace
 }
-if ($Mode -in @('Install','Repair')) { Install-Tools }
+switch ($Mode) {
+  'InstallSystem' { Install-SystemTools }
+  'SetupUser' { Install-UserTools }
+  'Repair' { if (Is-Admin) { Install-SystemTools } else { Install-UserTools } }
+}
 Check-Tools

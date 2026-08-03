@@ -46,12 +46,14 @@ updateProgress();
 const agentInputs = [...document.querySelectorAll('input[name="agent"]')];
 function selectAgent(agent) {
   for (const command of document.querySelectorAll("[data-agent-command]")) command.textContent = command.dataset.template.replace("{agent}", agent);
+  const launch = document.querySelector("[data-agent-launch]");
+  if (launch) launch.textContent = { codex: "codex", claude: "claude", antigravity: "agy" }[agent];
   const help = document.querySelector("[data-login-help]");
   if (help) {
     const labels = {
-      codex: 'เปิด Codex แล้วรัน <code>codex login</code>',
-      claude: 'เปิด Claude Code ด้วย <code>claude</code> แล้วเลือกบัญชี Claude ที่มีสิทธิ์',
-      antigravity: 'เปิด Antigravity CLI ด้วย <code>agy</code> แล้วลงชื่อเข้าใช้ Google'
+      codex: 'คัดลอกคำสั่งด้านล่างเพื่อเปิด Codex แล้วทำตามหน้า sign in',
+      claude: 'คัดลอกคำสั่งด้านล่างเพื่อเปิด Claude Code แล้วเลือกบัญชี Claude ที่มีสิทธิ์',
+      antigravity: 'คัดลอกคำสั่งด้านล่างเพื่อเปิด Antigravity CLI แล้วลงชื่อเข้าใช้ Google'
     };
     help.innerHTML = labels[agent];
   }

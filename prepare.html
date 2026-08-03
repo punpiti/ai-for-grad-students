@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="เตรียม AI research workspace สำหรับหลักสูตร AI for Grad Students">
-  <meta name="theme-color" content="#102a2d">
+  <meta name="theme-color" content="#101817">
   <title>Prepare Workspace — AI for Grad Students</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,12 +61,27 @@
     </section>
 
     <section class="section platform-section" id="setup">
-      <div class="section-heading compact"><p class="eyebrow">ช่วงบรรยาย · 10 นาที</p><h2>รู้จัก workspace ก่อนติดตั้ง</h2></div>
+      <div class="section-heading compact"><p class="eyebrow">ช่วงบรรยาย · 10 นาที</p><h2>รู้จัก Terminal / CLI</h2></div>
+      <div class="terminal-primer">
+        <h3>Terminal คืออะไร?</h3>
+        <p>Terminal คือช่องสำหรับบอกคอมพิวเตอร์ให้ทำงานด้วยข้อความ ส่วน CLI หรือ Command-Line Interface คือโปรแกรมที่เราเรียกใช้ผ่านช่องนี้ หนึ่งบรรทัดคือหนึ่งคำสั่ง ในกิจกรรมนี้ไม่ต้องจำคำสั่งและไม่ต้องพิมพ์เอง—อ่านก่อน กด Copy วาง แล้วกด Enter</p>
+        <div class="terminal-anatomy" aria-label="ตัวอย่างหน้าต่าง terminal">
+          <span>ชื่อโฟลเดอร์และเครื่องหมายรอรับคำสั่ง</span><code>PS C:\Users\student&gt; <b>▌</b></code><small>เครื่องหมาย <b>▌</b> คือจุดที่คำสั่งจะถูกวาง</small>
+        </div>
+        <ul>
+          <li><strong>Paste:</strong> PowerShell ใช้ Ctrl+V · macOS ใช้ Command+V · Linux/WSL2 มักใช้ Ctrl+Shift+V</li>
+          <li><strong>Run:</strong> กด Enter หนึ่งครั้ง แล้วรอจนเห็น prompt กลับมา</li>
+          <li><strong>Stop:</strong> หากคำสั่งค้างหรือรันผิด ให้กด Ctrl+C แล้วเรียกผู้สอน</li>
+          <li><strong>Safety:</strong> รันเฉพาะคำสั่งบนหน้าเรียน อ่านก่อนทุกครั้ง และไม่วาง password/token ลงใน terminal</li>
+        </ul>
+      </div>
+      <div class="section-heading compact subheading"><p class="eyebrow">Workspace</p><h2>รู้จัก workspace ก่อนติดตั้ง</h2></div>
       <div class="concept-grid">
         <article><strong>VS Code</strong><p>พื้นที่เปิดไฟล์ Markdown ดูผลลัพธ์ และเรียก agent</p></article>
         <article><strong>Agent</strong><p>ช่วยทำงานในโฟลเดอร์ภายใต้สิทธิ์ที่ผู้เรียนกำหนด</p></article>
-        <article><strong>Course tools</strong><p>Python, Pandoc และ LaTeX ทำงานเบื้องหลัง ไม่ต้องเขียนโค้ดเอง</p></article>
+        <article><strong>Course tools</strong><p>Python, uv, Pandoc และ LaTeX ทำงานเบื้องหลัง ผู้เรียนไม่ต้องเขียนโค้ดหรือใช้ <code>pip</code></p></article>
       </div>
+      <div class="plain-note"><strong>uv คืออะไร?</strong> เป็นโปรแกรมที่ installer ใช้ติดตั้ง Python และชุดเครื่องมือของรายวิชาให้เหมือนกันทุกเครื่อง ผู้เรียนไม่ต้องเรียน Python, uv หรือจำคำสั่งของมัน</div>
       <div class="notice"><strong>หลักความปลอดภัย:</strong> อ่านสิ่งที่ script จะติดตั้งก่อนกดยืนยัน Script ไม่เก็บ token ไม่ปิดระบบป้องกัน และไม่ติดตั้ง WSL2 หรือ Rosetta อัตโนมัติ</div>
       <div class="agent-choice">
         <h3>เลือก agent ที่คุณมีเพียงหนึ่งตัว</h3>
@@ -78,7 +93,8 @@
     </section>
 
     <section class="section platform-section" id="practice">
-      <div class="section-heading compact"><p class="eyebrow">Workshop · 35 นาที</p><h2>เลือกแพลตฟอร์มแล้วทำตามขั้นตอน</h2></div>
+      <div class="section-heading compact"><p class="eyebrow">Workshop · 35 นาที</p><h2>เริ่มจากรู้จัก Terminal<br>แล้วจึงติดตั้ง</h2></div>
+      <div class="section-heading compact subheading"><p class="eyebrow">เลือกเครื่อง</p><h2>ฝึกคำสั่งแรกก่อนติดตั้ง</h2></div>
       <div class="platform-picker" role="group" aria-label="เลือกระบบปฏิบัติการ">
         <button type="button" data-platform-button="windows">Windows 11</button>
         <button type="button" data-platform-button="macos">macOS</button>
@@ -88,38 +104,82 @@
         <article class="platform-card" data-platform-panel="windows">
           <p class="platform-label">Windows</p>
           <h3>Windows 11 · 64-bit</h3>
-          <p>เปิด PowerShell ปกติ ดาวน์โหลด script แล้วตรวจเครื่องก่อนติดตั้ง</p>
+          <ol class="micro-steps">
+            <li>กดปุ่ม Windows พิมพ์ <strong>PowerShell</strong> แล้วกด Enter — ไม่ต้องเลือก Run as administrator</li>
+            <li>ฝึก Copy → Ctrl+V → Enter ด้วยสองคำสั่งแรก</li>
+            <li>กดดาวน์โหลด installer แล้วใช้คำสั่ง Check ใน PowerShell ปกติ</li>
+            <li>เปิด Admin PowerShell เพื่อติดตั้ง system tools; เมื่อเสร็จหน้าต่างจะปิดเอง</li>
+            <li>เปิด PowerShell ปกติอีกครั้ง แล้วติดตั้งส่วนของผู้ใช้</li>
+          </ol>
+          <p class="command-label">ฝึก 1 · ตอนนี้อยู่ที่ไหน</p>
+          <div class="command"><code>Get-Location</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="command-label">ฝึก 2 · ดูไฟล์ในโฟลเดอร์</p>
+          <div class="command"><code>Get-ChildItem</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected"><strong>ควรเห็น:</strong> path ปัจจุบันและรายชื่อไฟล์ โดยยังไม่มีอะไรถูกแก้ไข</p>
           <a class="button primary" href="downloads/setup-windows.ps1" download>ดาวน์โหลด PowerShell script</a>
-          <div class="command"><code>powershell -ExecutionPolicy Bypass -File .\setup-windows.ps1 -Mode Check</code><button type="button" data-copy>คัดลอก</button></div>
-          <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File .\setup-windows.ps1 -Mode Install -Agent {agent}">powershell -ExecutionPolicy Bypass -File .\setup-windows.ps1 -Mode Install -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="command-label">1 · ตรวจเครื่อง</p>
+          <div class="command"><code>powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode Check</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="command-label">2 · เปิด PowerShell ด้วย Run as administrator แล้วติดตั้ง system tools</p>
+          <div class="command"><code>powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode InstallSystem</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected"><strong>เมื่อเสร็จ:</strong> Admin PowerShell จะปิดเองภายใน 5 วินาที ห้ามเปิด agent หรือสร้างงานในหน้าต่าง Admin</p>
+          <p class="command-label">3 · เปิด PowerShell แบบปกติใหม่ แล้วตั้งค่าส่วนของผู้ใช้</p>
+          <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File &quot;$HOME\Downloads\setup-windows.ps1&quot; -Mode SetupUser -Agent {agent}">powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode SetupUser -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected"><strong>ระบบป้องกัน:</strong> หากเปิด PowerShell แบบ Admin อยู่ Script จะหยุดและสั่งให้เปิดหน้าต่างปกติใหม่</p>
           <small>WSL2 ไม่ใช่ค่าเริ่มต้น</small>
         </article>
         <article class="platform-card" data-platform-panel="macos">
           <p class="platform-label">macOS</p>
           <h3>Apple silicon / Intel</h3>
-          <p>เปิด Terminal ดาวน์โหลด script และรัน check ก่อน Script จะไม่ติดตั้ง Homebrew หรือ Rosetta ให้เอง</p>
+          <ol class="micro-steps">
+            <li>กด Command+Space พิมพ์ <strong>Terminal</strong> แล้วกด Enter</li>
+            <li>ฝึก Copy → Command+V → Enter ด้วยสองคำสั่งแรก</li>
+            <li>กดดาวน์โหลด installer แล้วใช้คำสั่ง Check</li>
+            <li>อ่านผล <code>PASS</code>/<code>MISSING</code> ก่อนใช้คำสั่ง Install</li>
+          </ol>
+          <p class="command-label">ฝึก 1 · ตอนนี้อยู่ที่ไหน</p>
+          <div class="command"><code>pwd</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="command-label">ฝึก 2 · ดูไฟล์ในโฟลเดอร์</p>
+          <div class="command"><code>ls</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected"><strong>ควรเห็น:</strong> path ปัจจุบันและรายชื่อไฟล์ โดยยังไม่มีอะไรถูกแก้ไข</p>
           <a class="button primary" href="downloads/setup-macos.sh" download>ดาวน์โหลด macOS script</a>
-          <div class="command"><code>bash ~/Downloads/setup-macos.sh --check</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="command-label">1 · ตรวจเครื่อง</p>
+          <div class="command"><code>bash "$HOME/Downloads/setup-macos.sh" --check</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="command-label">2 · ติดตั้ง</p>
           <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-macos.sh --install">AI_GRAD_AGENT=codex bash ~/Downloads/setup-macos.sh --install</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected"><strong>ควรเห็น:</strong> macOS version, architecture และรายการ <code>PASS</code>/<code>MISSING</code></p>
           <small>ไม่ติดตั้ง Rosetta หรือ Homebrew โดยไม่ขออนุญาต</small>
         </article>
         <article class="platform-card" data-platform-panel="linux">
           <p class="platform-label">Linux / WSL2</p>
           <h3>Ubuntu / Debian / WSL2 · 64-bit</h3>
-          <p>Linux native ใช้ apt และอาจใช้ Snap สำหรับ VS Code ส่วน WSL2 ใช้ VS Code ฝั่ง Windows พร้อม WSL extension</p>
+          <ol class="micro-steps">
+            <li>Linux: เปิดแอป <strong>Terminal</strong> · WSL2: เปิด <strong>Ubuntu</strong> จาก Start menu</li>
+            <li>ฝึก Copy → Ctrl+Shift+V → Enter ด้วยสองคำสั่งแรก</li>
+            <li>กดดาวน์โหลด installer; ใน WSL2 ให้อาจารย์ช่วยหา path ของ Downloads หากคำสั่งตัวอย่างหาไฟล์ไม่พบ</li>
+            <li>อ่านผล <code>PASS</code>/<code>MISSING</code> ก่อนใช้คำสั่ง Install</li>
+          </ol>
+          <p class="command-label">ฝึก 1 · ตอนนี้อยู่ที่ไหน</p>
+          <div class="command"><code>pwd</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="command-label">ฝึก 2 · ดูไฟล์ในโฟลเดอร์</p>
+          <div class="command"><code>ls</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected"><strong>ควรเห็น:</strong> path ปัจจุบันและรายชื่อไฟล์ โดยยังไม่มีอะไรถูกแก้ไข</p>
           <a class="button primary" href="downloads/setup-linux.sh" download>ดาวน์โหลด Linux / WSL2 script</a>
-          <div class="command"><code>bash ~/Downloads/setup-linux.sh --check</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="command-label">1 · ตรวจเครื่อง (Linux native)</p>
+          <div class="command"><code>bash "$HOME/Downloads/setup-linux.sh" --check</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="command-label">2 · ติดตั้ง</p>
           <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-linux.sh --install">AI_GRAD_AGENT=codex bash ~/Downloads/setup-linux.sh --install</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected"><strong>ควรเห็น:</strong> <code>platform=Linux</code> หรือ <code>platform=WSL2</code> ตามเครื่องที่ใช้</p>
           <small>Script ตรวจ WSL2 ได้ แต่จะไม่เปิด WSL2 หรือติดตั้ง VS Code ฝั่ง Windows ให้โดยอัตโนมัติ</small>
         </article>
       </div>
       <div class="section-heading compact subheading"><p class="eyebrow">Readiness practice</p><h2>ฝึกให้ผ่านทีละข้อ</h2></div>
       <ol class="readiness-steps">
-        <li><span>01</span><div><strong>เปิด workspace</strong><br>เปิดโฟลเดอร์ <code>ai-for-grad-students-workspace</code> ใน VS Code</div></li>
-        <li><span>02</span><div><strong>Sign in</strong><br><span data-login-help>เปิด Codex แล้วรัน <code>codex login</code></span>; ลงชื่อเข้าใช้ผ่าน browser และห้ามส่ง token ให้ผู้สอน</div></li>
-        <li><span>03</span><div><strong>Markdown</strong><br>แก้ <code>content.md</code> และเปิด Markdown Preview</div></li>
-        <li><span>04</span><div><strong>Agent file task</strong><br>สั่ง agent: “อ่าน content.md แล้วสร้าง output/readiness-note.md โดยไม่เปลี่ยนไฟล์ต้นฉบับ”</div></li>
-        <li><span>05</span><div><strong>Evidence</strong><br>บันทึกผล check, screenshot ของ workspace และ readiness note โดยตรวจว่าไม่มีข้อมูลลับ</div></li>
+        <li><span>01</span><div><strong>เปิด VS Code</strong><br>คัดลอกคำสั่งนี้ลง terminal เพื่อเปิด workspace<div class="command"><code>code "$HOME/ai-for-grad-students-workspace"</code><button type="button" data-copy>คัดลอก</button></div></div></li>
+        <li><span>02</span><div><strong>เปิด terminal ใน VS Code</strong><br>เลือกเมนู Terminal → New Terminal จะเห็นช่องคำสั่งด้านล่าง ไม่ต้องรู้คำสั่งอื่นนอกจากที่ให้คัดลอก</div></li>
+        <li><span>03</span><div><strong>เปิด agent</strong><br><span data-login-help>คัดลอกคำสั่งด้านล่างเพื่อเปิด Codex แล้วทำตามหน้า sign in</span>; ห้ามส่ง token ให้ผู้สอน<div class="command"><code data-agent-launch>codex</code><button type="button" data-copy>คัดลอก</button></div></div></li>
+        <li><span>04</span><div><strong>Markdown</strong><br>คลิก <code>content.md</code> แก้ข้อความ แล้วกด Ctrl+Shift+V (macOS: Command+Shift+V) เพื่อเปิด Preview</div></li>
+        <li><span>05</span><div><strong>Agent file task</strong><br><div class="command"><code>อ่าน content.md แล้วสร้าง output/readiness-note.md โดยไม่เปลี่ยนไฟล์ต้นฉบับ</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
+        <li><span>06</span><div><strong>Evidence</strong><br>บันทึกผล check, screenshot ของ workspace และ readiness note โดยตรวจว่าไม่มีข้อมูลลับ</div></li>
       </ol>
       <div class="checklist" data-checklist="practice">
         <label><input type="checkbox"> เปิด workspace ใน VS Code ได้</label>
