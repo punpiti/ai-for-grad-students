@@ -19,7 +19,8 @@ body {
   color: var(--ink);
   background: var(--paper);
   font-family: "IBM Plex Sans Thai", "Inter", sans-serif;
-  line-height: 1.65;
+  font-size: 18px;
+  line-height: 1.72;
 }
 a { color: inherit; }
 .skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 99; background: var(--accent); color: var(--surface-strong); padding: .7rem 1rem; }
@@ -161,6 +162,7 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
   .platform-grid, .concept-grid, .homework-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
+  body { font-size: 17px; }
   .site-header { padding: .8rem 1rem; }
   .brand { font-size: .9rem; }
   h1 { font-size: 3.1rem; }
