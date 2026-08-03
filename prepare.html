@@ -65,8 +65,13 @@
       <div class="terminal-primer">
         <h3>Terminal คืออะไร?</h3>
         <p>Terminal คือช่องสำหรับบอกคอมพิวเตอร์ให้ทำงานด้วยข้อความ ส่วน CLI หรือ Command-Line Interface คือโปรแกรมที่เราเรียกใช้ผ่านช่องนี้ หนึ่งบรรทัดคือหนึ่งคำสั่ง ในกิจกรรมนี้ไม่ต้องจำคำสั่งและไม่ต้องพิมพ์เอง—อ่านก่อน กด Copy วาง แล้วกด Enter</p>
+        <div class="platform-picker on-dark" role="group" aria-label="เลือกระบบปฏิบัติการสำหรับการเปิด Terminal">
+          <button type="button" data-platform-button="windows">Windows 11</button>
+          <button type="button" data-platform-button="macos">macOS</button>
+          <button type="button" data-platform-button="linux">Linux / WSL2</button>
+        </div>
         <div class="open-terminal-grid">
-          <article>
+          <article data-platform-panel="windows">
             <p class="platform-label">Windows 11</p>
             <h4>เปิด PowerShell แบบปกติ</h4>
             <ol>
@@ -77,7 +82,7 @@
             </ol>
             <p class="terminal-check">พร้อมเมื่อเห็น <code>PS C:\Users\ชื่อผู้ใช้&gt;</code></p>
           </article>
-          <article>
+          <article data-platform-panel="macos">
             <p class="platform-label">macOS</p>
             <h4>เปิด Terminal</h4>
             <ol>
@@ -87,6 +92,17 @@
               <li><span>4</span><div>ใช้หน้าต่างปกติ ไม่พิมพ์ <code>sudo</code> ในขั้นนี้</div></li>
             </ol>
             <p class="terminal-check">พร้อมเมื่อเห็นชื่อเครื่องตามด้วย <code>%</code> หรือ <code>$</code></p>
+          </article>
+          <article data-platform-panel="linux">
+            <p class="platform-label">Linux / WSL2</p>
+            <h4>เปิด Terminal หรือ Ubuntu</h4>
+            <ol>
+              <li><span>1</span><div>Linux: เปิดแอป <strong>Terminal</strong></div></li>
+              <li><span>2</span><div>WSL2: กด Start แล้วเปิด <strong>Ubuntu</strong></div></li>
+              <li><span>3</span><div>รอจนเห็นบรรทัด prompt</div></li>
+              <li><span>4</span><div>ยังไม่พิมพ์ <code>sudo</code> ในขั้นนี้</div></li>
+            </ol>
+            <p class="terminal-check">พร้อมเมื่อเห็นชื่อผู้ใช้และเครื่องตามด้วย <code>$</code></p>
           </article>
         </div>
         <div class="terminal-anatomy" aria-label="ตัวอย่างหน้าต่าง terminal">
@@ -190,8 +206,13 @@
         </article>
       </div>
       <div class="section-heading compact subheading"><p class="eyebrow">Workspace</p><h2>เปิด workspace หลังติดตั้ง</h2></div>
+      <div class="platform-picker" role="group" aria-label="เลือกระบบปฏิบัติการสำหรับการเปิด workspace">
+        <button type="button" data-platform-button="windows">Windows 11</button>
+        <button type="button" data-platform-button="macos">macOS</button>
+        <button type="button" data-platform-button="linux">Linux / WSL2</button>
+      </div>
       <div class="open-terminal-grid workspace-open-grid">
-        <article>
+        <article data-platform-panel="windows">
           <p class="platform-label">Windows 11</p>
           <h4>เปิดด้วย PowerShell</h4>
           <ol>
@@ -201,7 +222,7 @@
           </ol>
           <div class="command"><code>code "$HOME\ai-for-grad-students-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
         </article>
-        <article>
+        <article data-platform-panel="macos">
           <p class="platform-label">macOS</p>
           <h4>เปิดด้วย VS Code</h4>
           <ol>
@@ -211,6 +232,16 @@
             <li><span>4</span><div>วาง path ด้านล่าง แล้วกด Open</div></li>
           </ol>
           <div class="command"><code>~/ai-for-grad-students-workspace</code><button type="button" data-copy>คัดลอก path</button></div>
+        </article>
+        <article data-platform-panel="linux">
+          <p class="platform-label">Linux / WSL2</p>
+          <h4>เปิดด้วย Terminal</h4>
+          <ol>
+            <li><span>1</span><div>เปิด Terminal หรือ Ubuntu/WSL2</div></li>
+            <li><span>2</span><div>คัดลอกคำสั่งด้านล่างแล้วกด Enter</div></li>
+            <li><span>3</span><div>รอให้ VS Code เปิดโฟลเดอร์ผ่าน Linux/WSL2</div></li>
+          </ol>
+          <div class="command"><code>code "$HOME/ai-for-grad-students-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
         </article>
       </div>
       <div class="plain-note"><strong>พร้อมเมื่อ:</strong> เห็น <code>README.md</code>, <code>content.md</code>, <code>input/</code> และ <code>output/</code> ในแถบ Explorer ของ VS Code</div>
