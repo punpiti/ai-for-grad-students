@@ -16,64 +16,129 @@
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
   <header class="site-header">
     <a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Grad Students</span></a>
-    <nav aria-label="เมนูหลัก"><a href="index.html">หน้าหลัก</a><a href="#check">ตรวจเครื่อง</a><a href="#setup">ติดตั้ง</a></nav>
+    <nav aria-label="เมนูหลัก">
+      <a href="index.html">หน้าหลัก</a>
+      <details class="module-menu">
+        <summary>โมดูล 1–9</summary>
+        <div>
+          <a class="available" href="prepare.html" aria-current="page">1 · Prepare Workspace</a>
+          <a href="index.html#module-2">2 · AI Boundaries <small>เร็ว ๆ นี้</small></a>
+          <a href="index.html#module-3">3 · Problem–Gap–RQ <small>เร็ว ๆ นี้</small></a>
+          <a href="index.html#module-4">4 · Literature Evidence <small>เร็ว ๆ นี้</small></a>
+          <a href="index.html#module-5">5 · Research Logic <small>เร็ว ๆ นี้</small></a>
+          <a href="index.html#module-6">6 · Claim Audit <small>เร็ว ๆ นี้</small></a>
+          <a href="index.html#module-7">7 · Analysis & Visuals <small>เร็ว ๆ นี้</small></a>
+          <a href="index.html#module-8">8 · Document Production <small>เร็ว ๆ นี้</small></a>
+          <a href="index.html#module-9">9 · Personal Workflow <small>เร็ว ๆ นี้</small></a>
+        </div>
+      </details>
+      <a href="#before">ก่อนเรียน</a><a href="#practice">Workshop</a><a href="#homework">การบ้าน</a>
+    </nav>
   </header>
 
   <main id="main">
     <section class="prepare-hero">
-      <p class="eyebrow">Module 0 · Before class</p>
+      <p class="eyebrow">Module 1 · First class</p>
       <h1>Prepare Your<br>AI Research Workspace</h1>
-      <p>ติดตั้งครั้งเดียว เปิดมาเจอหน้า AI และตรวจว่าเครื่องพร้อมทำกิจกรรมจริง</p>
+      <p>ทำตามทีละขั้นตั้งแต่ตรวจเครื่อง ติดตั้ง เปิด workspace ฝึกใช้ agent และสร้าง readiness evidence</p>
     </section>
 
-    <section class="section readiness" id="check">
-      <div class="section-heading compact"><p class="eyebrow">Step 1</p><h2>ตรวจเครื่องก่อนดาวน์โหลด</h2></div>
+    <section class="section readiness" id="before">
+      <div class="section-heading compact"><p class="eyebrow">ก่อนเข้าเรียน</p><h2>ตรวจเครื่องและเตรียมสิ่งที่ต้องใช้</h2></div>
       <div class="check-grid">
         <div><span>OS</span><strong>Windows 11 · macOS<br>หรือ Linux ที่รองรับ</strong></div>
         <div><span>Memory</span><strong>8 GB minimum<br>16 GB recommended</strong></div>
         <div><span>Storage</span><strong>20 GB<br>free space</strong></div>
         <div><span>Access</span><strong>Install permission<br>+ stable internet</strong></div>
       </div>
-      <p class="muted">Chromebook, tablet และเครื่องที่ติดตั้งซอฟต์แวร์ไม่ได้ไม่เหมาะกับกิจกรรมนี้</p>
-    </section>
-
-    <section class="section platform-section" id="setup">
-      <div class="section-heading compact"><p class="eyebrow">Step 2</p><h2>เลือกเครื่องที่คุณใช้</h2></div>
-      <div class="platform-grid">
-        <article class="platform-card">
-          <p class="platform-label">Windows</p>
-          <h3>Windows 11 · 64-bit</h3>
-          <p>ติดตั้งผ่าน PowerShell และ WinGet พร้อม VS Code learner profile และ starter project</p>
-          <button class="button primary disabled" type="button" disabled>Installer — coming soon</button>
-          <small>WSL2 ไม่ใช่ค่าเริ่มต้น</small>
-        </article>
-        <article class="platform-card">
-          <p class="platform-label">macOS</p>
-          <h3>Apple silicon / Intel</h3>
-          <p>script จะตรวจ architecture และเลือก installation path ที่ผ่านการทดสอบ</p>
-          <button class="button primary disabled" type="button" disabled>Installer — coming soon</button>
-          <small>ไม่ติดตั้ง Rosetta หรือ Homebrew โดยไม่ขออนุญาต</small>
-        </article>
-        <article class="platform-card">
-          <p class="platform-label">Linux / WSL2</p>
-          <h3>Ubuntu-based · 64-bit</h3>
-          <p>รองรับ Linux native และ WSL2 บน Windows 11 สำหรับผู้ที่ต้องการ Linux toolchain</p>
-          <button class="button primary disabled" type="button" disabled>Installer — coming soon</button>
-          <small>WSL2 เป็นทางเลือก ต้องเปิดใช้โดยผู้เรียน และยังต้องติดตั้ง VS Code ฝั่ง Windows</small>
-        </article>
+      <p class="muted">Chromebook, tablet และเครื่องที่ติดตั้งซอฟต์แวร์ไม่ได้ไม่เหมาะกับกิจกรรมนี้ ห้ามนำข้อมูลลับหรือข้อมูลส่วนบุคคลที่ไม่ได้รับอนุญาตมาใช้</p>
+      <div class="checklist" data-checklist="before">
+        <label><input type="checkbox"> ฉันนำ notebook และ charger มาแล้ว</label>
+        <label><input type="checkbox"> เครื่องมี RAM/พื้นที่ว่างและสิทธิ์ติดตั้งเพียงพอ</label>
+        <label><input type="checkbox"> ฉันเข้าสู่บัญชี AI ผ่าน browser ได้</label>
+        <label><input type="checkbox"> ฉันมี research excerpt 1–3 หน้าที่เปิดเผยได้ หรือจะใช้ mock case</label>
       </div>
     </section>
 
-    <section class="section after-setup">
-      <div class="section-heading compact"><p class="eyebrow">Step 3</p><h2>สิ่งที่ต้องทำให้ผ่าน</h2></div>
+    <section class="section platform-section" id="setup">
+      <div class="section-heading compact"><p class="eyebrow">ช่วงบรรยาย · 10 นาที</p><h2>รู้จัก workspace ก่อนติดตั้ง</h2></div>
+      <div class="concept-grid">
+        <article><strong>VS Code</strong><p>พื้นที่เปิดไฟล์ Markdown ดูผลลัพธ์ และเรียก agent</p></article>
+        <article><strong>Agent</strong><p>ช่วยทำงานในโฟลเดอร์ภายใต้สิทธิ์ที่ผู้เรียนกำหนด</p></article>
+        <article><strong>Course tools</strong><p>Python, Pandoc และ LaTeX ทำงานเบื้องหลัง ไม่ต้องเขียนโค้ดเอง</p></article>
+      </div>
+      <div class="notice"><strong>หลักความปลอดภัย:</strong> อ่านสิ่งที่ script จะติดตั้งก่อนกดยืนยัน Script ไม่เก็บ token ไม่ปิดระบบป้องกัน และไม่ติดตั้ง WSL2 หรือ Rosetta อัตโนมัติ</div>
+      <div class="agent-choice">
+        <h3>เลือก agent ที่คุณมีเพียงหนึ่งตัว</h3>
+        <label><input type="radio" name="agent" value="codex" checked> <span><strong>ChatGPT → Codex</strong><small>ใช้ Codex CLI หรือส่วนเสริมใน VS Code</small></span></label>
+        <label><input type="radio" name="agent" value="claude"> <span><strong>Claude → Claude Code</strong><small>แนะนำ VS Code extension/terminal โดยยังใช้ VS Code เป็น workspace กลาง</small></span></label>
+        <label><input type="radio" name="agent" value="antigravity"> <span><strong>Gemini → Antigravity CLI</strong><small>ใช้ <code>agy</code> ใน terminal ของ VS Code; ไม่ต้องติดตั้ง Antigravity IDE</small></span></label>
+        <p class="muted">Agent อื่นถือเป็น advanced track และไม่ครอบคลุมใน Module 1</p>
+      </div>
+    </section>
+
+    <section class="section platform-section" id="practice">
+      <div class="section-heading compact"><p class="eyebrow">Workshop · 35 นาที</p><h2>เลือกแพลตฟอร์มแล้วทำตามขั้นตอน</h2></div>
+      <div class="platform-picker" role="group" aria-label="เลือกระบบปฏิบัติการ">
+        <button type="button" data-platform-button="windows">Windows 11</button>
+        <button type="button" data-platform-button="macos">macOS</button>
+        <button type="button" data-platform-button="linux">Linux</button>
+      </div>
+      <div class="platform-grid">
+        <article class="platform-card" data-platform-panel="windows">
+          <p class="platform-label">Windows</p>
+          <h3>Windows 11 · 64-bit</h3>
+          <p>เปิด PowerShell ปกติ ดาวน์โหลด script แล้วตรวจเครื่องก่อนติดตั้ง</p>
+          <a class="button primary" href="downloads/setup-windows.ps1" download>ดาวน์โหลด PowerShell script</a>
+          <div class="command"><code>powershell -ExecutionPolicy Bypass -File .\setup-windows.ps1 -Mode Check</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File .\setup-windows.ps1 -Mode Install -Agent {agent}">powershell -ExecutionPolicy Bypass -File .\setup-windows.ps1 -Mode Install -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
+          <small>WSL2 ไม่ใช่ค่าเริ่มต้น</small>
+        </article>
+        <article class="platform-card" data-platform-panel="macos">
+          <p class="platform-label">macOS</p>
+          <h3>Apple silicon / Intel</h3>
+          <p>เปิด Terminal ดาวน์โหลด script และรัน check ก่อน Script จะไม่ติดตั้ง Homebrew หรือ Rosetta ให้เอง</p>
+          <a class="button primary" href="downloads/setup-macos.sh" download>ดาวน์โหลด macOS script</a>
+          <div class="command"><code>bash ~/Downloads/setup-macos.sh --check</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-macos.sh --install">AI_GRAD_AGENT=codex bash ~/Downloads/setup-macos.sh --install</code><button type="button" data-copy>คัดลอก</button></div>
+          <small>ไม่ติดตั้ง Rosetta หรือ Homebrew โดยไม่ขออนุญาต</small>
+        </article>
+        <article class="platform-card" data-platform-panel="linux">
+          <p class="platform-label">Linux</p>
+          <h3>Ubuntu / Debian · 64-bit</h3>
+          <p>ใช้ apt และใช้ snap สำหรับ VS Code เมื่อมีอยู่ ไม่เปิด WSL2 ให้โดยอัตโนมัติ</p>
+          <a class="button primary" href="downloads/setup-linux.sh" download>ดาวน์โหลด Linux script</a>
+          <div class="command"><code>bash ~/Downloads/setup-linux.sh --check</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-linux.sh --install">AI_GRAD_AGENT=codex bash ~/Downloads/setup-linux.sh --install</code><button type="button" data-copy>คัดลอก</button></div>
+          <small>ผู้ใช้ WSL2 ต้องติดตั้ง VS Code ฝั่ง Windows และเปิด WSL2 เอง</small>
+        </article>
+      </div>
+      <div class="section-heading compact subheading"><p class="eyebrow">Readiness practice</p><h2>ฝึกให้ผ่านทีละข้อ</h2></div>
       <ol class="readiness-steps">
-        <li><span>01</span>เปิด VS Code แล้วพบหน้า AI agent</li>
-        <li><span>02</span>แก้และ preview ไฟล์ Markdown</li>
-        <li><span>03</span>ให้ agent อ่านและสร้างไฟล์ใน project</li>
-        <li><span>04</span>สร้าง PDF และอ่านข้อความกลับจาก PDF</li>
-        <li><span>05</span>ส่ง readiness evidence ก่อนวันอบรม</li>
+        <li><span>01</span><div><strong>เปิด workspace</strong><br>เปิดโฟลเดอร์ <code>ai-for-grad-students-workspace</code> ใน VS Code</div></li>
+        <li><span>02</span><div><strong>Sign in</strong><br><span data-login-help>เปิด Codex แล้วรัน <code>codex login</code></span>; ลงชื่อเข้าใช้ผ่าน browser และห้ามส่ง token ให้ผู้สอน</div></li>
+        <li><span>03</span><div><strong>Markdown</strong><br>แก้ <code>content.md</code> และเปิด Markdown Preview</div></li>
+        <li><span>04</span><div><strong>Agent file task</strong><br>สั่ง agent: “อ่าน content.md แล้วสร้าง output/readiness-note.md โดยไม่เปลี่ยนไฟล์ต้นฉบับ”</div></li>
+        <li><span>05</span><div><strong>Evidence</strong><br>บันทึกผล check, screenshot ของ workspace และ readiness note โดยตรวจว่าไม่มีข้อมูลลับ</div></li>
       </ol>
-      <div class="notice"><strong>ยังไม่ต้องติดตั้งตอนนี้:</strong> installer และรายการ software ที่ผ่าน compatibility test จะเปิดให้ดาวน์โหลดก่อนรอบ pilot</div>
+      <div class="checklist" data-checklist="practice">
+        <label><input type="checkbox"> เปิด workspace ใน VS Code ได้</label>
+        <label><input type="checkbox"> Agent ที่เลือก sign in และอ่านข้อความใน project ได้</label>
+        <label><input type="checkbox"> แก้และ preview Markdown ได้</label>
+        <label><input type="checkbox"> Agent สร้าง readiness note ใน output/ ได้</label>
+        <label><input type="checkbox"> ตรวจ evidence แล้วว่าไม่มีข้อมูลลับ</label>
+      </div>
+      <p class="progress" aria-live="polite">ความพร้อม: <strong data-progress>0%</strong></p>
+    </section>
+
+    <section class="section" id="homework">
+      <div class="section-heading compact"><p class="eyebrow">การบ้าน</p><h2>เปิดซ้ำด้วยตัวเองและเตรียมคาบถัดไป</h2></div>
+      <div class="homework-grid">
+        <article><h3>ทบทวน</h3><p>ปิดแล้วเปิด VS Code ใหม่ รัน script ในโหมด check และยืนยันว่า workspace, agent และ Markdown ยังทำงาน</p></article>
+        <article><h3>แก้สิ่งที่ค้าง</h3><p>ถ้ายังมีรายการ MISSING ให้บันทึก error ตามจริง ใช้ fallback ในชั้น และนัด setup clinic โดยไม่ปิด security protection</p></article>
+        <article><h3>เตรียมคาบถัดไป</h3><p>เก็บ research excerpt ที่เปิดเผยได้ใน input/ และเขียนรายการงานที่อยากให้ AI ช่วยใน content.md</p></article>
+      </div>
+      <div class="notice"><strong>หลักฐานที่ส่ง:</strong> ผล check, readiness-note.md และคำอธิบาย blocker ถ้ามี ไม่ส่ง password, token, API key หรือข้อมูลวิจัยที่ห้ามเปิดเผย</div>
     </section>
   </main>
   <footer><p>AI for Grad Students</p><p><a href="index.html">กลับหน้าหลัก</a></p></footer>
