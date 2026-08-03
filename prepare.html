@@ -99,13 +99,6 @@
           <li><strong>Safety:</strong> รันเฉพาะคำสั่งบนหน้าเรียน อ่านก่อนทุกครั้ง และไม่วาง password/token ลงใน terminal</li>
         </ul>
       </div>
-      <div class="section-heading compact subheading"><p class="eyebrow">Workspace</p><h2>รู้จัก workspace ก่อนติดตั้ง</h2></div>
-      <div class="concept-grid">
-        <article><strong>VS Code</strong><p>พื้นที่เปิดไฟล์ Markdown ดูผลลัพธ์ และเรียก agent</p></article>
-        <article><strong>Agent</strong><p>ช่วยทำงานในโฟลเดอร์ภายใต้สิทธิ์ที่ผู้เรียนกำหนด</p></article>
-        <article><strong>Course tools</strong><p>Python, uv, Pandoc และ LaTeX ทำงานเบื้องหลัง ผู้เรียนไม่ต้องเขียนโค้ดหรือใช้ <code>pip</code></p></article>
-      </div>
-      <div class="plain-note"><strong>uv คืออะไร?</strong> เป็นโปรแกรมที่ installer ใช้ติดตั้ง Python และชุดเครื่องมือของรายวิชาให้เหมือนกันทุกเครื่อง ผู้เรียนไม่ต้องเรียน Python, uv หรือจำคำสั่งของมัน</div>
       <div class="notice"><strong>หลักความปลอดภัย:</strong> อ่านสิ่งที่ script จะติดตั้งก่อนกดยืนยัน Script ไม่เก็บ token ไม่ปิดระบบป้องกัน และไม่ติดตั้ง WSL2 หรือ Rosetta อัตโนมัติ</div>
       <div class="agent-choice">
         <h3>เลือก agent ที่คุณมีเพียงหนึ่งตัว</h3>
@@ -196,6 +189,31 @@
           <small>Script ตรวจ WSL2 ได้ แต่จะไม่เปิด WSL2 หรือติดตั้ง VS Code ฝั่ง Windows ให้โดยอัตโนมัติ</small>
         </article>
       </div>
+      <div class="section-heading compact subheading"><p class="eyebrow">Workspace</p><h2>เปิด workspace หลังติดตั้ง</h2></div>
+      <div class="open-terminal-grid workspace-open-grid">
+        <article>
+          <p class="platform-label">Windows 11</p>
+          <h4>เปิดด้วย PowerShell</h4>
+          <ol>
+            <li><span>1</span><div>เปิด PowerShell แบบปกติ</div></li>
+            <li><span>2</span><div>คัดลอกคำสั่งด้านล่างแล้วกด Enter</div></li>
+            <li><span>3</span><div>รอให้ VS Code เปิดโฟลเดอร์งาน</div></li>
+          </ol>
+          <div class="command"><code>code "$HOME\ai-for-grad-students-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
+        </article>
+        <article>
+          <p class="platform-label">macOS</p>
+          <h4>เปิดด้วย VS Code</h4>
+          <ol>
+            <li><span>1</span><div>เปิด Visual Studio Code</div></li>
+            <li><span>2</span><div>กด <strong>Command (⌘) + O</strong></div></li>
+            <li><span>3</span><div>กด <strong>Command (⌘) + Shift + G</strong></div></li>
+            <li><span>4</span><div>วาง path ด้านล่าง แล้วกด Open</div></li>
+          </ol>
+          <div class="command"><code>~/ai-for-grad-students-workspace</code><button type="button" data-copy>คัดลอก path</button></div>
+        </article>
+      </div>
+      <div class="plain-note"><strong>พร้อมเมื่อ:</strong> เห็น <code>README.md</code>, <code>content.md</code>, <code>input/</code> และ <code>output/</code> ในแถบ Explorer ของ VS Code</div>
       <div class="section-heading compact subheading"><p class="eyebrow">Readiness practice</p><h2>ฝึกให้ผ่านทีละข้อ</h2></div>
       <ol class="readiness-steps">
         <li><span>01</span><div><strong>เปิด VS Code</strong><br>คัดลอกคำสั่งนี้ลง terminal เพื่อเปิด workspace<div class="command"><code>code "$HOME/ai-for-grad-students-workspace"</code><button type="button" data-copy>คัดลอก</button></div></div></li>
