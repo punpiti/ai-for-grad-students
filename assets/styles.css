@@ -134,6 +134,9 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
 .micro-steps li { margin-bottom: .55rem; }
 .command-label { margin: 1rem 0 .25rem; font-size: .8rem; font-weight: 600; color: var(--ink-soft); }
 .expected { padding-top: .65rem; border-top: 1px solid var(--line); font-size: .86rem; color: var(--ink-soft); }
+.phase-title { display: flex; gap: .65rem; align-items: center; margin: 1.6rem 0 .75rem; padding-top: 1.2rem; border-top: 1px solid var(--line); font-size: 1.05rem; }
+.phase-title:first-of-type { margin-top: .75rem; }
+.phase-title > span { display: grid; place-items: center; flex: 0 0 1.7rem; width: 1.7rem; height: 1.7rem; border-radius: 50%; color: var(--surface-strong); background: var(--accent); font: 600 .78rem/1 Inter, sans-serif; }
 .terminal-primer { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid rgba(135,199,178,.3); border-radius: 1.2rem; color: var(--white); background: var(--surface-strong); }
 .terminal-primer p, .terminal-primer li { color: rgba(255,253,248,.82); }
 .terminal-primer li { margin-bottom: .45rem; }

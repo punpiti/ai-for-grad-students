@@ -25,7 +25,7 @@ make_workspace() {
   fi
   log "workspace=$course_dir"
 }
-install_tools() {
+install_system_tools() {
   [[ "$(uname -s)" == Linux ]] || { log 'This installer requires Linux.'; exit 2; }
   have apt-get || { log 'Only Ubuntu/Debian apt systems are currently supported.'; exit 2; }
   log 'This installs Git, Node.js/npm, Pandoc, XeLaTeX, curl and VS Code (via snap when available).'
@@ -42,6 +42,9 @@ install_tools() {
       log 'VS Code still missing: install it from https://code.visualstudio.com/'
     fi
   fi
+  log 'System installation finished. Close this terminal, open Terminal/Ubuntu normally, then run --setup-user.'
+}
+setup_user() {
   have uv || curl -LsSf https://astral.sh/uv/install.sh | sh
   if [[ -z "$agent" ]]; then read -r -p 'Choose agent [codex/claude/antigravity]: ' agent; fi
   mkdir -p "$HOME/.local"
@@ -58,6 +61,8 @@ install_tools() {
 
 case "$mode" in
   --check) check ;;
-  --install|--repair) install_tools; check ;;
-  *) echo "Usage: $0 [--check|--install|--repair]" >&2; exit 2 ;;
+  --install-system) install_system_tools ;;
+  --setup-user) setup_user; check ;;
+  --repair) install_system_tools; setup_user; check ;;
+  *) echo "Usage: $0 [--check|--install-system|--setup-user|--repair]" >&2; exit 2 ;;
 esac

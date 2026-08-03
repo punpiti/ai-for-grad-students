@@ -155,25 +155,21 @@
         <article class="platform-card" data-platform-panel="windows">
           <p class="platform-label">Windows</p>
           <h3>Windows 11 · 64-bit</h3>
-          <ol class="micro-steps">
-            <li>กดปุ่ม Windows พิมพ์ <strong>PowerShell</strong> แล้วกด Enter — ไม่ต้องเลือก Run as administrator</li>
-            <li>ฝึก Copy → Ctrl+V → Enter ด้วยสองคำสั่งแรก</li>
-            <li>กดดาวน์โหลด installer แล้วใช้คำสั่ง Check ใน PowerShell ปกติ</li>
-            <li>เปิด Admin PowerShell เพื่อติดตั้ง system tools; เมื่อเสร็จหน้าต่างจะปิดเอง</li>
-            <li>เปิด PowerShell ปกติอีกครั้ง แล้วติดตั้งส่วนของผู้ใช้</li>
-          </ol>
+          <h4 class="phase-title"><span>1</span> รู้จัก command ใน PowerShell ปกติ</h4>
           <p class="command-label">ฝึก 1 · ตอนนี้อยู่ที่ไหน</p>
           <div class="command"><code>Get-Location</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="command-label">ฝึก 2 · ดูไฟล์ในโฟลเดอร์</p>
           <div class="command"><code>Get-ChildItem</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected"><strong>ควรเห็น:</strong> path ปัจจุบันและรายชื่อไฟล์ โดยยังไม่มีอะไรถูกแก้ไข</p>
+          <h4 class="phase-title"><span>2</span> ติดตั้ง system software ด้วย Admin</h4>
           <a class="button primary" href="downloads/setup-windows.ps1" download>ดาวน์โหลด PowerShell script</a>
-          <p class="command-label">1 · ตรวจเครื่อง</p>
+          <p class="command-label">ตรวจเครื่องใน PowerShell ปกติ</p>
           <div class="command"><code>powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode Check</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="command-label">2 · เปิด PowerShell ด้วย Run as administrator แล้วติดตั้ง system tools</p>
+          <p class="command-label">เปิด PowerShell ด้วย Run as administrator แล้วติดตั้ง</p>
           <div class="command"><code>powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode InstallSystem</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected"><strong>เมื่อเสร็จ:</strong> Admin PowerShell จะปิดเองภายใน 5 วินาที ห้ามเปิด agent หรือสร้างงานในหน้าต่าง Admin</p>
-          <p class="command-label">3 · เปิด PowerShell แบบปกติใหม่ แล้วตั้งค่าส่วนของผู้ใช้</p>
+          <h4 class="phase-title"><span>3</span> ปิด Admin แล้วเปิด PowerShell ปกติใหม่</h4>
+          <p class="command-label">ตั้งค่า agent และ workspace ในสิทธิ์ผู้ใช้ปกติ</p>
           <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File &quot;$HOME\Downloads\setup-windows.ps1&quot; -Mode SetupUser -Agent {agent}">powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode SetupUser -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected"><strong>ระบบป้องกัน:</strong> หากเปิด PowerShell แบบ Admin อยู่ Script จะหยุดและสั่งให้เปิดหน้าต่างปกติใหม่</p>
           <small>WSL2 ไม่ใช่ค่าเริ่มต้น</small>
@@ -181,45 +177,41 @@
         <article class="platform-card" data-platform-panel="macos">
           <p class="platform-label">macOS</p>
           <h3>Apple silicon / Intel</h3>
-          <ol class="micro-steps">
-            <li>กด Command+Space พิมพ์ <strong>Terminal</strong> แล้วกด Enter</li>
-            <li>ฝึก Copy → Command+V → Enter ด้วยสองคำสั่งแรก</li>
-            <li>กดดาวน์โหลด installer แล้วใช้คำสั่ง Check</li>
-            <li>อ่านผล <code>PASS</code>/<code>MISSING</code> ก่อนใช้คำสั่ง Install</li>
-          </ol>
+          <h4 class="phase-title"><span>1</span> รู้จัก command ใน Terminal ปกติ</h4>
           <p class="command-label">ฝึก 1 · ตอนนี้อยู่ที่ไหน</p>
           <div class="command"><code>pwd</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="command-label">ฝึก 2 · ดูไฟล์ในโฟลเดอร์</p>
           <div class="command"><code>ls</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected"><strong>ควรเห็น:</strong> path ปัจจุบันและรายชื่อไฟล์ โดยยังไม่มีอะไรถูกแก้ไข</p>
+          <h4 class="phase-title"><span>2</span> ติดตั้ง system software</h4>
           <a class="button primary" href="downloads/setup-macos.sh" download>ดาวน์โหลด macOS script</a>
-          <p class="command-label">1 · ตรวจเครื่อง</p>
+          <p class="command-label">ตรวจเครื่องใน Terminal ปกติ</p>
           <div class="command"><code>bash "$HOME/Downloads/setup-macos.sh" --check</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="command-label">2 · ติดตั้ง</p>
-          <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-macos.sh --install">AI_GRAD_AGENT=codex bash ~/Downloads/setup-macos.sh --install</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected"><strong>ควรเห็น:</strong> macOS version, architecture และรายการ <code>PASS</code>/<code>MISSING</code></p>
+          <p class="command-label">ติดตั้ง; macOS อาจขอรหัสผ่านเฉพาะขั้นที่จำเป็น</p>
+          <div class="command"><code>bash "$HOME/Downloads/setup-macos.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
+          <h4 class="phase-title"><span>3</span> ปิดแล้วเปิด Terminal ปกติใหม่</h4>
+          <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-macos.sh --setup-user">AI_GRAD_AGENT=codex bash ~/Downloads/setup-macos.sh --setup-user</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected"><strong>ขั้นนี้:</strong> ตั้งค่า agent และ workspace โดยไม่ใช้ <code>sudo</code></p>
           <small>ไม่ติดตั้ง Rosetta หรือ Homebrew โดยไม่ขออนุญาต</small>
         </article>
         <article class="platform-card" data-platform-panel="linux">
           <p class="platform-label">Linux / WSL2</p>
           <h3>Ubuntu / Debian / WSL2 · 64-bit</h3>
-          <ol class="micro-steps">
-            <li>Linux: เปิดแอป <strong>Terminal</strong> · WSL2: เปิด <strong>Ubuntu</strong> จาก Start menu</li>
-            <li>ฝึก Copy → Ctrl+Shift+V → Enter ด้วยสองคำสั่งแรก</li>
-            <li>กดดาวน์โหลด installer; ใน WSL2 ให้อาจารย์ช่วยหา path ของ Downloads หากคำสั่งตัวอย่างหาไฟล์ไม่พบ</li>
-            <li>อ่านผล <code>PASS</code>/<code>MISSING</code> ก่อนใช้คำสั่ง Install</li>
-          </ol>
+          <h4 class="phase-title"><span>1</span> รู้จัก command ใน Terminal ปกติ</h4>
           <p class="command-label">ฝึก 1 · ตอนนี้อยู่ที่ไหน</p>
           <div class="command"><code>pwd</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="command-label">ฝึก 2 · ดูไฟล์ในโฟลเดอร์</p>
           <div class="command"><code>ls</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected"><strong>ควรเห็น:</strong> path ปัจจุบันและรายชื่อไฟล์ โดยยังไม่มีอะไรถูกแก้ไข</p>
+          <h4 class="phase-title"><span>2</span> ติดตั้ง system software ด้วย sudo</h4>
           <a class="button primary" href="downloads/setup-linux.sh" download>ดาวน์โหลด Linux / WSL2 script</a>
-          <p class="command-label">1 · ตรวจเครื่อง (Linux native)</p>
+          <p class="command-label">ตรวจเครื่อง</p>
           <div class="command"><code>bash "$HOME/Downloads/setup-linux.sh" --check</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="command-label">2 · ติดตั้ง</p>
-          <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-linux.sh --install">AI_GRAD_AGENT=codex bash ~/Downloads/setup-linux.sh --install</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected"><strong>ควรเห็น:</strong> <code>platform=Linux</code> หรือ <code>platform=WSL2</code> ตามเครื่องที่ใช้</p>
+          <p class="command-label">ติดตั้ง; script จะเรียก sudo เฉพาะ package ที่จำเป็น</p>
+          <div class="command"><code>bash "$HOME/Downloads/setup-linux.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
+          <h4 class="phase-title"><span>3</span> ปิดแล้วเปิด Terminal/Ubuntu ปกติใหม่</h4>
+          <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-linux.sh --setup-user">AI_GRAD_AGENT=codex bash ~/Downloads/setup-linux.sh --setup-user</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected"><strong>ขั้นนี้:</strong> ตั้งค่า agent และ workspace โดยไม่ใช้ <code>sudo</code></p>
           <small>Script ตรวจ WSL2 ได้ แต่จะไม่เปิด WSL2 หรือติดตั้ง VS Code ฝั่ง Windows ให้โดยอัตโนมัติ</small>
         </article>
       </div>

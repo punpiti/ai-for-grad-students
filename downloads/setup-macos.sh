@@ -20,7 +20,7 @@ make_workspace() {
   [[ -e "$course_dir/README.md" ]] || printf '# AI for Grad Students\n\nKeep permitted inputs in `input/` and generated work in `output/`.\n' > "$course_dir/README.md"
   log "workspace=$course_dir"
 }
-install_tools() {
+install_system_tools() {
   [[ "$(uname -s)" == Darwin ]] || { log 'This installer requires macOS.'; exit 2; }
   have brew || { log 'Homebrew is required but will not be installed silently. Install it from https://brew.sh/ and rerun.'; exit 2; }
   log 'This uses Homebrew to install VS Code, Node.js, uv, Pandoc and BasicTeX. It does not install Rosetta.'
@@ -28,6 +28,9 @@ install_tools() {
   [[ "$answer" =~ ^[Yy]$ ]] || exit 0
   brew install node uv pandoc
   brew install --cask visual-studio-code basictex
+  log 'System installation finished. Close this terminal, open Terminal normally, then run --setup-user.'
+}
+setup_user() {
   if [[ -z "$agent" ]]; then read -r -p 'Choose agent [codex/claude/antigravity]: ' agent; fi
   case "$agent" in
     codex) have codex || npm install -g @openai/codex ;;
@@ -39,6 +42,8 @@ install_tools() {
 }
 case "$mode" in
   --check) check ;;
-  --install|--repair) install_tools; check ;;
-  *) echo "Usage: $0 [--check|--install|--repair]" >&2; exit 2 ;;
+  --install-system) install_system_tools ;;
+  --setup-user) setup_user; check ;;
+  --repair) install_system_tools; setup_user; check ;;
+  *) echo "Usage: $0 [--check|--install-system|--setup-user|--repair]" >&2; exit 2 ;;
 esac
