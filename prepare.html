@@ -105,8 +105,14 @@
             <p class="terminal-check">พร้อมเมื่อเห็นชื่อผู้ใช้และเครื่องตามด้วย <code>$</code></p>
           </article>
         </div>
-        <div class="terminal-anatomy" aria-label="ตัวอย่างหน้าต่าง terminal">
-          <span>ชื่อโฟลเดอร์และเครื่องหมายรอรับคำสั่ง</span><code>PS C:\Users\student&gt; <b>▌</b></code><small>เครื่องหมาย <b>▌</b> คือจุดที่คำสั่งจะถูกวาง</small>
+        <div class="terminal-anatomy" data-platform-panel="windows" aria-label="ตัวอย่าง PowerShell บน Windows">
+          <span>PowerShell · Windows 11</span><code>PS C:\Users\student&gt; <b>▌</b></code><small><strong>PS</strong> = PowerShell · <strong>C:\Users\student</strong> = โฟลเดอร์ปัจจุบัน · <b>▌</b> = จุดวางคำสั่ง</small>
+        </div>
+        <div class="terminal-anatomy" data-platform-panel="macos" aria-label="ตัวอย่าง Terminal บน macOS">
+          <span>Terminal · macOS (zsh)</span><code>student@MacBook ~ % <b>▌</b></code><small><strong>student@MacBook</strong> = ผู้ใช้และชื่อเครื่อง · <strong>~</strong> = home folder · <strong>%</strong> = พร้อมรับคำสั่ง</small>
+        </div>
+        <div class="terminal-anatomy" data-platform-panel="linux" aria-label="ตัวอย่าง Terminal บน Linux หรือ WSL2">
+          <span>Terminal · Linux / WSL2</span><code>student@ubuntu:~$ <b>▌</b></code><small><strong>student@ubuntu</strong> = ผู้ใช้และชื่อเครื่อง · <strong>~</strong> = home folder · <strong>$</strong> = พร้อมรับคำสั่ง</small>
         </div>
         <ul>
           <li><strong>Paste:</strong> PowerShell ใช้ Ctrl+V · macOS ใช้ Command+V · Linux/WSL2 มักใช้ Ctrl+Shift+V</li>
