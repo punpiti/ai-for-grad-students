@@ -84,6 +84,12 @@
             <div class="terminal-anatomy" aria-label="ตัวอย่าง PowerShell บน Windows">
               <span>ตัวอย่าง PowerShell</span><code>PS C:\Users\student&gt; <b>▌</b></code><small><strong>PS</strong> = PowerShell · <strong>C:\Users\student</strong> = โฟลเดอร์ปัจจุบัน · <b>▌</b> = จุดวางคำสั่ง</small>
             </div>
+            <ul class="terminal-rules">
+              <li><strong>Paste:</strong> Ctrl+V</li>
+              <li><strong>Run:</strong> กด Enter แล้วรอจนเห็น <code>PS ...&gt;</code> กลับมา</li>
+              <li><strong>Stop:</strong> กด Ctrl+C แล้วเรียกผู้สอน</li>
+              <li><strong>Safety:</strong> อ่านก่อนรัน และไม่วาง password/token</li>
+            </ul>
           </article>
           <article data-platform-panel="macos">
             <p class="platform-label">macOS</p>
@@ -98,6 +104,12 @@
             <div class="terminal-anatomy" aria-label="ตัวอย่าง Terminal บน macOS">
               <span>ตัวอย่าง macOS Terminal (zsh)</span><code>student@MacBook ~ % <b>▌</b></code><small><strong>student@MacBook</strong> = ผู้ใช้และชื่อเครื่อง · <strong>~</strong> = home folder · <strong>%</strong> = พร้อมรับคำสั่ง</small>
             </div>
+            <ul class="terminal-rules">
+              <li><strong>Paste:</strong> Command (⌘)+V</li>
+              <li><strong>Run:</strong> กด Enter แล้วรอจนเห็น <code>%</code> หรือ <code>$</code> กลับมา</li>
+              <li><strong>Stop:</strong> กด Control+C แล้วเรียกผู้สอน</li>
+              <li><strong>Safety:</strong> อ่านก่อนรัน และไม่วาง password/token</li>
+            </ul>
           </article>
           <article data-platform-panel="linux">
             <p class="platform-label">Linux / WSL2</p>
@@ -112,14 +124,14 @@
             <div class="terminal-anatomy" aria-label="ตัวอย่าง Terminal บน Linux หรือ WSL2">
               <span>ตัวอย่าง Linux / WSL2 Terminal</span><code>student@ubuntu:~$ <b>▌</b></code><small><strong>student@ubuntu</strong> = ผู้ใช้และชื่อเครื่อง · <strong>~</strong> = home folder · <strong>$</strong> = พร้อมรับคำสั่ง</small>
             </div>
+            <ul class="terminal-rules">
+              <li><strong>Paste:</strong> Ctrl+Shift+V</li>
+              <li><strong>Run:</strong> กด Enter แล้วรอจนเห็น <code>$</code> กลับมา</li>
+              <li><strong>Stop:</strong> กด Ctrl+C แล้วเรียกผู้สอน</li>
+              <li><strong>Safety:</strong> อ่านก่อนรัน และไม่วาง password/token</li>
+            </ul>
           </article>
         </div>
-        <ul>
-          <li><strong>Paste:</strong> PowerShell ใช้ Ctrl+V · macOS ใช้ Command+V · Linux/WSL2 มักใช้ Ctrl+Shift+V</li>
-          <li><strong>Run:</strong> กด Enter หนึ่งครั้ง แล้วรอจนเห็น prompt กลับมา</li>
-          <li><strong>Stop:</strong> หากคำสั่งค้างหรือรันผิด ให้กด Ctrl+C แล้วเรียกผู้สอน</li>
-          <li><strong>Safety:</strong> รันเฉพาะคำสั่งบนหน้าเรียน อ่านก่อนทุกครั้ง และไม่วาง password/token ลงใน terminal</li>
-        </ul>
       </div>
       <div class="notice"><strong>หลักความปลอดภัย:</strong> อ่านสิ่งที่ script จะติดตั้งก่อนกดยืนยัน Script ไม่เก็บ token ไม่ปิดระบบป้องกัน และไม่ติดตั้ง WSL2 หรือ Rosetta อัตโนมัติ</div>
       <div class="agent-choice">
