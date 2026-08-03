@@ -8,7 +8,8 @@ agent="${AI_GRAD_AGENT:-}"
 log() { printf '[ai-grad] %s\n' "$*"; }
 have() { command -v "$1" >/dev/null 2>&1; }
 check() {
-  log "platform=$(uname -s) arch=$(uname -m)"
+  if grep -qi microsoft /proc/version 2>/dev/null; then platform='WSL2'; else platform='Linux'; fi
+  log "platform=$platform arch=$(uname -m)"
   for cmd in code node npm codex claude agy uv pandoc xelatex; do
     if have "$cmd"; then log "PASS $cmd=$($cmd --version 2>/dev/null | head -n 1)"; else log "MISSING $cmd"; fi
   done
@@ -33,7 +34,13 @@ install_tools() {
   sudo apt-get update
   sudo apt-get install -y git curl nodejs npm pandoc texlive-xetex
   if ! have code; then
-    if have snap; then sudo snap install code --classic; else log 'VS Code still missing: install it from https://code.visualstudio.com/'; fi
+    if grep -qi microsoft /proc/version 2>/dev/null; then
+      log 'VS Code still missing in WSL2: install VS Code and the WSL extension on Windows, then reopen this folder in WSL.'
+    elif have snap; then
+      sudo snap install code --classic
+    else
+      log 'VS Code still missing: install it from https://code.visualstudio.com/'
+    fi
   fi
   have uv || curl -LsSf https://astral.sh/uv/install.sh | sh
   if [[ -z "$agent" ]]; then read -r -p 'Choose agent [codex/claude/antigravity]: ' agent; fi
