@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="เตรียม AI research workspace สำหรับหลักสูตร AI for Grad Students">
+  <meta name="description" content="เตรียม AI research workspace สำหรับหลักสูตร AI for Research">
   <meta name="theme-color" content="#101817">
-  <title>Prepare Workspace — AI for Grad Students</title>
+  <title>Prepare Workspace — AI for Research</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260803-2">
-  <script src="assets/app.js?v=20260803-2" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260803-5">
+  <script src="assets/app.js?v=20260803-10" defer></script>
 </head>
 <body class="prepare-page">
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Grad Students</span></a>
+    <a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Research</span></a>
     <nav aria-label="เมนูหลัก">
       <a href="index.html">หน้าหลัก</a>
       <details class="module-menu">
@@ -32,7 +32,7 @@
           <a href="index.html#module-9">9 · Personal Workflow <small>เร็ว ๆ นี้</small></a>
         </div>
       </details>
-      <a href="#before">ก่อนเรียน</a><a href="#practice">Workshop</a><a href="#homework">การบ้าน</a>
+      <a href="#setup">เริ่มต้น</a><a href="#practice">Workshop</a><a href="#homework">การบ้าน</a>
     </nav>
   </header>
 
@@ -40,28 +40,11 @@
     <section class="prepare-hero">
       <p class="eyebrow">Module 1 · First class</p>
       <h1>Prepare Your<br>AI Research Workspace</h1>
-      <p>ทำตามทีละขั้นตั้งแต่ตรวจเครื่อง ติดตั้ง เปิด workspace ฝึกใช้ agent และสร้าง readiness evidence</p>
-    </section>
-
-    <section class="section readiness" id="before">
-      <div class="section-heading compact"><p class="eyebrow">ก่อนเข้าเรียน</p><h2>ตรวจเครื่องและเตรียมสิ่งที่ต้องใช้</h2></div>
-      <div class="check-grid">
-        <div><span>OS</span><strong>Windows 11 · macOS<br>หรือ Linux ที่รองรับ</strong></div>
-        <div><span>Memory</span><strong>8 GB minimum<br>16 GB recommended</strong></div>
-        <div><span>Storage</span><strong>20 GB<br>free space</strong></div>
-        <div><span>Access</span><strong>Install permission<br>+ stable internet</strong></div>
-      </div>
-      <p class="muted">Chromebook, tablet และเครื่องที่ติดตั้งซอฟต์แวร์ไม่ได้ไม่เหมาะกับกิจกรรมนี้ ห้ามนำข้อมูลลับหรือข้อมูลส่วนบุคคลที่ไม่ได้รับอนุญาตมาใช้</p>
-      <div class="checklist" data-checklist="before">
-        <label><input type="checkbox"> ฉันนำ notebook และ charger มาแล้ว</label>
-        <label><input type="checkbox"> เครื่องมี RAM/พื้นที่ว่างและสิทธิ์ติดตั้งเพียงพอ</label>
-        <label><input type="checkbox"> ฉันเข้าสู่บัญชี AI ผ่าน browser ได้</label>
-        <label><input type="checkbox"> ฉันมี research excerpt 1–3 หน้าที่เปิดเผยได้ หรือจะใช้ mock case</label>
-      </div>
+      <p>ทำตามทีละขั้นเพื่อเตรียมเครื่อง เชื่อมต่อ AI และสร้าง PDF ตัวอย่างชิ้นแรก ไม่จำเป็นต้องมีพื้นฐานการเขียนโปรแกรม</p>
     </section>
 
     <section class="section platform-section" id="setup">
-      <div class="section-heading compact"><p class="eyebrow">ช่วงบรรยาย · 10 นาที</p><h2>รู้จัก Terminal / CLI</h2></div>
+      <div class="section-heading compact"><p class="eyebrow">ขั้นที่ 1 · ในชั้นเรียน</p><h2>รู้จัก Terminal / CLI</h2></div>
       <div class="terminal-primer">
         <h3>Terminal คืออะไร?</h3>
         <p>Terminal คือช่องสำหรับบอกคอมพิวเตอร์ให้ทำงานด้วยข้อความ ส่วน CLI หรือ Command-Line Interface คือโปรแกรมที่เราเรียกใช้ผ่านช่องนี้ หนึ่งบรรทัดคือหนึ่งคำสั่ง ในกิจกรรมนี้ไม่ต้องจำคำสั่งและไม่ต้องพิมพ์เอง—อ่านก่อน กด Copy วาง แล้วกด Enter</p>
@@ -133,89 +116,73 @@
           </article>
         </div>
       </div>
-      <div class="notice"><strong>หลักความปลอดภัย:</strong> อ่านสิ่งที่ script จะติดตั้งก่อนกดยืนยัน Script ไม่เก็บ token ไม่ปิดระบบป้องกัน และไม่ติดตั้ง WSL2 หรือ Rosetta อัตโนมัติ</div>
+      <div class="notice"><strong>จบขั้นที่ 1 เมื่อ:</strong> เปิด Terminal แบบปกติได้ รู้ตำแหน่ง prompt และทำ Copy → Paste → Enter ได้ โดยยังไม่ติดตั้งอะไร</div>
+    </section>
+
+    <section class="section" id="choose-ai">
+      <div class="section-heading compact"><p class="eyebrow">ก่อนติดตั้ง</p><h2>คุณจะใช้ AI ตัวไหน?</h2></div>
       <div class="agent-choice">
-        <h3>เลือก agent ที่คุณมีเพียงหนึ่งตัว</h3>
-        <label><input type="radio" name="agent" value="codex" checked> <span><strong>ChatGPT → Codex</strong><small>ใช้ Codex CLI หรือส่วนเสริมใน VS Code</small></span></label>
-        <label><input type="radio" name="agent" value="claude"> <span><strong>Claude → Claude Code</strong><small>แนะนำ VS Code extension/terminal โดยยังใช้ VS Code เป็น workspace กลาง</small></span></label>
-        <label><input type="radio" name="agent" value="antigravity"> <span><strong>Gemini → Antigravity CLI</strong><small>ใช้ <code>agy</code> ใน terminal ของ VS Code; ไม่ต้องติดตั้ง Antigravity IDE</small></span></label>
-        <p class="muted">Agent อื่นถือเป็น advanced track และไม่ครอบคลุมใน Module 1</p>
+        <p>ต้องเลือกตามบัญชีที่มีอยู่ก่อน จึงจะเปิดขั้นตอนติดตั้งและแสดงคำสั่ง CLI ที่ตรงกับ AI นั้น</p>
+        <label><input type="radio" name="agent" value="codex"> <span><strong>บัญชี ChatGPT → Codex</strong><small>เปิดครั้งแรกแล้วเลือก Sign in with ChatGPT</small></span></label>
+        <label><input type="radio" name="agent" value="claude"> <span><strong>บัญชี Claude → Claude Code</strong><small>เปิดครั้งแรกแล้วเลือกบัญชี Claude ที่มีสิทธิ์</small></span></label>
+        <label><input type="radio" name="agent" value="antigravity"> <span><strong>บัญชี Google → Antigravity IDE</strong><small>ใช้ Antigravity เป็น workspace แทน VS Code แล้ว Sign in ด้วย Google</small></span></label>
+        <p class="expected" data-agent-gate-status role="status" aria-live="polite"><strong>ยังไปต่อไม่ได้:</strong> กรุณาเลือก AI หนึ่งตัว</p>
       </div>
     </section>
 
-    <section class="section platform-section" id="practice">
-      <div class="section-heading compact"><p class="eyebrow">Workshop · 35 นาที</p><h2>เริ่มจากรู้จัก Terminal<br>แล้วจึงติดตั้ง</h2></div>
-      <div class="section-heading compact subheading"><p class="eyebrow">เลือกเครื่อง</p><h2>ฝึกคำสั่งแรกก่อนติดตั้ง</h2></div>
-      <div class="platform-picker" role="group" aria-label="เลือกระบบปฏิบัติการ">
+    <section class="section platform-section" id="install" data-agent-required hidden>
+      <div class="section-heading compact"><p class="eyebrow">ขั้นที่ 2 · Installation</p><h2>ติดตั้งซอฟต์แวร์</h2></div>
+      <p>Installer จะตรวจของที่มีอยู่แล้วและติดตั้งเพิ่มเฉพาะที่จำเป็น ทำตามคำแนะนำของระบบทีละข้อได้เลย</p>
+      <div class="notice"><strong>สบายใจได้:</strong> Script ไม่เก็บรหัสผ่านหรือ token และไม่ปิดระบบป้องกันของเครื่อง</div>
+      <div class="platform-picker" role="group" aria-label="เลือกระบบปฏิบัติการสำหรับติดตั้ง software">
         <button type="button" data-platform-button="windows">Windows 11</button>
         <button type="button" data-platform-button="macos">macOS</button>
         <button type="button" data-platform-button="linux">Linux / WSL2</button>
       </div>
       <div class="platform-grid">
         <article class="platform-card" data-platform-panel="windows">
-          <p class="platform-label">Windows</p>
-          <h3>Windows 11 · 64-bit</h3>
-          <h4 class="phase-title"><span>1</span> รู้จัก command ใน PowerShell ปกติ</h4>
-          <p class="command-label">ฝึก 1 · ตอนนี้อยู่ที่ไหน</p>
-          <div class="command"><code>Get-Location</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="command-label">ฝึก 2 · ดูไฟล์ในโฟลเดอร์</p>
-          <div class="command"><code>Get-ChildItem</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected"><strong>ควรเห็น:</strong> path ปัจจุบันและรายชื่อไฟล์ โดยยังไม่มีอะไรถูกแก้ไข</p>
-          <h4 class="phase-title"><span>2</span> ติดตั้ง system software ด้วย Admin</h4>
-          <a class="button primary" href="downloads/setup-windows.ps1" download>ดาวน์โหลด PowerShell script</a>
-          <p class="command-label">ตรวจเครื่องใน PowerShell ปกติ</p>
-          <div class="command"><code>powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode Check</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="command-label">เปิด PowerShell ด้วย Run as administrator แล้วติดตั้ง</p>
-          <div class="command"><code>powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode InstallSystem</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected"><strong>เมื่อเสร็จ:</strong> Admin PowerShell จะปิดเองภายใน 5 วินาที ห้ามเปิด agent หรือสร้างงานในหน้าต่าง Admin</p>
-          <h4 class="phase-title"><span>3</span> ปิด Admin แล้วเปิด PowerShell ปกติใหม่</h4>
-          <p class="command-label">ตั้งค่า agent และ workspace ในสิทธิ์ผู้ใช้ปกติ</p>
+          <p class="platform-label">Windows 11</p>
+          <h3>Admin system installation</h3>
+          <h4 class="phase-title"><span>1</span> เปิด PowerShell ด้วย Run as administrator แล้วโหลด script</h4>
+          <div class="command"><code>curl.exe -fL "https://punpiti.github.io/ai-for-grad-students/downloads/setup-windows.ps1" -o "$HOME\Downloads\setup-windows.ps1"</code><button type="button" data-copy>คัดลอก</button></div>
+          <h4 class="phase-title"><span>2</span> รัน script ใน Admin PowerShell</h4>
+          <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File &quot;$HOME\Downloads\setup-windows.ps1&quot; -Mode InstallSystem -Agent {agent}">powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode InstallSystem -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected">เมื่อเครื่องพร้อมจะเห็น <code>FINAL_RESULT PASS</code> และหน้าต่างนี้จะปิดเองหลังติดตั้งเสร็จ</p>
+          <h4 class="phase-title"><span>3</span> เปิด PowerShell ปกติและติดตั้ง AI frontend</h4>
           <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File &quot;$HOME\Downloads\setup-windows.ps1&quot; -Mode SetupUser -Agent {agent}">powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode SetupUser -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected"><strong>ระบบป้องกัน:</strong> หากเปิด PowerShell แบบ Admin อยู่ Script จะหยุดและสั่งให้เปิดหน้าต่างปกติใหม่</p>
-          <small>WSL2 ไม่ใช่ค่าเริ่มต้น</small>
+          <p class="expected">ขั้นนี้ต้องใช้ PowerShell ปกติ Script จะติดตั้ง AI workspace ที่เลือก, PDF Viewer และสร้าง starter workspace</p>
         </article>
         <article class="platform-card" data-platform-panel="macos">
           <p class="platform-label">macOS</p>
-          <h3>Apple silicon / Intel</h3>
-          <h4 class="phase-title"><span>1</span> รู้จัก command ใน Terminal ปกติ</h4>
-          <p class="command-label">ฝึก 1 · ตอนนี้อยู่ที่ไหน</p>
-          <div class="command"><code>pwd</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="command-label">ฝึก 2 · ดูไฟล์ในโฟลเดอร์</p>
-          <div class="command"><code>ls</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected"><strong>ควรเห็น:</strong> path ปัจจุบันและรายชื่อไฟล์ โดยยังไม่มีอะไรถูกแก้ไข</p>
-          <h4 class="phase-title"><span>2</span> ติดตั้ง system software</h4>
-          <a class="button primary" href="downloads/setup-macos.sh" download>ดาวน์โหลด macOS script</a>
-          <p class="command-label">ตรวจเครื่องใน Terminal ปกติ</p>
-          <div class="command"><code>bash "$HOME/Downloads/setup-macos.sh" --check</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="command-label">ติดตั้ง; macOS อาจขอรหัสผ่านเฉพาะขั้นที่จำเป็น</p>
-          <div class="command"><code>bash "$HOME/Downloads/setup-macos.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
-          <h4 class="phase-title"><span>3</span> ปิดแล้วเปิด Terminal ปกติใหม่</h4>
+          <h3>System installation</h3>
+          <h4 class="phase-title"><span>1</span> โหลด script</h4>
+          <div class="command"><code>curl -fL "https://punpiti.github.io/ai-for-grad-students/downloads/setup-macos.sh" -o "$HOME/Downloads/setup-macos.sh"</code><button type="button" data-copy>คัดลอก</button></div>
+          <h4 class="phase-title"><span>2</span> รัน script; ระบบขอสิทธิ์เมื่อจำเป็น</h4>
+          <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash &quot;$HOME/Downloads/setup-macos.sh&quot; --install-system">AI_GRAD_AGENT=codex bash "$HOME/Downloads/setup-macos.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected">script ตรวจเครื่องก่อน หากไม่ผ่านจะหยุดโดยไม่ติดตั้ง หากผ่านจึงขอรหัสผ่านเฉพาะขั้นที่จำเป็น</p>
+          <h4 class="phase-title"><span>3</span> เปิด Terminal ปกติใหม่และติดตั้ง AI frontend</h4>
           <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-macos.sh --setup-user">AI_GRAD_AGENT=codex bash ~/Downloads/setup-macos.sh --setup-user</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected"><strong>ขั้นนี้:</strong> ตั้งค่า agent และ workspace โดยไม่ใช้ <code>sudo</code></p>
-          <small>ไม่ติดตั้ง Rosetta หรือ Homebrew โดยไม่ขออนุญาต</small>
+          <p class="expected">AI workspace, PDF Viewer และ starter workspace ถูกติดตั้งในบัญชีผู้ใช้ปกติโดยไม่ใช้ <code>sudo</code></p>
         </article>
         <article class="platform-card" data-platform-panel="linux">
           <p class="platform-label">Linux / WSL2</p>
-          <h3>Ubuntu / Debian / WSL2 · 64-bit</h3>
-          <h4 class="phase-title"><span>1</span> รู้จัก command ใน Terminal ปกติ</h4>
-          <p class="command-label">ฝึก 1 · ตอนนี้อยู่ที่ไหน</p>
-          <div class="command"><code>pwd</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="command-label">ฝึก 2 · ดูไฟล์ในโฟลเดอร์</p>
-          <div class="command"><code>ls</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected"><strong>ควรเห็น:</strong> path ปัจจุบันและรายชื่อไฟล์ โดยยังไม่มีอะไรถูกแก้ไข</p>
-          <h4 class="phase-title"><span>2</span> ติดตั้ง system software ด้วย sudo</h4>
-          <a class="button primary" href="downloads/setup-linux.sh" download>ดาวน์โหลด Linux / WSL2 script</a>
-          <p class="command-label">ตรวจเครื่อง</p>
-          <div class="command"><code>bash "$HOME/Downloads/setup-linux.sh" --check</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="command-label">ติดตั้ง; script จะเรียก sudo เฉพาะ package ที่จำเป็น</p>
-          <div class="command"><code>bash "$HOME/Downloads/setup-linux.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
-          <h4 class="phase-title"><span>3</span> ปิดแล้วเปิด Terminal/Ubuntu ปกติใหม่</h4>
+          <h3>System installation</h3>
+          <h4 class="phase-title"><span>1</span> โหลด script</h4>
+          <div class="command"><code>curl -fL "https://punpiti.github.io/ai-for-grad-students/downloads/setup-linux.sh" -o "$HOME/Downloads/setup-linux.sh"</code><button type="button" data-copy>คัดลอก</button></div>
+          <h4 class="phase-title"><span>2</span> รัน script; ระบบเรียก sudo เมื่อจำเป็น</h4>
+          <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash &quot;$HOME/Downloads/setup-linux.sh&quot; --install-system">AI_GRAD_AGENT=codex bash "$HOME/Downloads/setup-linux.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
+          <p class="expected">script ตรวจเครื่องก่อน หากไม่ผ่านจะหยุดโดยไม่ติดตั้ง หากผ่านจึงเรียก <code>sudo</code> เฉพาะ package ที่จำเป็น</p>
+          <h4 class="phase-title"><span>3</span> เปิด Terminal/Ubuntu ปกติใหม่และติดตั้ง AI frontend</h4>
           <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-linux.sh --setup-user">AI_GRAD_AGENT=codex bash ~/Downloads/setup-linux.sh --setup-user</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected"><strong>ขั้นนี้:</strong> ตั้งค่า agent และ workspace โดยไม่ใช้ <code>sudo</code></p>
-          <small>Script ตรวจ WSL2 ได้ แต่จะไม่เปิด WSL2 หรือติดตั้ง VS Code ฝั่ง Windows ให้โดยอัตโนมัติ</small>
+          <p class="expected">AI workspace, PDF Viewer และ starter workspace ถูกติดตั้งในบัญชีผู้ใช้ปกติโดยไม่ใช้ <code>sudo</code></p>
         </article>
       </div>
-      <div class="section-heading compact subheading"><p class="eyebrow">Workspace</p><h2>เปิด workspace หลังติดตั้ง</h2></div>
+      <div class="notice"><strong>ติดตั้งสำเร็จเมื่อ:</strong> เห็น <code>FINAL_RESULT PASS</code> และมีโฟลเดอร์งานเริ่มต้น หากยังไม่สำเร็จ Script จะบอกสิ่งที่ต้องทำต่อให้</div>
+    </section>
+
+    <section class="section platform-section" id="practice" data-agent-required hidden>
+      <div class="section-heading compact"><p class="eyebrow">ขั้นที่ 3</p><h2>เปิด Workspace</h2></div>
+      <h3>เริ่มใช้งาน</h3>
       <div class="platform-picker" role="group" aria-label="เลือกระบบปฏิบัติการสำหรับการเปิด workspace">
         <button type="button" data-platform-button="windows">Windows 11</button>
         <button type="button" data-platform-button="macos">macOS</button>
@@ -228,20 +195,20 @@
           <ol>
             <li><span>1</span><div>เปิด PowerShell แบบปกติ</div></li>
             <li><span>2</span><div>คัดลอกคำสั่งด้านล่างแล้วกด Enter</div></li>
-            <li><span>3</span><div>รอให้ VS Code เปิดโฟลเดอร์งาน</div></li>
+            <li><span>3</span><div>รอให้ <span data-workspace-app>VS Code</span> เปิดโฟลเดอร์งาน</div></li>
           </ol>
-          <div class="command"><code>code "$HOME\ai-for-grad-students-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code data-agent-command data-template="code --profile &quot;AI for Research - {agent}&quot; &quot;$HOME\ai-for-research-workspace&quot;" data-antigravity-template="agy-ide &quot;$HOME\ai-for-research-workspace&quot;">code --profile "AI for Research - codex" "$HOME\ai-for-research-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
         </article>
         <article data-platform-panel="macos">
           <p class="platform-label">macOS</p>
-          <h4>เปิดด้วย VS Code</h4>
+          <h4>เปิดด้วย <span data-workspace-app>VS Code</span></h4>
           <ol>
-            <li><span>1</span><div>เปิด Visual Studio Code</div></li>
+            <li><span>1</span><div>เปิด <span data-workspace-app>VS Code</span></div></li>
             <li><span>2</span><div>กด <strong>Command (⌘) + O</strong></div></li>
             <li><span>3</span><div>กด <strong>Command (⌘) + Shift + G</strong></div></li>
             <li><span>4</span><div>วาง path ด้านล่าง แล้วกด Open</div></li>
           </ol>
-          <div class="command"><code>~/ai-for-grad-students-workspace</code><button type="button" data-copy>คัดลอก path</button></div>
+          <div class="command"><code data-agent-command data-template="open -a &quot;Visual Studio Code&quot; --args --profile &quot;AI for Research - {agent}&quot; &quot;$HOME/ai-for-research-workspace&quot;" data-antigravity-template="agy-ide &quot;$HOME/ai-for-research-workspace&quot;">open -a "Visual Studio Code" --args --profile "AI for Research - codex" "$HOME/ai-for-research-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
         </article>
         <article data-platform-panel="linux">
           <p class="platform-label">Linux / WSL2</p>
@@ -249,41 +216,70 @@
           <ol>
             <li><span>1</span><div>เปิด Terminal หรือ Ubuntu/WSL2</div></li>
             <li><span>2</span><div>คัดลอกคำสั่งด้านล่างแล้วกด Enter</div></li>
-            <li><span>3</span><div>รอให้ VS Code เปิดโฟลเดอร์ผ่าน Linux/WSL2</div></li>
+            <li><span>3</span><div>รอให้ <span data-workspace-app>VS Code</span> เปิดโฟลเดอร์ผ่าน Linux/WSL2</div></li>
           </ol>
-          <div class="command"><code>code "$HOME/ai-for-grad-students-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code data-agent-command data-template="code --profile &quot;AI for Research - {agent}&quot; &quot;$HOME/ai-for-research-workspace&quot;" data-antigravity-template="agy-ide &quot;$HOME/ai-for-research-workspace&quot;">code --profile "AI for Research - codex" "$HOME/ai-for-research-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
         </article>
       </div>
-      <div class="plain-note"><strong>พร้อมเมื่อ:</strong> เห็น <code>README.md</code>, <code>content.md</code>, <code>input/</code> และ <code>output/</code> ในแถบ Explorer ของ VS Code</div>
-      <div class="section-heading compact subheading"><p class="eyebrow">Readiness practice</p><h2>ฝึกให้ผ่านทีละข้อ</h2></div>
+      <div class="plain-note"><strong>พร้อมเมื่อ:</strong> เห็น <code>README.md</code>, <code>content.md</code>, <code>input/</code> และ <code>output/</code> ในแถบ Explorer ของ Workspace ที่เลือก</div>
+      <h3 class="section-zone-heading">เชื่อมต่อบัญชี AI</h3>
+      <ol class="readiness-steps" data-login-steps>
+        <li><span>01</span><div><strong>เปิด Codex panel</strong><br>คลิกไอคอน Codex ในแถบด้านข้างของ VS Code</div></li>
+        <li><span>02</span><div><strong>เลือก Sign in with ChatGPT</strong><br>กดปุ่ม Sign in แล้วเลือกใช้บัญชี ChatGPT</div></li>
+        <li><span>03</span><div><strong>ยืนยันใน Browser</strong><br>ลงชื่อเข้าใช้บัญชีของตนเอง อนุญาตการเชื่อมต่อ แล้วกลับมาที่ VS Code</div></li>
+      </ol>
+      <p class="expected">รายละเอียดจากผู้ให้บริการ: <a data-login-source href="https://developers.openai.com/codex/" target="_blank" rel="noopener">คู่มือ Codex ของ OpenAI</a></p>
+      <div class="plain-note"><strong>พร้อมไปต่อเมื่อ:</strong> Sign in สำเร็จและเห็นช่องสนทนาใน AI panel</div>
+      <h3 class="section-zone-heading">ทดลอง Prompt แรก</h3>
       <ol class="readiness-steps">
-        <li><span>01</span><div><strong>เปิด VS Code</strong><br>คัดลอกคำสั่งนี้ลง terminal เพื่อเปิด workspace<div class="command"><code>code "$HOME/ai-for-grad-students-workspace"</code><button type="button" data-copy>คัดลอก</button></div></div></li>
-        <li><span>02</span><div><strong>เปิด terminal ใน VS Code</strong><br>เลือกเมนู Terminal → New Terminal จะเห็นช่องคำสั่งด้านล่าง ไม่ต้องรู้คำสั่งอื่นนอกจากที่ให้คัดลอก</div></li>
-        <li><span>03</span><div><strong>เปิด agent</strong><br><span data-login-help>คัดลอกคำสั่งด้านล่างเพื่อเปิด Codex แล้วทำตามหน้า sign in</span>; ห้ามส่ง token ให้ผู้สอน<div class="command"><code data-agent-launch>codex</code><button type="button" data-copy>คัดลอก</button></div></div></li>
-        <li><span>04</span><div><strong>Markdown</strong><br>คลิก <code>content.md</code> แก้ข้อความ แล้วกด Ctrl+Shift+V (macOS: Command+Shift+V) เพื่อเปิด Preview</div></li>
-        <li><span>05</span><div><strong>Agent file task</strong><br><div class="command"><code>อ่าน content.md แล้วสร้าง output/readiness-note.md โดยไม่เปลี่ยนไฟล์ต้นฉบับ</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
-        <li><span>06</span><div><strong>Evidence</strong><br>บันทึกผล check, screenshot ของ workspace และ readiness note โดยตรวจว่าไม่มีข้อมูลลับ</div></li>
+        <li><span>01</span><div><strong>คัดลอก Prompt</strong><br>ใช้ข้อความสั้น ๆ ด้านล่าง โดยยังไม่ต้องเปิด Terminal หรือไฟล์ใด<div class="command"><code>แนะนำตัวสั้น ๆ แล้วบอกว่าคุณช่วยงานวิจัยใน Workspace นี้ได้อย่างไร 3 ข้อ โดยยังไม่แก้ไขไฟล์ใด</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
+        <li><span>02</span><div><strong>ส่งให้ AI</strong><br>วางข้อความใน <span data-agent-panel>Codex panel</span> แล้วกด Enter</div></li>
+        <li><span>03</span><div><strong>ตรวจคำตอบ</strong><br>ต้องได้รับคำแนะนำ 3 ข้อ และ AI ต้องยังไม่สร้างหรือแก้ไขไฟล์</div></li>
+      </ol>
+      <div class="plain-note"><strong>Prompt แรกผ่านเมื่อ:</strong> AI ตอบกลับได้และทำตามเงื่อนไข “ยังไม่แก้ไขไฟล์ใด” จากนั้นจึงเริ่มทดลอง Markdown</div>
+      <h3 class="section-zone-heading">ทดลองไฟล์ Markdown แรก</h3>
+      <ol class="readiness-steps">
+        <li><span>01</span><div><strong>เปิดและแก้ Markdown</strong><br>คลิก <code>content.md</code> แล้วแก้ข้อความตัวอย่าง</div></li>
+        <li><span>02</span><div><strong>ดู Markdown Preview</strong><br>กด Ctrl+Shift+V (macOS: Command+Shift+V) เพื่อดูผลลัพธ์ที่จัดรูปแบบแล้ว</div></li>
+        <li><span>03</span><div><strong>ให้ AI อ่านและสร้าง PDF</strong><br>วาง prompt ด้านล่างใน <span data-agent-panel>Codex panel</span>; agent จะอ่านคำสั่งใน Workspace และใช้ Integrated Terminal เบื้องหลังเมื่อจำเป็น<div class="command"><code>อ่าน content.md แล้วสร้าง output/content.pdf ตามรูปแบบที่กำหนดไว้ใน Workspace โดยไม่เปลี่ยนไฟล์ต้นฉบับ จากนั้นตรวจว่าไฟล์ PDF สร้างสำเร็จ</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
+        <li><span>04</span><div><strong>เปิด PDF</strong><br>คลิก <code>output/content.pdf</code> และตรวจว่าเปิดอ่านได้ เป็นกระดาษ A4 ภาษาไทยใช้ TH Sarabun New และมีรูปแบบสีตาม template</div></li>
       </ol>
       <div class="checklist" data-checklist="practice">
-        <label><input type="checkbox"> เปิด workspace ใน VS Code ได้</label>
-        <label><input type="checkbox"> Agent ที่เลือก sign in และอ่านข้อความใน project ได้</label>
-        <label><input type="checkbox"> แก้และ preview Markdown ได้</label>
-        <label><input type="checkbox"> Agent สร้าง readiness note ใน output/ ได้</label>
-        <label><input type="checkbox"> ตรวจ evidence แล้วว่าไม่มีข้อมูลลับ</label>
+        <label><input type="checkbox"> เปิด workspace ใน <span data-workspace-app>VS Code</span> ได้</label>
+        <label><input type="checkbox"> <span data-agent-panel>Codex panel</span> sign in ได้</label>
+        <label><input type="checkbox"> AI ตอบ Prompt แรกครบ 3 ข้อโดยไม่แก้ไขไฟล์</label>
+        <label><input type="checkbox"> เปิด อ่าน แก้ และ Preview <code>content.md</code> ได้</label>
+        <label><input type="checkbox"> AI อ่าน <code>content.md</code> และสร้าง <code>output/content.pdf</code> ได้</label>
+        <label><input type="checkbox"> เปิด PDF แล้วตรวจว่าเป็น A4 ภาษาไทยและรูปแบบถูกต้อง</label>
       </div>
       <p class="progress" aria-live="polite">ความพร้อม: <strong data-progress>0%</strong></p>
+      <h3>เริ่มต้นใหม่หลังติดตั้ง</h3>
+      <ol class="readiness-steps">
+        <li><span>01</span><div><strong>เปิด Terminal</strong><br>Windows เปิด PowerShell; macOS เปิด Terminal; Linux/WSL2 เปิด Terminal หรือ Ubuntu</div></li>
+        <li><span>02</span><div><strong>เข้าโฟลเดอร์ Workspace</strong><br>ใช้ <code>cd</code> ไปยังโฟลเดอร์งานที่ installer สร้างไว้</div></li>
+        <li><span>03</span><div><strong>เปิด Workspace</strong><br>รัน <code data-workspace-open-command>code .</code> เพื่อเปิด <span data-workspace-app>VS Code</span><div class="command"><code data-agent-command data-template="cd &quot;$HOME/ai-for-research-workspace&quot;
+code ." data-antigravity-template="cd &quot;$HOME/ai-for-research-workspace&quot;
+agy-ide .">cd "$HOME/ai-for-research-workspace"
+code .</code><button type="button" data-copy>คัดลอก</button></div></div></li>
+      </ol>
     </section>
 
-    <section class="section" id="homework">
+    <section class="section" id="homework" data-agent-required hidden>
       <div class="section-heading compact"><p class="eyebrow">การบ้าน</p><h2>เปิดซ้ำด้วยตัวเองและเตรียมคาบถัดไป</h2></div>
       <div class="homework-grid">
-        <article><h3>ทบทวน</h3><p>ปิดแล้วเปิด VS Code ใหม่ รัน script ในโหมด check และยืนยันว่า workspace, agent และ Markdown ยังทำงาน</p></article>
-        <article><h3>แก้สิ่งที่ค้าง</h3><p>ถ้ายังมีรายการ MISSING ให้บันทึก error ตามจริง ใช้ fallback ในชั้น และนัด setup clinic โดยไม่ปิด security protection</p></article>
+        <article><h3>ทบทวน</h3><p>ปิดแล้วเปิด <span data-workspace-app>VS Code</span> ใหม่ รัน script ในโหมด check และยืนยันว่า workspace, agent และ Markdown ยังทำงาน</p></article>
+        <article><h3>หากต้องการความช่วยเหลือ</h3><p>เก็บข้อความที่เห็นบนหน้าจอหรือถ่ายภาพไว้ แล้วนำมาถามผู้สอนในชั้นเรียน</p></article>
         <article><h3>เตรียมคาบถัดไป</h3><p>เก็บ research excerpt ที่เปิดเผยได้ใน input/ และเขียนรายการงานที่อยากให้ AI ช่วยใน content.md</p></article>
       </div>
-      <div class="notice"><strong>หลักฐานที่ส่ง:</strong> ผล check, readiness-note.md และคำอธิบาย blocker ถ้ามี ไม่ส่ง password, token, API key หรือข้อมูลวิจัยที่ห้ามเปิดเผย</div>
+      <div class="notice"><strong>พร้อมสำหรับคาบถัดไปเมื่อ:</strong> เปิด Workspace ได้ คุยกับ AI ได้ อ่าน Markdown ได้ และเปิด <code>content.pdf</code> ได้</div>
     </section>
   </main>
-  <footer><p>AI for Grad Students</p><p><a href="index.html">กลับหน้าหลัก</a></p></footer>
+  <footer>
+    <p><a href="index.html">AI for Research</a></p>
+    <div class="footer-credit">
+      <p>Developed by One234@KU</p>
+      <p>© 2026 พันธุ์ปิติ เปี่ยมสง่า. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

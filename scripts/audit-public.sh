@@ -3,7 +3,7 @@ set -euo pipefail
 
 site_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-allowed_pattern='^(\.nojekyll|404\.html|index\.html|prepare\.html|robots\.txt|PUBLIC_CONTENT_POLICY\.md|assets/(styles\.css|app\.js)|downloads/(setup-windows\.ps1|setup-macos\.sh|setup-linux\.sh)|scripts/(audit-public\.sh|test-installers\.sh)|\.github/workflows/pages\.yml)$'
+allowed_pattern='^(\.nojekyll|404\.html|index\.html|prepare\.html|robots\.txt|PUBLIC_CONTENT_POLICY\.md|assets/(styles\.css|app\.js)|downloads/(setup-windows\.ps1|setup-macos\.sh|setup-linux\.sh|modern-thai\.yaml|modern-thai\.lua|modern-thai\.tex|starter-AGENTS\.md)|scripts/(audit-public\.sh|test-installers\.sh|test-installer-behavior\.sh|test-installer-behavior\.ps1)|\.github/workflows/(pages|installer-tests)\.yml)$'
 
 status=0
 while IFS= read -r path; do

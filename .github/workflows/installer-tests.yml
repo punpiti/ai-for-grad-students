@@ -1,0 +1,47 @@
+name: Test installers
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  static:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/test-installers.sh
+      - run: bash scripts/audit-public.sh
+
+  unix-behavior:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        agent: [codex, claude, antigravity]
+        state: [present, missing]
+        include:
+          - os: ubuntu-latest
+            installer: downloads/setup-linux.sh
+          - os: macos-latest
+            installer: downloads/setup-macos.sh
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash scripts/test-installer-behavior.sh "${{ matrix.installer }}" "${{ matrix.agent }}" "${{ matrix.state }}"
+
+  windows-behavior:
+    strategy:
+      fail-fast: false
+      matrix:
+        agent: [codex, claude, antigravity]
+        state: [present, missing]
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - shell: pwsh
+        run: ./scripts/test-installer-behavior.ps1 -Agent "${{ matrix.agent }}" -State "${{ matrix.state }}"

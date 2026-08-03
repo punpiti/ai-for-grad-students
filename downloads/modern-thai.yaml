@@ -1,0 +1,20 @@
+from: markdown
+standalone: true
+pdf-engine: xelatex
+filters:
+  - templates/modern-thai.lua
+include-in-header:
+  - templates/modern-thai.tex
+variables:
+  mainfont: TH Sarabun New
+  sansfont: TH Sarabun New
+  papersize: a4
+  geometry:
+    - top=24mm
+    - bottom=24mm
+    - left=25mm
+    - right=25mm
+  linestretch: 1.2
+  colorlinks: true
+  linkcolor: BrandBlue
+  urlcolor: BrandTeal
