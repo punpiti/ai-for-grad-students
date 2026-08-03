@@ -42,7 +42,7 @@ check() {
 }
 make_workspace() {
   if [[ "$dry_run" == 1 ]]; then log "DRY_RUN workspace=$course_dir"; return; fi
-  mkdir -p "$course_dir/input" "$course_dir/output"
+  mkdir -p "$course_dir/input/original" "$course_dir/input/markdown" "$course_dir/output" "$course_dir/tools"
   if [[ ! -e "$course_dir/content.md" ]]; then
     printf '# My AI Research Workspace\n\nDescribe the research task here.\n' > "$course_dir/content.md"
   fi
@@ -54,6 +54,9 @@ make_workspace() {
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.lua' -o "$course_dir/templates/modern-thai.lua"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.tex' -o "$course_dir/templates/modern-thai.tex"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md' -o "$course_dir/AGENTS.md"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/import-documents.sh' -o "$course_dir/tools/import-documents.sh"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/import-documents.ps1' -o "$course_dir/tools/import-documents.ps1"
+  chmod +x "$course_dir/tools/import-documents.sh"
   log "workspace=$course_dir"
 }
 configure_vscode() {
@@ -89,7 +92,10 @@ install_system_tools() {
   have npm || packages+=(npm)
   have pandoc || packages+=(pandoc)
   have xelatex || packages+=(texlive-xetex)
-  for cmd in git curl node npm pandoc xelatex; do
+  have tesseract || packages+=(tesseract-ocr)
+  have pdftotext || packages+=(poppler-utils)
+  dpkg -s tesseract-ocr-tha >/dev/null 2>&1 || packages+=(tesseract-ocr-tha)
+  for cmd in git curl node npm pandoc xelatex tesseract pdftotext; do
     if have "$cmd"; then log "REUSE $cmd"; fi
   done
   if ((${#packages[@]})); then log "INSTALL apt=${packages[*]}"; else log 'All apt system software is already available.'; fi

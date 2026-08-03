@@ -42,7 +42,7 @@ check() {
 }
 make_workspace() {
   if [[ "$dry_run" == 1 ]]; then log "DRY_RUN workspace=$course_dir"; return; fi
-  mkdir -p "$course_dir/input" "$course_dir/output"
+  mkdir -p "$course_dir/input/original" "$course_dir/input/markdown" "$course_dir/output" "$course_dir/tools"
   [[ -e "$course_dir/content.md" ]] || printf '# My AI Research Workspace\n\nDescribe the research task here.\n' > "$course_dir/content.md"
   [[ -e "$course_dir/README.md" ]] || printf '# AI for Research\n\nKeep permitted inputs in `input/` and generated work in `output/`.\n' > "$course_dir/README.md"
   mkdir -p "$course_dir/templates"
@@ -50,6 +50,9 @@ make_workspace() {
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.lua' -o "$course_dir/templates/modern-thai.lua"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.tex' -o "$course_dir/templates/modern-thai.tex"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md' -o "$course_dir/AGENTS.md"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/import-documents.sh' -o "$course_dir/tools/import-documents.sh"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/import-documents.ps1' -o "$course_dir/tools/import-documents.ps1"
+  chmod +x "$course_dir/tools/import-documents.sh"
   log "workspace=$course_dir"
 }
 configure_vscode() {
@@ -88,6 +91,9 @@ install_system_tools() {
   for cmd in git node uv pandoc; do
     if have "$cmd"; then log "REUSE $cmd"; else formulae+=("$cmd"); fi
   done
+  if have tesseract; then log 'REUSE tesseract'; else formulae+=(tesseract); fi
+  if have pdftotext; then log 'REUSE pdftotext'; else formulae+=(poppler); fi
+  if have tesseract && tesseract --list-langs 2>/dev/null | grep -qx tha; then log 'REUSE tesseract-lang tha'; else formulae+=(tesseract-lang); fi
   if [[ "$agent" != antigravity ]]; then
     if have code || [[ -d '/Applications/Visual Studio Code.app' ]]; then log 'REUSE code'; else casks+=(visual-studio-code); fi
   fi

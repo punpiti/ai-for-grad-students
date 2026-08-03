@@ -56,17 +56,21 @@ for (const button of document.querySelectorAll("[data-copy]")) {
   button.addEventListener("click", copyCommand);
 }
 
-const boxes = [...document.querySelectorAll('.checklist input[type="checkbox"]')];
-const progress = document.querySelector("[data-progress]");
-function updateProgress() {
-  const done = boxes.filter((box) => box.checked).length;
-  if (progress) progress.textContent = `${Math.round(done / boxes.length * 100)}%`;
+for (const checklist of document.querySelectorAll("[data-checklist]")) {
+  const boxes = [...checklist.querySelectorAll('input[type="checkbox"]')];
+  const progress = checklist.parentElement.querySelector("[data-progress]");
+  const checklistId = checklist.dataset.checklist;
+  const updateProgress = () => {
+    const done = boxes.filter((box) => box.checked).length;
+    if (progress) progress.textContent = `${Math.round(done / boxes.length * 100)}%`;
+  };
+  boxes.forEach((box, index) => {
+    const key = `ai-research-check-${checklistId}-${index}`;
+    box.checked = localStorage.getItem(key) === "true";
+    box.addEventListener("change", () => { localStorage.setItem(key, box.checked); updateProgress(); });
+  });
+  updateProgress();
 }
-boxes.forEach((box, index) => {
-  box.checked = localStorage.getItem(`ai-grad-check-${index}`) === "true";
-  box.addEventListener("change", () => { localStorage.setItem(`ai-grad-check-${index}`, box.checked); updateProgress(); });
-});
-updateProgress();
 
 const agentInputs = [...document.querySelectorAll('input[name="agent"]')];
 const agentRequiredSections = [...document.querySelectorAll("[data-agent-required]")];

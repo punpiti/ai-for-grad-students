@@ -46,7 +46,7 @@ function Check-Tools {
 }
 function New-CourseWorkspace {
   if ($DryRun) { Log "DRY_RUN workspace=$CourseDir"; return }
-  New-Item -ItemType Directory -Force -Path $CourseDir,(Join-Path $CourseDir 'input'),(Join-Path $CourseDir 'output') | Out-Null
+  New-Item -ItemType Directory -Force -Path $CourseDir,(Join-Path $CourseDir 'input\original'),(Join-Path $CourseDir 'input\markdown'),(Join-Path $CourseDir 'output'),(Join-Path $CourseDir 'tools') | Out-Null
   $content = Join-Path $CourseDir 'content.md'
   $readme = Join-Path $CourseDir 'README.md'
   if (-not (Test-Path $content)) { Set-Content -Encoding utf8 $content "# My AI Research Workspace`n`nDescribe the research task here.`n" }
@@ -57,7 +57,9 @@ function New-CourseWorkspace {
     @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.yaml'; Path = (Join-Path $templateDir 'modern-thai.yaml') },
     @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.lua'; Path = (Join-Path $templateDir 'modern-thai.lua') },
     @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.tex'; Path = (Join-Path $templateDir 'modern-thai.tex') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md'; Path = (Join-Path $CourseDir 'AGENTS.md') }
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md'; Path = (Join-Path $CourseDir 'AGENTS.md') },
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/import-documents.sh'; Path = (Join-Path $CourseDir 'tools\import-documents.sh') },
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/import-documents.ps1'; Path = (Join-Path $CourseDir 'tools\import-documents.ps1') }
   )
   foreach ($file in $starterFiles) { Invoke-WebRequest -UseBasicParsing -Uri $file.Url -OutFile $file.Path }
   Log "workspace=$CourseDir"
@@ -95,7 +97,7 @@ function Install-SystemTools {
   if (-not $Agent) { throw 'InstallSystem requires -Agent codex, claude, or antigravity.' }
   if (-not (Check-Tools)) { throw 'INSTALL_STOPPED System requirements did not pass. Nothing was installed.' }
   if (-not (Has 'winget')) { throw 'WinGet is required. Update App Installer from Microsoft Store and rerun.' }
-  Log "ADMIN PHASE: checks the selected workspace, Git, Node.js LTS, uv, Pandoc and MiKTeX; installs only missing items. agent=$Agent"
+  Log "ADMIN PHASE: checks the selected workspace, document, PDF and Thai-English OCR tools; installs only missing items. agent=$Agent"
   $answer = Read-Host 'Continue? [y/N]'
   if ($answer -notmatch '^[Yy]$') { return }
   $packages = @(
@@ -103,7 +105,9 @@ function Install-SystemTools {
     @{ Command = 'node'; Package = 'OpenJS.NodeJS.LTS' },
     @{ Command = 'uv'; Package = 'astral-sh.uv' },
     @{ Command = 'pandoc'; Package = 'JohnMacFarlane.Pandoc' },
-    @{ Command = 'xelatex'; Package = 'MiKTeX.MiKTeX' }
+    @{ Command = 'xelatex'; Package = 'MiKTeX.MiKTeX' },
+    @{ Command = 'tesseract'; Package = 'tesseract-ocr.tesseract' },
+    @{ Command = 'pdftotext'; Package = 'oschwartz10612.Poppler' }
   )
   if ($Agent -ne 'antigravity') { $packages = @(@{ Command = 'code'; Package = 'Microsoft.VisualStudioCode' }) + $packages }
   foreach ($item in $packages) {
@@ -111,6 +115,15 @@ function Install-SystemTools {
     Log "INSTALL $($item.Package)"
     winget install --id $item.Package --exact --accept-package-agreements --accept-source-agreements --silent
   }
+  $tesseractCommand = Get-Command tesseract -ErrorAction SilentlyContinue
+  $tesseractRoot = if ($tesseractCommand) { Split-Path $tesseractCommand.Source } else { Join-Path $env:ProgramFiles 'Tesseract-OCR' }
+  $tessdataDir = Join-Path $tesseractRoot 'tessdata'
+  $thaiData = Join-Path $tessdataDir 'tha.traineddata'
+  if (-not (Test-Path $thaiData)) {
+    New-Item -ItemType Directory -Force -Path $tessdataDir | Out-Null
+    Log 'INSTALL Tesseract Thai language data'
+    Invoke-WebRequest -UseBasicParsing -Uri 'https://github.com/tesseract-ocr/tessdata_fast/raw/main/tha.traineddata' -OutFile $thaiData
+  } else { Log 'REUSE Tesseract Thai language data' }
   if ($Agent -eq 'antigravity' -and -not (Has 'agy-ide')) {
     Log 'INSTALL Antigravity IDE from the official Google download page; complete its installer before SetupUser.'
     Start-Process 'https://antigravity.google/download#antigravity-ide'
