@@ -54,10 +54,10 @@ function New-CourseWorkspace {
   $templateDir = Join-Path $CourseDir 'templates'
   New-Item -ItemType Directory -Force -Path $templateDir | Out-Null
   $starterFiles = @(
-    @{ Url = 'https://punpiti.github.io/ai-for-grad-students/downloads/modern-thai.yaml'; Path = (Join-Path $templateDir 'modern-thai.yaml') },
-    @{ Url = 'https://punpiti.github.io/ai-for-grad-students/downloads/modern-thai.lua'; Path = (Join-Path $templateDir 'modern-thai.lua') },
-    @{ Url = 'https://punpiti.github.io/ai-for-grad-students/downloads/modern-thai.tex'; Path = (Join-Path $templateDir 'modern-thai.tex') },
-    @{ Url = 'https://punpiti.github.io/ai-for-grad-students/downloads/starter-AGENTS.md'; Path = (Join-Path $CourseDir 'AGENTS.md') }
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.yaml'; Path = (Join-Path $templateDir 'modern-thai.yaml') },
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.lua'; Path = (Join-Path $templateDir 'modern-thai.lua') },
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.tex'; Path = (Join-Path $templateDir 'modern-thai.tex') },
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md'; Path = (Join-Path $CourseDir 'AGENTS.md') }
   )
   foreach ($file in $starterFiles) { Invoke-WebRequest -UseBasicParsing -Uri $file.Url -OutFile $file.Path }
   Log "workspace=$CourseDir"

@@ -144,7 +144,7 @@
           <p class="platform-label">Windows 11</p>
           <h3>Admin system installation</h3>
           <h4 class="phase-title"><span>1</span> เปิด PowerShell ด้วย Run as administrator แล้วโหลด script</h4>
-          <div class="command"><code>curl.exe -fL "https://punpiti.github.io/ai-for-grad-students/downloads/setup-windows.ps1" -o "$HOME\Downloads\setup-windows.ps1"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code>curl.exe -fL "https://punpiti.github.io/ai-for-research/downloads/setup-windows.ps1" -o "$HOME\Downloads\setup-windows.ps1"</code><button type="button" data-copy>คัดลอก</button></div>
           <h4 class="phase-title"><span>2</span> รัน script ใน Admin PowerShell</h4>
           <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File &quot;$HOME\Downloads\setup-windows.ps1&quot; -Mode InstallSystem -Agent {agent}">powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode InstallSystem -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected">เมื่อเครื่องพร้อมจะเห็น <code>FINAL_RESULT PASS</code> และหน้าต่างนี้จะปิดเองหลังติดตั้งเสร็จ</p>
@@ -156,7 +156,7 @@
           <p class="platform-label">macOS</p>
           <h3>System installation</h3>
           <h4 class="phase-title"><span>1</span> โหลด script</h4>
-          <div class="command"><code>curl -fL "https://punpiti.github.io/ai-for-grad-students/downloads/setup-macos.sh" -o "$HOME/Downloads/setup-macos.sh"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code>curl -fL "https://punpiti.github.io/ai-for-research/downloads/setup-macos.sh" -o "$HOME/Downloads/setup-macos.sh"</code><button type="button" data-copy>คัดลอก</button></div>
           <h4 class="phase-title"><span>2</span> รัน script; ระบบขอสิทธิ์เมื่อจำเป็น</h4>
           <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash &quot;$HOME/Downloads/setup-macos.sh&quot; --install-system">AI_GRAD_AGENT=codex bash "$HOME/Downloads/setup-macos.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected">script ตรวจเครื่องก่อน หากไม่ผ่านจะหยุดโดยไม่ติดตั้ง หากผ่านจึงขอรหัสผ่านเฉพาะขั้นที่จำเป็น</p>
@@ -168,7 +168,7 @@
           <p class="platform-label">Linux / WSL2</p>
           <h3>System installation</h3>
           <h4 class="phase-title"><span>1</span> โหลด script</h4>
-          <div class="command"><code>curl -fL "https://punpiti.github.io/ai-for-grad-students/downloads/setup-linux.sh" -o "$HOME/Downloads/setup-linux.sh"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code>curl -fL "https://punpiti.github.io/ai-for-research/downloads/setup-linux.sh" -o "$HOME/Downloads/setup-linux.sh"</code><button type="button" data-copy>คัดลอก</button></div>
           <h4 class="phase-title"><span>2</span> รัน script; ระบบเรียก sudo เมื่อจำเป็น</h4>
           <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash &quot;$HOME/Downloads/setup-linux.sh&quot; --install-system">AI_GRAD_AGENT=codex bash "$HOME/Downloads/setup-linux.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected">script ตรวจเครื่องก่อน หากไม่ผ่านจะหยุดโดยไม่ติดตั้ง หากผ่านจึงเรียก <code>sudo</code> เฉพาะ package ที่จำเป็น</p>

@@ -46,10 +46,10 @@ make_workspace() {
   [[ -e "$course_dir/content.md" ]] || printf '# My AI Research Workspace\n\nDescribe the research task here.\n' > "$course_dir/content.md"
   [[ -e "$course_dir/README.md" ]] || printf '# AI for Research\n\nKeep permitted inputs in `input/` and generated work in `output/`.\n' > "$course_dir/README.md"
   mkdir -p "$course_dir/templates"
-  curl -fL 'https://punpiti.github.io/ai-for-grad-students/downloads/modern-thai.yaml' -o "$course_dir/templates/modern-thai.yaml"
-  curl -fL 'https://punpiti.github.io/ai-for-grad-students/downloads/modern-thai.lua' -o "$course_dir/templates/modern-thai.lua"
-  curl -fL 'https://punpiti.github.io/ai-for-grad-students/downloads/modern-thai.tex' -o "$course_dir/templates/modern-thai.tex"
-  curl -fL 'https://punpiti.github.io/ai-for-grad-students/downloads/starter-AGENTS.md' -o "$course_dir/AGENTS.md"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.yaml' -o "$course_dir/templates/modern-thai.yaml"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.lua' -o "$course_dir/templates/modern-thai.lua"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.tex' -o "$course_dir/templates/modern-thai.tex"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md' -o "$course_dir/AGENTS.md"
   log "workspace=$course_dir"
 }
 configure_vscode() {
