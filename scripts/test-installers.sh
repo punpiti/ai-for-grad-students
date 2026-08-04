@@ -73,8 +73,13 @@ grep -q 'href="module-3.html"' "$root/index.html"
 grep -q 'Literature Evidence' "$root/module-4.html"
 grep -q 'Discovery Source' "$root/module-4.html"
 grep -q 'fabricated / phantom reference' "$root/module-4.html"
-grep -q 'ทาง A · มี Claim ที่ต้องหาหลักฐาน' "$root/module-4.html"
-grep -q 'ทาง B · มีงานเขียนและ Reference List' "$root/module-4.html"
+grep -q 'Claim ที่ต้องหาหลักฐาน' "$root/module-4.html"
+grep -q 'งานเขียนที่ต้องตรวจ Citation' "$root/module-4.html"
+grep -q 'ตัดสินใจว่าจะเก็บ ปรับ หรือตัด Citation' "$root/module-4.html"
+if grep -q 'จุดนัดพบ\|มาบรรจบกัน\|Module นี้เริ่มเรียนได้โดยตรง\|ผู้เรียนทำ:\|ส่งให้ AI:\|ส่งให้ AI หลังมีแหล่งต้นทาง:\|ผลที่คาดหวัง:' "$root/module-4.html"; then
+  echo 'Module 4 must use learner-facing language instead of workflow labels.' >&2
+  exit 1
+fi
 grep -q 'output/literature-evidence-table.md' "$root/module-4.html"
 grep -q 'output/citation-self-audit.md' "$root/module-4.html"
 grep -q 'output/citation-verification-checklist.md' "$root/module-4.html"
