@@ -22,6 +22,9 @@ try {
 function Require([bool]$Condition, [string]$Message) {
   if (-not $Condition) { throw "$Message`n$output" }
 }
+$workspaceIndex = $output.IndexOf('DRY_RUN workspace=')
+$agentIndexes = @('REUSE codex','INSTALL codex','REUSE claude','INSTALL claude','Antigravity will be opened','INSTALL ANTIGRAVITY_EXTENSION') | ForEach-Object { $output.IndexOf($_) } | Where-Object { $_ -ge 0 }
+Require ($workspaceIndex -ge 0 -and $agentIndexes.Count -gt 0 -and $workspaceIndex -lt ($agentIndexes | Measure-Object -Minimum).Minimum) 'Workspace fonts must be prepared before the AI frontend.'
 switch ("${Agent}:${State}") {
   'codex:missing' {
     Require (!$failed -and $output.Contains('DRY_RUN npm install -g @openai/codex') -and $output.Contains('openai.chatgpt')) 'Codex missing behavior failed.'

@@ -15,6 +15,9 @@ output="$(AI_RESEARCH_DRY_RUN=1 AI_RESEARCH_TEST_COMMANDS="$commands" AI_GRAD_AG
   bash "$installer" --setup-user 2>&1)"
 status=$?
 set -e
+workspace_line="$(grep -n -m1 'DRY_RUN workspace=' <<<"$output" | cut -d: -f1)"
+agent_line="$(grep -n -m1 -E 'REUSE (codex|claude)|INSTALL (codex|claude)|Install Antigravity IDE|INSTALL ANTIGRAVITY_EXTENSION' <<<"$output" | cut -d: -f1)"
+[[ -n "$workspace_line" && -n "$agent_line" && $workspace_line -lt $agent_line ]]
 if [[ "$state" == present || "$agent" != antigravity ]]; then
   [[ "$output" == *'mathematic.vscode-pdf'* ]]
 fi

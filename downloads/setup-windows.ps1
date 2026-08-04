@@ -47,12 +47,23 @@ function Check-Tools {
 function New-CourseWorkspace {
   if ($DryRun) { Log "DRY_RUN workspace=$CourseDir"; return }
   New-Item -ItemType Directory -Force -Path $CourseDir,(Join-Path $CourseDir 'input\original'),(Join-Path $CourseDir 'input\markdown'),(Join-Path $CourseDir 'output'),(Join-Path $CourseDir 'tools') | Out-Null
+  $templateDir = Join-Path $CourseDir 'templates'
+  $fontDir = Join-Path $templateDir 'fonts'
+  New-Item -ItemType Directory -Force -Path $fontDir | Out-Null
+  $fontFiles = @(
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Regular.ttf'; Path = (Join-Path $fontDir 'Sarabun-Regular.ttf') },
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Bold.ttf'; Path = (Join-Path $fontDir 'Sarabun-Bold.ttf') },
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/OFL.txt'; Path = (Join-Path $fontDir 'OFL.txt') }
+  )
+  foreach ($file in $fontFiles) { Invoke-WebRequest -UseBasicParsing -Uri $file.Url -OutFile $file.Path }
+  foreach ($file in $fontFiles) {
+    if (-not (Test-Path $file.Path) -or (Get-Item $file.Path).Length -eq 0) { throw "FONT_SETUP_FAILED Missing or empty file: $($file.Path)" }
+  }
+  Log 'FONT_READY Sarabun Regular/Bold bundled in workspace.'
   $content = Join-Path $CourseDir 'content.md'
   $readme = Join-Path $CourseDir 'README.md'
   if (-not (Test-Path $content)) { Set-Content -Encoding utf8 $content "# My AI Research Workspace`n`nDescribe the research task here.`n" }
   if (-not (Test-Path $readme)) { Set-Content -Encoding utf8 $readme "# AI for Research`n`nKeep permitted inputs in input/ and generated work in output/.`n" }
-  $templateDir = Join-Path $CourseDir 'templates'
-  New-Item -ItemType Directory -Force -Path $templateDir | Out-Null
   $starterFiles = @(
     @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.yaml'; Path = (Join-Path $templateDir 'modern-thai.yaml') },
     @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.lua'; Path = (Join-Path $templateDir 'modern-thai.lua') },
@@ -60,13 +71,6 @@ function New-CourseWorkspace {
     @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md'; Path = (Join-Path $CourseDir 'AGENTS.md') },
     @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/import-documents.sh'; Path = (Join-Path $CourseDir 'tools\import-documents.sh') },
     @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/import-documents.ps1'; Path = (Join-Path $CourseDir 'tools\import-documents.ps1') }
-  )
-  $fontDir = Join-Path $templateDir 'fonts'
-  New-Item -ItemType Directory -Force -Path $fontDir | Out-Null
-  $starterFiles += @(
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Regular.ttf'; Path = (Join-Path $fontDir 'Sarabun-Regular.ttf') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Bold.ttf'; Path = (Join-Path $fontDir 'Sarabun-Bold.ttf') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/OFL.txt'; Path = (Join-Path $fontDir 'OFL.txt') }
   )
   foreach ($file in $starterFiles) { Invoke-WebRequest -UseBasicParsing -Uri $file.Url -OutFile $file.Path }
   Log "workspace=$CourseDir"
@@ -148,6 +152,7 @@ function Install-SystemTools {
 function Install-UserTools {
   if (Is-Admin) { throw 'SetupUser must run in a normal, non-Administrator PowerShell. Close this window and open PowerShell normally.' }
   if (-not $Agent) { $Agent = Read-Host 'Choose AI frontend [codex/claude/antigravity]' }
+  New-CourseWorkspace
   if (Has 'npm') {
     switch ($Agent) {
       'codex' { if (Has 'codex') { Log 'REUSE codex' } else { Log 'INSTALL codex'; if ($DryRun) { Log 'DRY_RUN npm install -g @openai/codex' } else { npm install -g '@openai/codex' } } }
@@ -156,7 +161,6 @@ function Install-UserTools {
     }
   }
   else { Log 'Node/npm was installed but this shell has not refreshed PATH. Reopen PowerShell and rerun with -Mode Repair.' }
-  New-CourseWorkspace
   if ($Agent -eq 'antigravity') { Configure-Antigravity } else { Configure-VSCode }
   Log "AI workspace=$Agent installed. Next: open the workspace, open its AI panel, and sign in with your own account. The terminal command is only a fallback."
 }

@@ -150,7 +150,7 @@
           <p class="expected">เมื่อเครื่องพร้อมจะเห็น <code>FINAL_RESULT PASS</code> และหน้าต่างนี้จะปิดเองหลังติดตั้งเสร็จ</p>
           <h4 class="phase-title"><span>3</span> เปิด PowerShell ปกติและเตรียม Workspace</h4>
           <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File &quot;$HOME\Downloads\setup-windows.ps1&quot; -Mode SetupUser -Agent {agent}">powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode SetupUser -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected">ขั้นนี้ต้องใช้ PowerShell ปกติ Script จะเตรียม AI workspace, PDF Viewer และโฟลเดอร์งานพร้อมเครื่องมือนำเข้าเอกสาร หากเลือก Antigravity ให้ติดตั้งโปรแกรมจากหน้าที่เปิดในขั้นก่อน; ไม่จำเป็นต้องมีคำสั่ง <code>agy-ide</code></p>
+          <p class="expected">ขั้นนี้ต้องใช้ PowerShell ปกติ Script ต้องแสดง <code>FONT_READY</code> ก่อนเริ่มติดตั้ง AI frontend แล้วจึงเตรียม Workspace, PDF Viewer และเครื่องมือนำเข้าเอกสาร หากฟอนต์ไม่ครบ Script จะหยุดทันที หากเลือก Antigravity ไม่จำเป็นต้องมีคำสั่ง <code>agy-ide</code></p>
         </article>
         <article class="platform-card" data-platform-panel="macos">
           <p class="platform-label">macOS</p>

@@ -50,6 +50,8 @@ for installer in "$root/downloads/setup-windows.ps1" "$root/downloads/setup-maco
   grep -q 'modern-thai.tex' "$installer"
   grep -q 'Sarabun-Regular.ttf' "$installer"
   grep -q 'Sarabun-Bold.ttf' "$installer"
+  grep -q 'FONT_READY Sarabun Regular/Bold bundled in workspace' "$installer"
+  grep -q 'FONT_SETUP_FAILED' "$installer"
   grep -q 'starter-AGENTS.md' "$installer"
   grep -q 'import-documents.sh' "$installer"
   grep -q 'import-documents.ps1' "$installer"
