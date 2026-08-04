@@ -33,7 +33,7 @@ switch ("${Agent}:${State}") {
     Require (!$output.Contains('@openai/codex')) 'Claude selected but Codex was touched.'
   }
   'claude:present' { Require (!$failed -and $output.Contains('REUSE claude') -and !$output.Contains('DRY_RUN npm install')) 'Claude reuse behavior failed.' }
-  'antigravity:missing' { Require ($failed -and $output.Contains('Antigravity IDE is not ready') -and !$output.Contains('VS_CODE_EXTENSION')) 'Antigravity missing behavior failed.' }
+  'antigravity:missing' { Require (!$failed -and $output.Contains('ANTIGRAVITY_GUI_SETUP') -and !$output.Contains('VS_CODE_EXTENSION')) 'Antigravity missing behavior failed.' }
   'antigravity:present' { Require (!$failed -and $output.Contains('ANTIGRAVITY_EXTENSION mathematic.vscode-pdf') -and !$output.Contains('npm install') -and !$output.Contains('openai.chatgpt') -and !$output.Contains('anthropic.claude-code')) 'Antigravity present behavior failed.' }
 }
 if (!$failed -and $State -eq 'present') { Require ($output.Contains('mathematic.vscode-pdf')) 'PDF viewer was not installed.' }

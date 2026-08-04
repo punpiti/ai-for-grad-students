@@ -84,8 +84,13 @@ function Configure-VSCode {
 }
 function Configure-Antigravity {
   $extension = 'mathematic.vscode-pdf'
-  Log "INSTALL ANTIGRAVITY_EXTENSION $extension"
-  if ($DryRun) { Log "DRY_RUN agy-ide --install-extension $extension" } else { agy-ide --install-extension $extension }
+  if (Has 'agy-ide') {
+    Log "INSTALL ANTIGRAVITY_EXTENSION $extension"
+    if ($DryRun) { Log "DRY_RUN agy-ide --install-extension $extension" } else { agy-ide --install-extension $extension }
+  }
+  else {
+    Log "ANTIGRAVITY_GUI_SETUP Open Antigravity IDE, open folder $CourseDir, then install extension $extension from Extensions. The agy-ide command is optional."
+  }
   $vscodeDir = Join-Path $CourseDir '.vscode'
   if (-not $DryRun) {
     New-Item -ItemType Directory -Force -Path $vscodeDir | Out-Null
@@ -140,7 +145,7 @@ function Install-UserTools {
     switch ($Agent) {
       'codex' { if (Has 'codex') { Log 'REUSE codex' } else { Log 'INSTALL codex'; if ($DryRun) { Log 'DRY_RUN npm install -g @openai/codex' } else { npm install -g '@openai/codex' } } }
       'claude' { if (Has 'claude') { Log 'REUSE claude' } else { Log 'INSTALL claude'; if ($DryRun) { Log 'DRY_RUN npm install -g @anthropic-ai/claude-code' } else { npm install -g '@anthropic-ai/claude-code' } } }
-      'antigravity' { if (-not (Has 'agy-ide')) { throw 'Antigravity IDE is not ready. Install it from https://antigravity.google/download#antigravity-ide, enable the agy-ide command during onboarding, then rerun SetupUser.' } }
+      'antigravity' { if (-not (Has 'agy-ide')) { Log 'Antigravity will be opened through its desktop IDE; agy-ide is not required for workspace setup.' } }
     }
   }
   else { Log 'Node/npm was installed but this shell has not refreshed PATH. Reopen PowerShell and rerun with -Mode Repair.' }

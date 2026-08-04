@@ -77,6 +77,8 @@ const agentRequiredSections = [...document.querySelectorAll("[data-agent-require
 const agentGateStatus = document.querySelector("[data-agent-gate-status]");
 function selectAgent(agent, persist = false) {
   const workspaceApp = agent === "antigravity" ? "Antigravity IDE" : "VS Code";
+  for (const element of document.querySelectorAll("[data-antigravity-only]")) element.hidden = agent !== "antigravity";
+  for (const element of document.querySelectorAll("[data-antigravity-hide]")) element.hidden = agent === "antigravity";
   for (const label of document.querySelectorAll("[data-workspace-app]")) label.textContent = workspaceApp;
   for (const label of document.querySelectorAll("[data-workspace-open-command]")) label.textContent = agent === "antigravity" ? "agy-ide ." : "code .";
   const agentPanel = { codex: "Codex panel", claude: "Claude Code panel", antigravity: "Antigravity Agent panel" }[agent];

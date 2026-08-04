@@ -148,9 +148,9 @@
           <h4 class="phase-title"><span>2</span> รัน script ใน Admin PowerShell</h4>
           <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File &quot;$HOME\Downloads\setup-windows.ps1&quot; -Mode InstallSystem -Agent {agent}">powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode InstallSystem -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected">เมื่อเครื่องพร้อมจะเห็น <code>FINAL_RESULT PASS</code> และหน้าต่างนี้จะปิดเองหลังติดตั้งเสร็จ</p>
-          <h4 class="phase-title"><span>3</span> เปิด PowerShell ปกติและติดตั้ง AI frontend</h4>
+          <h4 class="phase-title"><span>3</span> เปิด PowerShell ปกติและเตรียม Workspace</h4>
           <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File &quot;$HOME\Downloads\setup-windows.ps1&quot; -Mode SetupUser -Agent {agent}">powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode SetupUser -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected">ขั้นนี้ต้องใช้ PowerShell ปกติ Script จะติดตั้ง AI workspace ที่เลือก, PDF Viewer และสร้างโฟลเดอร์งานพร้อมเครื่องมือนำเข้าเอกสาร</p>
+          <p class="expected">ขั้นนี้ต้องใช้ PowerShell ปกติ Script จะเตรียม AI workspace, PDF Viewer และโฟลเดอร์งานพร้อมเครื่องมือนำเข้าเอกสาร หากเลือก Antigravity ให้ติดตั้งโปรแกรมจากหน้าที่เปิดในขั้นก่อน; ไม่จำเป็นต้องมีคำสั่ง <code>agy-ide</code></p>
         </article>
         <article class="platform-card" data-platform-panel="macos">
           <p class="platform-label">macOS</p>
@@ -191,13 +191,23 @@
       <div class="open-terminal-grid workspace-open-grid">
         <article data-platform-panel="windows">
           <p class="platform-label">Windows 11</p>
-          <h4>เปิดด้วย PowerShell</h4>
-          <ol>
+          <h4 data-antigravity-hide>เปิดด้วย PowerShell</h4>
+          <ol data-antigravity-hide>
             <li><span>1</span><div>เปิด PowerShell แบบปกติ</div></li>
             <li><span>2</span><div>คัดลอกคำสั่งด้านล่างแล้วกด Enter</div></li>
             <li><span>3</span><div>รอให้ <span data-workspace-app>VS Code</span> เปิดโฟลเดอร์งาน</div></li>
           </ol>
-          <div class="command"><code data-agent-command data-template="code --profile &quot;AI for Research - {agent}&quot; &quot;$HOME\ai-for-research-workspace&quot;" data-antigravity-template="agy-ide &quot;$HOME\ai-for-research-workspace&quot;">code --profile "AI for Research - codex" "$HOME\ai-for-research-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command" data-antigravity-hide><code data-agent-command data-template="code --profile &quot;AI for Research - {agent}&quot; &quot;$HOME\ai-for-research-workspace&quot;">code --profile "AI for Research - codex" "$HOME\ai-for-research-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div data-antigravity-only hidden>
+            <h4>เปิดผ่าน Antigravity IDE</h4>
+            <ol>
+              <li><span>1</span><div>เปิด Antigravity จาก Start menu และ Sign in ด้วยบัญชี Google</div></li>
+              <li><span>2</span><div>เลือก <strong>File → Open Folder</strong></div></li>
+              <li><span>3</span><div>วาง path ด้านล่าง แล้วกด <strong>Select Folder</strong></div></li>
+            </ol>
+            <div class="command"><code>%USERPROFILE%\ai-for-research-workspace</code><button type="button" data-copy>คัดลอก</button></div>
+            <p class="expected">ถ้า PDF Viewer ยังไม่มี ให้เปิด Extensions ใน IDE แล้วติดตั้ง <code>mathematic.vscode-pdf</code></p>
+          </div>
         </article>
         <article data-platform-panel="macos">
           <p class="platform-label">macOS</p>
