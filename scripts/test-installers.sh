@@ -70,6 +70,15 @@ grep -q 'ทาง B · เริ่มจาก Module 3' "$root/module-3.html"
 grep -q 'ขั้นที่ 2 · จุดนัดพบ' "$root/module-3.html"
 grep -q 'ขั้นที่ 3 · กิจกรรมร่วม' "$root/module-3.html"
 grep -q 'href="module-3.html"' "$root/index.html"
+grep -q 'Literature Evidence' "$root/module-4.html"
+grep -q 'Discovery Source' "$root/module-4.html"
+grep -q 'fabricated / phantom reference' "$root/module-4.html"
+grep -q 'ทาง A · มี Claim ที่ต้องหาหลักฐาน' "$root/module-4.html"
+grep -q 'ทาง B · มีงานเขียนและ Reference List' "$root/module-4.html"
+grep -q 'output/literature-evidence-table.md' "$root/module-4.html"
+grep -q 'output/citation-self-audit.md' "$root/module-4.html"
+grep -q 'output/citation-verification-checklist.md' "$root/module-4.html"
+grep -q 'href="module-4.html"' "$root/index.html"
 if grep -q 'data-agent-launch' "$root/prepare.html"; then
   echo 'Primary readiness flow must use the in-editor AI panel, not launch a CLI.' >&2
   exit 1
