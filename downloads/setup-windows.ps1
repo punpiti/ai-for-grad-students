@@ -64,9 +64,9 @@ function New-CourseWorkspace {
   $fontDir = Join-Path $templateDir 'fonts'
   New-Item -ItemType Directory -Force -Path $fontDir | Out-Null
   $starterFiles += @(
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/THSarabunNew.ttf'; Path = (Join-Path $fontDir 'THSarabunNew.ttf') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/THSarabunNew-Bold.ttf'; Path = (Join-Path $fontDir 'THSarabunNew-Bold.ttf') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/TH-Sarabun-New-License.pdf'; Path = (Join-Path $fontDir 'TH-Sarabun-New-License.pdf') }
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Regular.ttf'; Path = (Join-Path $fontDir 'Sarabun-Regular.ttf') },
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Bold.ttf'; Path = (Join-Path $fontDir 'Sarabun-Bold.ttf') },
+    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/OFL.txt'; Path = (Join-Path $fontDir 'OFL.txt') }
   )
   foreach ($file in $starterFiles) { Invoke-WebRequest -UseBasicParsing -Uri $file.Url -OutFile $file.Path }
   Log "workspace=$CourseDir"

@@ -6,17 +6,17 @@ filters:
 include-in-header:
   - templates/modern-thai.tex
 variables:
-  mainfont: THSarabunNew
+  mainfont: Sarabun
   mainfontoptions:
     - Path=templates/fonts/
     - Extension=.ttf
-    - UprightFont=*
+    - UprightFont=*-Regular
     - BoldFont=*-Bold
-  sansfont: THSarabunNew
+  sansfont: Sarabun
   sansfontoptions:
     - Path=templates/fonts/
     - Extension=.ttf
-    - UprightFont=*
+    - UprightFont=*-Regular
     - BoldFont=*-Bold
   papersize: a4
   geometry:
