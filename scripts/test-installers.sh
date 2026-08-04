@@ -18,7 +18,12 @@ grep -q 'cd.*ai-for-research-workspace' "$root/prepare.html"
 grep -q 'data-workspace-app' "$root/assets/app.js"
 grep -q 'data-workspace-open-command' "$root/assets/app.js"
 grep -q 'data-agent-panel' "$root/assets/app.js"
-grep -q 'mainfont: TH Sarabun New' "$root/downloads/modern-thai.yaml"
+grep -q 'mainfont: THSarabunNew' "$root/downloads/modern-thai.yaml"
+grep -q 'Path=templates/fonts/' "$root/downloads/modern-thai.yaml"
+grep -q 'always allow the exact `pandoc` executable' "$root/downloads/starter-AGENTS.md"
+for font_file in THSarabunNew.ttf THSarabunNew-Bold.ttf TH-Sarabun-New-License.pdf; do
+  [[ -s "$root/downloads/fonts/$font_file" ]]
+done
 grep -q 'pdf-engine: xelatex' "$root/downloads/modern-thai.yaml"
 grep -q 'BrandBlue' "$root/downloads/modern-thai.lua"
 grep -q 'BrandTeal' "$root/downloads/modern-thai.tex"
@@ -43,6 +48,8 @@ for installer in "$root/downloads/setup-windows.ps1" "$root/downloads/setup-maco
   grep -q 'mathematic.vscode-pdf' "$installer"
   grep -q 'modern-thai.yaml' "$installer"
   grep -q 'modern-thai.tex' "$installer"
+  grep -q 'THSarabunNew.ttf' "$installer"
+  grep -q 'THSarabunNew-Bold.ttf' "$installer"
   grep -q 'starter-AGENTS.md' "$installer"
   grep -q 'import-documents.sh' "$installer"
   grep -q 'import-documents.ps1' "$installer"

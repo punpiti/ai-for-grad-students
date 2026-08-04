@@ -12,7 +12,9 @@
   pandoc content.md --defaults templates/modern-thai.yaml -o output/content.pdf
   ```
 
-- The PDF baseline is A4, XeLaTeX, and the exact font family `TH Sarabun New`.
+- Run that exact `pandoc` build once; do not split it into repeated exploratory shell commands.
+- If the IDE asks for command permission, ask the learner to always allow the exact `pandoc` executable for this trusted course workspace. Never ask for broad permission to run every shell command.
+- The PDF baseline is A4, XeLaTeX, and the bundled `TH Sarabun New` files under `templates/fonts/`; do not depend on system font discovery.
 - Keep the modern blue/teal template unless the user requests another design.
 - Do not ask the learner to edit generated LaTeX.
-- After building, confirm that `output/content.pdf` exists and is non-empty. Report the real build error if font discovery or PDF generation fails.
+- After building, use the IDE file explorer to confirm that `output/content.pdf` exists and is non-empty. Do not run extra terminal commands merely to restate what the tool output and file explorer already show. Report the real build error if PDF generation fails.

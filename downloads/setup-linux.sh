@@ -49,10 +49,13 @@ make_workspace() {
   if [[ ! -e "$course_dir/README.md" ]]; then
     printf '# AI for Research\n\nKeep permitted inputs in `input/` and generated work in `output/`.\n' > "$course_dir/README.md"
   fi
-  mkdir -p "$course_dir/templates"
+  mkdir -p "$course_dir/templates/fonts"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.yaml' -o "$course_dir/templates/modern-thai.yaml"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.lua' -o "$course_dir/templates/modern-thai.lua"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.tex' -o "$course_dir/templates/modern-thai.tex"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/fonts/THSarabunNew.ttf' -o "$course_dir/templates/fonts/THSarabunNew.ttf"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/fonts/THSarabunNew-Bold.ttf' -o "$course_dir/templates/fonts/THSarabunNew-Bold.ttf"
+  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/fonts/TH-Sarabun-New-License.pdf' -o "$course_dir/templates/fonts/TH-Sarabun-New-License.pdf"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md' -o "$course_dir/AGENTS.md"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/import-documents.sh' -o "$course_dir/tools/import-documents.sh"
   curl -fL 'https://punpiti.github.io/ai-for-research/downloads/import-documents.ps1' -o "$course_dir/tools/import-documents.ps1"
