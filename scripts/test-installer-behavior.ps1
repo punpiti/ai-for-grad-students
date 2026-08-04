@@ -25,6 +25,11 @@ function Require([bool]$Condition, [string]$Message) {
 $workspaceIndex = $output.IndexOf('DRY_RUN workspace=')
 $agentIndexes = @('REUSE codex','INSTALL codex','REUSE claude','INSTALL claude','Antigravity will be opened','INSTALL ANTIGRAVITY_EXTENSION') | ForEach-Object { $output.IndexOf($_) } | Where-Object { $_ -ge 0 }
 Require ($workspaceIndex -ge 0 -and $agentIndexes.Count -gt 0 -and $workspaceIndex -lt ($agentIndexes | Measure-Object -Minimum).Minimum) 'Workspace fonts must be prepared before the AI frontend.'
+if ($Agent -ne 'antigravity') {
+  $profileIndex = $output.IndexOf('CREATE VS_CODE_PROFILE')
+  $extensionIndex = $output.IndexOf('INSTALL VS_CODE_EXTENSION')
+  Require ($profileIndex -ge 0 -and $extensionIndex -ge 0 -and $profileIndex -lt $extensionIndex) 'VS Code profile must be created before extensions are installed.'
+}
 switch ("${Agent}:${State}") {
   'codex:missing' {
     Require (!$failed -and $output.Contains('DRY_RUN npm install -g @openai/codex') -and $output.Contains('openai.chatgpt')) 'Codex missing behavior failed.'

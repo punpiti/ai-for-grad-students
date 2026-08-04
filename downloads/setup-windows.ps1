@@ -85,6 +85,8 @@ function Configure-VSCode {
   }
   $extensions = @('mathematic.vscode-pdf')
   if ($aiExtension) { $extensions = @($aiExtension) + $extensions }
+  Log "CREATE VS_CODE_PROFILE profile=$profile workspace=$CourseDir"
+  if ($DryRun) { Log "DRY_RUN code --profile $profile $CourseDir" } else { code --profile $profile $CourseDir }
   foreach ($extension in $extensions) {
     Log "INSTALL VS_CODE_EXTENSION $extension profile=$profile"
     if ($DryRun) { Log "DRY_RUN code --profile $profile --install-extension $extension" } else { code --profile $profile --install-extension $extension }

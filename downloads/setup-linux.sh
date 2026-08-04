@@ -69,6 +69,8 @@ configure_vscode() {
   profile="AI for Research - $agent"
   extensions=(mathematic.vscode-pdf)
   case "$agent" in codex) extensions=(openai.chatgpt "${extensions[@]}") ;; claude) extensions=(anthropic.claude-code "${extensions[@]}") ;; esac
+  log "CREATE VS_CODE_PROFILE profile=$profile workspace=$course_dir"
+  if [[ "$dry_run" == 1 ]]; then log "DRY_RUN code --profile $profile $course_dir"; else code --profile "$profile" "$course_dir"; fi
   for extension in "${extensions[@]}"; do
     log "INSTALL VS_CODE_EXTENSION $extension profile=$profile"
     if [[ "$dry_run" == 1 ]]; then log "DRY_RUN code --profile $profile --install-extension $extension"; else code --profile "$profile" --install-extension "$extension"; fi

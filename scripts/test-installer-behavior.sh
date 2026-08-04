@@ -21,6 +21,11 @@ agent_line="$(grep -n -m1 -E 'REUSE (codex|claude)|INSTALL (codex|claude)|Instal
 if [[ "$state" == present || "$agent" != antigravity ]]; then
   [[ "$output" == *'mathematic.vscode-pdf'* ]]
 fi
+if [[ "$agent" != antigravity ]]; then
+  profile_line="$(grep -n -m1 'CREATE VS_CODE_PROFILE' <<<"$output" | cut -d: -f1)"
+  extension_line="$(grep -n -m1 'INSTALL VS_CODE_EXTENSION' <<<"$output" | cut -d: -f1)"
+  [[ -n "$profile_line" && -n "$extension_line" && $profile_line -lt $extension_line ]]
+fi
 
 case "$agent:$state" in
   codex:missing)
