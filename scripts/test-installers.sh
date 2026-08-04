@@ -53,6 +53,8 @@ for installer in "$root/downloads/setup-windows.ps1" "$root/downloads/setup-maco
   grep -q 'FONT_READY Sarabun Regular/Bold bundled in workspace' "$installer"
   grep -q 'FONT_SETUP_FAILED' "$installer"
   grep -q 'CREATE VS_CODE_PROFILE' "$installer"
+  grep -q 'SETUP_VERSION' "$installer"
+  grep -q 'PREREQUISITE_MISSING' "$installer"
   grep -q 'starter-AGENTS.md' "$installer"
   grep -q 'import-documents.sh' "$installer"
   grep -q 'import-documents.ps1' "$installer"
@@ -67,6 +69,7 @@ for installer in "$root/downloads/setup-windows.ps1" "$root/downloads/setup-maco
   grep -q 'REUSE' "$installer"
   grep -q 'INSTALL' "$installer"
 done
+bash "$root/scripts/test-prepare-page.sh"
 if rg -n --glob '!test-installers.sh' 'gemini|Gemini CLI|@google/gemini-cli' "$root"; then
   echo 'Obsolete Gemini CLI reference found.' >&2
   exit 1

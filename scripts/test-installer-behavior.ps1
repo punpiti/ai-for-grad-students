@@ -1,13 +1,17 @@
 param(
   [Parameter(Mandatory)][ValidateSet('codex','claude','antigravity')][string]$Agent,
-  [Parameter(Mandatory)][ValidateSet('present','missing')][string]$State
+  [Parameter(Mandatory)][ValidateSet('present','missing','no-npm','no-code')][string]$State
 )
 $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $installer = Join-Path $root 'downloads/setup-windows.ps1'
 $selectedCommand = if ($Agent -eq 'antigravity') { 'agy-ide' } else { $Agent }
-$commands = @('npm','code','uv')
-if ($State -eq 'present') { $commands += $selectedCommand }
+$commands = switch ($State) {
+  'present' { @('npm','code','uv',$selectedCommand) }
+  'missing' { @('npm','code','uv') }
+  'no-npm' { @('code','uv',$selectedCommand) }
+  'no-code' { @('npm','uv',$selectedCommand) }
+}
 $env:AI_RESEARCH_DRY_RUN = '1'
 $env:AI_RESEARCH_TEST_COMMANDS = $commands -join ','
 
@@ -25,7 +29,7 @@ function Require([bool]$Condition, [string]$Message) {
 $workspaceIndex = $output.IndexOf('DRY_RUN workspace=')
 $agentIndexes = @('REUSE codex','INSTALL codex','REUSE claude','INSTALL claude','Antigravity will be opened','INSTALL ANTIGRAVITY_EXTENSION') | ForEach-Object { $output.IndexOf($_) } | Where-Object { $_ -ge 0 }
 Require ($workspaceIndex -ge 0 -and $agentIndexes.Count -gt 0 -and $workspaceIndex -lt ($agentIndexes | Measure-Object -Minimum).Minimum) 'Workspace fonts must be prepared before the AI frontend.'
-if ($Agent -ne 'antigravity') {
+if ($Agent -ne 'antigravity' -and $State -in @('present','missing')) {
   $profileIndex = $output.IndexOf('CREATE VS_CODE_PROFILE')
   $extensionIndex = $output.IndexOf('INSTALL VS_CODE_EXTENSION')
   Require ($profileIndex -ge 0 -and $extensionIndex -ge 0 -and $profileIndex -lt $extensionIndex) 'VS Code profile must be created before extensions are installed.'
@@ -43,6 +47,10 @@ switch ("${Agent}:${State}") {
   'claude:present' { Require (!$failed -and $output.Contains('REUSE claude') -and !$output.Contains('DRY_RUN npm install')) 'Claude reuse behavior failed.' }
   'antigravity:missing' { Require (!$failed -and $output.Contains('ANTIGRAVITY_GUI_SETUP') -and !$output.Contains('VS_CODE_EXTENSION')) 'Antigravity missing behavior failed.' }
   'antigravity:present' { Require (!$failed -and $output.Contains('ANTIGRAVITY_EXTENSION mathematic.vscode-pdf') -and !$output.Contains('npm install') -and !$output.Contains('openai.chatgpt') -and !$output.Contains('anthropic.claude-code')) 'Antigravity present behavior failed.' }
+  'codex:no-npm' { Require ($failed -and $output.Contains('PREREQUISITE_MISSING npm is not on PATH') -and !$output.Contains('INSTALL VS_CODE_EXTENSION')) 'Codex missing npm behavior failed.' }
+  'claude:no-npm' { Require ($failed -and $output.Contains('PREREQUISITE_MISSING npm is not on PATH') -and !$output.Contains('INSTALL VS_CODE_EXTENSION')) 'Claude missing npm behavior failed.' }
+  'codex:no-code' { Require ($failed -and $output.Contains('PREREQUISITE_MISSING VS Code CLI') -and !$output.Contains('INSTALL VS_CODE_EXTENSION')) 'Codex missing code behavior failed.' }
+  'claude:no-code' { Require ($failed -and $output.Contains('PREREQUISITE_MISSING VS Code CLI') -and !$output.Contains('INSTALL VS_CODE_EXTENSION')) 'Claude missing code behavior failed.' }
 }
 if (!$failed -and $State -eq 'present') { Require ($output.Contains('mathematic.vscode-pdf')) 'PDF viewer was not installed.' }
 Write-Host "PASS installer=windows agent=$Agent state=$State"

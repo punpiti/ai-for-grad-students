@@ -23,12 +23,17 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
         agent: [codex, claude, antigravity]
-        state: [present, missing]
+        state: [present, missing, no-npm, no-code]
         include:
           - os: ubuntu-latest
             installer: downloads/setup-linux.sh
           - os: macos-latest
             installer: downloads/setup-macos.sh
+        exclude:
+          - agent: antigravity
+            state: no-npm
+          - agent: antigravity
+            state: no-code
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -39,7 +44,12 @@ jobs:
       fail-fast: false
       matrix:
         agent: [codex, claude, antigravity]
-        state: [present, missing]
+        state: [present, missing, no-npm, no-code]
+        exclude:
+          - agent: antigravity
+            state: no-npm
+          - agent: antigravity
+            state: no-code
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4

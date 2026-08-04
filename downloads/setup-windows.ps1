@@ -6,8 +6,10 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $DryRun = $env:AI_RESEARCH_DRY_RUN -eq '1'
+$SetupVersion = '2026.08.05.5'
 $TestCommands = @($env:AI_RESEARCH_TEST_COMMANDS -split ',' | Where-Object { $_ })
 function Log([string]$Message) { Write-Host "[ai-grad] $Message" }
+Log "SETUP_VERSION $SetupVersion"
 function Has([string]$Command) {
   if ($TestCommands.Count -gt 0) { return $TestCommands -contains $Command }
   return [bool](Get-Command $Command -ErrorAction SilentlyContinue)
@@ -76,7 +78,7 @@ function New-CourseWorkspace {
   Log "workspace=$CourseDir"
 }
 function Configure-VSCode {
-  if (-not (Has 'code')) { Log 'VS Code CLI is not on PATH; reopen PowerShell and rerun SetupUser.'; return }
+  if (-not (Has 'code')) { throw 'PREREQUISITE_MISSING VS Code CLI is not on PATH. Close PowerShell, open a new normal PowerShell, then rerun SetupUser.' }
   $profile = "AI for Research - $Agent"
   $aiExtension = switch ($Agent) {
     'codex' { 'openai.chatgpt' }
@@ -155,6 +157,7 @@ function Install-UserTools {
   if (Is-Admin) { throw 'SetupUser must run in a normal, non-Administrator PowerShell. Close this window and open PowerShell normally.' }
   if (-not $Agent) { $Agent = Read-Host 'Choose AI frontend [codex/claude/antigravity]' }
   New-CourseWorkspace
+  if ($Agent -ne 'antigravity' -and -not (Has 'npm')) { throw 'PREREQUISITE_MISSING npm is not on PATH. Close PowerShell, open a new normal PowerShell, then rerun SetupUser.' }
   if (Has 'npm') {
     switch ($Agent) {
       'codex' { if (Has 'codex') { Log 'REUSE codex' } else { Log 'INSTALL codex'; if ($DryRun) { Log 'DRY_RUN npm install -g @openai/codex' } else { npm install -g '@openai/codex' } } }

@@ -5,9 +5,11 @@ mode="${1:---check}"
 course_dir="${AI_RESEARCH_COURSE_DIR:-${AI_GRAD_COURSE_DIR:-$HOME/ai-for-research-workspace}}"
 agent="${AI_GRAD_AGENT:-}"
 dry_run="${AI_RESEARCH_DRY_RUN:-0}"
+setup_version='2026.08.05.5'
 test_commands=",${AI_RESEARCH_TEST_COMMANDS:-},"
 
 log() { printf '[ai-grad] %s\n' "$*"; }
+log "SETUP_VERSION $setup_version"
 have() {
   if [[ "$test_commands" != ",," ]]; then [[ "$test_commands" == *",$1,"* ]]; else command -v "$1" >/dev/null 2>&1; fi
 }
@@ -65,7 +67,7 @@ make_workspace() {
   log "workspace=$course_dir"
 }
 configure_vscode() {
-  have code || { log 'VS Code CLI not found; finish the VS Code/WSL setup and rerun --setup-user.'; return; }
+  have code || { log 'PREREQUISITE_MISSING VS Code CLI not found. Finish the VS Code/WSL setup, then rerun --setup-user.'; exit 2; }
   profile="AI for Research - $agent"
   extensions=(mathematic.vscode-pdf)
   case "$agent" in codex) extensions=(openai.chatgpt "${extensions[@]}") ;; claude) extensions=(anthropic.claude-code "${extensions[@]}") ;; esac
@@ -134,6 +136,7 @@ setup_user() {
   if [[ -z "$agent" ]]; then read -r -p 'Choose AI frontend [codex/claude/antigravity]: ' agent; fi
   [[ "$agent" =~ ^(codex|claude|antigravity)$ ]] || { log 'AI frontend must be codex, claude, or antigravity.'; exit 2; }
   make_workspace
+  [[ "$agent" == antigravity ]] || have npm || { log 'PREREQUISITE_MISSING npm is not on PATH. Close Terminal, open a new Terminal, then rerun --setup-user.'; exit 2; }
   if ! have uv; then if [[ "$dry_run" == 1 ]]; then log 'DRY_RUN install uv'; else curl -LsSf https://astral.sh/uv/install.sh | sh; fi; fi
   if [[ "$dry_run" != 1 ]]; then mkdir -p "$HOME/.local"; npm config set prefix "$HOME/.local"; fi
   export PATH="$HOME/.local/bin:$PATH"
