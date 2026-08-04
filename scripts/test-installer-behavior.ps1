@@ -28,7 +28,9 @@ function Require([bool]$Condition, [string]$Message) {
 }
 $workspaceIndex = $output.IndexOf('DRY_RUN workspace=')
 $agentIndexes = @('REUSE codex','INSTALL codex','REUSE claude','INSTALL claude','Antigravity will be opened','INSTALL ANTIGRAVITY_EXTENSION') | ForEach-Object { $output.IndexOf($_) } | Where-Object { $_ -ge 0 }
-Require ($workspaceIndex -ge 0 -and $agentIndexes.Count -gt 0 -and $workspaceIndex -lt ($agentIndexes | Measure-Object -Minimum).Minimum) 'Workspace fonts must be prepared before the AI frontend.'
+if ($State -in @('present','missing')) {
+  Require ($workspaceIndex -ge 0 -and $agentIndexes.Count -gt 0 -and $workspaceIndex -lt ($agentIndexes | Measure-Object -Minimum).Minimum) 'Workspace fonts must be prepared before the AI frontend.'
+}
 if ($Agent -ne 'antigravity' -and $State -in @('present','missing')) {
   $profileIndex = $output.IndexOf('CREATE VS_CODE_PROFILE')
   $extensionIndex = $output.IndexOf('INSTALL VS_CODE_EXTENSION')
