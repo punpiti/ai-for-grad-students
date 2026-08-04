@@ -34,6 +34,36 @@ grep -q 'tesseract.*tha+eng' "$root/downloads/import-documents.sh"
 grep -q 'pdftotext' "$root/downloads/import-documents.sh"
 grep -q 'L1–L4' "$root/module-2.html"
 grep -q 'first-ai-research-task.pdf' "$root/module-2.html"
+grep -q 'OPEN ANTIGRAVITY_WORKSPACE' "$root/downloads/setup-macos.sh"
+grep -q 'คำตอบเปลี่ยนอย่างไรเมื่อกำหนดหลักฐานให้ชัด' "$root/module-2.html"
+grep -q 'ช่วงที่ 1 · ดูคำตอบก่อนกำหนดกติกา' "$root/module-2.html"
+grep -q 'ช่วงที่ 2 · ตรวจคำตอบกับต้นฉบับ' "$root/module-2.html"
+grep -q 'ช่วงที่ 3 · ปรับคำสั่งแล้วเปรียบเทียบผล' "$root/module-2.html"
+grep -q 'ขั้นนี้ไม่มี Prompt ให้คัดลอก' "$root/module-2.html"
+grep -q 'ข้อความด้านล่างเป็นคำสั่งสร้างชิ้นงาน' "$root/module-2.html"
+if grep -q 'อย่าเพิ่งใช้ Prompt ที่ดี' "$root/module-2.html"; then
+  echo 'Module 2 activity must use learner-facing language.' >&2
+  exit 1
+fi
+grep -q 'Recommended 2–3 hours' "$root/module-3.html"
+grep -q 'Evidence Boundary' "$root/module-3.html"
+grep -q 'Candidate Gap' "$root/module-3.html"
+grep -q 'Gap Prosecutor' "$root/module-3.html"
+grep -q 'หิว → กิน → อิ่ม' "$root/module-3.html"
+grep -q 'ลองหักล้างตัวอย่าง' "$root/module-3.html"
+[[ "$(grep -o 'ตัวอย่างหิว–กิน–อิ่ม:' "$root/module-3.html" | wc -l)" -ge 12 ]]
+grep -q 'output/problem-gap-rq.md' "$root/module-3.html"
+grep -q 'การเตรียมตัวก่อนเรียน' "$root/module-3.html"
+grep -q 'สิ่งที่ต้องเตรียมก่อนเรียน' "$root/module-3.html"
+if grep -q 'Standalone แต่ต่อยอดได้' "$root/module-3.html"; then
+  echo 'Module 3 preparation must use learner-facing language.' >&2
+  exit 1
+fi
+grep -q 'ทาง A · เรียนต่อจาก Module 2' "$root/module-3.html"
+grep -q 'ทาง B · เริ่มจาก Module 3' "$root/module-3.html"
+grep -q 'ขั้นที่ 2 · จุดนัดพบ' "$root/module-3.html"
+grep -q 'ขั้นที่ 3 · กิจกรรมร่วม' "$root/module-3.html"
+grep -q 'href="module-3.html"' "$root/index.html"
 if grep -q 'data-agent-launch' "$root/prepare.html"; then
   echo 'Primary readiness flow must use the in-editor AI panel, not launch a CLI.' >&2
   exit 1

@@ -6,7 +6,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $DryRun = $env:AI_RESEARCH_DRY_RUN -eq '1'
-$SetupVersion = '2026.08.05.5'
+$SetupVersion = '2026.08.05.6'
 $TestCommands = @($env:AI_RESEARCH_TEST_COMMANDS -split ',' | Where-Object { $_ })
 function Log([string]$Message) { Write-Host "[ai-grad] $Message" }
 Log "SETUP_VERSION $SetupVersion"

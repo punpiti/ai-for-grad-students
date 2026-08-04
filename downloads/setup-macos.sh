@@ -5,7 +5,7 @@ mode="${1:---check}"
 course_dir="${AI_RESEARCH_COURSE_DIR:-${AI_GRAD_COURSE_DIR:-$HOME/ai-for-research-workspace}}"
 agent="${AI_GRAD_AGENT:-}"
 dry_run="${AI_RESEARCH_DRY_RUN:-0}"
-setup_version='2026.08.05.5'
+setup_version='2026.08.05.6'
 test_commands=",${AI_RESEARCH_TEST_COMMANDS:-},"
 log() { printf '[ai-grad] %s\n' "$*"; }
 log "SETUP_VERSION $setup_version"
@@ -91,6 +91,8 @@ configure_antigravity() {
     mkdir -p "$course_dir/.vscode"
     printf '{\n  "recommendations": ["%s"]\n}\n' "$extension" > "$course_dir/.vscode/extensions.json"
   fi
+  log "OPEN ANTIGRAVITY_WORKSPACE workspace=$course_dir"
+  if [[ "$dry_run" == 1 ]]; then log "DRY_RUN agy-ide $course_dir"; else agy-ide "$course_dir"; fi
 }
 install_system_tools() {
   [[ "$(uname -s)" == Darwin ]] || { log 'This installer requires macOS.'; exit 2; }

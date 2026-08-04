@@ -23,7 +23,7 @@
         <div>
           <a class="available" href="prepare.html" aria-current="page">1 · Prepare Workspace</a>
           <a class="available" href="module-2.html">2 · First AI Research Task</a>
-          <a href="index.html#module-3">3 · Problem–Gap–RQ <small>เร็ว ๆ นี้</small></a>
+          <a class="available" href="module-3.html">3 · Problem–Gap–RQ</a>
           <a href="index.html#module-4">4 · Literature Evidence <small>เร็ว ๆ นี้</small></a>
           <a href="index.html#module-5">5 · Research Logic <small>เร็ว ๆ นี้</small></a>
           <a href="index.html#module-6">6 · Claim Audit <small>เร็ว ๆ นี้</small></a>
@@ -134,7 +134,7 @@
       <div class="section-heading compact"><p class="eyebrow">ขั้นที่ 2 · Installation</p><h2>ติดตั้งซอฟต์แวร์</h2></div>
       <p>Installer จะเตรียม AI workspace, เครื่องมืออ่านเอกสารและ OCR ไทย–อังกฤษ, Markdown และ PDF ให้พร้อมในครั้งเดียว โดยติดตั้งเพิ่มเฉพาะสิ่งที่ยังไม่มี</p>
       <div class="notice"><strong>สบายใจได้:</strong> Script ไม่เก็บรหัสผ่านหรือ token และไม่ปิดระบบป้องกันของเครื่อง</div>
-      <div class="notice"><strong>ถ้ารันซ้ำหรือแก้ปัญหา:</strong> ต้องคัดลอกคำสั่งโหลด Script ในข้อ 1 ใหม่ก่อนเสมอ แล้วตรวจว่าเห็น <code>SETUP_VERSION 2026.08.05.5</code> เพื่อไม่ใช้ไฟล์เก่าที่ค้างใน Downloads</div>
+      <div class="notice"><strong>ถ้ารันซ้ำหรือแก้ปัญหา:</strong> ต้องคัดลอกคำสั่งโหลด Script ในข้อ 1 ใหม่ก่อนเสมอ แล้วตรวจว่าเห็น <code>SETUP_VERSION 2026.08.05.6</code> เพื่อไม่ใช้ไฟล์เก่าที่ค้างใน Downloads</div>
       <div class="platform-picker" role="group" aria-label="เลือกระบบปฏิบัติการสำหรับติดตั้ง software">
         <button type="button" data-platform-button="windows">Windows 11</button>
         <button type="button" data-platform-button="macos">macOS</button>
@@ -163,7 +163,7 @@
           <p class="expected">script ตรวจเครื่องก่อน หากไม่ผ่านจะหยุดโดยไม่ติดตั้ง หากผ่านจึงขอรหัสผ่านเฉพาะขั้นที่จำเป็น</p>
           <h4 class="phase-title"><span>3</span> เปิด Terminal ปกติใหม่และติดตั้ง AI frontend</h4>
           <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash ~/Downloads/setup-macos.sh --setup-user">AI_GRAD_AGENT=codex bash ~/Downloads/setup-macos.sh --setup-user</code><button type="button" data-copy>คัดลอก</button></div>
-          <p class="expected">ต้องเห็น <code>SETUP_VERSION 2026.08.05.5</code>, <code>FONT_READY</code> และ <code>CREATE VS_CODE_PROFILE</code> ก่อนติดตั้ง extension หาก PATH ยังไม่ refresh Script จะหยุดและให้เปิด Terminal ใหม่ โดยไม่แสดงผลสำเร็จผิด ๆ</p>
+          <p class="expected">ต้องเห็น <code>SETUP_VERSION 2026.08.05.6</code> และ <code>FONT_READY</code> หากเลือก Codex หรือ Claude จะเห็น <code>CREATE VS_CODE_PROFILE</code> ด้วย เมื่อเสร็จแล้ว Script จะเปิด Workspace ใน <span data-workspace-app>VS Code</span> ให้อัตโนมัติ หาก PATH ยังไม่ refresh Script จะหยุดและให้เปิด Terminal ใหม่ โดยไม่แสดงผลสำเร็จผิด ๆ</p>
         </article>
         <article class="platform-card" data-platform-panel="linux">
           <p class="platform-label">Linux / WSL2</p>
@@ -182,8 +182,8 @@
     </section>
 
     <section class="section platform-section" id="practice" data-agent-required hidden>
-      <div class="section-heading compact"><p class="eyebrow">ขั้นที่ 3</p><h2>เปิด Workspace</h2></div>
-      <h3>เริ่มใช้งาน</h3>
+      <div class="section-heading compact"><p class="eyebrow">ขั้นที่ 3</p><h2>ตรวจว่า Workspace เปิดแล้ว</h2><p>คำสั่ง <code>--setup-user</code> จะเปิด Workspace ให้อัตโนมัติ หากเห็นโฟลเดอร์งานใน VS Code แล้ว ไม่ต้องเปิดซ้ำ ให้ไปที่ “เชื่อมต่อบัญชี AI” ได้เลย วิธีด้านล่างใช้เมื่อปิดหน้าต่างไปแล้วหรือต้องการเปิดใหม่เท่านั้น</p></div>
+      <h3>เปิดใหม่เมื่อจำเป็น</h3>
       <div class="platform-picker" role="group" aria-label="เลือกระบบปฏิบัติการสำหรับการเปิด workspace">
         <button type="button" data-platform-button="windows">Windows 11</button>
         <button type="button" data-platform-button="macos">macOS</button>
@@ -212,14 +212,25 @@
         </article>
         <article data-platform-panel="macos">
           <p class="platform-label">macOS</p>
-          <h4>เปิดด้วย <span data-workspace-app>VS Code</span></h4>
-          <ol>
-            <li><span>1</span><div>เปิด <span data-workspace-app>VS Code</span></div></li>
-            <li><span>2</span><div>กด <strong>Command (⌘) + O</strong></div></li>
-            <li><span>3</span><div>กด <strong>Command (⌘) + Shift + G</strong></div></li>
-            <li><span>4</span><div>วาง path ด้านล่าง แล้วกด Open</div></li>
-          </ol>
-          <div class="command"><code data-agent-command data-template="open -a &quot;Visual Studio Code&quot; --args --profile &quot;AI for Research - {agent}&quot; &quot;$HOME/ai-for-research-workspace&quot;" data-antigravity-template="agy-ide &quot;$HOME/ai-for-research-workspace&quot;">open -a "Visual Studio Code" --args --profile "AI for Research - codex" "$HOME/ai-for-research-workspace"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div data-antigravity-hide>
+            <h4>หาก Workspace ยังไม่เปิด</h4>
+            <ol>
+              <li><span>1</span><div>เปิด VS Code</div></li>
+              <li><span>2</span><div>กด <strong>Command (⌘) + O</strong></div></li>
+              <li><span>3</span><div>กด <strong>Command (⌘) + Shift + G</strong></div></li>
+              <li><span>4</span><div>วางตำแหน่งโฟลเดอร์ด้านล่าง กด Enter แล้วกด <strong>Open</strong></div></li>
+            </ol>
+            <div class="command"><code>~/ai-for-research-workspace</code><button type="button" data-copy>คัดลอกตำแหน่งโฟลเดอร์</button></div>
+          </div>
+          <div data-antigravity-only hidden>
+            <h4>หาก Antigravity Workspace ยังไม่เปิด</h4>
+            <ol>
+              <li><span>1</span><div>เปิด <strong>Terminal</strong> ไม่ใช่ช่องค้นหาโฟลเดอร์ใน Antigravity</div></li>
+              <li><span>2</span><div>คัดลอกคำสั่งด้านล่างแล้วกด Enter</div></li>
+              <li><span>3</span><div>รอให้ Antigravity IDE เปิดโฟลเดอร์งาน</div></li>
+            </ol>
+            <div class="command"><code>agy-ide "$HOME/ai-for-research-workspace"</code><button type="button" data-copy>คัดลอกคำสั่ง Terminal</button></div>
+          </div>
         </article>
         <article data-platform-panel="linux">
           <p class="platform-label">Linux / WSL2</p>

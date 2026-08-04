@@ -23,7 +23,7 @@
         <div>
           <a class="available" href="prepare.html">1 · Prepare Workspace</a>
           <a class="available" href="module-2.html" aria-current="page">2 · First AI Research Task</a>
-          <a href="index.html#module-3">3 · Problem–Gap–RQ <small>เร็ว ๆ นี้</small></a>
+          <a class="available" href="module-3.html">3 · Problem–Gap–RQ</a>
           <a href="index.html#module-4">4 · Literature Evidence <small>เร็ว ๆ นี้</small></a>
           <a href="index.html#module-5">5 · Research Logic <small>เร็ว ๆ นี้</small></a>
           <a href="index.html#module-6">6 · Claim Audit <small>เร็ว ๆ นี้</small></a>
@@ -79,18 +79,28 @@
     </section>
 
     <section class="section" id="activity">
-      <div class="section-heading compact"><p class="eyebrow">กิจกรรมหลัก · ทดลองสองรอบ</p><h2>อย่าเพิ่งใช้ Prompt ที่ดี</h2><p>รอบแรกปล่อยให้ AI ทำจากคำสั่งกว้าง ๆ แล้วตรวจข้อผิดพลาดด้วยตนเอง ก่อนออกแบบ Prompt รอบสองเพื่อดูว่าผลดีขึ้นจริงหรือไม่</p></div>
+      <div class="section-heading compact"><p class="eyebrow">กิจกรรมหลัก · เปรียบเทียบสองรอบ</p><h2>คำตอบเปลี่ยนอย่างไรเมื่อกำหนดหลักฐานให้ชัด</h2><p>ใช้เอกสารชุดเดียวกันถาม AI สองรอบ รอบแรกใช้คำถามสั้นเพื่อดูพฤติกรรมตามธรรมชาติ จากนั้นตรวจคำตอบกับต้นฉบับ แล้วเขียนคำสั่งรอบใหม่ที่ระบุวิธีใช้หลักฐานให้ชัดเพื่อเปรียบเทียบผล</p></div>
+
+      <h3 class="section-zone-heading">ช่วงที่ 1 · ดูคำตอบก่อนกำหนดกติกา</h3>
       <ol class="readiness-steps activity-steps">
-        <li><span>01</span><div><strong>เตรียมไฟล์ให้ AI อ่าน</strong><br>วางไฟล์ใน <code>input/original/</code> แล้วส่ง prompt นี้<div class="command"><code>ตรวจไฟล์ทั้งหมดใน input/original/ แล้วใช้เครื่องมือที่เตรียมไว้ใน Workspace สร้าง Markdown ใน input/markdown/ ห้ามแก้หรือลบไฟล์ต้นฉบับ บอกด้วยว่าไฟล์ใดใช้ OCR และส่วนใดควรตรวจเทียบต้นฉบับ</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
-        <li><span>02</span><div><strong>รอบแรก: ใช้ Prompt กว้าง</strong><br>จงใจไม่กำหนดวิธีอ้างหลักฐาน<div class="command"><code>อ่านเอกสารทั้งหมดใน input/markdown/ แล้วสรุปประเด็นสำคัญของเรื่องที่ฉันสนใจ</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
-        <li><span>03</span><div><strong>ใช้ Prompt นำคิด โดยยังไม่เฉลย</strong><br>ให้ AI ช่วยตั้งคำถามตรวจทีละ Claim แต่ผู้เรียนเป็นคนเปิดต้นฉบับและตัดสินใจเอง<div class="command"><code>เลือกข้อความสำคัญ 8–10 Claims จากคำตอบของคุณ แล้วช่วยฉันตรวจทีละ Claim โดยถามเพียงว่า: พบข้อความนี้โดยตรงในไฟล์ใด, เป็นข้อเท็จจริงหรือความเห็นของใคร, ต้องเชื่อมหลายเอกสารหรือไม่, และมีส่วนใดเกินข้อมูลที่ให้ ห้ามบอกว่าเป็น L1–L4 จนกว่าฉันจะตอบครบทุก Claim</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
-        <li><span>04</span><div><strong>มนุษย์จัด L1–L4</strong><br>เปิดต้นฉบับตรวจ 8–10 Claims ทีละข้อ แล้วบันทึกคำตอบของตนเอง พร้อมชื่อไฟล์และตำแหน่งที่พบ ก่อนดูเฉลยจาก AI</div></li>
-        <li><span>05</span><div><strong>ตั้งคำถามที่ไม่มีในข้อมูล 2 ข้อ</strong><br>ข้อแรกเป็นข้อมูลที่ฟังดูเหมือนควรมี อีกข้อเป็นคำถามเชิงสาเหตุหรือการคาดการณ์ สังเกตว่า AI ยอมรับว่าไม่รู้ อนุมานอย่างเปิดเผย หรือแต่งคำตอบ</div></li>
-        <li><span>06</span><div><strong>ถาม AI ว่าแต่งหรือไม่</strong><br>ให้ AI ตรวจคำตอบของตัวเอง แต่ยังต้องเทียบกับผลที่เราตรวจไว้<div class="command"><code>ตรวจคำตอบก่อนหน้าทีละข้อ: ส่วนใดอ้างจากเอกสาร ส่วนใดเป็นการอนุมาน และส่วนใดไม่มีหลักฐาน หากเติมข้อมูลขึ้นมา ให้อธิบายว่าทำไมจึงตอบเช่นนั้น แล้วแก้คำตอบโดยไม่ทำให้สิ่งที่ยังไม่รู้ดูเหมือนข้อเท็จจริง</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
-        <li><span>07</span><div><strong>ออกแบบ Prompt รอบสองด้วยตนเอง</strong><br>เขียน prompt ใหม่ให้มีครบ 5 ส่วน: งานที่ต้องการ, ขอบเขตไฟล์, รูปแบบคำตอบ, วิธีระบุแหล่งที่มา และกติกาเมื่อไม่พบข้อมูล อย่าขอให้ AI เขียน prompt ให้ทั้งหมด</div></li>
-        <li><span>08</span><div><strong>รันใหม่และเปรียบเทียบ</strong><br>ใช้ prompt รอบสอง แล้วเปรียบเทียบจำนวนข้อความที่ตรวจย้อนกลับได้ ข้อความที่ไม่มีหลักฐาน การแยกข้อเท็จจริงกับความเห็น และจำนวนครั้งที่ต้องถามซ้ำ</div></li>
-        <li><span>09</span><div><strong>เปิดเฉลย L1–L4 แล้วเทียบคำตอบ</strong><br>AI เสนอเฉลยได้หลังผู้เรียนส่งคำตอบของตนเองครบแล้ว ทุกข้อที่อ้างว่าเป็น L1–L3 ต้องมีหลักฐานให้เปิดตรวจ<div class="command"><code>ตอนนี้ฉันจัด L1–L4 ด้วยตนเองครบแล้ว จงเสนอเฉลยสำหรับ 8–10 Claims เป็นตาราง: Claim, ระดับ L1–L4, เหตุผล, ชื่อไฟล์, ข้อความหรือตำแหน่งที่รองรับ และความมั่นใจ เปรียบเทียบกับคำตอบของฉันและอธิบายเฉพาะข้อที่ต่างกัน หากหาแหล่งรองรับไม่ได้ให้จัดเป็น L4 ห้ามใช้ความรู้ภายนอก และเตือนว่าฉันต้องเปิดต้นฉบับตรวจเฉลยนี้อีกครั้ง</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
-        <li><span>10</span><div><strong>สร้างรายงานและ PDF</strong><br>เก็บทั้งผลที่ดี จุดที่ AI พลาด และข้อที่ผู้เรียนกับ AI เห็นต่าง<div class="command"><code>สร้าง output/first-ai-research-task.md โดยมีคำถามที่สนใจ ผลจาก Prompt รอบแรก การตรวจ 8–10 Claims ด้วย L1–L4 คำถามที่ไม่มีในข้อมูล Prompt รอบสอง ตารางเปรียบเทียบก่อน–หลัง ผลเปรียบเทียบคำตอบของฉันกับเฉลยจาก AI และข้อสรุปว่างานใดให้ AI ทำได้ งานใดต้องตรวจ และงานใดต้องตัดสินใจเอง จากนั้นสร้าง output/first-ai-research-task.pdf ด้วย template A4 ภาษาไทยใน Workspace</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
+        <li><span>01</span><div><strong>แปลงเอกสารเป็นข้อความที่ค้นได้</strong><p><strong>ผู้เรียนทำ:</strong> วางเอกสารใน <code>input/original/</code> แล้วส่งคำสั่งด้านล่างให้ AI หลังทำเสร็จ เปิดไฟล์ Markdown อย่างน้อยหนึ่งไฟล์เทียบกับต้นฉบับ โดยเฉพาะข้อความที่ผ่าน OCR</p><p class="expected"><strong>ข้อความด้านล่างเป็นคำสั่งเตรียมไฟล์</strong> ไม่ใช่คำถามวิจัย</p><div class="command"><code>ตรวจไฟล์ทั้งหมดใน input/original/ แล้วใช้เครื่องมือที่เตรียมไว้ใน Workspace สร้าง Markdown ใน input/markdown/ ห้ามแก้หรือลบไฟล์ต้นฉบับ บอกด้วยว่าไฟล์ใดใช้ OCR และส่วนใดควรตรวจเทียบต้นฉบับ</code><button type="button" data-copy>คัดลอกคำสั่งเตรียมไฟล์</button></div></div></li>
+        <li><span>02</span><div><strong>ขอคำตอบรอบแรก</strong><p><strong>ส่งให้ AI:</strong> ใช้ Prompt สั้นด้านล่างโดยยังไม่เพิ่มกติกาเรื่องแหล่งที่มา เก็บคำตอบนี้ไว้เป็นผลรอบแรกสำหรับเปรียบเทียบภายหลัง</p><div class="command"><code>อ่านเอกสารทั้งหมดใน input/markdown/ แล้วสรุปประเด็นสำคัญของเรื่องที่ฉันสนใจ</code><button type="button" data-copy>คัดลอก Prompt รอบแรก</button></div></div></li>
+      </ol>
+
+      <h3 class="section-zone-heading">ช่วงที่ 2 · ตรวจคำตอบกับต้นฉบับ</h3>
+      <ol class="readiness-steps activity-steps">
+        <li><span>03</span><div><strong>แยกคำตอบออกเป็นข้ออ้างที่ตรวจได้</strong><p><strong>ส่งให้ AI:</strong> ให้ AI เลือก 8–10 Claims และถามคำถามตรวจทีละข้อ แต่ยังไม่ให้เฉลยระดับ L1–L4 ผู้เรียนจะเป็นคนเปิดต้นฉบับและตอบเองก่อน</p><div class="command"><code>เลือกข้อความสำคัญ 8–10 Claims จากคำตอบของคุณ แล้วช่วยฉันตรวจทีละ Claim โดยถามเพียงว่า: พบข้อความนี้โดยตรงในไฟล์ใด, เป็นข้อเท็จจริงหรือความเห็นของใคร, ต้องเชื่อมหลายเอกสารหรือไม่, และมีส่วนใดเกินข้อมูลที่ให้ ห้ามบอกว่าเป็น L1–L4 จนกว่าฉันจะตอบครบทุก Claim</code><button type="button" data-copy>คัดลอก Prompt แยก Claims</button></div></div></li>
+        <li><span>04</span><div><strong>ตรวจและจัด L1–L4 ด้วยตนเอง</strong><p><strong>ผู้เรียนทำ:</strong> เปิดต้นฉบับตรวจ Claims ทีละข้อ บันทึกระดับ L1–L4 เหตุผล ชื่อไฟล์ และตำแหน่งที่พบ ขั้นนี้ไม่มี Prompt ให้คัดลอก เพราะผู้เรียนต้องตัดสินจากหลักฐานเอง</p></div></li>
+        <li><span>05</span><div><strong>ทดสอบคำถามที่เอกสารตอบไม่ได้</strong><p><strong>ผู้เรียนทำ:</strong> เขียนและส่งคำถามของตนเองสองข้อ ข้อหนึ่งถามข้อมูลที่ไม่มีในเอกสาร อีกข้อถามสาเหตุหรือการคาดการณ์ แล้วสังเกตว่า AI ยอมรับว่าไม่รู้ ระบุว่าเป็นการอนุมาน หรือแต่งคำตอบ ขั้นนี้ไม่มี Prompt สำเร็จรูป เพราะคำถามต้องสัมพันธ์กับเอกสารของผู้เรียน</p></div></li>
+        <li><span>06</span><div><strong>ให้ AI ตรวจคำตอบของตัวเอง</strong><p><strong>ส่งให้ AI:</strong> ขอให้แยกข้อความที่มีหลักฐาน การอนุมาน และข้อความที่ไม่มีหลักฐาน จากนั้นเปรียบเทียบผลของ AI กับสิ่งที่ผู้เรียนตรวจในข้อ 4–5</p><div class="command"><code>ตรวจคำตอบก่อนหน้าทีละข้อ: ส่วนใดอ้างจากเอกสาร ส่วนใดเป็นการอนุมาน และส่วนใดไม่มีหลักฐาน หากเติมข้อมูลขึ้นมา ให้อธิบายว่าทำไมจึงตอบเช่นนั้น แล้วแก้คำตอบโดยไม่ทำให้สิ่งที่ยังไม่รู้ดูเหมือนข้อเท็จจริง</code><button type="button" data-copy>คัดลอก Prompt ตรวจคำตอบ</button></div></div></li>
+      </ol>
+
+      <h3 class="section-zone-heading">ช่วงที่ 3 · ปรับคำสั่งแล้วเปรียบเทียบผล</h3>
+      <ol class="readiness-steps activity-steps">
+        <li><span>07</span><div><strong>เขียน Prompt รอบสองด้วยตนเอง</strong><p><strong>ผู้เรียนทำ:</strong> เขียน Prompt ใหม่ให้มีงานที่ต้องการ ขอบเขตไฟล์ รูปแบบคำตอบ วิธีระบุแหล่งที่มา และกติกาเมื่อไม่พบข้อมูล ขั้นนี้ไม่มีข้อความให้คัดลอก เพราะเป้าหมายคือให้ผู้เรียนแก้จุดอ่อนที่ตนพบจากรอบแรก</p></div></li>
+        <li><span>08</span><div><strong>ใช้ Prompt รอบสองและเปรียบเทียบ</strong><p><strong>ผู้เรียนทำ:</strong> ส่ง Prompt ที่เขียนในข้อ 7 แล้วเปรียบเทียบกับรอบแรก โดยดูจำนวน Claims ที่ตรวจย้อนกลับได้ ข้อความที่ไม่มีหลักฐาน การแยกข้อเท็จจริงกับความเห็น และจำนวนครั้งที่ต้องถามซ้ำ</p></div></li>
+        <li><span>09</span><div><strong>เปรียบเทียบการจัด L1–L4 กับ AI</strong><p><strong>ส่งให้ AI หลังจากผู้เรียนตอบเองแล้ว:</strong> ขอผลจัดระดับเป็นตาราง จากนั้นเปิดต้นฉบับตรวจเฉพาะข้อที่เห็นต่างกัน AI ทำหน้าที่เป็นคู่เปรียบเทียบ ไม่ใช่เฉลยสุดท้าย</p><div class="command"><code>ตอนนี้ฉันจัด L1–L4 ด้วยตนเองครบแล้ว จงเสนอการจัดระดับสำหรับ 8–10 Claims เป็นตาราง: Claim, ระดับ L1–L4, เหตุผล, ชื่อไฟล์, ข้อความหรือตำแหน่งที่รองรับ และความมั่นใจ เปรียบเทียบกับคำตอบของฉันและอธิบายเฉพาะข้อที่ต่างกัน หากหาแหล่งรองรับไม่ได้ให้จัดเป็น L4 ห้ามใช้ความรู้ภายนอก และเตือนว่าฉันต้องเปิดต้นฉบับตรวจผลนี้อีกครั้ง</code><button type="button" data-copy>คัดลอก Prompt เปรียบเทียบ L1–L4</button></div></div></li>
+        <li><span>10</span><div><strong>บันทึกผลการทดลองเป็นรายงาน</strong><p><strong>ส่งให้ AI:</strong> หลังผู้เรียนตรวจและอนุมัติข้อมูลแล้ว ใช้คำสั่งนี้รวบรวมผลเป็น Markdown และ PDF</p><p class="expected"><strong>ข้อความด้านล่างเป็นคำสั่งสร้างชิ้นงาน</strong> ไม่ใช่ Prompt สำหรับวิเคราะห์หลักฐานรอบใหม่</p><div class="command"><code>สร้าง output/first-ai-research-task.md โดยมีคำถามที่สนใจ ผลจาก Prompt รอบแรก การตรวจ 8–10 Claims ด้วย L1–L4 คำถามที่ไม่มีในข้อมูล Prompt รอบสอง ตารางเปรียบเทียบก่อน–หลัง ผลเปรียบเทียบคำตอบของฉันกับผลจาก AI และข้อสรุปว่างานใดให้ AI ทำได้ งานใดต้องตรวจ และงานใดต้องตัดสินใจเอง จากนั้นสร้าง output/first-ai-research-task.pdf ด้วย template A4 ภาษาไทยใน Workspace</code><button type="button" data-copy>คัดลอกคำสั่งสร้างชิ้นงาน</button></div></div></li>
       </ol>
     </section>
 
@@ -107,7 +117,7 @@
         <label><input type="checkbox"> เปิด <code>output/first-ai-research-task.md</code> และ PDF ได้</label>
       </div>
       <p class="progress" aria-live="polite">ความคืบหน้า: <strong data-progress>0%</strong></p>
-      <div class="hero-actions module-next"><a class="button secondary" href="prepare.html">← กลับ Module 1</a><a class="button primary" href="index.html#module-3">ดู Module ถัดไป →</a></div>
+      <div class="hero-actions module-next"><a class="button secondary" href="prepare.html">← กลับ Module 1</a><a class="button primary" href="module-3.html">ไป Module 3 →</a></div>
     </section>
   </main>
 
