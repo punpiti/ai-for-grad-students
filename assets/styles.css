@@ -91,6 +91,9 @@ h1 span { color: var(--accent); }
 .requirement h3 { margin: 0 0 .3rem; }
 .requirement p { margin: 0; color: var(--ink-soft); }
 .notice { margin-top: 2rem; padding: 1.1rem 1.25rem; border-left: 4px solid var(--accent); background: var(--paper-deep); }
+.fallback-details { margin: 1.5rem 0 2rem; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
+.fallback-details > summary { cursor: pointer; font-weight: 600; color: var(--mint); }
+.fallback-details[open] > summary { margin-bottom: 1.25rem; }
 .final-cta { text-align: center; }
 .final-cta h2 { font-size: clamp(2.4rem, 5vw, 4.5rem); font-weight: 400; }
 .final-cta p:not(.eyebrow) { margin: 0 auto 2rem; max-width: 640px; }
