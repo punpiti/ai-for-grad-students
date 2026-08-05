@@ -1,7 +1,518 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Module 8 — ผลิตบทความ PDF โปสเตอร์ และสไลด์ตามข้อกำหนดแหล่งเผยแพร่"><meta name="theme-color" content="#101817"><title>Document Production — AI for Research</title><link rel="stylesheet" href="assets/styles.css?v=20260805-1"><script src="assets/app.js?v=20260804-1" defer></script></head>
-<body><a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a><header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Research</span></a><nav aria-label="เมนูหลัก"><a href="index.html">หน้าหลัก</a><a href="#activity">กิจกรรม</a><a href="#finish">ชิ้นงาน</a><a class="nav-cta" href="module-9.html">Module 9</a></nav></header><main id="main">
-<section class="prepare-hero module-hero"><p class="eyebrow">Module 8 · 180 นาที</p><h1>Venue-first<br><span>Document Production</span></h1><p>เริ่มจากข้อกำหนดทางการของแหล่งเผยแพร่ เลือก Word หรือ LaTeX ให้เหมาะ แล้วสร้างเอกสารจากหลักฐานที่ตรวจแล้วด้วย build ladder ที่หยุดตรวจได้ทุกขั้น</p></section>
-<section class="section"><div class="section-heading compact"><p class="eyebrow">เริ่มได้สองแบบ</p><h2>ใช้ผลงานเดิม<br>หรือใช้ package ตัวอย่าง</h2></div><div class="concept-grid"><article><h3>ต่อจาก Module 5–7</h3><p>นำ venue landscape, verified claims, ตาราง ภาพ และไฟล์อ้างอิงที่ตรวจแล้วมาใช้ ห้ามให้ AI สร้างผลหรือ citation เพื่อเติมช่องว่าง</p></article><article><h3>Standalone</h3><p>เตรียม official author guideline, template และเนื้อหาที่ตรวจแล้ว 1–2 หน้า หรือใช้ package ตัวอย่างของหลักสูตร</p></article><article><h3>เลือกเครื่องมือจากข้อกำหนด</h3><p>ถ้า venue ให้ Word template ให้รักษา Word; ถ้าให้ LaTeX ให้เริ่มจาก template ที่ compile ได้ ห้ามแปลงเพราะความชอบส่วนตัว</p></article></div><div class="notice"><strong>ซอฟต์แวร์:</strong> ใช้ Pandoc, LaTeX และเครื่องมือตรวจ PDF ที่ Module 1 เตรียมไว้แล้ว หาก build test ไม่ผ่านให้กลับไป <a href="prepare.html">Module 1</a> ก่อนเริ่ม</div></section>
-<section class="section"><div class="section-heading compact"><p class="eyebrow">Insight to paragraph</p><h2>AI เรียบเรียงได้<br>แต่นักวิจัยต้องให้ความหมาย</h2></div><div class="level-grid"><article><span>01</span><div><h3>Statement</h3><p>ประโยคหลักที่ผู้วิจัยยืนยันว่าหลักฐานรองรับ</p></div></article><article><span>02</span><div><h3>Evidence</h3><p>ตาราง ภาพ ค่า หรือแหล่งอ้างอิงพร้อมตำแหน่งที่ตรวจย้อนกลับได้</p></div></article><article><span>03</span><div><h3>Explanation</h3><p>เหตุผลหรือกลไกที่ผู้วิจัยรับผิดชอบ ไม่ใช่เรื่องที่ AI เดาเติม</p></div></article><article><span>04</span><div><h3>Boundary</h3><p>ข้อจำกัด ความไม่แน่นอน และสิ่งที่ข้อความนี้ไม่ควรถูกนำไปกล่าวอ้าง</p></div></article></div></section>
-<section class="section" id="activity"><div class="section-heading compact"><p class="eyebrow">Build ladder</p><h2>ผ่านทีละ Gate</h2></div><ol class="readiness-steps activity-steps"><li><span>00</span><div><strong>Verify venue package</strong><br>บันทึก URL วันที่ version และ checksum ของ guideline/template เมื่อทำได้</div></li><li><span>01</span><div><strong>Pristine template</strong><br>เปิดหรือ compile ต้นฉบับเดิมให้ผ่านก่อนแก้ เพื่อแยกปัญหา environment ออกจากปัญหาเนื้อหา</div></li><li><span>02</span><div><strong>Outline and sections</strong><br>เพิ่มโครงและเนื้อหาทีละส่วน แล้ว build ทุกครั้งที่เปลี่ยนชั้นสำคัญ</div></li><li><span>03</span><div><strong>Citations, figures, tables</strong><br>ตรวจ identity/source ของ citation และเชื่อมภาพ/ตารางกับไฟล์ข้อมูลต้นทาง</div></li><li><span>04</span><div><strong>Full build and PDF QA</strong><br>ตรวจหน้า ล้นขอบ ฟอนต์ ภาษาไทย ตาราง ภาพ caption reference และข้อกำหนด venue</div></li><li><span>05</span><div><strong>Presentation variant</strong><br>สร้างโปสเตอร์หรือสไลด์จาก verified claims ชุดเดียวกัน แล้วซ้อมตามเวลาและผู้ฟังจริง</div></li></ol><div class="command"><code>ใช้ official guideline และ template ที่ให้เป็นข้อกำหนดหลัก ตรวจ pristine template ก่อน แล้วเสนอ build plan แบบทีละ gate ใช้เฉพาะ verified claims, citations, figures และ tables ที่ฉันระบุ ทุกย่อหน้าต้องย้อนกลับไปยัง paragraph contract ได้ ห้ามสร้างผล อ้างอิง หรือคำอธิบายกลไกเพิ่มเอง หลัง build ให้ตรวจ PDF ทั้งเชิงเนื้อหาและภาพ</code><button type="button" data-copy>คัดลอก Prompt</button></div></section>
-<section class="section" id="finish"><div class="section-heading compact"><p class="eyebrow">ชิ้นงานและเกณฑ์ผ่าน</p><h2>เอกสารที่ตรง venue และย้อนกลับถึงหลักฐาน</h2></div><div class="checklist"><label><input type="checkbox">บันทึก guideline/template และเหตุผลเลือก Word หรือ LaTeX</label><label><input type="checkbox">Pristine template และ build ทุก gate ผ่านโดยมี log</label><label><input type="checkbox">ข้อความ อ้างอิง ตาราง และภาพย้อนกลับถึง source artifact ได้</label><label><input type="checkbox">ตรวจ PDF ด้วยตาและผ่านข้อกำหนดสำคัญของ venue</label></div><div class="notice"><strong>การบ้าน:</strong> ให้ผู้ร่วมงานตรวจ source-to-PDF package และบันทึกข้อผิดพลาดที่ต้องป้องกันใน workflow ส่วนบุคคล</div><a class="button primary module-next" href="module-9.html">ไป Module 9 →</a></section></main><footer><p>AI for Research · Source of truth มาก่อนรูปแบบที่สวย</p><p class="footer-credit">Department of Computer Engineering · Kasetsart University</p></footer></body></html>
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Module 8 — การผลิตบทความวิจัยและสื่อการนำเสนอตามรูปแบบของแหล่งเผยแพร่">
+  <meta name="theme-color" content="#101817">
+  <title>Document Production — AI for Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-2">
+  <script src="assets/app.js?v=20260805-2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Research</span></a>
+    <nav aria-label="เมนูหลัก"><a href="index.html">หน้าหลัก</a><details class="module-menu"><summary>โมดูล 1–9</summary><div><a class="available" href="prepare.html">1 · Prepare Workspace</a><a class="available" href="module-2.html">2 · First AI Research Task</a><a class="available" href="module-3.html">3 · Problem–Gap–RQ</a><a class="available" href="module-4.html">4 · Literature Evidence</a><a class="available" href="module-5.html">5 · Research Logic</a><a class="available" href="module-6.html">6 · Experiment Design</a><a class="available" href="module-7.html">7 · Analysis &amp; Visuals</a><a class="available" href="module-8.html" aria-current="page">8 · Document Production</a><a class="available" href="module-9.html">9 · Personal Workflow</a></div></details><a href="#module-content">เนื้อหา</a><a href="#module-toc">สารบัญ</a></nav>
+  </header>
+  <main id="main" class="module-document-shell">
+    <aside class="markdown-toc" id="module-toc" aria-label="สารบัญในหน้านี้"><strong>สารบัญ</strong><ol></ol></aside>
+    <article class="markdown-body" id="module-content">
+<h1 id="module-8--การผลิตบทความวิจัยและสื่อการนำเสนอตามรูปแบบของแหล่งเผยแพร่">Module 8 — การผลิตบทความวิจัยและสื่อการนำเสนอตามรูปแบบของแหล่งเผยแพร่</h1>
+<h2 id="เริ่มเรียนได้สองแบบ">เริ่มเรียนได้สองแบบ</h2>
+<ul>
+<li><strong>เรียนต่อเนื่อง:</strong> ใช้ verified claims, ตาราง, ภาพ, citation records และผลวิเคราะห์จาก Module 4–7 เพื่อประกอบเอกสารตามข้อกำหนดของแหล่งเผยแพร่</li>
+<li><strong>เรียนแบบ Standalone:</strong> เริ่มจาก author kit และ verified content package ของตนเอง หรือใช้ mock package ของรายวิชาที่มี Markdown รูป ตาราง และรายการอ้างอิงพร้อมตรวจ</li>
+</ul>
+<h2 id="คำถามแกนของโมดูล">คำถามแกนของโมดูล</h2>
+<p>จะเปลี่ยนเนื้อหาวิจัยที่ตรวจสอบแล้วให้เป็นบทความ PDF โปสเตอร์ หรือสไลด์ที่ตรงตามข้อกำหนดของแหล่งเผยแพร่ โดยไม่ทำลายแม่แบบ ไม่ทำให้การอ้างอิงผิด และไม่ปล่อยให้รูปแบบบดบังข้อบกพร่องของเนื้อหาได้อย่างไร</p>
+<h2 id="เป้าหมาย">เป้าหมาย</h2>
+<p>เมื่อจบโมดูล ผู้เรียนสามารถ</p>
+<ol type="1">
+<li>เลือกสายการผลิต Word หรือ LaTeX จากข้อกำหนดทางการของแหล่งเผยแพร่ ไม่เลือกจากความชอบส่วนบุคคล</li>
+<li>ดาวน์โหลดและเก็บชุดแม่แบบทางการ พร้อมบันทึกแหล่งที่มา รุ่น วันที่ และเงื่อนไขการใช้</li>
+<li>อธิบายโครงสร้าง LaTeX ในระดับที่สั่ง AI และตรวจตำแหน่งความผิดพลาดได้ โดยไม่ต้องเขียนคำสั่ง LaTeX เอง</li>
+<li>ทดสอบ compile แม่แบบเดิมและ outline ก่อนเพิ่มเนื้อหา</li>
+<li>แปลงข้อค้นพบจากการทดลองเป็น statement และคำอธิบายที่ผูกกับหลักฐาน แล้วให้ AI เรียบเรียงเป็นย่อหน้าโดยไม่เพิ่มข้อกล่าวที่ไม่มีหลักฐาน</li>
+<li>เขียนแต่ละส่วนของบทความเป็น Markdown และให้ AI ประกอบเข้ากับแม่แบบโดยแยก source, template, generated และ build output ออกจากกัน</li>
+<li>แทรกรูป ตาราง และรายการอ้างอิงอย่างตรวจสอบย้อนกลับได้</li>
+<li>ตรวจทั้งความถูกต้องของเนื้อหาและคุณภาพการนำเสนอใน PDF หรือเอกสารที่ส่งจริง</li>
+</ol>
+<p>โมดูลนี้ไม่รับรองการตอบรับตีพิมพ์ และไม่ถือว่า compile ผ่านเท่ากับบทความถูกต้อง ผู้เขียนยังรับผิดชอบข้อกล่าวอ้าง ข้อมูล การอ้างอิง ความเป็นผู้ประพันธ์ จริยธรรม และการเปิดเผยการใช้ AI</p>
+<h2 id="latex-คืออะไร-และเหตุใดไม่ใช้-microsoft-word-อย่างเดียว">LaTeX คืออะไร และเหตุใดไม่ใช้ Microsoft Word อย่างเดียว</h2>
+<p>LaTeX เป็นระบบจัดเอกสารที่แยก <strong>เนื้อหาและโครงสร้าง</strong> ออกจาก <strong>กฎการจัดรูปแบบ</strong> ผู้เขียนระบุว่าส่วนใดเป็นชื่อเรื่อง หัวข้อ สมการ รูป ตาราง หรือการอ้างอิง แล้วระบบใช้แม่แบบของแหล่งเผยแพร่จัดหน้าให้</p>
+<p>Microsoft Word และ LaTeX ต่างมีกรณีใช้งานที่เหมาะสม</p>
+<table>
+<thead>
+<tr class="header">
+<th>คำถาม</th>
+<th>เลือก Word เมื่อ</th>
+<th>เลือก LaTeX เมื่อ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>แหล่งเผยแพร่กำหนดอะไร</td>
+<td>ให้ <code>.docx</code> หรือ Word template และตรวจด้วย Track Changes</td>
+<td>ให้ <code>.tex</code>, <code>.cls</code>, <code>.sty</code>, <code>.bst</code>, Overleaf template หรือ LaTeX author kit</td>
+</tr>
+<tr class="even">
+<td>ลักษณะเนื้อหา</td>
+<td>เนื้อหาทั่วไป ตารางไม่ซับซ้อน และผู้ร่วมเขียนทำงานใน Word</td>
+<td>มีสมการ การอ้างอิงไขว้ รูป/ตารางจำนวนมาก หรือข้อกำหนดการจัดหน้าที่เข้มงวด</td>
+</tr>
+<tr class="odd">
+<td>การทำงานร่วมกัน</td>
+<td>ทีมต้องใช้ comments/Track Changes ใน Word</td>
+<td>ทีมใช้ source control, Overleaf หรือแฟ้มข้อความร่วมกันได้</td>
+</tr>
+<tr class="even">
+<td>ผลส่งสุดท้าย</td>
+<td>venue ต้องการ DOCX</td>
+<td>venue ต้องการ source LaTeX และ PDF</td>
+</tr>
+</tbody>
+</table>
+<p>หลักตัดสินคือ <strong>ใช้รูปแบบที่แหล่งเผยแพร่กำหนด</strong> หาก venue กำหนด Word ให้ใช้ Word หาก venue มี LaTeX template ให้เริ่มจาก template นั้น ไม่ควรแปลง PDF ตัวอย่างกลับเป็นแม่แบบเอง และไม่ควรบังคับ LaTeX เพียงเพราะดูเป็นงานวิชาการ</p>
+<h2 id="venue-first-intake">Venue-first Intake</h2>
+<p>เริ่มจากหน้า Author Guidelines หรือ Submission Guidelines ทางการของ venue แล้วบันทึก</p>
+<ul>
+<li>ชื่อแหล่งเผยแพร่ ประเภทบทความ และกลุ่มผู้อ่าน</li>
+<li>URL ทางการ วันที่เข้าถึง และรุ่น/ปีของข้อกำหนด</li>
+<li>จำนวนหน้า/คำ โครงสร้างบทความ รูปแบบ anonymous review และไฟล์ประกอบ</li>
+<li>รูปแบบอ้างอิง ข้อกำหนดรูป ตาราง สมการ คำสำคัญ และข้อมูลเสริม</li>
+<li>ข้อกำหนด authorship, AI disclosure, ethics, data/code availability และ conflicts of interest</li>
+<li>ชุดแม่แบบ Word หรือ LaTeX จากแหล่งทางการ</li>
+</ul>
+<p>ชุด LaTeX อาจประกอบด้วย <code>.tex</code>, <code>.cls</code>, <code>.sty</code>, <code>.bst</code>, <code>.bib</code>, รูปตราสัญลักษณ์ และตัวอย่าง PDF ไม่ใช่ทุก venue จะมี <code>.sty</code> และบางแห่งให้ไฟล์ ZIP หรือ Overleaf project แทน</p>
+<h3 id="ความปลอดภัยและที่มา">ความปลอดภัยและที่มา</h3>
+<ul>
+<li>ดาวน์โหลดจากเว็บไซต์ของ publisher, journal, conference หรือคลังทางการที่ guideline เชื่อมไปเท่านั้น</li>
+<li>เก็บชุดเดิมไว้ใน <code>venue-original/</code> และไม่แก้ไฟล์นั้น</li>
+<li>บันทึก URL วันที่ดาวน์โหลด ชื่อแฟ้ม และ checksum ใน <code>venue-manifest.md</code></li>
+<li>แตกสำเนาไปทำงานใน <code>venue-working/</code></li>
+<li>ห้ามให้ AI ดาวน์โหลด package หรือ template จากแหล่งไม่ทราบที่มาเพื่อแก้ compile โดยอัตโนมัติ</li>
+<li>compile ใน environment ของรายวิชาโดยปิดความสามารถเรียกคำสั่งระบบจาก LaTeX เว้นแต่ผู้สอนตรวจสอบและอนุญาตเป็นกรณีเฉพาะ</li>
+</ul>
+<h2 id="no-code-latex-หมายถึงอะไร">No-code LaTeX หมายถึงอะไร</h2>
+<p>ผู้เรียนไม่ต้องเขียนหรือท่องคำสั่ง LaTeX แต่ต้องเข้าใจโครงสร้างพอที่จะสั่ง AI ตรวจไฟล์ที่ถูกชั้น และไม่แก้ <code>.cls</code> หรือ <code>.sty</code> เพียงเพื่อให้เอกสารผ่าน</p>
+<pre class="text"><code>Markdown sections + bibliography + figures + tables
+                ↓
+      AI conversion/integration
+                ↓
+ venue .tex + .cls/.sty + .bst
+                ↓
+       LaTeX engine + BibTeX/Biber
+                ↓
+        PDF + log + auxiliary files
+                ↓
+       content QA + visual QA</code></pre>
+<h3 id="โครงสร้าง-latex-ที่ควรรู้">โครงสร้าง LaTeX ที่ควรรู้</h3>
+<table>
+<thead>
+<tr class="header">
+<th>ส่วน</th>
+<th>หน้าที่</th>
+<th>สิ่งที่ผู้เรียนต้องตรวจ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>.tex</code></td>
+<td>แฟ้มหลักและส่วนเนื้อหาที่ระบบประกอบ</td>
+<td>ใช้แม่แบบตัวใด เรียกส่วนใด และเนื้อหาอยู่ตำแหน่งถูกต้องหรือไม่</td>
+</tr>
+<tr class="even">
+<td><code>\documentclass{...}</code> / <code>.cls</code></td>
+<td>กฎหลักของชนิดบทความ</td>
+<td>ต้องตรงกับ venue และไม่ถูกแก้โดยไม่มีเหตุผล</td>
+</tr>
+<tr class="odd">
+<td><code>\usepackage{...}</code> / <code>.sty</code></td>
+<td>ความสามารถเสริม เช่น รูป ตาราง สมการ</td>
+<td>package มาจากไหน จำเป็นหรือขัดกับ template หรือไม่</td>
+</tr>
+<tr class="even">
+<td><code>\begin{document}</code> … <code>\end{document}</code></td>
+<td>ขอบเขตเนื้อหาเอกสาร</td>
+<td>ชื่อเรื่อง ผู้แต่ง abstract และแต่ละส่วนอยู่ภายในโครงสร้างที่ venue กำหนด</td>
+</tr>
+<tr class="odd">
+<td><code>\input{...}</code></td>
+<td>นำเนื้อหาจากแฟ้มย่อยมาประกอบ</td>
+<td>เส้นทางแฟ้มและลำดับส่วนถูกต้องหรือไม่</td>
+</tr>
+<tr class="even">
+<td><code>\label</code>, <code>\ref</code>, <code>\cite</code></td>
+<td>เชื่อมรูป ตาราง สมการ หัวข้อ และเอกสารอ้างอิง</td>
+<td>ไม่มีหมายเลขหรือ citation ที่ unresolved</td>
+</tr>
+<tr class="odd">
+<td><code>.bib</code></td>
+<td>ฐานข้อมูลรายการอ้างอิง</td>
+<td>ระเบียนมาจากแหล่งจริง DOI/ชื่อ/ปีถูกต้อง และ citation key ไม่ซ้ำ</td>
+</tr>
+<tr class="even">
+<td><code>.bst</code> หรือ BibLaTeX style</td>
+<td>รูปแบบแสดงรายการอ้างอิง</td>
+<td>ใช้กลไกที่ venue กำหนด ไม่สลับ BibTeX/Biber เอง</td>
+</tr>
+<tr class="odd">
+<td><code>.log</code>, <code>.aux</code>, <code>.bbl</code></td>
+<td>บันทึก compile และผลกลาง</td>
+<td>error, warning, missing reference/citation และ font problem ได้รับการตรวจ</td>
+</tr>
+</tbody>
+</table>
+<p>ผู้เรียนต้องรู้ว่า <code>.cls/.sty/.bst</code> เป็นชั้นแม่แบบ, Markdown เป็นชั้นเนื้อหา, <code>.tex</code> ที่ AI สร้างเป็นชั้นประกอบ และ PDF เป็นผลลัพธ์ ห้ามแก้ PDF หรือ generated <code>.tex</code> เพื่อซ่อนปัญหาโดยไม่แก้ source ที่แท้จริง</p>
+<h2 id="โครงสร้างโครงการที่แนะนำ">โครงสร้างโครงการที่แนะนำ</h2>
+<pre class="text"><code>paper/
+├── venue-original/           # ชุดแม่แบบเดิม ห้ามแก้
+├── venue-working/            # สำเนาแม่แบบที่ใช้ประกอบงาน
+├── source/
+│   ├── outline.md
+│   └── sections/
+│       ├── 01-abstract.md
+│       ├── 02-introduction.md
+│       ├── 03-related-work.md
+│       ├── 04-methods.md
+│       ├── 05-results.md
+│       ├── 06-discussion.md
+│       └── 07-conclusion.md
+├── bibliography/references.bib
+├── figures/
+├── tables/
+├── generated/                # tex ที่ AI สร้าง
+├── build/                    # PDF, log และไฟล์กลาง
+└── checks/                   # venue, content และ visual QA</code></pre>
+<p>ชื่อและจำนวนส่วนต้องปรับตามประเภทบทความและแม่แบบจริง ไม่บังคับโครง IMRaD หากสาขาหรือ venue ใช้โครงอื่น</p>
+<h2 id="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง">Build Ladder — ทำเป็นขั้นเพื่อไม่ให้พัง</h2>
+<p>กฎสำคัญคือ <strong>เปลี่ยนงานเพียงหนึ่งประเภท แล้ว compile ทันที</strong> เมื่อพังจะรู้ว่าปัญหาเกิดจากขั้นใด</p>
+<h3 id="gate-0--venue-package-verified">Gate 0 — Venue Package Verified</h3>
+<ul>
+<li>ดาวน์โหลดแม่แบบและ guideline ทางการ</li>
+<li>บันทึก <code>venue-manifest.md</code></li>
+<li>แยก original กับ working copy</li>
+<li>ตรวจว่า venue ต้องการ Word หรือ LaTeX และใช้ citation engine ใด</li>
+</ul>
+<h3 id="gate-1--pristine-template-compiles">Gate 1 — Pristine Template Compiles</h3>
+<p>compile ตัวอย่างเดิมโดยยังไม่แก้อะไร เก็บ PDF และ log เป็น baseline หาก template เดิมยัง compile ไม่ผ่าน ให้แก้ environment หรือขอชุด template ที่ถูกต้องก่อน ห้ามเริ่มใส่เนื้อหา</p>
+<h3 id="gate-2--outline-compiles">Gate 2 — Outline Compiles</h3>
+<p>แทนเนื้อหาตัวอย่างด้วย outline และ placeholder สั้น ๆ ตามหัวข้อที่ venue อนุญาต แล้ว compile ให้ผ่านก่อนเขียนจริง ตรวจจำนวนคอลัมน์ หัวกระดาษ ชื่อส่วน และ bibliography placeholder</p>
+<h3 id="gate-3--markdown-sections-added-one-by-one">Gate 3 — Markdown Sections Added One by One</h3>
+<p>เขียนแต่ละส่วนเป็น Markdown แยกแฟ้ม เนื้อหาของทุกส่วนควรระบุ</p>
+<ul>
+<li>หน้าที่ของส่วนและข้อกล่าวอ้างหลัก</li>
+<li>หลักฐาน รูป ตาราง หรือ citation ที่ต้องใช้</li>
+<li>สิ่งที่ยังไม่ทราบหรือยังห้ามสรุป</li>
+<li>ข้อจำกัดด้านคำ/หน้า</li>
+</ul>
+<p>AI แปลงทีละส่วนและ compile หลังเพิ่มแต่ละส่วน หากผิดด้านเนื้อหาให้แก้ Markdown หากผิดด้านการแปลงให้แก้ conversion rule หากผิดร่วมทั้งเอกสารให้ตรวจ template layer โดยไม่แก้ไฟล์ต้นฉบับของ venue</p>
+<h2 id="จากผลการทดลองสู่ย่อหน้า--statement--explanation">จากผลการทดลองสู่ย่อหน้า — Statement + Explanation</h2>
+<p>การให้ AI “เขียน Results” หรือ “เขียน Discussion” จากข้อมูลทั้งก้อนเปิดช่องให้ AI เลือกประเด็น แต่งเหตุผล หรือสรุปเกินหลักฐาน ผู้เรียนจึงต้องสร้าง <strong>Paragraph Contract</strong> ก่อน โดยมนุษย์กำหนด insight, statement และคำอธิบาย แล้วให้ AI ทำหน้าที่เรียบเรียงเป็นย่อหน้า</p>
+<p><strong>หลักแบ่งความรับผิดชอบ:</strong> ผู้วิจัยรับผิดชอบว่าจะกล่าวอะไร อธิบายจากหลักฐานใด และสรุปได้ภายในขอบเขตใด AI รับผิดชอบการเชื่อมและเรียบเรียงภาษา แต่ไม่มีอำนาจเพิ่มข้อค้นพบ เหตุผล หรือเอกสารอ้างอิง</p>
+<h3 id="insight-มาจากอะไร">Insight มาจากอะไร</h3>
+<p>insight ที่ใช้เขียนต้องย้อนกลับได้ถึงผลการทดลอง ตาราง รูป หรือข้อค้นพบที่ตรวจแล้ว และต้องแยกองค์ประกอบต่อไปนี้</p>
+<table>
+<thead>
+<tr class="header">
+<th>องค์ประกอบ</th>
+<th>คำถาม</th>
+<th>ตัวอย่างรูปแบบ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Observation</td>
+<td>ข้อมูลแสดงอะไรโดยยังไม่ตีความ</td>
+<td>กลุ่ม A มีค่าเฉลี่ยสูงกว่ากลุ่ม B เท่าใด พร้อมช่วงความเชื่อมั่น</td>
+</tr>
+<tr class="even">
+<td>Comparison/baseline</td>
+<td>เทียบกับอะไร</td>
+<td>baseline, control, prior work, threshold หรือค่าก่อนทดลอง</td>
+</tr>
+<tr class="odd">
+<td>Insight</td>
+<td>รูปแบบนี้มีความหมายอย่างไรต่อคำถามวิจัย</td>
+<td>ผลสนับสนุนบางส่วน ไม่สนับสนุน หรือชี้เงื่อนไขขอบเขต</td>
+</tr>
+<tr class="even">
+<td>Statement</td>
+<td>ประโยคหลักที่ต้องการให้ย่อหน้าสื่อ</td>
+<td>“ผลแสดงว่า…ภายใต้เงื่อนไข…”</td>
+</tr>
+<tr class="odd">
+<td>Explanation</td>
+<td>เพราะเหตุใดจึงตีความเช่นนั้น</td>
+<td>mechanism, context หรือเหตุผลที่มีหลักฐานรองรับ</td>
+</tr>
+<tr class="even">
+<td>Evidence</td>
+<td>ตัวเลข รูป ตาราง หรือ citation ใดรองรับ</td>
+<td>Fig. 2, Table 3, effect size, DOI</td>
+</tr>
+<tr class="odd">
+<td>Limitation/alternative</td>
+<td>มีคำอธิบายอื่นหรือข้อจำกัดใด</td>
+<td>sample, measurement, confounder, uncertainty</td>
+</tr>
+<tr class="even">
+<td>Boundary</td>
+<td>ห้ามย่อหน้าสรุปอะไร</td>
+<td>ไม่อ้างเหตุและผล ไม่ขยายไปประชากรอื่น</td>
+</tr>
+</tbody>
+</table>
+<h3 id="paragraph-contract">Paragraph Contract</h3>
+<p>ก่อนให้ AI เขียน ผู้เรียนกรอก</p>
+<pre class="text"><code>Section/purpose:
+Statement:
+Evidence and exact numbers:
+Figure/table/citation references:
+Explanation supported by evidence:
+Alternative explanation or limitation:
+Uncertainty and scope:
+Terms that must remain unchanged:
+Claims that must not be added:
+Target length and tone:</code></pre>
+<p>จากนั้นใช้คำสั่ง</p>
+<blockquote>
+<p>เขียนหนึ่งย่อหน้าจาก Paragraph Contract นี้เท่านั้น เริ่มด้วย statement เชื่อม evidence และคำอธิบายตามลำดับ รักษาตัวเลข หน่วย ทิศทาง ความไม่แน่นอน และ reference marker ทุกจุด ระบุ limitation/boundary ตามที่ให้ ห้ามเพิ่ม mechanism, citation, result, causal language หรือ generalization ที่ไม่มีใน contract หากข้อมูลไม่พอให้แทรก <code>[ข้อมูลไม่พอ: ...]</code> แทนการเดา</p>
+</blockquote>
+<h3 id="รูปแบบย่อหน้าตามส่วนของบทความ">รูปแบบย่อหน้าตามส่วนของบทความ</h3>
+<table>
+<thead>
+<tr class="header">
+<th>ส่วน</th>
+<th>ลำดับที่เหมาะสม</th>
+<th>สิ่งที่ต้องระวัง</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Results</td>
+<td>statement ของผล → ตัวเลข/รูป/ตาราง → comparison → uncertainty</td>
+<td>ไม่อธิบายกลไกเกินที่ผลแสดง</td>
+</tr>
+<tr class="even">
+<td>Discussion</td>
+<td>insight → เชื่อมผล → explanation/citation → alternative/limitation → implication</td>
+<td>ไม่เปลี่ยนความสัมพันธ์เป็นเหตุและผล</td>
+</tr>
+<tr class="odd">
+<td>Introduction</td>
+<td>problem statement → consequence → literature evidence → gap → objective</td>
+<td>ไม่แต่ง gap หรือ citation</td>
+</tr>
+<tr class="even">
+<td>Methods</td>
+<td>purpose → procedure/parameter → rationale → reproducibility detail</td>
+<td>ไม่เติมขั้นตอนที่ไม่ได้ทำจริง</td>
+</tr>
+<tr class="odd">
+<td>Conclusion</td>
+<td>supported statement → contribution/use → boundary/next step</td>
+<td>ไม่เพิ่มผลใหม่หรือขยายประชากร</td>
+</tr>
+</tbody>
+</table>
+<h3 id="paragraph-reverse-check">Paragraph Reverse Check</h3>
+<p>หลัง AI ร่าง ให้แยกทุกประโยคกลับเป็นตาราง</p>
+<table>
+<thead>
+<tr class="header">
+<th>ประโยค</th>
+<th>บทบาท</th>
+<th>รองรับโดยช่องใดใน contract</th>
+<th>สถานะ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>statement/evidence/explanation/limitation/bridge</td>
+<td></td>
+<td>supported / revise / remove</td>
+</tr>
+</tbody>
+</table>
+<p>ย่อหน้าผ่านเมื่อทุกประโยคย้อนกลับไปยัง contract ได้ ตัวเลขและ reference ตรงกับ source และไม่มีคำที่เพิ่มระดับความมั่นใจ เช่น “พิสูจน์”, “ทำให้เกิด”, “อย่างชัดเจน” หรือ “ใช้ได้ทั่วไป” โดยไม่มีหลักฐานรองรับ</p>
+<p>Paragraph Contract หนึ่งชุดควรสร้างหนึ่งย่อหน้าหลัก หากมีหลาย statement ให้แยกเป็นหลาย contract เพื่อให้ตรวจ logic และหลักฐานง่าย</p>
+<h3 id="gate-4--citations-and-bibliography">Gate 4 — Citations and Bibliography</h3>
+<p>เพิ่มรายการอ้างอิงหลังส่วนข้อความพื้นฐาน compile ผ่านแล้ว</p>
+<ul>
+<li>เก็บรายการอ้างอิงใน <code>references.bib</code></li>
+<li>นำเข้าจาก DOI, publisher, Crossref หรือฐานข้อมูลที่ตรวจสอบได้ ไม่ให้ AI แต่งระเบียนจากความจำ</li>
+<li>ตรวจผู้แต่ง ชื่อเรื่อง ปี venue เลขหน้า DOI และชนิดรายการ</li>
+<li>ใช้ citation key ที่อ่านได้และไม่ซ้ำ</li>
+<li>ใช้ BibTeX/Biber และ <code>.bst</code>/style ตามแม่แบบของ venue</li>
+<li>compile จนครบลำดับและไม่มี undefined citation; ใช้ <code>latexmk</code> หรือเครื่องมือที่ venue แนะนำให้จัดลำดับอัตโนมัติ</li>
+</ul>
+<p>ในเชิงกลไก การสร้าง bibliography อาจต้อง LaTeX → BibTeX/Biber → LaTeX → LaTeX เพื่อให้ citation และหมายเลขทุกจุดปรับครบ ผู้เรียนไม่ต้องเรียกคำสั่งเอง แต่ต้องอ่านสถานะว่าแต่ละขั้นสำเร็จหรือไม่</p>
+<h3 id="gate-5--figures">Gate 5 — Figures</h3>
+<p>เพิ่มรูปทีละรูปแล้ว compile</p>
+<ul>
+<li>เก็บข้อมูลหรือ script ต้นทางและรูปส่งออกแยกจากกัน</li>
+<li>ใช้ชื่อแฟ้มคงที่ ไม่มีช่องว่างหรือชื่อกำกวม</li>
+<li>ใช้ PDF สำหรับภาพเวกเตอร์เมื่อ template รองรับ และ PNG/JPEG ความละเอียดเหมาะสมสำหรับภาพราสเตอร์</li>
+<li>เขียน caption ที่อธิบายสิ่งที่วัด กลุ่ม หน่วย จำนวนตัวอย่าง และความไม่แน่นอนที่จำเป็น</li>
+<li>กำหนด label และอ้างรูปจากข้อความ</li>
+<li>ตรวจขนาดจริง ตัวอักษร สี ขาวดำ การตัดขอบ และสิทธิการใช้</li>
+</ul>
+<p>ใน Markdown ผู้เรียนใส่ตำแหน่งรูป ชื่อภาพ caption, label และแหล่งที่มา จากนั้น AI แปลงเป็นโครงสร้าง LaTeX ตาม venue ไม่ต้องเขียน <code>\includegraphics</code> เอง</p>
+<h3 id="gate-6--tables">Gate 6 — Tables</h3>
+<p>เพิ่มตารางทีละตารางแล้ว compile</p>
+<ul>
+<li>สร้างค่าจาก CSV/XLSX หรือผลวิเคราะห์ที่ตรวจแล้ว ไม่คัดลอกตัวเลขหลายชุดด้วยมือ</li>
+<li>ระบุชื่อ หน่วย จำนวนตัวอย่าง ตัวหาร การปัดเศษ และหมายเหตุ</li>
+<li>กำหนด label และอ้างตารางจากข้อความ</li>
+<li>ตรวจหัวตาราง ตารางกว้างเกินคอลัมน์ ตารางข้ามหน้า และความสอดคล้องกับข้อความ/รูป</li>
+<li>ห้ามลดขนาดตัวอักษรจนอ่านไม่ได้เพื่อบังคับตารางให้พอดี</li>
+</ul>
+<h3 id="gate-7--full-build-and-venue-compliance">Gate 7 — Full Build and Venue Compliance</h3>
+<p>ประกอบทุกส่วนแล้วตรวจ page/word limit, anonymous review, author block, keywords, acknowledgments, declarations, supplementary files และชื่อแฟ้มตาม guideline</p>
+<h3 id="gate-8--final-pdf-qa">Gate 8 — Final PDF QA</h3>
+<p>สร้าง PDF ฉบับส่งจริง แล้วตรวจทั้งด้วยเครื่องมือและสายตา ไม่ใช้เพียงสถานะว่า process จบด้วย exit code 0</p>
+<h2 id="บัตรคำสั่งสำหรับผู้เรียน">บัตรคำสั่งสำหรับผู้เรียน</h2>
+<h3 id="venue-template-card">Venue Template Card</h3>
+<blockquote>
+<p>อ่าน guideline และชุดแม่แบบจาก URL ทางการนี้ บันทึก venue, article type, version/date, required files และ citation engine ลง <code>venue-manifest.md</code> เก็บต้นฉบับไว้ใน <code>venue-original/</code> และทำงานกับสำเนาเท่านั้น ตรวจไฟล์ <code>.tex/.cls/.sty/.bst/.bib</code> แล้ว compile ตัวอย่างเดิมโดยไม่แก้ เก็บ PDF และ log เป็น baseline ห้ามดาวน์โหลดหรือแก้ package จากแหล่งอื่นโดยอัตโนมัติ</p>
+</blockquote>
+<h3 id="outline-card">Outline Card</h3>
+<blockquote>
+<p>สร้าง outline ตามหัวข้อและข้อจำกัดของ venue ใช้ placeholder สั้น ๆ ก่อน ยังไม่เขียนเนื้อหาเต็ม ประกอบ outline เข้ากับสำเนาแม่แบบและ compile ให้ผ่าน รายงานหัวข้อที่ venue บังคับ/ไม่อนุญาต page/word limit และความผิดปกติของ PDF</p>
+</blockquote>
+<h3 id="section-card">Section Card</h3>
+<blockquote>
+<p>ตรวจ Paragraph Contract และ reverse-check ของทุกย่อหน้าก่อน ใช้ Markdown ส่วนนี้เป็น source of truth ตรวจข้อกล่าวอ้าง citation รูป ตาราง uncertainty และข้อจำกัด แปลงเฉพาะส่วนนี้เข้าสู่ generated layer โดยรักษาแม่แบบ venue compile แล้วรายงาน error/warning และตำแหน่งที่เนื้อหาเปลี่ยนความหมาย ห้ามแก้ generated <code>.tex</code> เป็นแหล่งหลัก</p>
+</blockquote>
+<h3 id="figuretable-card">Figure/Table Card</h3>
+<blockquote>
+<p>ตรวจแฟ้มรูป/ตารางกับข้อมูลต้นทางก่อน ระบุ caption, label, source, unit, denominator, sample size และ uncertainty ตามที่เกี่ยวข้อง แทรกตามกฎของ venue compile และตรวจทั้งการอ้างในข้อความ หมายเลข ขนาด ตำแหน่ง และการอ่านจริงใน PDF</p>
+</blockquote>
+<h3 id="bibliography-card">Bibliography Card</h3>
+<blockquote>
+<p>ตรวจระเบียนใน <code>references.bib</code> กับ DOI หรือแหล่งต้นทาง ใช้ citation engine และ style ของ venue ห้ามสร้างรายการที่ตรวจสอบไม่ได้ compile จนไม่มี undefined citation/reference แล้วเปรียบเทียบ citation ในข้อความกับรายการท้ายบทความ</p>
+</blockquote>
+<h3 id="pdf-qa-card">PDF QA Card</h3>
+<blockquote>
+<p>สร้าง PDF ฉบับส่งจริง ตรวจ log และแยกข้อความจาก PDF เพื่อตรวจเนื้อหาขาดหาย จากนั้น render ทุกหน้าเพื่อตรวจชื่อเรื่อง ผู้แต่ง หัวข้อ สมการ citation รูป ตาราง caption เลขหน้า ขอบ คอลัมน์ font และ page break เปรียบเทียบกับ guideline และจัดทำรายการ PASS/FAIL พร้อมตำแหน่งและวิธีแก้</p>
+</blockquote>
+<h2 id="การตรวจเนื้อหาเอกสาร">การตรวจเนื้อหาเอกสาร</h2>
+<p>ตรวจแยกจากการจัดรูปแบบ</p>
+<ul>
+<li>ปัญหา วัตถุประสงค์ วิธี ผล และข้อสรุปสอดคล้องกัน</li>
+<li>ทุกข้อกล่าวอ้างสำคัญมีหลักฐานหรือ citation ที่เหมาะสม</li>
+<li>ตัวเลขในข้อความ ตาราง และรูปตรงกัน</li>
+<li>ไม่เพิ่มผลทดลอง citation หรือรายละเอียดวิธีที่ไม่มีใน source</li>
+<li>แยกผล ข้อสังเกต การตีความ และข้อเสนอแนะออกจากกัน</li>
+<li>ระบุความไม่แน่นอน ข้อจำกัด ขอบเขต และผลพลอยได้อย่างเหมาะสม</li>
+<li>abstract, title และ conclusion ไม่อ้างเกินผล</li>
+<li>ผู้แต่ง หน่วยงาน acknowledgments, funding, conflicts, ethics, data/code availability และ AI disclosure ถูกต้อง</li>
+<li>ฉบับ anonymous ไม่มีชื่อ ไฟล์ metadata acknowledgments หรือข้อความที่เปิดเผยตัวตนตามข้อกำหนด</li>
+</ul>
+<h2 id="การตรวจคุณภาพการนำเสนอ">การตรวจคุณภาพการนำเสนอ</h2>
+<ul>
+<li>โครงเรื่องและลำดับหัวข้อทำให้ผู้อ่านตามข้อโต้แย้งได้</li>
+<li>ย่อหน้าแรกของแต่ละส่วนบอกหน้าที่ และย่อหน้าท้ายเชื่อมไปส่วนถัดไป</li>
+<li>รูปและตารางแต่ละรายการตอบคำถามหนึ่งเรื่องและถูกกล่าวถึงในข้อความ</li>
+<li>caption อ่านแยกจากเนื้อหาได้พอสมควร</li>
+<li>แบบอักษร สมการ สัญลักษณ์ หน่วย และคำย่อสม่ำเสมอ</li>
+<li>ไม่มีบรรทัดหรือวัตถุล้นคอลัมน์ ภาพแตก ตารางอ่านไม่ได้ หรือ heading ค้างท้ายหน้า</li>
+<li>ภาพยังอ่านได้เมื่อพิมพ์ขาวดำหรือย่อเป็นขนาดคอลัมน์</li>
+<li>PDF มีจำนวนหน้า ขนาดกระดาษ font embedding และคุณสมบัติไฟล์ตามที่ venue กำหนด</li>
+<li>สไลด์หรือโปสเตอร์ใช้ข้อกล่าวอ้างและตัวเลขชุดเดียวกับบทความ แต่ลดความหนาแน่นให้เหมาะกับระยะอ่านและเวลานำเสนอ</li>
+</ul>
+<h2 id="เมื่อ-compile-พัง-ให้แก้ตามชั้น">เมื่อ compile พัง ให้แก้ตามชั้น</h2>
+<table>
+<thead>
+<tr class="header">
+<th>อาการ</th>
+<th>ตรวจชั้นใดก่อน</th>
+<th>ห้ามทำ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>template เดิม compile ไม่ผ่าน</td>
+<td>environment, engine, package และรุ่น template</td>
+<td>ใส่เนื้อหาต่อหรือแก้ <code>.cls/.sty</code> แบบเดาสุ่ม</td>
+</tr>
+<tr class="even">
+<td>undefined control sequence</td>
+<td>conversion/generated section และ package ที่ venue อนุญาต</td>
+<td>ดาวน์โหลด package จากแหล่งสุ่ม</td>
+</tr>
+<tr class="odd">
+<td>citation/reference เป็น <code>?</code></td>
+<td>citation key, <code>.bib</code>, BibTeX/Biber และลำดับ compile</td>
+<td>พิมพ์หมายเลข citation ด้วยมือ</td>
+</tr>
+<tr class="even">
+<td>รูปหาย</td>
+<td>path, filename, format และ case sensitivity</td>
+<td>ฝังรูปด้วย path จากเครื่องส่วนตัว</td>
+</tr>
+<tr class="odd">
+<td>ตาราง/ข้อความล้น</td>
+<td>source table, column width, caption และ venue layout</td>
+<td>ย่อ font จนอ่านไม่ได้หรือแก้ PDF</td>
+</tr>
+<tr class="even">
+<td>เนื้อหาหายแต่ compile ผ่าน</td>
+<td>conversion log, generated <code>.tex</code> และ text extraction จาก PDF</td>
+<td>ถือว่า exit code 0 เท่ากับสำเร็จ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="โครงกิจกรรมในชั้นเรียน">โครงกิจกรรมในชั้นเรียน</h2>
+<ol type="1">
+<li><strong>Word or LaTeX Decision:</strong> เปรียบเทียบ author kits จริงและเลือกสายจากหลักฐานของ venue</li>
+<li><strong>Template Autopsy:</strong> แกะแม่แบบเพื่อชี้ <code>.tex/.cls/.sty/.bst/.bib</code>, master file และ citation engine โดยไม่แก้ syntax</li>
+<li><strong>Pristine Build:</strong> compile template เดิมและเก็บ baseline</li>
+<li><strong>Outline Build:</strong> ใส่ outline/placeholder แล้ว compile</li>
+<li><strong>Insight-to-Paragraph:</strong> กรอก statement, evidence, explanation, limitation และ boundary แล้วให้ AI ร่างหนึ่งย่อหน้า</li>
+<li><strong>Paragraph Reverse Check:</strong> แยกทุกประโยคกลับไปยัง contract และตัดสิ่งที่ไม่มีหลักฐาน</li>
+<li><strong>Section Assembly:</strong> รวมย่อหน้าที่ผ่านแล้วเป็น Markdown หนึ่งส่วนและตรวจ meaning preservation</li>
+<li><strong>Citation Build:</strong> เพิ่ม BibTeX record/citation ที่ตรวจสอบแล้ว</li>
+<li><strong>Figure and Table Build:</strong> เพิ่มอย่างละหนึ่งรายการจากไฟล์ต้นทาง</li>
+<li><strong>Break-and-Repair:</strong> ผู้สอนแจกกรณี citation หาย รูปหาย ตารางล้น หรือเนื้อหาหาย ให้ผู้เรียนระบุชั้นที่ควรแก้ก่อนสั่ง AI</li>
+<li><strong>PDF Red-team:</strong> ตรวจเนื้อหา venue compliance และ visual quality จาก PDF ฉบับจริง</li>
+</ol>
+<h2 id="ผลผลิตและเกณฑ์ผ่าน">ผลผลิตและเกณฑ์ผ่าน</h2>
+<ul>
+<li><code>venue-manifest.md</code> และชุดแม่แบบ original/working ที่แยกกัน</li>
+<li>pristine-template PDF/log baseline</li>
+<li><code>source/outline.md</code> และ Markdown แยกส่วน</li>
+<li>Paragraph Contracts และ reverse-check records ของย่อหน้าหลัก</li>
+<li><code>references.bib</code> พร้อม verification record</li>
+<li>รูปและตารางพร้อม source/caption/label record</li>
+<li>generated <code>.tex</code> และ build log</li>
+<li>PDF ฉบับประกอบและฉบับแก้หลัง QA</li>
+<li><code>content-check.md</code>, <code>venue-compliance.md</code> และ <code>visual-qa.md</code></li>
+<li><a href="downloads/module-08-venue-document-workbook.md">สมุดงาน Module 8</a> ที่กรอกครบ</li>
+</ul>
+<p>เกณฑ์ผ่านคือแม่แบบเดิมและ outline compile ผ่านก่อนเพิ่มเนื้อหา ทุก citation รูป ตาราง และ cross-reference แกะย้อนกลับได้ ไม่มี unresolved error สำคัญ เนื้อหาใน PDF ตรงกับ Markdown และผลที่ตรวจสอบแล้ว และเอกสารผ่านทั้ง content, venue และ visual QA</p>
+<h2 id="การเตรียมของผู้สอน">การเตรียมของผู้สอน</h2>
+<ul>
+<li>author kit อย่างน้อยหนึ่งชุดที่ใช้ LaTeX และหนึ่งชุดที่ใช้ Word จากแหล่งทางการ</li>
+<li>ชุด LaTeX ที่ทดสอบ pristine compile แล้วและอนุญาตให้ใช้ในชั้นเรียน</li>
+<li>mock paper ที่แยก Markdown เป็นส่วน มีรูป ตาราง และ BibTeX records ที่ตรวจสอบได้</li>
+<li>baseline PDF/log และ expected outline PDF</li>
+<li>break-and-repair cases ที่แยกสาเหตุตาม content/template/generated/build layer</li>
+<li>checklist สำหรับ venue compliance, content QA และ visual QA</li>
+<li>fallback template ของรายวิชาเมื่อเว็บไซต์ venue ใช้งานไม่ได้ โดยระบุชัดว่าไม่ใช่ template สำหรับส่งจริง</li>
+</ul>
+<h2 id="การบ้าน">การบ้าน</h2>
+<p>ผู้เรียนเพิ่ม Markdown อีกหนึ่งส่วน รูปหรือตารางอีกหนึ่งรายการ และ citation ที่ตรวจสอบแล้ว โดย compile หลังเปลี่ยนแต่ละประเภท จากนั้นส่ง PDF สองฉบับก่อนและหลัง Red-team พร้อมบันทึกว่าแก้ source ชั้นใด เพราะเหตุใด และตรวจได้อย่างไรว่าการแก้ไม่เปลี่ยนความหมายของงานวิจัย</p>
+
+    </article>
+    <nav class="module-pagination" aria-label="โมดูลก่อนหน้าและถัดไป"><a class="button secondary" href="module-7.html">← ก่อนหน้า</a><a class="button primary" href="module-9.html">ไป Module 9 →</a></nav>
+  </main>
+  <footer><p>AI for Research · ตรวจหลักฐานก่อนเชื่อคำตอบของ AI</p><p class="footer-credit">Department of Computer Engineering · Kasetsart University</p></footer>
+</body>
+</html>

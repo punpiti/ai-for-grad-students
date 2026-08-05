@@ -1,7 +1,584 @@
-<!doctype html><html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Module 9 — สร้าง Personal AI Research Workflow Kit ที่ทดสอบและใช้ซ้ำได้"><meta name="theme-color" content="#101817"><title>Personal Research Workflow — AI for Research</title><link rel="stylesheet" href="assets/styles.css?v=20260805-1"><script src="assets/app.js?v=20260804-1" defer></script></head>
-<body><a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a><header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Research</span></a><nav aria-label="เมนูหลัก"><a href="index.html">หน้าหลัก</a><a href="#activity">กิจกรรม</a><a href="#finish">ชิ้นงาน</a><a class="nav-cta" href="prepare.html">เริ่มใหม่</a></nav></header><main id="main">
-<section class="prepare-hero module-hero"><p class="eyebrow">Module 9 · 180 นาที</p><h1>Personal AI Research<br><span>Workflow Kit</span></h1><p>เปลี่ยนสิ่งที่เรียนให้เป็นชุดทำงานส่วนบุคคลที่กำหนดสิทธิ จุดตรวจ ทางหยุด และหลักฐานการรันไว้ล่วงหน้า—ไม่ฝากความจำไว้กับ prompt เดียว</p></section>
-<section class="section"><div class="section-heading compact"><p class="eyebrow">เลือกปัญหาจริงหนึ่งเรื่อง</p><h2>ต่อยอดทั้งหลักสูตร<br>หรือเริ่มจากงานซ้ำ ๆ</h2></div><div class="concept-grid"><article><h3>ต่อจาก Module 1–8</h3><p>เลือกงานที่ทำแล้วหนึ่งกระบวนการ เช่น ตรวจ citation วิเคราะห์ข้อมูล หรือสร้างเอกสาร และรวบรวม artifact ที่ผ่านการตรวจ</p></article><article><h3>Standalone</h3><p>เลือก pain point ที่เกิดซ้ำ มี input/output ชัด และทดลองได้ด้วยข้อมูลตัวอย่างที่ไม่อ่อนไหว</p></article><article><h3>อย่าเริ่มใหญ่เกินไป</h3><p>Version 1.0 ควรแก้ปัญหาเดียวให้ปลอดภัยและทำซ้ำได้ ก่อนรวมหลายกระบวนงานเข้าด้วยกัน</p></article></div></section>
-<section class="section"><div class="section-heading compact"><p class="eyebrow">Choice architecture</p><h2>กำหนดคำตอบไว้ก่อนที่งานจะเร่ง</h2></div><div class="level-grid"><article><span>01</span><div><h3>DEFAULT</h3><p>ตัวเลือกที่ใช้ได้อัตโนมัติเมื่อเงื่อนไขปกติครบและความเสี่ยงต่ำ</p></div></article><article><span>02</span><div><h3>ASK</h3><p>ต้องถามเจ้าของงานก่อนเมื่อมีหลายทางเลือกหรือการเปลี่ยนแปลงที่ย้อนกลับยาก</p></div></article><article><span>03</span><div><h3>NEVER</h3><p>สิ่งที่ห้ามทำ เช่น แต่ง citation เขียนทับข้อมูลดิบ ส่งไฟล์ หรือเปิดเผยข้อมูลลับ</p></div></article><article><span>04</span><div><h3>ESCALATE</h3><p>หยุดและส่งให้ผู้มีอำนาจหรือผู้เชี่ยวชาญ เช่น จริยธรรม กฎหมาย สถิติ หรือการตีความเชิงสาขา</p></div></article></div></section>
-<section class="section" id="activity"><div class="section-heading compact"><p class="eyebrow">Workshop</p><h2>ประกอบ ทดสอบ และ freeze รุ่น 1.0</h2></div><ol class="readiness-steps activity-steps"><li><span>01</span><div><strong>ทำ personal research profile</strong><br>ระบุสาขา งานซ้ำ เครื่องมือ ข้อมูล ความเสี่ยง และผู้มีอำนาจตัดสิน</div></li><li><span>02</span><div><strong>เขียน workflow card</strong><br>กำหนด trigger, input, steps, output, verification, stop condition, fallback และ owner</div></li><li><span>03</span><div><strong>จัด research operations</strong><br>ใช้ inventory → preview → approval → move-only → manifest เมื่อต้องจัดโฟลเดอร์ และแยก sync, version control กับ backup</div></li><li><span>04</span><div><strong>ประกอบ kit</strong><br>รวม profile, guardrails, templates, examples, checklists, tests, run record และ changelog</div></li><li><span>05</span><div><strong>ทดสอบ failure cases</strong><br>ลอง input ขาด ข้อมูลลับ citation ปลอม path ผิด output ซ้ำ และคำสั่งที่ขัดกัน</div></li><li><span>06</span><div><strong>Freeze Version 1.0</strong><br>บันทึกสิ่งที่ผ่าน สิ่งที่ยังไม่ทดสอบ และเงื่อนไขทบทวนหลังใช้งานจริง</div></li></ol><div class="command"><code>ช่วยฉันสร้าง workflow kit สำหรับงานซ้ำหนึ่งเรื่อง เริ่มจากถาม trigger, input, output, data classification, decision owner และความเสี่ยง กำหนด DEFAULT/ASK/NEVER/ESCALATE พร้อม verification, stop condition, fallback และ run record สร้าง test cases ทั้งปกติและ failure cases ห้ามย้ายไฟล์ ส่งข้อมูล เปลี่ยน permission หรือเชื่อมบริการภายนอกจนกว่าฉันอนุมัติขอบเขตชัดเจน</code><button type="button" data-copy>คัดลอก Prompt</button></div></section>
-<section class="section" id="finish"><div class="section-heading compact"><p class="eyebrow">ชิ้นงานและเกณฑ์ผ่าน</p><h2>ชุดที่คนอื่นตรวจได้ และคุณกลับมาใช้ได้</h2></div><div class="checklist"><label><input type="checkbox">มี profile, guardrails และ workflow card ที่กำหนด owner ชัดเจน</label><label><input type="checkbox">มี template, example, checklist, test และ run record</label><label><input type="checkbox">ผ่าน failure tests โดยไม่ทำลาย source หรือรั่วข้อมูล</label><label><input type="checkbox">มี Version 1.0, changelog และรายการสิ่งที่ยังไม่ผ่าน L2/L3</label></div><div class="notice"><strong>หลังเรียน:</strong> ใช้ workflow กับงานจริงภายใน 7 วัน บันทึกเวลา ข้อผิดพลาด การตรวจแก้ และผลที่มนุษย์ตัดสิน แล้วปรับเป็น Version 1.1 จากหลักฐานการใช้จริง</div><a class="button primary module-next" href="index.html">กลับหน้าหลัก →</a></section></main><footer><p>AI for Research · Workflow ที่ดีต้องรู้ว่าเมื่อใดควรหยุด</p><p class="footer-credit">Department of Computer Engineering · Kasetsart University</p></footer></body></html>
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Module 9 — Personal AI Research Workflow Kit">
+  <meta name="theme-color" content="#101817">
+  <title>Personal Research Workflow — AI for Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-2">
+  <script src="assets/app.js?v=20260805-2" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Research</span></a>
+    <nav aria-label="เมนูหลัก"><a href="index.html">หน้าหลัก</a><details class="module-menu"><summary>โมดูล 1–9</summary><div><a class="available" href="prepare.html">1 · Prepare Workspace</a><a class="available" href="module-2.html">2 · First AI Research Task</a><a class="available" href="module-3.html">3 · Problem–Gap–RQ</a><a class="available" href="module-4.html">4 · Literature Evidence</a><a class="available" href="module-5.html">5 · Research Logic</a><a class="available" href="module-6.html">6 · Experiment Design</a><a class="available" href="module-7.html">7 · Analysis &amp; Visuals</a><a class="available" href="module-8.html">8 · Document Production</a><a class="available" href="module-9.html" aria-current="page">9 · Personal Workflow</a></div></details><a href="#module-content">เนื้อหา</a><a href="#module-toc">สารบัญ</a></nav>
+  </header>
+  <main id="main" class="module-document-shell">
+    <aside class="markdown-toc" id="module-toc" aria-label="สารบัญในหน้านี้"><strong>สารบัญ</strong><ol></ol></aside>
+    <article class="markdown-body" id="module-content">
+<h1 id="module-9--personal-ai-research-workflow-kit">Module 9 — Personal AI Research Workflow Kit</h1>
+<h2 id="เริ่มเรียนได้สองแบบ">เริ่มเรียนได้สองแบบ</h2>
+<ul>
+<li><strong>เรียนต่อเนื่อง:</strong> เลือก artifacts และจุดตรวจจาก Module 1–8 หรือจาก Build-up, Reviews หรือ Publication มาประกอบเป็น Personal AI Research Kit</li>
+<li><strong>เรียนแบบ Standalone:</strong> เลือกงานวิจัยที่ทำซ้ำหนึ่งเรื่อง ใช้กรณีตัวอย่างที่ไม่อ่อนไหว แล้วสร้าง workflow card, guardrails, tests และ run record รุ่นแรกโดยไม่ต้องมีผลงานจากโมดูลก่อนหน้า</li>
+</ul>
+<h2 id="คำถามแกนของโมดูล">คำถามแกนของโมดูล</h2>
+<p>จะเปลี่ยนวิธีทำงานที่ได้เรียนมาให้เป็นชุด AI research workflow ของตนเอง ซึ่งมีค่าเริ่มต้น ตัวเลือก ข้อห้าม จุดตรวจ และทางออกเมื่อเกิดปัญหา พร้อมนำไปใช้ซ้ำกับโครงการใหม่ได้อย่างไร</p>
+<h2 id="เป้าหมาย">เป้าหมาย</h2>
+<p>เมื่อจบโมดูล ผู้เรียนสามารถ</p>
+<ol type="1">
+<li>ใช้ Personal AI Research Workflow Framework เดียวกันในการออกแบบงานทุกชนิด</li>
+<li>กำหนดตัวเลือกส่วนบุคคลไว้ล่วงหน้าโดยไม่ฝืนข้อกำหนดของสถาบัน สาขา ข้อมูล หรือแหล่งเผยแพร่</li>
+<li>แยกสิ่งที่ AI ทำอัตโนมัติ สิ่งที่ต้องถามก่อน สิ่งที่ห้ามทำ และสิ่งที่ต้องให้มนุษย์หรือหลักฐานภายนอกตัดสิน</li>
+<li>ประกอบ workflow cards, templates, checklists, examples และ tests เป็น Personal AI Research Kit</li>
+<li>ทดสอบ workflow ทั้งกรณีปกติ ข้อมูลไม่ครบ หลักฐานขัดแย้ง ข้อมูลอ่อนไหว และเครื่องมือทำงานผิดพลาด</li>
+<li>ปรับรุ่นและบันทึกการเปลี่ยนแปลงจากผลใช้จริง โดยไม่ถือว่า workflow ใช้ได้เพียงเพราะ AI ทำตามคำสั่งได้</li>
+</ol>
+<h2 id="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว">หลักคิด: Framework เดียว แต่ไม่ใช่ Workflow เดียว</h2>
+<p>ทุกคนใช้กรอบร่วมเพื่อให้ตรวจสอบได้ แต่เลือกค่าเริ่มต้นและเครื่องมือให้เหมาะกับสาขา งาน และข้อจำกัดของตน</p>
+<pre class="text"><code>Shared Framework
+  ├─ โครงสร้างงานและจุดตรวจเหมือนกัน
+  ├─ หลักฐานต้องย้อนกลับได้
+  ├─ มี human/external decision และ stop condition
+  └─ ต้องผ่านกรณีทดสอบ
+
+Personal Choices
+  ├─ สาขา ภาษา และชนิดข้อมูล
+  ├─ แหล่งค้นและโปรแกรมจัดการเอกสารอ้างอิง
+  ├─ เครื่องมือวิเคราะห์/สร้างภาพ
+  ├─ รูปแบบ Word/LaTeX และ venue ที่ใช้บ่อย
+  └─ ค่าเริ่มต้น ข้อยกเว้น และทางเลือกสำรอง</code></pre>
+<p>ความเป็นส่วนบุคคลไม่ได้หมายถึงลดมาตรฐาน ตัวเลือกของผู้เรียนเปลี่ยนได้เฉพาะส่วนที่เจ้าของงานมีอำนาจตัดสิน ข้อกำหนด IRB, privacy, copyright, institutional policy, data-use agreement และ venue guideline ยังคงอยู่เหนือค่าเริ่มต้นส่วนตัว</p>
+<h2 id="personal-ai-research-workflow-framework">Personal AI Research Workflow Framework</h2>
+<p>workflow ทุกใบต้องมี 12 ส่วน</p>
+<table>
+<thead>
+<tr class="header">
+<th>ส่วน</th>
+<th>คำถามที่ต้องตอบ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1. Purpose</td>
+<td>งานนี้แก้ปัญหาอะไร และไม่ครอบคลุมอะไร</td>
+</tr>
+<tr class="even">
+<td>2. Trigger</td>
+<td>เมื่อใดควรเริ่มใช้ workflow นี้</td>
+</tr>
+<tr class="odd">
+<td>3. Intake</td>
+<td>ต้องมีข้อมูล เอกสาร หลักฐาน สิทธิ และบริบทใดก่อนเริ่ม</td>
+</tr>
+<tr class="even">
+<td>4. Defaults</td>
+<td>ตัวเลือกใดใช้เป็นค่าเริ่มต้นได้โดยไม่ถามซ้ำ</td>
+</tr>
+<tr class="odd">
+<td>5. Decisions</td>
+<td>ตัวเลือกใดต้องถามเจ้าของงานหรือผู้เชี่ยวชาญทุกครั้ง</td>
+</tr>
+<tr class="even">
+<td>6. Steps</td>
+<td>ลำดับงานหลักและ artifact ที่สร้างในแต่ละขั้นคืออะไร</td>
+</tr>
+<tr class="odd">
+<td>7. Evidence</td>
+<td>ข้อกล่าวอ้างและผลลัพธ์ย้อนกลับไปยังแหล่งใด</td>
+</tr>
+<tr class="even">
+<td>8. Evals</td>
+<td>เกณฑ์ผ่าน/ไม่ผ่านของแต่ละขั้นคืออะไร</td>
+</tr>
+<tr class="odd">
+<td>9. Human Gate</td>
+<td>จุดใดต้องใช้วิจารณญาณของผู้วิจัย อาจารย์ หรือผู้เชี่ยวชาญ</td>
+</tr>
+<tr class="even">
+<td>10. External Gate</td>
+<td>จุดใดต้องใช้ข้อมูลจริง guideline, IRB, reviewer, experiment หรือ stakeholder</td>
+</tr>
+<tr class="odd">
+<td>11. Stop/Escalation</td>
+<td>เมื่อใดต้องหยุด ห้ามเดา หรือเปลี่ยนไปใช้ทางเลือกสำรอง</td>
+</tr>
+<tr class="even">
+<td>12. Record</td>
+<td>ต้องบันทึก input, output, version, decision, error และการเปลี่ยนแปลงอะไร</td>
+</tr>
+</tbody>
+</table>
+<p>framework กำหนดโครงขั้นต่ำ ไม่กำหนดว่าเครื่องมือใดดีที่สุดสำหรับทุกคน</p>
+<h2 id="choice-architecture--ตัดสินใจล่วงหน้าอย่างมีขอบเขต">Choice Architecture — ตัดสินใจล่วงหน้าอย่างมีขอบเขต</h2>
+<p>ผู้เรียนจัดทุกตัวเลือกไว้หนึ่งในสี่สถานะ</p>
+<table>
+<thead>
+<tr class="header">
+<th>สถานะ</th>
+<th>ความหมาย</th>
+<th>ตัวอย่าง</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>DEFAULT</strong></td>
+<td>ใช้อัตโนมัติได้เมื่อไม่มีเงื่อนไขขัดแย้ง</td>
+<td>ภาษาเอกสารหลัก โครงสร้างโฟลเดอร์ รูปแบบชื่อแฟ้ม แหล่งค้นเริ่มต้น รูปแบบบันทึกผล</td>
+</tr>
+<tr class="even">
+<td><strong>ASK</strong></td>
+<td>ต้องถามก่อน เพราะคำตอบเปลี่ยนผลหรือมีความเสี่ยง</td>
+<td>target venue, research claim, วิธีสถิติ, การตัดข้อมูลสูญหาย, การเปิดเผยข้อมูล, การติดตั้งเครื่องมือ</td>
+</tr>
+<tr class="odd">
+<td><strong>NEVER</strong></td>
+<td>ห้าม AI ทำ แม้ผู้ใช้ไม่ได้เตือน</td>
+<td>แต่ง citation/ผลทดลอง ส่งข้อมูลลับไปบริการภายนอก เปลี่ยนไฟล์ต้นฉบับ ลบข้อมูล หรือรับรอง IRB/acceptance</td>
+</tr>
+<tr class="even">
+<td><strong>ESCALATE</strong></td>
+<td>ส่งให้บุคคลหรือหลักฐานภายนอกตัดสิน</td>
+<td>novelty, domain validity, ethics approval, legal interpretation, authorship dispute, final submission</td>
+</tr>
+</tbody>
+</table>
+<h3 id="กฎชนกันของตัวเลือก">กฎชนกันของตัวเลือก</h3>
+<p>เมื่อค่าเริ่มต้นส่วนตัวขัดกับเงื่อนไขเฉพาะงาน ให้ใช้ลำดับความสำคัญดังนี้</p>
+<pre class="text"><code>กฎหมาย/จริยธรรม/สิทธิข้อมูล
+  &gt; ข้อกำหนดสถาบันและโครงการ
+  &gt; ข้อกำหนดของ venue หรือแหล่งข้อมูล
+  &gt; ระเบียบวิธีและหลักฐานเฉพาะงาน
+  &gt; ค่าเริ่มต้นส่วนบุคคล
+  &gt; ความสะดวกของเครื่องมือ</code></pre>
+<h2 id="personal-research-profile">Personal Research Profile</h2>
+<p>ก่อนสร้าง workflow ให้กำหนดบริบทที่ใช้บ่อย</p>
+<ul>
+<li>สาขา หัวข้อ และชนิดคำถามวิจัย</li>
+<li>ภาษาเขียน ภาษาแหล่งข้อมูล และรูปแบบคำศัพท์</li>
+<li>ชนิดข้อมูลที่ใช้ เช่น เอกสาร แบบสอบถาม การทดลอง ภาพ พิกัด หรือชุดข้อมูลเปิด</li>
+<li>ระดับความลับและสถานที่เก็บข้อมูลที่อนุญาต</li>
+<li>แหล่งค้น ฐานข้อมูล และ reference manager ที่ใช้</li>
+<li>วิธีตรวจ DOI, citation, metadata และหลักฐานต้นทาง</li>
+<li>เครื่องมือวิเคราะห์ สถิติ visualization และรูปแบบส่งออก</li>
+<li>venue/รูปแบบบทความที่ใช้บ่อย โดยยังต้องตรวจ guideline ใหม่ทุกงาน</li>
+<li>ผู้ตัดสิน L2 เช่น อาจารย์ที่ปรึกษา ผู้เชี่ยวชาญสาขา นักสถิติ หรือเจ้าของข้อมูล</li>
+<li>แหล่ง L3 เช่น participant, experiment, reviewer, IRB, stakeholder หรือ guideline ปัจจุบัน</li>
+<li>เครื่องมือสำรองเมื่อบริการหลักใช้ไม่ได้</li>
+</ul>
+<p>Profile มีไว้ลดคำถามซ้ำ ไม่ใช่ใช้แทน intake ของโครงการใหม่</p>
+<h2 id="personal-ai-research-kit">Personal AI Research Kit</h2>
+<p>ชุดที่ส่งต้องเป็นโฟลเดอร์ standalone ซึ่งเปิดแล้วรู้ว่าจะเริ่มอย่างไร</p>
+<pre class="text"><code>my-ai-research-kit/
+├── README.md                  # เริ่มใช้อย่างไรและขอบเขตของชุด
+├── profile.md                 # บริบทและความต้องการส่วนบุคคล
+├── defaults.md                # DEFAULT / ASK / NEVER / ESCALATE
+├── guardrails.md              # privacy, ethics, evidence และ destructive-action rules
+├── workflows/
+│   ├── workflow-card-template.md
+│   └── my-core-workflow.md
+├── templates/                 # intake, analysis, review, venue, document ฯลฯ
+├── checklists/                # evals และ QA gates
+├── project-template/          # โครงโฟลเดอร์โครงการวิจัยใหม่
+├── notes-templates/           # daily, decision, meeting, reading และ AI-use notes
+├── sharing/                   # collaboration protocol และ share-package checklist
+├── backup/                    # backup policy, inventory และ restore-test template
+├── examples/                  # ตัวอย่างที่ไม่มีข้อมูลลับ
+├── tests/                     # test cases และ expected decisions
+├── records/                   # run log ตัวอย่าง
+└── CHANGELOG.md               # รุ่น เหตุผล และผลกระทบของการแก้</code></pre>
+<p>ชุดนี้ต้องเป็น tool-neutral ก่อน กล่าวคืออ่านและใช้ได้แม้เปลี่ยน AI frontend จากนั้นจึงมี adapter หรือคำแนะนำเฉพาะเครื่องมือเมื่อจำเป็น</p>
+<h2 id="research-operations--ให้-workflow-อยู่รอดในงานจริง">Research Operations — ให้ Workflow อยู่รอดในงานจริง</h2>
+<p>Personal Kit ต้องครอบคลุมการจัดแฟ้ม การจดบันทึก การทำงานร่วมกัน และการกู้คืนข้อมูล ไม่ใช่เฉพาะคำสั่งให้ AI ผลิตผลลัพธ์</p>
+<h3 id="1-ให้-ai-ช่วยจัดโฟลเดอร์อย่างปลอดภัย">1. ให้ AI ช่วยจัดโฟลเดอร์อย่างปลอดภัย</h3>
+<p>โครงเริ่มต้นปรับได้ตามสาขา แต่ควรแยกข้อมูลต้นฉบับ งานระหว่างทำ บันทึก และผลส่งออก</p>
+<pre class="text"><code>research-project/
+├── README.md
+├── governance/                # permission, ethics, data-use, venue rules
+├── sources/original/          # เอกสารต้นฉบับ ห้ามเขียนทับ
+├── data/
+│   ├── raw/                   # ข้อมูลต้นฉบับ ห้ามเขียนทับ
+│   ├── interim/               # ข้อมูลระหว่างแปลง
+│   └── processed/             # ข้อมูลพร้อมวิเคราะห์
+├── notes/
+│   ├── inbox/
+│   ├── daily/
+│   ├── decisions/
+│   ├── meetings/
+│   ├── reading/
+│   └── ai-runs/
+├── design/                    # RQ, hypothesis, experiment/study design
+├── analysis/                  # scripts, parameters, results, QA
+├── manuscript/sections/       # Markdown source
+├── figures/
+├── tables/
+├── outputs/
+│   ├── drafts/
+│   └── final/
+├── shared/                    # ชุดที่ตรวจแล้วสำหรับผู้ร่วมงาน
+└── archive/                   # รุ่นเก่าที่เก็บตามนโยบาย</code></pre>
+<p>AI เป็นผู้สำรวจและจัดให้ได้ แต่ต้องทำตามลำดับ</p>
+<ol type="1">
+<li>ทำรายการแฟ้มและขนาดโดยไม่แก้ไข</li>
+<li>เสนอ <code>folder-plan.md</code> ซึ่งแสดง source → destination, เหตุผล, collision และแฟ้มที่ไม่แน่ใจ</li>
+<li>ให้เจ้าของงานอนุมัติขอบเขตและรายการย้าย</li>
+<li>สร้างโฟลเดอร์และ <strong>ย้าย</strong> แฟ้มที่อนุมัติ ห้ามลบหรือเขียนทับ</li>
+<li>เก็บแฟ้มซ้ำหรือกำกวมไว้ใน quarantine/review folder</li>
+<li>สร้าง <code>file-manifest.csv</code> และ <code>organization-log.md</code></li>
+<li>ตรวจจำนวนแฟ้ม ขนาดรวม ลิงก์ และ path หลังจัดเสร็จ</li>
+</ol>
+<p>ห้ามสั่ง AI จัดทั้ง home directory, cloud drive หรือโฟลเดอร์กว้างโดยไม่มี target ชัด ห้ามใช้ wildcard หรือตัวแปร path ที่ยังไม่ตรวจสอบกับการย้าย/ลบ และห้ามถือว่าแฟ้มที่ชื่อคล้ายกันเป็นแฟ้มซ้ำโดยไม่เปรียบเทียบเนื้อหา</p>
+<p><strong>Folder Organization Card</strong></p>
+<blockquote>
+<p>สำรวจโฟลเดอร์ที่ระบุแบบอ่านอย่างเดียว จัดทำ inventory และเสนอ <code>folder-plan.md</code> ตาม project template แสดงการย้ายทุกแฟ้ม source → destination, collision, duplicate candidate และรายการที่ไม่แน่ใจ ห้ามย้าย ลบ เปลี่ยนชื่อ หรือเขียนทับจนกว่าจะได้รับอนุมัติ หลังอนุมัติให้ใช้ move-only, เก็บ manifest/log และตรวจจำนวนแฟ้มกับขนาดรวมก่อน–หลัง</p>
+</blockquote>
+<h3 id="2-การจดบันทึกระหว่างทำวิจัย">2. การจดบันทึกระหว่างทำวิจัย</h3>
+<p>ประวัติสนทนากับ AI ไม่ใช่สมุดบันทึกการวิจัย เพราะค้นยาก เปลี่ยนระบบไม่ได้ และมักขาดเหตุผลของการตัดสินใจ ให้บันทึกเป็น Markdown ที่อยู่กับโครงการ</p>
+<table>
+<thead>
+<tr class="header">
+<th>บันทึก</th>
+<th>เนื้อหาขั้นต่ำ</th>
+<th>ใช้เมื่อ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Daily research note</td>
+<td>วันที่ เป้าหมาย สิ่งที่ทำ หลักฐาน ผลที่พบ ปัญหา การตัดสินใจ และ next action</td>
+<td>ทุกช่วงทำงานที่มีสาระสำคัญ</td>
+</tr>
+<tr class="even">
+<td>Decision record</td>
+<td>คำถาม ตัวเลือก หลักฐาน ผู้ตัดสิน เหตุผล วันที่ และเงื่อนไขทบทวน</td>
+<td>เปลี่ยน RQ, method, metric, exclusion, venue หรือ interpretation</td>
+</tr>
+<tr class="odd">
+<td>Reading note</td>
+<td>citation/DOI คำถาม วิธี ผล ข้อจำกัด ข้อความที่อ้างได้ และความเชื่อมโยงกับงาน</td>
+<td>อ่านแหล่งสำคัญแต่ละเรื่อง</td>
+</tr>
+<tr class="even">
+<td>Meeting note</td>
+<td>ผู้เข้าร่วม ประเด็นตัดสินใจ งาน ผู้รับผิดชอบ และกำหนดติดตาม</td>
+<td>ประชุมกับที่ปรึกษา/ทีม</td>
+</tr>
+<tr class="odd">
+<td>Experiment/analysis note</td>
+<td>data/version, parameter, environment, run, output, anomaly และ interpretation</td>
+<td>ทดลอง วิเคราะห์ หรือสร้างรูป/ตาราง</td>
+</tr>
+<tr class="even">
+<td>AI-use note</td>
+<td>task, input classification, tool/model เมื่อเกี่ยวข้อง, output, verification, human decision และสิ่งที่ไม่ใช้</td>
+<td>AI มีผลต่อเนื้อหา/การตัดสินใจ/ผลผลิต</td>
+</tr>
+</tbody>
+</table>
+<p>ใช้ชื่อแฟ้มวันที่แบบ <code>YYYY-MM-DD-short-topic.md</code> และแยก <strong>ข้อเท็จจริง</strong>, <strong>การตีความ</strong>, <strong>การตัดสินใจ</strong>, <strong>สิ่งที่ยังไม่ทราบ</strong> และ <strong>งานถัดไป</strong> ให้ชัด AI ช่วยสรุปจาก artifacts ได้ แต่ต้องเชื่อมกลับไปยังแฟ้มหรือหลักฐาน ไม่สร้างบันทึกย้อนหลังจากความจำโดยไม่มีเครื่องหมายว่าเป็นการ reconstruct</p>
+<p><strong>Research Note Card</strong></p>
+<blockquote>
+<p>สร้างบันทึกชนิด ______ จาก artifacts และข้อความที่ให้เท่านั้น แยก fact, interpretation, decision, unresolved issue และ next action ระบุผู้ตัดสิน หลักฐาน/ตำแหน่ง วันที่ และ workflow version ห้ามเติมเหตุการณ์ เหตุผล หรือผลที่ไม่มีหลักฐาน บันทึกเป็น <code>YYYY-MM-DD-short-topic.md</code> ในโฟลเดอร์ notes ที่ถูกชนิด</p>
+</blockquote>
+<h3 id="3-การแชร์กับเพื่อนร่วมงาน">3. การแชร์กับเพื่อนร่วมงาน</h3>
+<p>การแชร์ที่ดีไม่ใช่ส่งทั้งโฟลเดอร์ แต่สร้าง <strong>share package</strong> ที่มีเฉพาะสิ่งจำเป็นและมีเจ้าของชัดเจน</p>
+<ul>
+<li>ระบุผู้รับ บทบาท วัตถุประสงค์ ระยะเวลา และสิทธิ read/comment/edit</li>
+<li>ระบุ source of truth และวิธีส่งการแก้กลับ ห้ามมีสำเนาหลายชุดที่ไม่รู้ว่าชุดใดล่าสุด</li>
+<li>ตรวจ privacy, consent, copyright, data-use agreement และ anonymous-review constraints</li>
+<li>ตัด credential, token, local absolute path, cache, temporary build และข้อมูลส่วนบุคคลที่ไม่จำเป็น</li>
+<li>ใช้ de-identified, aggregated, redacted หรือ mock data เมื่อเพียงพอ</li>
+<li>แนบ <code>SHARE-README.md</code>, <code>share-manifest.csv</code>, data dictionary, environment/build instructions และ known limitations</li>
+<li>กำหนดวิธีตั้งชื่อ version, review, merge และอนุมัติ final artifact</li>
+<li>ตรวจแพ็กเกจจากมุมของผู้รับว่าเปิดได้ ลิงก์ไม่ขาด และไม่มีสิ่งที่ไม่ควรส่ง</li>
+</ul>
+<p>AI เตรียมสำเนาและ manifest ได้ แต่ห้ามส่งอีเมล อัปโหลด เปลี่ยน permission หรือเชิญบุคคลภายนอกโดยไม่ได้รับอนุมัติที่ระบุผู้รับและขอบเขตชัดเจน</p>
+<p><strong>Share Package Card</strong></p>
+<blockquote>
+<p>เตรียม share package สำหรับผู้รับ ______ เพื่อวัตถุประสงค์ ______ แบบ read/comment/edit ตรวจสิทธิและระดับความลับก่อน คัดลอกเฉพาะแฟ้มที่จำเป็นลง <code>shared/&lt;package-name&gt;/</code> ลบ credential/local path และใช้ redacted/mock data เมื่อเหมาะสม สร้าง <code>SHARE-README.md</code> กับ <code>share-manifest.csv</code> แล้วรายงานรายการรวม รายการตัดออก และความเสี่ยง ห้ามอัปโหลดหรือเปลี่ยน permission จนกว่าจะอนุมัติ</p>
+</blockquote>
+<h3 id="4-การสำรองและกู้คืนข้อมูล">4. การสำรองและกู้คืนข้อมูล</h3>
+<p><strong>Cloud sync ไม่เท่ากับ backup</strong> เพราะการลบ การเขียนทับ หรือแฟ้มเสียอาจถูก sync ไปทุกเครื่อง และ <strong>version control ไม่เท่ากับ backup</strong> เพราะอาจไม่เก็บข้อมูลขนาดใหญ่ ข้อมูลลับ หรือประวัติที่ยังไม่ commit</p>
+<p>แผนสำรองต้องระบุ</p>
+<ul>
+<li>ข้อมูลใดต้องสำรอง/ห้ามสำรองไปที่ใดตามสิทธิและจริยธรรม</li>
+<li>source of truth และผู้รับผิดชอบ</li>
+<li>ความถี่ รุ่นย้อนหลัง ระยะเวลาเก็บ และวิธีลบเมื่อครบกำหนด</li>
+<li>สำเนาที่แยกจาก working copy และอย่างน้อยหนึ่งสำเนาที่ไม่ถูก sync การลบโดยทันที</li>
+<li>การเข้ารหัสและการจัดการกุญแจสำหรับข้อมูลอ่อนไหว</li>
+<li>checksum/inventory หรือวิธีตรวจความครบถ้วน</li>
+<li>restore procedure และวันที่ทดสอบกู้คืนล่าสุด</li>
+</ul>
+<p>ใช้หลัก 3-2-1 เมื่อข้อกำหนดของข้อมูลอนุญาต: อย่างน้อย 3 สำเนา บนสื่อหรือระบบ 2 ชนิด และ 1 สำเนาอยู่นอกระบบหลัก แต่ห้ามทำสำเนาข้อมูลควบคุมไปยังปลายทางที่ไม่ได้รับอนุญาตเพียงเพื่อให้ครบสูตร</p>
+<p>AI ช่วยสร้าง <code>backup-plan.md</code>, <code>backup-inventory.csv</code>, script ที่ตรวจสอบแล้ว และ restore checklist ได้ แต่ห้ามสร้างบัญชี เชื่อมปลายทางภายนอก ใช้ credential หรือเริ่มสำรองข้อมูลจริงโดยไม่ได้รับอนุมัติ</p>
+<p><strong>Backup and Restore Card</strong></p>
+<blockquote>
+<p>จัดทำแผนสำรองสำหรับโครงการนี้จาก data classification และสิทธิที่ระบุ แยก working copy, sync, version control และ backup ระบุแฟ้ม/โฟลเดอร์ที่รวมและไม่รวม ความถี่ retention encryption owner และ restore procedure สร้าง inventory/checksum แบบอ่านอย่างเดียวก่อน ห้ามคัดลอกข้อมูลหรือเชื่อมปลายทางภายนอกจนกว่าจะอนุมัติ จากนั้นทดสอบกู้คืนด้วยแฟ้มตัวอย่างที่ไม่อ่อนไหวและบันทึกผล</p>
+</blockquote>
+<h2 id="workflow-cards-ที่เลือกประกอบเป็นชุด">Workflow Cards ที่เลือกประกอบเป็นชุด</h2>
+<p>ไม่จำเป็นต้องมีทุกใบ ผู้เรียนเลือกตามหลักสูตรและงานของตน</p>
+<table>
+<thead>
+<tr class="header">
+<th>Workflow card</th>
+<th>งานที่ครอบคลุม</th>
+<th>ค่าเริ่มต้นที่อาจกำหนดล่วงหน้า</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Research Build-up</td>
+<td>interest/expertise → literature → problem/gap → objective/RQ → rough design</td>
+<td>แหล่งค้น ภาษา ชนิด evidence, venue family และ template M5/M6</td>
+</tr>
+<tr class="even">
+<td>Literature and Citation Review</td>
+<td>document → claim/citation extraction → source verification → finding</td>
+<td>DOI resolver, reference manager, severity scale และ review format</td>
+</tr>
+<tr class="odd">
+<td>Research Logic Review</td>
+<td>problem/objective/hypothesis/method/result/conclusion audit</td>
+<td>logic checklist, finding schema และ escalation to domain expert</td>
+</tr>
+<tr class="even">
+<td>Experiment Design</td>
+<td>claim → hypothesis tree → variables/metrics/comparator/sample/instrument/result rules</td>
+<td>design workbook, default completeness checks และ ethics trigger screen</td>
+</tr>
+<tr class="odd">
+<td>Data Analysis and Visualization</td>
+<td>CSV/Excel/SPSS → DataFrame → analysis → table/figure → QA</td>
+<td>import cards, Python libraries, static/interactive/map choices และ export formats</td>
+</tr>
+<tr class="even">
+<td>Venue Document Production</td>
+<td>venue guideline → author kit → Markdown sections → staged build → PDF QA</td>
+<td>folder structure, build ladder, citation verification และ fallback template</td>
+</tr>
+<tr class="odd">
+<td>Research Presentation</td>
+<td>verified claims → audience → storyline → slide/poster → rehearsal</td>
+<td>slide ratio, visual style, duration, speaker-note structure และ accessibility checks</td>
+</tr>
+<tr class="even">
+<td>Research Project Operations</td>
+<td>folder organization → notes → share package → backup/restore</td>
+<td>project template, naming, note types, collaboration permissions, retention และ restore checks</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ชุดขั้นต่ำตามวิชาย่อย">ชุดขั้นต่ำตามวิชาย่อย</h3>
+<ul>
+<li><strong>AI for Research:</strong> workflow หลักหนึ่งใบที่เชื่อมอย่างน้อยสามช่วงของงานวิจัย และ support cards อย่างน้อยสองใบ</li>
+<li><strong>Build-up:</strong> Research Build-up เป็น core และ Experiment Design เป็น support</li>
+<li><strong>Reviews:</strong> Literature/Citation หรือ Research Logic Review เป็น core และ checklist ที่ใช้ซ้ำได้</li>
+<li><strong>Publication:</strong> Venue Document Production เป็น core และ Data Visualization หรือ Presentation เป็น support</li>
+</ul>
+<p>ผู้เรียนอาจเพิ่มใบอื่นได้ แต่จำนวนมากไม่ใช่คุณภาพ หาก workflow ไม่ผ่าน tests ให้ลดขอบเขตก่อนเพิ่มความสามารถ</p>
+<h2 id="จาก-framework-สู่-workflow-ของเรา">จาก Framework สู่ Workflow ของเรา</h2>
+<h3 id="step-1--select-one-repeated-pain">Step 1 — Select One Repeated Pain</h3>
+<p>เลือกงานที่เกิดซ้ำและมีต้นทุนจริง เช่น ตรวจ citation, เตรียมข้อมูลแบบสอบถาม, สร้างกราฟ, ตรวจ logic หรือประกอบบทความ หลีกเลี่ยงโจทย์กว้างว่า “ทำวิจัยทั้งหมดให้ฉัน”</p>
+<h3 id="step-2--map-current-practice">Step 2 — Map Current Practice</h3>
+<p>เขียนวิธีที่ทำอยู่จริง ระบุจุดเสียเวลา จุดผิดพลาด ผู้ที่ต้องตัดสินใจ และหลักฐานที่ต้องรอ ไม่เริ่มจากความสามารถของ AI</p>
+<h3 id="step-3--fill-the-12-part-framework">Step 3 — Fill the 12-Part Framework</h3>
+<p>กำหนด purpose, trigger, intake, outputs, evidence, evals, human/external gates และ stop conditions ให้ครบก่อนเลือกเครื่องมือ</p>
+<h3 id="step-4--preselect-choices">Step 4 — Preselect Choices</h3>
+<p>กรอก <code>defaults.md</code> และอธิบายเหตุผลของ DEFAULT/ASK/NEVER/ESCALATE แต่ละข้อ เลือกทางสำรองอย่างน้อยหนึ่งทางสำหรับแหล่งข้อมูล เครื่องมือหลัก หรือรูปแบบส่งออกที่สำคัญ</p>
+<h3 id="step-5--assemble-the-kit">Step 5 — Assemble the Kit</h3>
+<p>ให้ AI สร้างโฟลเดอร์และไฟล์จาก template แต่ผู้เรียนตรวจชื่อ ขอบเขต ความซ้ำซ้อน และความสามารถในการย้ายไปโครงการอื่น ห้ามฝัง path, credential หรือข้อมูลลับจากเครื่องส่วนตัว</p>
+<h3 id="step-6--dry-run">Step 6 — Dry Run</h3>
+<p>ใช้กรณีตัวอย่างที่ทราบคำตอบบางส่วน ตรวจว่า workflow เริ่มถูกจุด สร้าง artifact ครบ หยุดเมื่อควรหยุด และไม่ถามสิ่งที่กำหนดเป็น DEFAULT แล้ว</p>
+<h3 id="step-7--red-team-and-revise">Step 7 — Red-team and Revise</h3>
+<p>ทดสอบ failure cases แก้ workflow และบันทึกใน <code>CHANGELOG.md</code> ว่าเปลี่ยนอะไร เพราะอะไร และ test ใดพิสูจน์การแก้</p>
+<h3 id="step-8--freeze-version-10">Step 8 — Freeze Version 1.0</h3>
+<p>กำหนดรุ่น วันที่ ขอบเขตที่ผ่านการทดสอบ และ known limitations พร้อมงานจริงขนาดเล็กที่จะทดลองภายหลัง</p>
+<h2 id="test-suite-ขั้นต่ำ">Test Suite ขั้นต่ำ</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>สิ่งที่ต้องเกิด</th>
+<th>สิ่งที่ถือว่าล้มเหลว</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Happy path</td>
+<td>input ครบและได้ artifact ตาม schema</td>
+<td>output สวยแต่ตรวจย้อนกลับไม่ได้</td>
+</tr>
+<tr class="even">
+<td>Missing input</td>
+<td>ระบุสิ่งที่ขาดและหยุดก่อนสรุป</td>
+<td>เดาค่าหรือสร้างข้อมูลเติมเอง</td>
+</tr>
+<tr class="odd">
+<td>Conflicting evidence</td>
+<td>แสดงแหล่งที่ขัดกันและส่งให้มนุษย์ตัดสิน</td>
+<td>เลือกแหล่งที่เข้ากับคำตอบโดยไม่บอก</td>
+</tr>
+<tr class="even">
+<td>Phantom citation/result</td>
+<td>ปฏิเสธหรือระบุว่าไม่ตรวจสอบได้</td>
+<td>สร้าง reference หรือผลทดลองขึ้นใหม่</td>
+</tr>
+<tr class="odd">
+<td>Sensitive data</td>
+<td>ใช้ privacy rule, local/mock/redacted fallback หรือหยุด</td>
+<td>ส่งข้อมูลไปยังเครื่องมือที่ไม่ได้รับอนุญาต</td>
+</tr>
+<tr class="even">
+<td>Tool unavailable</td>
+<td>ใช้ fallback หรือสร้างคำแนะนำกู้คืน</td>
+<td>เปลี่ยนเครื่องมือ/ติดตั้ง package โดยพลการ</td>
+</tr>
+<tr class="odd">
+<td>Venue/rule changed</td>
+<td>ตรวจ guideline ปัจจุบันและยกเลิก default ที่ล้าสมัย</td>
+<td>ใช้ template เก่าเพราะเคยใช้ได้</td>
+</tr>
+<tr class="even">
+<td>Destructive request</td>
+<td>ขออนุมัติและระบุ target ให้ชัด หรือปฏิเสธ</td>
+<td>ลบ/เขียนทับแฟ้มต้นฉบับ</td>
+</tr>
+<tr class="odd">
+<td>QA failure</td>
+<td>กลับไปแก้ source layer ที่ถูกต้องและรันทดสอบซ้ำ</td>
+<td>แก้ generated output เพื่อซ่อนอาการ</td>
+</tr>
+<tr class="even">
+<td>Folder collision</td>
+<td>หยุดและเสนอชื่อ/ตำแหน่งใหม่โดยไม่เขียนทับ</td>
+<td>เขียนทับหรือรวมแฟ้มเพราะชื่อคล้ายกัน</td>
+</tr>
+<tr class="odd">
+<td>Unsafe share</td>
+<td>ตัดข้อมูล/credential ที่ไม่จำเป็นและขออนุมัติผู้รับ/สิทธิ</td>
+<td>อัปโหลดหรือเปลี่ยน permission เอง</td>
+</tr>
+<tr class="even">
+<td>Backup restore</td>
+<td>กู้แฟ้มตัวอย่างได้และเทียบความครบถ้วน</td>
+<td>มีเพียงข้อความว่า backup สำเร็จแต่ไม่เคย restore</td>
+</tr>
+</tbody>
+</table>
+<p>workflow ผ่านเมื่อผลการตัดสินใจถูกต้อง ไม่ใช่เมื่อถ้อยคำตอบตรงกับตัวอย่างทุกคำ</p>
+<h2 id="run-record--หลักฐานจากการใช้-workflow">Run Record — หลักฐานจากการใช้ Workflow</h2>
+<p>ทุกครั้งที่ใช้จริงให้บันทึกอย่างน้อย</p>
+<ul>
+<li>workflow/version และวันที่</li>
+<li>project/case identifier ที่ไม่เปิดเผยข้อมูลเกินจำเป็น</li>
+<li>input และสิทธิการใช้</li>
+<li>choices ที่ใช้ค่า DEFAULT และ choices ที่ ASK</li>
+<li>AI/tool/model/environment ที่เกี่ยวข้องเมื่อมีผลต่อการทำซ้ำ</li>
+<li>artifacts และตำแหน่ง</li>
+<li>verification results</li>
+<li>human/external decisions</li>
+<li>errors, fallback และ unresolved issues</li>
+<li>สิ่งที่ควรแก้ใน workflow รุ่นถัดไป</li>
+</ul>
+<p>ห้ามบันทึก credential, token, password หรือข้อมูลลับลงใน kit</p>
+<h2 id="โครงกิจกรรมในชั้นเรียน">โครงกิจกรรมในชั้นเรียน</h2>
+<ol type="1">
+<li><strong>Pain-point Inventory:</strong> เลือกงานซ้ำที่มีประโยชน์จริงหนึ่งเรื่อง</li>
+<li><strong>Framework Mapping:</strong> เติมกรอบ 12 ส่วนโดยยังไม่เลือก AI tool</li>
+<li><strong>Choice Clinic:</strong> จัดตัวเลือกเป็น DEFAULT/ASK/NEVER/ESCALATE และตรวจลำดับอำนาจ</li>
+<li><strong>Kit Assembly:</strong> สร้างโฟลเดอร์ <code>my-ai-research-kit/</code> และ project template</li>
+<li><strong>Messy Folder Drill:</strong> ให้ AI inventory และเสนอ move-only plan จากโฟลเดอร์จำลอง</li>
+<li><strong>Research Note Drill:</strong> สร้าง daily/decision/AI-use note จาก artifacts ชุดเดียวกัน</li>
+<li><strong>Share Package Drill:</strong> เตรียมชุดแชร์แบบ redacted พร้อม manifest โดยยังไม่อัปโหลด</li>
+<li><strong>Restore Drill:</strong> ตรวจแผน backup และกู้แฟ้มตัวอย่างหนึ่งชุด</li>
+<li><strong>Dry Run:</strong> ใช้กรณีปกติและบันทึก run record</li>
+<li><strong>Chaos Test:</strong> สุ่ม missing input, conflict, privacy, phantom citation, tool failure, venue change, file collision หรือ unsafe share</li>
+<li><strong>Peer Attack:</strong> เพื่อนพยายามหาจุดที่ workflow เดา ข้ามหลักฐาน ถามมากเกินไป หรือจัดการแฟ้มไม่ปลอดภัย</li>
+<li><strong>Revise and Freeze:</strong> แก้ tests, บันทึก changelog และกำหนด Version 1.0</li>
+<li><strong>Walkthrough:</strong> สาธิต trigger → defaults → steps → evidence/evals → human gate → output ภายในกรณีเดียว</li>
+</ol>
+<h2 id="การประเมินคุณภาพ">การประเมินคุณภาพ</h2>
+<table>
+<thead>
+<tr class="header">
+<th>ด้าน</th>
+<th>คำถามประเมิน</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Framework completeness</td>
+<td>12 ส่วนครบและเชื่อมกันหรือไม่</td>
+</tr>
+<tr class="even">
+<td>Personal fit</td>
+<td>defaults สอดคล้องกับสาขา เครื่องมือ ข้อมูล และงานซ้ำจริงหรือไม่</td>
+</tr>
+<tr class="odd">
+<td>Choice discipline</td>
+<td>ASK/NEVER/ESCALATE ป้องกันการตัดสินใจเกินอำนาจหรือไม่</td>
+</tr>
+<tr class="even">
+<td>Evidence and QA</td>
+<td>output ย้อนกลับได้และมีเกณฑ์ผ่าน/ไม่ผ่านหรือไม่</td>
+</tr>
+<tr class="odd">
+<td>Failure handling</td>
+<td>มี stop/fallback/recovery ที่ทดสอบแล้วหรือไม่</td>
+</tr>
+<tr class="even">
+<td>Portability</td>
+<td>ย้ายไปโครงการหรือ AI frontend อื่นโดยไม่พึ่ง path/credential ส่วนตัวได้หรือไม่</td>
+</tr>
+<tr class="odd">
+<td>Maintainability</td>
+<td>มี version, changelog, owner และเงื่อนไขทบทวนหรือไม่</td>
+</tr>
+<tr class="even">
+<td>Research operations</td>
+<td>โฟลเดอร์ บันทึก การแชร์ backup และ restore มีเจ้าของ กติกา และหลักฐานหรือไม่</td>
+</tr>
+<tr class="odd">
+<td>Practical value</td>
+<td>ลดงานซ้ำหรือความเสี่ยงจริง โดยไม่เพิ่มภาระตรวจมากเกินประโยชน์หรือไม่</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ผลผลิตและเกณฑ์ผ่าน">ผลผลิตและเกณฑ์ผ่าน</h2>
+<ul>
+<li>โฟลเดอร์ <code>my-ai-research-kit/</code> ที่มี README, profile, defaults, guardrails, workflow cards, templates, checklists, examples, tests และ changelog</li>
+<li>core workflow ที่กรอก framework ครบ 12 ส่วน</li>
+<li>test results อย่างน้อย happy path และ failure cases สามประเภท</li>
+<li>run record หนึ่งกรณี</li>
+<li><code>folder-plan.md</code>, <code>file-manifest.csv</code> และ research-note templates</li>
+<li>share-package protocol/manifest และ <code>backup-plan.md</code> พร้อม restore-test record</li>
+<li>Version 1.0 พร้อม known limitations</li>
+<li>walkthrough และ peer-review findings พร้อมการแก้อย่างน้อยหนึ่งข้อ</li>
+<li><a href="downloads/module-09-personal-workflow-kit-workbook.md">สมุดงาน Module 9</a> ที่กรอกครบ</li>
+</ul>
+<p>เกณฑ์ผ่านคือบุคคลอื่นสามารถอ่าน README แล้วใช้กรณีตัวอย่างเพื่อเรียก workflow ได้ เข้าใจว่าค่าใดกำหนดไว้แล้ว จุดใดต้องถาม จุดใดห้ามทำ จุดใดต้องส่งต่อ และสามารถตรวจผลจาก artifacts/tests/run record ได้</p>
+<h2 id="การเตรียมของผู้สอน">การเตรียมของผู้สอน</h2>
+<ul>
+<li>empty Personal AI Research Kit template</li>
+<li>messy-folder mock, note-source artifacts, unsafe-share case และ backup/restore drill pack</li>
+<li>workflow-card template ที่มี framework 12 ส่วน</li>
+<li>course-specific starter cards สำหรับ Build-up, Reviews, Publication และหลักสูตรเต็ม</li>
+<li>choice cards สำหรับ DEFAULT/ASK/NEVER/ESCALATE</li>
+<li>mock cases และ chaos-test cards ที่ไม่มีข้อมูลลับ</li>
+<li>ตัวอย่าง kit ที่ดีหนึ่งชุดและตัวอย่าง over-automated/over-questioning อย่างละหนึ่งชุด</li>
+<li>rubric และ peer-attack checklist</li>
+</ul>
+<h2 id="การนำไปใช้หลังจบโมดูล">การนำไปใช้หลังจบโมดูล</h2>
+<p>ทดลอง Version 1.0 กับงานจริงขนาดเล็กที่ได้รับอนุญาต บันทึก run record และผลกระทบ ได้แก่ เวลาที่ใช้ จำนวนข้อผิดพลาด จำนวนครั้งที่ต้องถามซ้ำ จุดที่ workflow หยุดถูกต้อง และงานตรวจเพิ่มเติม หลังมีหลักฐานจากการใช้จริงจึงออกรุ่น 1.1 ไม่ถือว่า kit ใช้งานได้ทั่วไปจากการทดสอบในชั้นเรียนเพียงครั้งเดียว</p>
+
+    </article>
+    <nav class="module-pagination" aria-label="โมดูลก่อนหน้าและถัดไป"><a class="button secondary" href="module-8.html">← ก่อนหน้า</a><a class="button primary" href="index.html">กลับหน้าหลัก →</a></nav>
+  </main>
+  <footer><p>AI for Research · ตรวจหลักฐานก่อนเชื่อคำตอบของ AI</p><p class="footer-credit">Department of Computer Engineering · Kasetsart University</p></footer>
+</body>
+</html>

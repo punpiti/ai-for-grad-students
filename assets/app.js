@@ -30,6 +30,20 @@ for (const link of links) {
   });
 }
 
+const markdownArticle = document.querySelector(".markdown-body");
+const markdownToc = document.querySelector(".markdown-toc ol");
+if (markdownArticle && markdownToc) {
+  for (const heading of markdownArticle.querySelectorAll("h2")) {
+    if (!heading.id) heading.id = heading.textContent.trim().toLowerCase().replace(/\s+/g, "-");
+    const item = document.createElement("li");
+    const link = document.createElement("a");
+    link.href = `#${heading.id}`;
+    link.textContent = heading.textContent;
+    item.appendChild(link);
+    markdownToc.appendChild(item);
+  }
+}
+
 const platformButtons = document.querySelectorAll("[data-platform-button]");
 const platformPanels = document.querySelectorAll("[data-platform-panel]");
 function selectPlatform(name, persist = false) {

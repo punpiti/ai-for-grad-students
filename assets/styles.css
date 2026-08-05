@@ -174,6 +174,30 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
 .activity-steps li { align-items: start; }
 .activity-steps .command { margin-top: 1rem; }
 .module-next { margin-top: 2rem; }
+.module-document-shell { max-width: var(--max); margin: auto; padding: 3rem 1.25rem 6rem; }
+.markdown-toc { margin: 1rem 0 3rem; padding: 1.25rem 1.5rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
+.markdown-toc > strong { color: var(--mint); font-size: 1.1rem; }
+.markdown-toc ol { columns: 2; gap: 2rem; margin: 1rem 0 0; padding-left: 1.3rem; }
+.markdown-toc li { break-inside: avoid; margin-bottom: .35rem; }
+.markdown-toc a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: .2em; }
+.markdown-body { max-width: 900px; }
+.markdown-body > h1 { margin: 1rem 0 2rem; font-size: clamp(2.8rem, 6vw, 5.7rem); line-height: 1.08; letter-spacing: -.045em; }
+.markdown-body h2 { margin: 4.5rem 0 1.25rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.15; }
+.markdown-body h3 { margin: 2.6rem 0 .8rem; font-size: clamp(1.35rem, 2.5vw, 1.8rem); }
+.markdown-body h4 { margin: 2rem 0 .6rem; font-size: 1.18rem; }
+.markdown-body p, .markdown-body li { max-width: 82ch; }
+.markdown-body li { margin-bottom: .45rem; }
+.markdown-body blockquote { margin: 1.5rem 0; padding: 1rem 1.25rem; border-left: 4px solid var(--accent); background: var(--paper-deep); }
+.markdown-body blockquote > :first-child { margin-top: 0; }
+.markdown-body blockquote > :last-child { margin-bottom: 0; }
+.markdown-body pre { overflow-x: auto; margin: 1.25rem 0; padding: 1.1rem 1.25rem; border-radius: .8rem; background: var(--surface-strong); color: var(--white); }
+.markdown-body code { overflow-wrap: anywhere; }
+.markdown-body :not(pre) > code { padding: .08em .32em; border: 1px solid var(--line); border-radius: .3rem; background: var(--paper-deep); }
+.markdown-body table { display: block; width: 100%; margin: 1.5rem 0 2rem; overflow-x: auto; border-collapse: collapse; font-size: .96rem; }
+.markdown-body th, .markdown-body td { min-width: 9rem; padding: .7rem .8rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+.markdown-body th { background: var(--paper-deep); color: var(--mint); }
+.markdown-body hr { margin: 3rem 0; border: 0; border-top: 1px solid var(--line); }
+.module-pagination { display: flex; justify-content: space-between; gap: 1rem; max-width: 900px; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line); }
 @media (max-width: 850px) {
   nav a:not(.nav-cta) { display: none; }
   nav .module-menu a { display: flex; }
@@ -183,6 +207,7 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
   .module-grid { grid-template-columns: 1fr 1fr; }
   .check-grid { grid-template-columns: 1fr 1fr; }
   .platform-grid, .concept-grid, .homework-grid, .level-grid { grid-template-columns: 1fr; }
+  .markdown-toc ol { columns: 1; }
 }
 @media (max-width: 560px) {
   body { font-size: 18px; }
