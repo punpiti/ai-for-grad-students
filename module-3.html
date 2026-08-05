@@ -7,15 +7,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css?v=20260804-1"><script src="assets/app.js?v=20260804-1" defer></script>
+  <script src="assets/site-shell.js?v=20260805-1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
-  <header class="site-header"><a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Research</span></a><nav aria-label="เมนูหลัก">
-    <a href="index.html">หน้าหลัก</a><details class="module-menu"><summary>โมดูล 1–9</summary><div>
-      <a class="available" href="prepare.html">1 · Prepare Workspace</a><a class="available" href="module-2.html">2 · First AI Research Task</a><a class="available" href="module-3.html" aria-current="page">3 · Problem–Gap–RQ</a>
-      <a class="available" href="module-4.html">4 · Literature Evidence</a><a class="available" href="module-5.html">5 · Research Logic</a><a class="available" href="module-6.html">6 · Experiment Design</a><a class="available" href="module-7.html">7 · Analysis &amp; Visuals</a><a class="available" href="module-8.html">8 · Document Production</a><a class="available" href="module-9.html">9 · Personal Workflow</a>
-    </div></details><a href="#activity">กิจกรรม</a><a href="#finish">ชิ้นงาน</a>
-  </nav></header>
+  <site-header current="3"></site-header>
   <main id="main">
     <section class="prepare-hero module-hero"><p class="eyebrow">Module 3 · Recommended 2–3 hours</p><h1>Problem → Gap →<br><span>Research Question</span></h1><p>เปลี่ยนเรื่องที่สนใจให้เป็นสายเหตุผลที่ตรวจย้อนกลับได้ โดยให้ AI ช่วยตั้งคำถามและท้าทายข้อสรุป แต่ให้หลักฐานและมนุษย์เป็นผู้ตัดสิน</p></section>
 
@@ -75,6 +71,6 @@
       <label><input type="checkbox"> เลือกทำทาง A หรือทาง B หนึ่งทาง และตรวจความพร้อมของตารางหลักฐานแล้ว</label><label><input type="checkbox"> แยก practical problem และ research problem ได้</label><label><input type="checkbox"> Evidence Inventory มีไฟล์และตำแหน่งที่ตรวจได้</label><label><input type="checkbox"> Gap Ledger ระบุขอบเขต หลักฐานคัดค้าน และสถานะ candidate</label><label><input type="checkbox"> ใช้ Gap Prosecutor และลดความมั่นใจหรือปฏิเสธ gap เมื่อจำเป็น</label><label><input type="checkbox"> ร่าง RQ เอง 3 ข้อก่อนให้ AI stress-test</label><label><input type="checkbox"> ตรวจสาย RQ → Gap → Problem → Evidence แล้ว</label><label><input type="checkbox"> เปิด <code>output/problem-gap-rq.md</code> และ PDF ได้</label>
     </div><p class="progress" aria-live="polite">ความคืบหน้า: <strong data-progress>0%</strong></p><div class="notice"><strong>Review gate:</strong> AI ไม่สามารถตัดสินความสำคัญ novelty ความเป็นไปได้ จริยธรรม หรือความเหมาะสมกับบริบทแทนอาจารย์ ผู้มีส่วนได้ส่วนเสีย และหลักฐานภายนอกได้ นำ candidate gap และ RQ ไปตรวจต่อใน Module 4</div><div class="hero-actions module-next"><a class="button secondary" href="module-2.html">← กลับ Module 2</a><a class="button primary" href="module-4.html">ไป Module 4 →</a></div></section>
   </main>
-  <footer><p><a href="index.html">AI for Research</a></p><div class="footer-credit"><p>Developed by One234@KU</p><p>© 2026 พันธุ์ปิติ เปี่ยมสง่า. All rights reserved.</p></div></footer>
+  <site-footer></site-footer>
 </body>
 </html>

@@ -9,28 +9,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-2">
-  <script src="assets/app.js?v=20260805-2" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-3">
+  <script src="assets/site-shell.js?v=20260805-1"></script>
+  <script src="assets/app.js?v=20260805-3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
-  <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Research</span></a>
-    <nav aria-label="เมนูหลัก"><a href="index.html">หน้าหลัก</a><details class="module-menu"><summary>โมดูล 1–9</summary><div><a class="available" href="prepare.html">1 · Prepare Workspace</a><a class="available" href="module-2.html">2 · First AI Research Task</a><a class="available" href="module-3.html">3 · Problem–Gap–RQ</a><a class="available" href="module-4.html">4 · Literature Evidence</a><a class="available" href="module-5.html">5 · Research Logic</a><a class="available" href="module-6.html">6 · Experiment Design</a><a class="available" href="module-7.html" aria-current="page">7 · Analysis &amp; Visuals</a><a class="available" href="module-8.html">8 · Document Production</a><a class="available" href="module-9.html">9 · Personal Workflow</a></div></details><a href="#module-content">เนื้อหา</a><a href="#module-toc">สารบัญ</a></nav>
-  </header>
-  <main id="main" class="module-document-shell">
-    <aside class="markdown-toc" id="module-toc" aria-label="สารบัญในหน้านี้"><strong>สารบัญ</strong><ol></ol></aside>
-    <article class="markdown-body" id="module-content">
-<h1 id="module-7--การวิเคราะห์ข้อมูลและการนำเสนอข้อมูลด้วยภาพโดยใช้-ai">Module 7 — การวิเคราะห์ข้อมูลและการนำเสนอข้อมูลด้วยภาพโดยใช้ AI</h1>
-<h2 id="เริ่มเรียนได้สองแบบ">เริ่มเรียนได้สองแบบ</h2>
-<ul>
+  <site-header current="7"></site-header>
+  <main id="main">
+    <section class="prepare-hero module-hero"><p class="eyebrow">Module 7 · Self-paced lesson</p><h1>Module 7 — การวิเคราะห์ข้อมูลและการนำเสนอข้อมูลด้วยภาพโดยใช้ AI</h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
+    <div id="module-content">
+<section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><h2 id="start-heading">ก่อนเริ่ม: เลือกทางเรียนและเตรียมสิ่งที่ใช้</h2>
+</div><div class="markdown-body"><ul>
 <li><strong>เรียนต่อเนื่อง:</strong> ใช้ hypothesis IDs, decision rules และแผนวิเคราะห์จาก Module 6 ร่วมกับข้อมูลที่เก็บหรือได้รับอนุญาตให้ใช้</li>
 <li><strong>เรียนแบบ Standalone:</strong> เริ่มจากข้อมูลจำแนกประเภทแบบ Iris ข้อมูลแบบสอบถาม CSV/Excel/SPSS ชุดข้อมูลเปิดของบทความ หรือข้อมูลวิจัยของผู้เรียนที่ผ่านการตรวจสิทธิและความเป็นส่วนตัว</li>
 </ul>
-<h2 id="คำถามแกนของโมดูล">คำถามแกนของโมดูล</h2>
-<p>ข้อมูลที่มีอยู่ตอบคำถามอะไรได้ ใช้วิธีวิเคราะห์ใดจึงสมเหตุสมผล และควรสร้างตารางหรือภาพแบบใดเพื่อสื่อผลโดยไม่ทำให้ผู้อ่านเข้าใจเกินกว่าหลักฐาน</p>
-<h2 id="เป้าหมาย">เป้าหมาย</h2>
-<p>เมื่อจบโมดูล ผู้เรียนสามารถ</p>
+<h3 id="สิ่งที่ต้องเตรียม">สิ่งที่ต้องเตรียม</h3>
+<ul>
+<li>เลือกข้อมูลจากหนึ่งใน Track A–D พร้อมสิทธิการใช้และพจนานุกรมข้อมูลเมื่อมี</li>
+<li>เตรียมคำถาม สมมติฐาน หรือเป้าหมายการพยากรณ์หนึ่งข้อที่ยังแก้ไขได้</li>
+<li>ใช้ environment ที่ผ่าน readiness check ของ Module 1 และตรวจรุ่น Python/ไลบรารีก่อนเริ่ม</li>
+<li>ดาวน์โหลด <a href="downloads/module-07-data-analysis-visualization-workbook.md">สมุดงาน Module 7</a></li>
+<li>เตรียมพื้นที่แยกข้อมูลต้นฉบับ script ที่ AI สร้าง ผลวิเคราะห์ ตาราง ภาพ และบันทึกการตรวจ</li>
+</ul>
+</div></section>
+<section class="section markdown-section" id="คำถามแกนของโมดูล" aria-labelledby="คำถามแกนของโมดูล-heading"><div class="section-heading compact"><h2 id="คำถามแกนของโมดูล-heading">คำถามแกนของโมดูล</h2>
+</div><div class="markdown-body"><p>ข้อมูลที่มีอยู่ตอบคำถามอะไรได้ ใช้วิธีวิเคราะห์ใดจึงสมเหตุสมผล และควรสร้างตารางหรือภาพแบบใดเพื่อสื่อผลโดยไม่ทำให้ผู้อ่านเข้าใจเกินกว่าหลักฐาน</p>
+</div></section>
+<section class="section markdown-section" id="outcomes" aria-labelledby="outcomes-heading"><div class="section-heading compact"><h2 id="outcomes-heading">สิ่งที่จะเรียนรู้</h2>
+</div><div class="markdown-body"><p>เมื่อจบโมดูล ผู้เรียนสามารถ</p>
 <ol type="1">
 <li>แปลงคำถามวิจัยเป็นหน่วยวิเคราะห์ ตัวแปร สมมติฐานหรือเป้าหมายการพยากรณ์ และหลักเกณฑ์การแปลผล</li>
 <li>ตรวจโครงสร้างและคุณภาพของข้อมูลจาก Excel, CSV หรือ SPSS ก่อนวิเคราะห์</li>
@@ -40,16 +47,18 @@
 <li>ส่งออกตาราง ภาพนิ่ง และภาพเชิงโต้ตอบในรูปแบบที่พร้อมใช้ในบทความ โปสเตอร์ สไลด์ หรือเว็บไซต์</li>
 </ol>
 <p>โมดูลนี้ไม่ทดแทนวิชาสถิติ ระเบียบวิธีวิจัย หรือวิธีวิเคราะห์เฉพาะสาขา AI อาจเสนอและดำเนินการวิเคราะห์ แต่ผู้วิจัยต้องรับผิดชอบความเหมาะสมของวิธี ความถูกต้องของข้อมูล และการแปลผล</p>
-<h2 id="no-code-ในโมดูลนี้หมายถึงอะไร">No-code ในโมดูลนี้หมายถึงอะไร</h2>
-<ul>
+</div></section>
+<section class="section markdown-section" id="no-code-ในโมดูลนี้หมายถึงอะไร" aria-labelledby="no-code-ในโมดูลนี้หมายถึงอะไร-heading"><div class="section-heading compact"><h2 id="no-code-ในโมดูลนี้หมายถึงอะไร-heading">No-code ในโมดูลนี้หมายถึงอะไร</h2>
+</div><div class="markdown-body"><ul>
 <li>ผู้เรียนทำงานผ่านการสนทนากับ AI การเลือกแฟ้มข้อมูล และการตรวจผลลัพธ์ ไม่ต้องเขียน Python, R หรือ JavaScript</li>
 <li>ผู้เรียนต้องเข้าใจกลไกของ Python และหน้าที่ของไลบรารีในระดับที่สามารถสั่งงาน ตรวจบันทึกการทำงาน และชี้ตำแหน่งข้อผิดพลาดได้ แม้ไม่ต้องเขียนคำสั่งด้วยตนเอง</li>
 <li>AI สามารถสร้างและเรียกใช้โปรแกรมเบื้องหลังได้ แต่ต้องแสดงข้อมูลนำเข้า ตัวแปร การแปลงข้อมูล วิธีวิเคราะห์ ไลบรารีและรุ่นที่ใช้ ค่าพารามิเตอร์ และผลลัพธ์ที่ใช้สร้างตารางหรือภาพ</li>
 <li>ผลงานต้องทำซ้ำได้จากแฟ้มข้อมูลและบันทึกคำสั่งเดิม การได้ภาพที่สวยเพียงอย่างเดียวไม่ถือว่าผ่าน</li>
 <li>เมื่อ AI เสนอวิธีทางสถิติที่ผู้เรียนอธิบายเหตุผลไม่ได้ ให้หยุดและขอคำปรึกษาจากผู้เชี่ยวชาญก่อนใช้ผล</li>
 </ul>
-<h2 id="รู้จักแฟ้มข้อมูลก่อนนำเข้า">รู้จักแฟ้มข้อมูลก่อนนำเข้า</h2>
-<p>CSV, Excel และ SPSS อาจแสดงข้อมูลคล้ายกันเมื่อเปิดดู แต่เก็บโครงสร้างและความหมายไม่เหมือนกัน การนำเข้าไม่ใช่เพียง “เปิดแฟ้มได้” ผู้เรียนต้องตรวจว่าจำนวนแถว คอลัมน์ ชนิดตัวแปร ป้ายกำกับ และข้อมูลสูญหายยังคงความหมายเดิม</p>
+</div></section>
+<section class="section markdown-section" id="รู้จักแฟ้มข้อมูลก่อนนำเข้า" aria-labelledby="รู้จักแฟ้มข้อมูลก่อนนำเข้า-heading"><div class="section-heading compact"><h2 id="รู้จักแฟ้มข้อมูลก่อนนำเข้า-heading">รู้จักแฟ้มข้อมูลก่อนนำเข้า</h2>
+</div><div class="markdown-body"><p>CSV, Excel และ SPSS อาจแสดงข้อมูลคล้ายกันเมื่อเปิดดู แต่เก็บโครงสร้างและความหมายไม่เหมือนกัน การนำเข้าไม่ใช่เพียง “เปิดแฟ้มได้” ผู้เรียนต้องตรวจว่าจำนวนแถว คอลัมน์ ชนิดตัวแปร ป้ายกำกับ และข้อมูลสูญหายยังคงความหมายเดิม</p>
 <table>
 <thead>
 <tr class="header">
@@ -115,8 +124,9 @@
 <li>วันที่ ภาษาไทย และเลขศูนย์นำหน้า</li>
 </ul>
 <p>เป้าหมายไม่ใช่ทำให้สามแฟ้มเหมือนกันทุกประการ แต่ให้ระบุว่าความหมายใดต้องรักษาและข้อมูลกำกับใดต้องแนบเมื่อเปลี่ยนรูปแบบ</p>
-<h2 id="python-ทำงานอยู่เบื้องหลังอย่างไร">Python ทำงานอยู่เบื้องหลังอย่างไร</h2>
-<p>ผู้เรียนไม่ต้องจำไวยากรณ์ แต่ต้องอธิบายสายงานต่อไปนี้ได้</p>
+</div></section>
+<section class="section markdown-section" id="python-ทำงานอยู่เบื้องหลังอย่างไร" aria-labelledby="python-ทำงานอยู่เบื้องหลังอย่างไร-heading"><div class="section-heading compact"><h2 id="python-ทำงานอยู่เบื้องหลังอย่างไร-heading">Python ทำงานอยู่เบื้องหลังอย่างไร</h2>
+</div><div class="markdown-body"><p>ผู้เรียนไม่ต้องจำไวยากรณ์ แต่ต้องอธิบายสายงานต่อไปนี้ได้</p>
 <pre class="text"><code>แฟ้มต้นฉบับ
   → ไลบรารีอ่านแฟ้ม
   → DataFrame ในหน่วยความจำ
@@ -135,8 +145,9 @@
 <li><strong>script:</strong> แฟ้มคำสั่งที่เก็บขั้นตอนทั้งหมดไว้เพื่อเรียกซ้ำ ไม่ใช้เฉพาะผลที่ปรากฏในหน้าสนทนา</li>
 <li><strong>artifact:</strong> แฟ้มผลลัพธ์ เช่น CSV, XLSX, PNG, SVG, PDF หรือ HTML ซึ่งต้องย้อนกลับได้ว่าสร้างจาก script และข้อมูลใด</li>
 </ul>
-<h2 id="จาก-dataframe-ไปเป็น-visualization">จาก DataFrame ไปเป็น Visualization</h2>
-<p>DataFrame ไม่ใช่เพียงตารางที่เปิดดูได้ แต่เป็นจุดเชื่อมระหว่างข้อมูลดิบ วิธีวิเคราะห์ และภาพ ทุกภาพต้องตอบได้ว่าใช้แถวใด คอลัมน์ใด มีการกรองหรือรวมค่าอย่างไร และแต่ละส่วนของภาพแทนตัวแปรใด</p>
+</div></section>
+<section class="section markdown-section" id="จาก-dataframe-ไปเป็น-visualization" aria-labelledby="จาก-dataframe-ไปเป็น-visualization-heading"><div class="section-heading compact"><h2 id="จาก-dataframe-ไปเป็น-visualization-heading">จาก DataFrame ไปเป็น Visualization</h2>
+</div><div class="markdown-body"><p>DataFrame ไม่ใช่เพียงตารางที่เปิดดูได้ แต่เป็นจุดเชื่อมระหว่างข้อมูลดิบ วิธีวิเคราะห์ และภาพ ทุกภาพต้องตอบได้ว่าใช้แถวใด คอลัมน์ใด มีการกรองหรือรวมค่าอย่างไร และแต่ละส่วนของภาพแทนตัวแปรใด</p>
 <h3 id="1-โครงสร้างของ-dataframe">1. โครงสร้างของ DataFrame</h3>
 <ul>
 <li><strong>หนึ่งแถว</strong> ควรแทนหน่วยวิเคราะห์หนึ่งหน่วย เช่น ดอกไม้หนึ่งดอก ผู้ตอบแบบสอบถามหนึ่งคน จังหวัดหนึ่งจังหวัด หรือผลการทดลองหนึ่งครั้ง</li>
@@ -379,8 +390,9 @@
 <p>ตรวจ environment ที่โครงการกำหนดก่อน ระบุ Python และไลบรารีพร้อมรุ่นที่จะใช้ ห้ามติดตั้งหรือปรับรุ่นโดยไม่แจ้ง อ่านแฟ้มต้นฉบับแบบไม่แก้ไข ตรวจโครงสร้างและคุณภาพข้อมูลก่อนเสนอวิธีวิเคราะห์ สร้าง script ที่เรียกซ้ำได้ บันทึกผลตัวเลขที่ใช้สร้างทั้งตารางและภาพ และรายงานชื่อแฟ้มผลลัพธ์กับข้อผิดพลาดหรือคำเตือนทั้งหมด</p>
 </blockquote>
 <p>หากไลบรารีที่ต้องใช้ไม่มีอยู่ AI ต้องเสนอทางเลือกที่มีอยู่หรือแจ้งรายการที่ขาดพร้อมเหตุผล คุณจึงตัดสินใจว่าจะใช้ทางเลือกหรือกลับไปเพิ่มซอฟต์แวร์ผ่าน Module 1 ห้ามให้ AI ติดตั้งแพ็กเกจโดยพลการระหว่างการวิเคราะห์</p>
-<h2 id="จุดเริ่มต้นของผู้เรียน">จุดเริ่มต้นของผู้เรียน</h2>
-<p>เลือกหนึ่งเส้นทาง โดยทุกเส้นทางใช้ <a href="downloads/module-07-data-analysis-visualization-workbook.md">สมุดงาน Module 7</a> ชุดเดียวกัน</p>
+</div></section>
+<section class="section markdown-section" id="จุดเริ่มต้นของผู้เรียน" aria-labelledby="จุดเริ่มต้นของผู้เรียน-heading"><div class="section-heading compact"><h2 id="จุดเริ่มต้นของผู้เรียน-heading">จุดเริ่มต้นของผู้เรียน</h2>
+</div><div class="markdown-body"><p>เลือกหนึ่งเส้นทาง โดยทุกเส้นทางใช้ <a href="downloads/module-07-data-analysis-visualization-workbook.md">สมุดงาน Module 7</a> ชุดเดียวกัน</p>
 <h3 id="track-a--การจำแนกประเภทแบบ-iris">Track A — การจำแนกประเภทแบบ Iris</h3>
 <p>ใช้ชุดข้อมูล Iris หรือชุดข้อมูลหลายกลุ่มที่มีโครงสร้างใกล้เคียงกัน เพื่อเรียนรู้ความแตกต่างระหว่างการอธิบายข้อมูลกับการพยากรณ์</p>
 <ul>
@@ -410,8 +422,9 @@
 <p>เส้นทางนี้เป็นการทำซ้ำผลจากข้อมูลที่เปิดเผย ไม่ใช่การรับรองความถูกต้องของบทความทั้งหมด</p>
 <h3 id="track-d--ข้อมูลวิจัยของผู้เรียน">Track D — ข้อมูลวิจัยของผู้เรียน</h3>
 <p>ใช้ได้เมื่อมีข้อมูลที่ได้รับอนุญาต ไม่มีข้อมูลส่วนบุคคลที่ไม่ควรเปิดเผย และมีพจนานุกรมข้อมูล หากยังไม่พร้อมให้ใช้ Track A–C โดยไม่ลดเกณฑ์การประเมิน</p>
-<h2 id="ตั้งสมมติฐานอย่างไร">ตั้งสมมติฐานอย่างไร</h2>
-<p>เริ่มจากชนิดของคำถาม ไม่บังคับให้ทุกการวิเคราะห์มีสมมติฐาน</p>
+</div></section>
+<section class="section markdown-section" id="ตั้งสมมติฐานอย่างไร" aria-labelledby="ตั้งสมมติฐานอย่างไร-heading"><div class="section-heading compact"><h2 id="ตั้งสมมติฐานอย่างไร-heading">ตั้งสมมติฐานอย่างไร</h2>
+</div><div class="markdown-body"><p>เริ่มจากชนิดของคำถาม ไม่บังคับให้ทุกการวิเคราะห์มีสมมติฐาน</p>
 <table>
 <thead>
 <tr class="header">
@@ -468,8 +481,9 @@
 <blockquote>
 <p>แบบจำลองที่กำหนดล่วงหน้าจะจำแนก ______ บนข้อมูลทดสอบที่แยกไว้ ได้ดีกว่าค่าฐานเปรียบเทียบ ______ เมื่อวัดด้วย ______ โดยไม่มีการรั่วไหลของข้อมูล</p>
 </blockquote>
-<h2 id="ลงมือวิเคราะห์และสร้างภาพด้วย-ai">ลงมือวิเคราะห์และสร้างภาพด้วย AI</h2>
-<pre class="text"><code>พาฉันวิเคราะห์ข้อมูลทีละ gate เริ่มจากถามคำถามวิจัย ชนิดแฟ้ม สิทธิการใช้ และ data dictionary ก่อนตรวจ environment และนำเข้าแบบอ่านอย่างเดียว ถามครั้งละหนึ่งคำถามและรอคำตอบ ห้ามติดตั้งแพ็กเกจ เขียนทับข้อมูลดิบ เลือกวิธีสถิติ หรือสรุปผลแทนฉัน ทุก gate ให้แสดงไฟล์/ตาราง/คำเตือนที่ใช้ตรวจ แยกผลจากการตีความ และให้ฉันอนุมัติก่อนสร้างตารางหรือภาพขั้นถัดไป</code></pre>
+</div></section>
+<section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือวิเคราะห์และสร้างภาพด้วย AI</h2>
+</div><div class="markdown-body"><pre class="text"><code>พาฉันวิเคราะห์ข้อมูลทีละ gate เริ่มจากถามคำถามวิจัย ชนิดแฟ้ม สิทธิการใช้ และ data dictionary ก่อนตรวจ environment และนำเข้าแบบอ่านอย่างเดียว ถามครั้งละหนึ่งคำถามและรอคำตอบ ห้ามติดตั้งแพ็กเกจ เขียนทับข้อมูลดิบ เลือกวิธีสถิติ หรือสรุปผลแทนฉัน ทุก gate ให้แสดงไฟล์/ตาราง/คำเตือนที่ใช้ตรวจ แยกผลจากการตีความ และให้ฉันอนุมัติก่อนสร้างตารางหรือภาพขั้นถัดไป</code></pre>
 <h3 id="1-hypothesis-clinic">1. Hypothesis Clinic</h3>
 <p>นำคำถามของคุณหรือคำถามตัวอย่างจากงานวิทยาศาสตร์และสังคมศาสตร์มาจำแนกว่าเป็นงานพรรณนา สำรวจ เปรียบเทียบ ความสัมพันธ์ พยากรณ์ หรือเชิงสาเหตุ จากนั้นเติมแบบประโยคสมมติฐานหรือระบุเหตุผลว่าไม่ควรตั้งสมมติฐาน</p>
 <h3 id="2-data-intake-and-quality-gate">2. Data Intake and Quality Gate</h3>
@@ -566,8 +580,9 @@
 </tbody>
 </table>
 <p>ทุกภาพต้องมีชื่อภาพ คำอธิบาย หน่วย แหล่งข้อมูล จำนวนตัวอย่างหรือตัวหารเมื่อจำเป็น และต้องไม่ใช้สีเป็นช่องทางเดียวในการจำแนกความหมาย</p>
-<h2 id="red-team-ก่อนสรุปผล">Red-team ก่อนสรุปผล</h2>
-<p>ให้ AI และเพื่อนร่วมชั้นพยายามหาข้อผิดพลาดต่อไปนี้</p>
+</div></section>
+<section class="section markdown-section" id="red-team-ก่อนสรุปผล" aria-labelledby="red-team-ก่อนสรุปผล-heading"><div class="section-heading compact"><h2 id="red-team-ก่อนสรุปผล-heading">Red-team ก่อนสรุปผล</h2>
+</div><div class="markdown-body"><p>ให้ AI และเพื่อนร่วมชั้นพยายามหาข้อผิดพลาดต่อไปนี้</p>
 <ul>
 <li>หน่วยวิเคราะห์ไม่ตรงกับข้อกล่าวอ้าง</li>
 <li>นับข้อมูลซ้ำหรือใช้ตัวหารผิด</li>
@@ -580,8 +595,9 @@
 <li>ตาราง ภาพ และข้อความรายงานตัวเลขไม่ตรงกัน</li>
 <li>ส่งออกแล้วตัวอักษรขาด สีอ่านไม่ได้ หรือแฟ้มเปิดไม่ได้</li>
 </ul>
-<h2 id="ผลผลิตและเกณฑ์ผ่าน">ผลผลิตและเกณฑ์ผ่าน</h2>
-<ul>
+</div></section>
+<section class="section markdown-section" id="finish" aria-labelledby="finish-heading"><div class="section-heading compact"><h2 id="finish-heading">ผลผลิตและเกณฑ์ผ่าน</h2>
+</div><div class="markdown-body"><ul>
 <li><code>analysis-brief.md</code> — คำถาม หน่วยวิเคราะห์ สมมติฐานหรือเหตุผลที่ไม่ตั้งสมมติฐาน ตัวแปร และเกณฑ์แปลผล</li>
 <li><code>import-report.md</code> — รูปแบบแฟ้ม วิธีนำเข้า จำนวนแถว × คอลัมน์ แผ่นงาน/ข้อมูลกำกับ ชนิดตัวแปร ข้อมูลสูญหาย และคำเตือน</li>
 <li><code>data-dictionary.csv</code> — ชื่อตัวแปร ป้ายตัวแปร ชนิด หน่วย ป้ายค่า และรหัสข้อมูลสูญหาย โดยเฉพาะข้อมูลจาก SPSS/Excel</li>
@@ -597,20 +613,22 @@
 <li>สมุดงาน Module 7 ที่กรอกครบ พร้อมบันทึกคำสั่งและการตรวจแก้</li>
 </ul>
 <p>เกณฑ์ผ่านคือบุคคลอื่นสามารถเริ่มจากข้อมูลต้นทางและบันทึกคำสั่งแล้วได้ตัวเลขเดียวกัน ตาราง ภาพ และข้อความต้องสอดคล้องกัน และข้อสรุปต้องไม่เกินขอบเขตของแบบการวิจัยและข้อมูล</p>
-<h2 id="สิ่งที่คุณต้องเตรียม">สิ่งที่คุณต้องเตรียม</h2>
-<ul>
-<li>เลือกข้อมูลจากหนึ่งใน Track A–D พร้อมสิทธิการใช้และพจนานุกรมข้อมูลเมื่อมี</li>
-<li>เตรียมคำถาม สมมติฐาน หรือเป้าหมายการพยากรณ์หนึ่งข้อที่ยังแก้ไขได้</li>
-<li>ใช้ environment ที่ผ่าน readiness check ของ Module 1 และตรวจรุ่น Python/ไลบรารีก่อนเริ่ม</li>
-<li>ดาวน์โหลด <a href="downloads/module-07-data-analysis-visualization-workbook.md">สมุดงาน Module 7</a></li>
-<li>เตรียมพื้นที่แยกข้อมูลต้นฉบับ script ที่ AI สร้าง ผลวิเคราะห์ ตาราง ภาพ และบันทึกการตรวจ</li>
-</ul>
-<h2 id="การบ้าน">การบ้าน</h2>
-<p>ผู้เรียนเลือกหนึ่งตารางหรือภาพ ปรับแก้จากผล Red-team แล้วส่งออกอย่างน้อยสองรูปแบบสำหรับสื่อคนละชนิด พร้อมเขียนคำอธิบายสั้นที่ระบุข้อค้นพบ หลักฐาน ความไม่แน่นอน ข้อจำกัด และสิ่งที่ห้ามสรุป หากเรียนโมดูลนี้เพียงโมดูลเดียว ชุดวิเคราะห์และภาพที่ผ่านการตรวจคือชิ้นงานปลายทาง</p>
-
-    </article>
-    <nav class="module-pagination" aria-label="โมดูลก่อนหน้าและถัดไป"><a class="button secondary" href="module-6.html">← ก่อนหน้า</a><a class="button primary" href="module-8.html">ไป Module 8 →</a></nav>
+</div></section>
+<section class="section markdown-section" id="การบ้าน" aria-labelledby="การบ้าน-heading"><div class="section-heading compact"><h2 id="การบ้าน-heading">การบ้าน</h2>
+</div><div class="markdown-body"><p>ผู้เรียนเลือกหนึ่งตารางหรือภาพ ปรับแก้จากผล Red-team แล้วส่งออกอย่างน้อยสองรูปแบบสำหรับสื่อคนละชนิด พร้อมเขียนคำอธิบายสั้นที่ระบุข้อค้นพบ หลักฐาน ความไม่แน่นอน ข้อจำกัด และสิ่งที่ห้ามสรุป หากเรียนโมดูลนี้เพียงโมดูลเดียว ชุดวิเคราะห์และภาพที่ผ่านการตรวจคือชิ้นงานปลายทาง</p>
+</div></section>
+<section class="section markdown-section" id="review" aria-labelledby="review-heading"><div class="section-heading compact"><h2 id="review-heading">คำถามทบทวนท้ายบท</h2>
+</div><div class="markdown-body"><ol type="1">
+<li><code>raw_df</code>, <code>clean_df</code>, <code>analysis_df</code> และ <code>plot_df</code> ของคุณต่างกันอย่างไร และเหตุใดจึงไม่ควรเขียนทับข้อมูลดิบ</li>
+<li>การรวมข้อมูลหรือ denominator ใดมีผลต่อความหมายของตารางและภาพมากที่สุด</li>
+<li>ภาพที่เลือกตอบคำถามวิจัยได้ดีกว่ารูปแบบอื่นอย่างไร และมีช่องทางใดที่ไม่พึ่งสี</li>
+<li>ข้อสรุปใดได้รับการสนับสนุนจากผล และข้อสรุปใดเกินขอบเขตของแบบวิจัย</li>
+<li>คุณตรวจ script, parameter, warning และไฟล์ผลลัพธ์ที่ AI สร้างอย่างไร</li>
+</ol>
+</div></section>
+    </div>
+    <section class="section final-cta"><nav class="module-pagination" aria-label="โมดูลก่อนหน้าและถัดไป"><a class="button secondary" href="module-6.html">← ก่อนหน้า</a><a class="button primary" href="module-8.html">ไป Module 8 →</a></nav></section>
   </main>
-  <footer><p>AI for Research · ตรวจหลักฐานก่อนเชื่อคำตอบของ AI</p><p class="footer-credit">Department of Computer Engineering · Kasetsart University</p></footer>
+  <site-footer></site-footer>
 </body>
 </html>

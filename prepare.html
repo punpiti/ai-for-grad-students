@@ -11,30 +11,11 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css?v=20260804-1">
   <script src="assets/app.js?v=20260804-1" defer></script>
+  <script src="assets/site-shell.js?v=20260805-1"></script>
 </head>
 <body class="prepare-page">
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
-  <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Research</span></a>
-    <nav aria-label="เมนูหลัก">
-      <a href="index.html">หน้าหลัก</a>
-      <details class="module-menu">
-        <summary>โมดูล 1–9</summary>
-        <div>
-          <a class="available" href="prepare.html" aria-current="page">1 · Prepare Workspace</a>
-          <a class="available" href="module-2.html">2 · First AI Research Task</a>
-          <a class="available" href="module-3.html">3 · Problem–Gap–RQ</a>
-          <a class="available" href="module-4.html">4 · Literature Evidence</a>
-          <a class="available" href="module-5.html">5 · Research Logic</a>
-          <a class="available" href="module-6.html">6 · Experiment Design</a>
-          <a class="available" href="module-7.html">7 · Analysis &amp; Visuals</a>
-          <a class="available" href="module-8.html">8 · Document Production</a>
-          <a class="available" href="module-9.html">9 · Personal Workflow</a>
-        </div>
-      </details>
-      <a href="#setup">เริ่มต้น</a><a href="#practice">Workshop</a><a href="#homework">การบ้าน</a>
-    </nav>
-  </header>
+  <site-header current="1"></site-header>
 
   <main id="main">
     <section class="prepare-hero">
@@ -300,12 +281,6 @@ code .</code><button type="button" data-copy>คัดลอก</button></div></
       <div class="notice"><strong>พร้อมมาเรียนเมื่อ:</strong> เปิด Workspace ได้ คุยกับ AI ได้ อ่าน Markdown และ PDF ได้ และเตรียมเอกสาร 6–8 ชิ้นไว้ใน <code>input/original/</code> แล้ว</div>
     </section>
   </main>
-  <footer>
-    <p><a href="index.html">AI for Research</a></p>
-    <div class="footer-credit">
-      <p>Developed by One234@KU</p>
-      <p>© 2026 พันธุ์ปิติ เปี่ยมสง่า. All rights reserved.</p>
-    </div>
-  </footer>
+  <site-footer></site-footer>
 </body>
 </html>

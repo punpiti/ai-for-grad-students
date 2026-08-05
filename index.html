@@ -11,35 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css?v=20260804-1">
   <script src="assets/app.js?v=20260804-1" defer></script>
+  <script src="assets/site-shell.js?v=20260805-1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="AI for Research หน้าแรก">
-      <span class="brand-mark">AI</span>
-      <span>for Research</span>
-    </a>
-    <nav aria-label="เมนูหลัก">
-      <a href="#course">หลักสูตร</a>
-      <details class="module-menu">
-        <summary>โมดูล 1–9</summary>
-        <div>
-          <a class="available" href="prepare.html">1 · Prepare Workspace</a>
-          <a class="available" href="module-2.html">2 · First AI Research Task</a>
-          <a class="available" href="module-3.html">3 · Problem–Gap–RQ</a>
-          <a class="available" href="module-4.html">4 · Literature Evidence</a>
-          <a class="available" href="module-5.html">5 · Research Logic</a>
-          <a class="available" href="module-6.html">6 · Experiment Design</a>
-          <a class="available" href="module-7.html">7 · Analysis &amp; Visuals</a>
-          <a class="available" href="module-8.html">8 · Document Production</a>
-          <a class="available" href="module-9.html">9 · Personal Workflow</a>
-        </div>
-      </details>
-      <a href="#requirements">ข้อกำหนด</a>
-      <a class="nav-cta" href="prepare.html">Module 1</a>
-    </nav>
-  </header>
+  <site-header current="home"></site-header>
 
   <main id="main">
     <section class="hero" id="top">
@@ -126,12 +103,6 @@
     </section>
   </main>
 
-  <footer>
-    <p>AI for Research</p>
-    <div class="footer-credit">
-      <p>Developed by One234@KU</p>
-      <p>© 2026 พันธุ์ปิติ เปี่ยมสง่า. All rights reserved.</p>
-    </div>
-  </footer>
+  <site-footer></site-footer>
 </body>
 </html>

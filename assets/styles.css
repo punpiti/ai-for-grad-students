@@ -13,6 +13,7 @@
 }
 
 * { box-sizing: border-box; }
+site-header, site-footer { display: contents; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
@@ -175,6 +176,9 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
 .activity-steps .command { margin-top: 1rem; }
 .module-next { margin-top: 2rem; }
 .module-document-shell { max-width: var(--max); margin: auto; padding: 3rem 1.25rem 6rem; }
+.markdown-section > .section-heading { max-width: 900px; }
+.markdown-section > .section-heading h2 { margin-bottom: 0; }
+.markdown-section > .markdown-body { max-width: 900px; }
 .markdown-toc { margin: 1rem 0 3rem; padding: 1.25rem 1.5rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
 .markdown-toc > strong { color: var(--mint); font-size: 1.1rem; }
 .markdown-toc ol { columns: 2; gap: 2rem; margin: 1rem 0 0; padding-left: 1.3rem; }
@@ -198,7 +202,7 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
 .markdown-body th, .markdown-body td { min-width: 9rem; padding: .7rem .8rem; border: 1px solid var(--line); text-align: left; vertical-align: top; }
 .markdown-body th { background: var(--paper-deep); color: var(--mint); }
 .markdown-body hr { margin: 3rem 0; border: 0; border-top: 1px solid var(--line); }
-.module-pagination { display: flex; justify-content: space-between; gap: 1rem; max-width: 900px; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.module-pagination { display: flex; justify-content: space-between; gap: 1rem; max-width: 900px; margin: auto; }
 @media (max-width: 850px) {
   nav a:not(.nav-cta) { display: none; }
   nav .module-menu a { display: flex; }

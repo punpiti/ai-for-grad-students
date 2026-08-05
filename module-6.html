@@ -9,26 +9,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-2">
-  <script src="assets/app.js?v=20260805-2" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-3">
+  <script src="assets/site-shell.js?v=20260805-1"></script>
+  <script src="assets/app.js?v=20260805-3" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
-  <header class="site-header">
-    <a class="brand" href="index.html"><span class="brand-mark">AI</span><span>for Research</span></a>
-    <nav aria-label="เมนูหลัก"><a href="index.html">หน้าหลัก</a><details class="module-menu"><summary>โมดูล 1–9</summary><div><a class="available" href="prepare.html">1 · Prepare Workspace</a><a class="available" href="module-2.html">2 · First AI Research Task</a><a class="available" href="module-3.html">3 · Problem–Gap–RQ</a><a class="available" href="module-4.html">4 · Literature Evidence</a><a class="available" href="module-5.html">5 · Research Logic</a><a class="available" href="module-6.html" aria-current="page">6 · Experiment Design</a><a class="available" href="module-7.html">7 · Analysis &amp; Visuals</a><a class="available" href="module-8.html">8 · Document Production</a><a class="available" href="module-9.html">9 · Personal Workflow</a></div></details><a href="#module-content">เนื้อหา</a><a href="#module-toc">สารบัญ</a></nav>
-  </header>
-  <main id="main" class="module-document-shell">
-    <aside class="markdown-toc" id="module-toc" aria-label="สารบัญในหน้านี้"><strong>สารบัญ</strong><ol></ol></aside>
-    <article class="markdown-body" id="module-content">
-<h1 id="module-6--experiment-design-stress-test-แบบที่ออกแบบไว้พิสูจน์สิ่งที่เคลมได้หรือไม่">Module 6 — Experiment Design Stress Test: แบบที่ออกแบบไว้พิสูจน์สิ่งที่เคลมได้หรือไม่</h1>
-<h2 id="เริ่มเรียนได้สองแบบ">เริ่มเรียนได้สองแบบ</h2>
-<ul>
+  <site-header current="6"></site-header>
+  <main id="main">
+    <section class="prepare-hero module-hero"><p class="eyebrow">Module 6 · Self-paced lesson</p><h1>Module 6 — Experiment Design Stress Test: แบบที่ออกแบบไว้พิสูจน์สิ่งที่เคลมได้หรือไม่</h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
+    <div id="module-content">
+<section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><h2 id="start-heading">ก่อนเริ่ม: เลือกทางเรียนและเตรียมสิ่งที่ใช้</h2>
+</div><div class="markdown-body"><ul>
 <li><strong>เรียนต่อเนื่อง:</strong> ใช้ candidate claim และ rough design ที่ผ่าน red-team จาก Module 5 เป็นจุดเริ่มต้น</li>
 <li><strong>เรียนแบบ Standalone:</strong> ใช้ rough idea ของตนเอง reverse-engineer งานตีพิมพ์ หรือใช้กรณีออกแบบตัวอย่าง โดยไม่จำเป็นต้องเรียน Module 5 มาก่อน</li>
 </ul>
-<h2 id="เป้าหมาย">เป้าหมาย</h2>
-<p>ตรวจว่า experiment/study design ที่ร่างไว้สามารถสร้างหลักฐานเพียงพอสำหรับ claim ที่ต้องการหรือไม่ โดยผู้เรียนจะ:</p>
+<h3 id="สิ่งที่ต้องเตรียม">สิ่งที่ต้องเตรียม</h3>
+<ul>
+<li><a href="downloads/module-06-experiment-design-workbook.md">experiment-design-workbook.md</a></li>
+<li>rough design ของตนเอง, open-access paper ที่มี Methods/Results และ verified DOI หรือ design dossier ตัวอย่างอย่างใดอย่างหนึ่ง</li>
+<li>ข้อมูลของ questionnaire, interview, sensor, simulation หรือ existing dataset ที่กำลังพิจารณาใช้</li>
+<li>hypothetical result cards 4 สถานะ โดยทำเครื่องหมายชัดเจนว่าไม่ใช่ผลจริง</li>
+<li>compliance-trigger checklist และลิงก์หน่วยงาน/แบบฟอร์มปัจจุบันของสถาบัน</li>
+<li>รูปแบบบันทึก <code>TBD — owner/source/date</code> สำหรับสิ่งที่ต้องถามผู้เชี่ยวชาญ</li>
+</ul>
+</div></section>
+<section class="section markdown-section" id="outcomes" aria-labelledby="outcomes-heading"><div class="section-heading compact"><h2 id="outcomes-heading">สิ่งที่จะเรียนรู้</h2>
+</div><div class="markdown-body"><p>ตรวจว่า experiment/study design ที่ร่างไว้สามารถสร้างหลักฐานเพียงพอสำหรับ claim ที่ต้องการหรือไม่ โดยผู้เรียนจะ:</p>
 <ul>
 <li>แกะ claim และแนวคิดออกเป็นสมมุติฐาน เงื่อนไข และ assumption ที่ต้องตรวจให้ครบตาม claim tree</li>
 <li>กำหนด unit of analysis, population/sample, parameter, metric, comparator, dataset, environment, instrument และ procedure ให้ตรวจย้อนกลับได้</li>
@@ -39,8 +46,9 @@
 <li>เทียบ evidence package ที่ design จะสร้างกับ methodological/reporting expectation ที่ตรวจจาก target venue โดยไม่ทำนาย acceptance</li>
 </ul>
 <p>Module นี้ไม่สอนให้ AI เลือก methodology, sample size, statistical test, IRB category หรือข้อสรุปแทนผู้เชี่ยวชาญ ผู้เรียนต้องนำ design ไปตรวจต่อกับอาจารย์ที่ปรึกษา นักสถิติ ผู้เชี่ยวชาญสาขา คณะกรรมการจริยธรรม หรือหน่วยงานกำกับที่เกี่ยวข้อง</p>
-<h2 id="ปัญหาการเตรียมตัวและทางเข้า-3-แบบ">ปัญหาการเตรียมตัวและทางเข้า 3 แบบ</h2>
-<p>การบังคับให้ผู้เรียน “คิดงานใหม่และออกแบบการทดลองให้เสร็จในคลาส” ไม่เหมาะ เพราะผู้เรียนอาจเพิ่งมีหัวข้อและยังไม่มี design ให้ตรวจ จึงเลือกทางเข้าเพียงหนึ่งแบบ:</p>
+</div></section>
+<section class="section markdown-section" id="เลือกกรณีที่จะใช้เรียน" aria-labelledby="เลือกกรณีที่จะใช้เรียน-heading"><div class="section-heading compact"><h2 id="เลือกกรณีที่จะใช้เรียน-heading">เลือกกรณีที่จะใช้เรียน</h2>
+</div><div class="markdown-body"><p>การบังคับให้ผู้เรียน “คิดงานใหม่และออกแบบการทดลองให้เสร็จในคลาส” ไม่เหมาะ เพราะผู้เรียนอาจเพิ่งมีหัวข้อและยังไม่มี design ให้ตรวจ จึงเลือกทางเข้าเพียงหนึ่งแบบ:</p>
 <h3 id="track-a--งานของตนเอง">Track A — งานของตนเอง</h3>
 <p>เหมาะกับผู้ที่มี objective/RQ, proposed idea และ rough design แล้ว แม้ยังไม่รู้ parameter หรือเครื่องมือครบ ให้นำ one-page design sketch ที่ระบุอย่างน้อย:</p>
 <ul>
@@ -54,8 +62,9 @@
 <p>เหมาะกับผู้ที่ยังไม่มี design ของตนเอง เลือกบทความที่เข้าถึง Methods และ Results ได้จริงหนึ่งชิ้น แล้วทดลองแกะว่า claim ของบทความนั้นต้องอาศัยสมมุติฐาน การวัด คู่เทียบ และเงื่อนไขใดบ้าง เป้าหมายไม่ใช่ตัดสินว่าบทความผิด แต่เรียนรู้ anatomy ของ design จากงานจริง</p>
 <h3 id="track-c--กรณีออกแบบตัวอย่าง">Track C — กรณีออกแบบตัวอย่าง</h3>
 <p>ใช้ dossier ตัวอย่างที่มี problem, objective/RQ, proposed mechanism, candidate claim, literature extracts/DOI ที่ตรวจแล้ว, constraint, candidate dataset/instrument และ design sketch ที่จงใจเว้นช่องสำคัญ แต่ <strong>ไม่มีผลทดลองปลอม</strong> หน้าที่ของคุณคือเติมสิ่งที่ขาดและโจมตี design ส่วน scenario “ผลสนับสนุน/ไม่ต่าง/ขัดแย้ง” เป็นเพียง hypothetical result card สำหรับทดสอบตรรกะการตัดสินใจ ไม่ใช่หลักฐานวิจัย</p>
-<h2 id="แนวคิดหลัก">แนวคิดหลัก</h2>
-<h3 id="1-เริ่มจาก-claim-แล้วถอยกลับ">1. เริ่มจาก claim แล้วถอยกลับ</h3>
+</div></section>
+<section class="section markdown-section" id="แนวคิดหลัก" aria-labelledby="แนวคิดหลัก-heading"><div class="section-heading compact"><h2 id="แนวคิดหลัก-heading">แนวคิดหลัก</h2>
+</div><div class="markdown-body"><h3 id="1-เริ่มจาก-claim-แล้วถอยกลับ">1. เริ่มจาก claim แล้วถอยกลับ</h3>
 <p>ไม่เริ่มจากรายการเครื่องมือ เริ่มจากประโยคที่อยากสรุป แล้วถามย้อนกลับ:</p>
 <pre class="text"><code>Candidate claim
   -&gt; ต้องมีข้อสรุปย่อยอะไรจึงกล่าวได้
@@ -138,8 +147,9 @@
 <li>ผลสรุปไม่ได้เพราะ measurement, protocol, missing data, power/adequacy หรือ assumption ล้มเหลว</li>
 </ul>
 <p>สำหรับแต่ละ state ให้เขียน <code>permitted conclusion</code>, <code>forbidden conclusion</code>, <code>next action</code> และ <code>claim status</code> ไว้ล่วงหน้า เพื่อลดการเลือกเล่าเฉพาะผลที่เข้าทางและการสร้างคำอธิบายหลังเห็นผล</p>
-<h2 id="ลงมือ-stress-test-แบบวิจัยด้วย-ai">ลงมือ stress-test แบบวิจัยด้วย AI</h2>
-<p>เปิด <a href="downloads/module-06-experiment-design-workbook.md">experiment-design-workbook.md</a> แล้วทำทีละช่วง ให้ AI ถามทีละคำถาม ช่วยจัดข้อมูลลงตาราง และชี้ช่องที่ยังไม่มีหลักฐาน แต่ห้ามให้ AI เติมค่าหรือเลือกวิธีแทนคุณ หากทำร่วมกับผู้อื่นสามารถแบ่งมุมตรวจเป็น:</p>
+</div></section>
+<section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือ stress-test แบบวิจัยด้วย AI</h2>
+</div><div class="markdown-body"><p>เปิด <a href="downloads/module-06-experiment-design-workbook.md">experiment-design-workbook.md</a> แล้วทำทีละช่วง ให้ AI ถามทีละคำถาม ช่วยจัดข้อมูลลงตาราง และชี้ช่องที่ยังไม่มีหลักฐาน แต่ห้ามให้ AI เติมค่าหรือเลือกวิธีแทนคุณ หากทำร่วมกับผู้อื่นสามารถแบ่งมุมตรวจเป็น:</p>
 <ul>
 <li><strong>Claim keeper:</strong> ตรวจว่า objective, hypothesis, evidence และ conclusion ใช้คำเดียวกัน</li>
 <li><strong>Design engineer:</strong> เติม specification, comparator, procedure และ measurement</li>
@@ -175,17 +185,9 @@
 <li><code>design is blocked pending evidence/approval/resource</code></li>
 </ul>
 <p>ระบุ revision สำคัญที่สุด 3 ข้อ ผู้รับผิดชอบ และหลักฐาน/คำวินิจฉัยที่ต้องหา</p>
-<h2 id="สิ่งที่คุณต้องเตรียม">สิ่งที่คุณต้องเตรียม</h2>
-<ul>
-<li><a href="downloads/module-06-experiment-design-workbook.md">experiment-design-workbook.md</a></li>
-<li>rough design ของตนเอง, open-access paper ที่มี Methods/Results และ verified DOI หรือ design dossier ตัวอย่างอย่างใดอย่างหนึ่ง</li>
-<li>ข้อมูลของ questionnaire, interview, sensor, simulation หรือ existing dataset ที่กำลังพิจารณาใช้</li>
-<li>hypothetical result cards 4 สถานะ โดยทำเครื่องหมายชัดเจนว่าไม่ใช่ผลจริง</li>
-<li>compliance-trigger checklist และลิงก์หน่วยงาน/แบบฟอร์มปัจจุบันของสถาบัน</li>
-<li>รูปแบบบันทึก <code>TBD — owner/source/date</code> สำหรับสิ่งที่ต้องถามผู้เชี่ยวชาญ</li>
-</ul>
-<h2 id="ผลผลิตและเกณฑ์ผ่าน">ผลผลิตและเกณฑ์ผ่าน</h2>
-<p>ส่ง:</p>
+</div></section>
+<section class="section markdown-section" id="finish" aria-labelledby="finish-heading"><div class="section-heading compact"><h2 id="finish-heading">ผลผลิตและเกณฑ์ผ่าน</h2>
+</div><div class="markdown-body"><p>ส่ง:</p>
 <ul>
 <li><code>experiment-design-workbook.md</code></li>
 <li><code>design-red-team-findings.md</code></li>
@@ -202,13 +204,23 @@
 <li>ข้อสรุปสุดท้ายไม่กว้างกว่า design และไม่มี result, citation, approval หรือ parameter ที่แต่งขึ้น</li>
 <li>design ถูกแก้อย่างน้อยหนึ่งจุดจาก valid red-team finding</li>
 </ul>
-<h2 id="ทบทวนและพัฒนาต่อ">ทบทวนและพัฒนาต่อ</h2>
-<p><strong>ทบทวน:</strong> แก้ workbook ตาม red team แล้วนำจุด <code>expert review required</code> ไปถามอาจารย์ที่ปรึกษา นักสถิติ ผู้เชี่ยวชาญเครื่องมือ หรือหน่วยงานจริยธรรม/กำกับที่เกี่ยวข้อง บันทึกคำตอบและแหล่งอ้างอิง ห้ามให้ AI ปิด <code>TBD</code> เอง</p>
+</div></section>
+<section class="section markdown-section" id="review" aria-labelledby="review-heading"><div class="section-heading compact"><h2 id="review-heading">คำถามทบทวนท้ายบท</h2>
+</div><div class="markdown-body"><ol type="1">
+<li>candidate claim ของคุณต้องอาศัยสมมุติฐานหรือเงื่อนไขจำเป็นใดบ้าง</li>
+<li>comparator หรือ negative case ที่เลือกช่วยตัดคำอธิบายคู่แข่งใด</li>
+<li>instrument วัด construct ที่ต้องการจริงหรือวัดเพียง proxy และต้องตรวจ validity อย่างไร</li>
+<li>เมื่อผลไม่ต่างหรือสรุปไม่ได้ คุณได้รับอนุญาตให้กล่าวอะไรและห้ามกล่าวอะไร</li>
+<li>ประเด็นใด AI ช่วยตรวจโครงได้ แต่ต้องส่งต่อให้นักสถิติ ผู้เชี่ยวชาญ หรือหน่วยงานจริยธรรมตัดสิน</li>
+</ol>
+</div></section>
+<section class="section markdown-section" id="ทบทวนและพัฒนาต่อ" aria-labelledby="ทบทวนและพัฒนาต่อ-heading"><div class="section-heading compact"><h2 id="ทบทวนและพัฒนาต่อ-heading">ทบทวนและพัฒนาต่อ</h2>
+</div><div class="markdown-body"><p><strong>ทบทวน:</strong> แก้ workbook ตาม red team แล้วนำจุด <code>expert review required</code> ไปถามอาจารย์ที่ปรึกษา นักสถิติ ผู้เชี่ยวชาญเครื่องมือ หรือหน่วยงานจริยธรรม/กำกับที่เกี่ยวข้อง บันทึกคำตอบและแหล่งอ้างอิง ห้ามให้ AI ปิด <code>TBD</code> เอง</p>
 <p><strong>พัฒนาต่อ:</strong> ใช้ hypothesis IDs, decision rules และ permitted-claim table เป็น analysis plan และ claim gate เมื่อมีข้อมูลจริงใน Module 7 หรือใช้ตรวจข้อความก่อนผลิตเอกสารใน Module 8 หากจบที่ Module 6 ให้ใช้ design verdict และ revision plan เป็นชิ้นงานปลายทาง</p>
-
-    </article>
-    <nav class="module-pagination" aria-label="โมดูลก่อนหน้าและถัดไป"><a class="button secondary" href="module-5.html">← ก่อนหน้า</a><a class="button primary" href="module-7.html">ไป Module 7 →</a></nav>
+</div></section>
+    </div>
+    <section class="section final-cta"><nav class="module-pagination" aria-label="โมดูลก่อนหน้าและถัดไป"><a class="button secondary" href="module-5.html">← ก่อนหน้า</a><a class="button primary" href="module-7.html">ไป Module 7 →</a></nav></section>
   </main>
-  <footer><p>AI for Research · ตรวจหลักฐานก่อนเชื่อคำตอบของ AI</p><p class="footer-credit">Department of Computer Engineering · Kasetsart University</p></footer>
+  <site-footer></site-footer>
 </body>
 </html>
