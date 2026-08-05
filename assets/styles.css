@@ -149,6 +149,12 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
 .markdown-command code { min-width: 0; white-space: pre-wrap; }
 .prompt-edit-note { margin: 1.25rem 0 .35rem; padding: .7rem .9rem; border-left: 4px solid var(--accent); background: rgba(239,125,85,.1); color: var(--ink); font-weight: 600; }
 .prompt-template { border-color: rgba(239,125,85,.55); }
+.prompt-template { display: block; }
+.prompt-editor { display: block; width: 100%; min-height: 15rem; resize: vertical; padding: 1rem; border: 1px solid rgba(255,255,255,.18); border-radius: .5rem; color: var(--white); background: rgba(0,0,0,.2); font: .92rem/1.6 ui-monospace, SFMono-Regular, Consolas, monospace; tab-size: 2; }
+.prompt-editor:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+.prompt-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .55rem; margin-top: .75rem; }
+.command .prompt-actions button { padding: .45rem .7rem; border: 1px solid rgba(255,255,255,.28); border-radius: .5rem; }
+.prompt-save-status { color: var(--ink-soft); }
 .command button { align-self: start; border: 0; background: transparent; color: var(--mint); font: inherit; font-size: .92rem; cursor: pointer; }
 .checklist { display: grid; gap: .7rem; margin-top: 2rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
 .checklist label { display: flex; gap: .75rem; align-items: flex-start; }

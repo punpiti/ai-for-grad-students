@@ -58,9 +58,53 @@ if (platformButtons.length) {
   for (const button of platformButtons) button.addEventListener("click", () => selectPlatform(button.dataset.platformButton, true));
 }
 
+for (const [index, block] of [...document.querySelectorAll(".prompt-template")].entries()) {
+  const code = block.querySelector("code");
+  if (!code) continue;
+  const initialValue = code.textContent;
+  const storageKey = `ai-research-prompt:${location.pathname}:${index}`;
+  const savedValue = localStorage.getItem(storageKey);
+  const editor = document.createElement("textarea");
+  editor.className = "prompt-editor";
+  editor.setAttribute("aria-label", "แก้ไข Prompt ก่อนส่งให้ AI");
+  editor.spellcheck = false;
+  editor.value = savedValue ?? initialValue;
+  editor.rows = Math.min(28, Math.max(10, editor.value.split("\n").length + 1));
+  code.replaceWith(editor);
+
+  const copyButton = block.querySelector("[data-copy]");
+  const actions = document.createElement("div");
+  actions.className = "prompt-actions";
+  const saveButton = document.createElement("button");
+  saveButton.type = "button";
+  saveButton.textContent = "บันทึกในเครื่อง";
+  const resetButton = document.createElement("button");
+  resetButton.type = "button";
+  resetButton.textContent = "คืนค่าเริ่มต้น";
+  const status = document.createElement("small");
+  status.className = "prompt-save-status";
+  status.setAttribute("aria-live", "polite");
+  if (savedValue !== null) status.textContent = "โหลดข้อมูลที่บันทึกไว้ใน browser นี้แล้ว";
+  saveButton.addEventListener("click", () => {
+    localStorage.setItem(storageKey, editor.value);
+    status.textContent = "บันทึกแล้วใน browser นี้";
+  });
+  resetButton.addEventListener("click", () => {
+    localStorage.removeItem(storageKey);
+    editor.value = initialValue;
+    status.textContent = "คืนค่าเริ่มต้นแล้ว";
+  });
+  if (copyButton) actions.append(copyButton);
+  actions.append(saveButton, resetButton, status);
+  block.append(actions);
+}
+
 async function copyCommand(event) {
   const button = event.currentTarget;
-  const value = button.parentElement.querySelector("code").textContent;
+  const command = button.closest(".command");
+  const editor = command.querySelector(".prompt-editor");
+  const code = command.querySelector("code");
+  const value = editor ? editor.value : code.textContent;
   await navigator.clipboard.writeText(value);
   button.textContent = "คัดลอกแล้ว";
   setTimeout(() => { button.textContent = "คัดลอก"; }, 1500);
