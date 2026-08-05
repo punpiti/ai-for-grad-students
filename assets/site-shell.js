@@ -11,11 +11,28 @@ const MODULE_LINKS = [
 ];
 
 const PRODUCTION_BASE = "https://urban.cpe.ku.ac.th/ai-for-research/";
+const GOOGLE_ANALYTICS_ID = "G-BWX7PFH4XM";
 const productionFile = location.pathname.endsWith("/") ? "" : location.pathname.split("/").pop();
-const canonical = document.createElement("link");
+const canonical = document.querySelector('link[rel="canonical"]') || document.createElement("link");
 canonical.rel = "canonical";
 canonical.href = PRODUCTION_BASE + productionFile;
-document.head.append(canonical);
+if (!canonical.isConnected) document.head.append(canonical);
+
+// Use the same GA4 property as urban.cpe.ku.ac.th so visits remain in one
+// measurement stream. The script is shared by every course page.
+window.dataLayer = window.dataLayer || [];
+function gtag() { window.dataLayer.push(arguments); }
+gtag("js", new Date());
+gtag("config", GOOGLE_ANALYTICS_ID, {
+  anonymize_ip: true,
+  page_location: canonical.href,
+  page_title: document.title,
+});
+
+const analyticsScript = document.createElement("script");
+analyticsScript.async = true;
+analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_ID}`;
+document.head.append(analyticsScript);
 
 const LOCAL_LINKS = {
   home: [["course", "หลักสูตร"], ["requirements", "ข้อกำหนด"]],
