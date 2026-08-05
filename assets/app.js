@@ -42,6 +42,20 @@ if (markdownArticle && markdownToc) {
     item.appendChild(link);
     markdownToc.appendChild(item);
   }
+  for (const block of markdownArticle.querySelectorAll("pre")) {
+    const code = block.querySelector("code");
+    if (!code) continue;
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "markdown-copy";
+    button.textContent = "คัดลอก";
+    button.addEventListener("click", async () => {
+      await navigator.clipboard.writeText(code.textContent);
+      button.textContent = "คัดลอกแล้ว";
+      setTimeout(() => { button.textContent = "คัดลอก"; }, 1500);
+    });
+    block.appendChild(button);
+  }
 }
 
 const platformButtons = document.querySelectorAll("[data-platform-button]");

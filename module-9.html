@@ -486,7 +486,8 @@ Personal Choices
 <li>สิ่งที่ควรแก้ใน workflow รุ่นถัดไป</li>
 </ul>
 <p>ห้ามบันทึก credential, token, password หรือข้อมูลลับลงใน kit</p>
-<h2 id="โครงกิจกรรมในชั้นเรียน">โครงกิจกรรมในชั้นเรียน</h2>
+<h2 id="ลงมือสร้าง-personal-ai-research-kit">ลงมือสร้าง Personal AI Research Kit</h2>
+<pre class="text"><code>พาฉันสร้าง Personal AI Research Kit จากงานซ้ำหนึ่งเรื่อง ถามทีละหนึ่งคำถามและรอคำตอบ เริ่มจาก trigger, input, output, data classification, decision owner และความเสี่ยง ก่อนช่วยจัด DEFAULT/ASK/NEVER/ESCALATE ห้ามย้ายไฟล์ ส่งข้อมูล เปลี่ยน permission เชื่อมบริการภายนอก หรือเก็บ credential ทำทีละ artifact แล้วให้ฉันทดสอบ happy path และ failure case ก่อน freeze Version 1.0</code></pre>
 <ol type="1">
 <li><strong>Pain-point Inventory:</strong> เลือกงานซ้ำที่มีประโยชน์จริงหนึ่งเรื่อง</li>
 <li><strong>Framework Mapping:</strong> เติมกรอบ 12 ส่วนโดยยังไม่เลือก AI tool</li>
@@ -562,16 +563,14 @@ Personal Choices
 <li><a href="downloads/module-09-personal-workflow-kit-workbook.md">สมุดงาน Module 9</a> ที่กรอกครบ</li>
 </ul>
 <p>เกณฑ์ผ่านคือบุคคลอื่นสามารถอ่าน README แล้วใช้กรณีตัวอย่างเพื่อเรียก workflow ได้ เข้าใจว่าค่าใดกำหนดไว้แล้ว จุดใดต้องถาม จุดใดห้ามทำ จุดใดต้องส่งต่อ และสามารถตรวจผลจาก artifacts/tests/run record ได้</p>
-<h2 id="การเตรียมของผู้สอน">การเตรียมของผู้สอน</h2>
+<h2 id="สิ่งที่คุณต้องเตรียม">สิ่งที่คุณต้องเตรียม</h2>
 <ul>
-<li>empty Personal AI Research Kit template</li>
-<li>messy-folder mock, note-source artifacts, unsafe-share case และ backup/restore drill pack</li>
-<li>workflow-card template ที่มี framework 12 ส่วน</li>
-<li>course-specific starter cards สำหรับ Build-up, Reviews, Publication และหลักสูตรเต็ม</li>
-<li>choice cards สำหรับ DEFAULT/ASK/NEVER/ESCALATE</li>
-<li>mock cases และ chaos-test cards ที่ไม่มีข้อมูลลับ</li>
-<li>ตัวอย่าง kit ที่ดีหนึ่งชุดและตัวอย่าง over-automated/over-questioning อย่างละหนึ่งชุด</li>
-<li>rubric และ peer-attack checklist</li>
+<li><a href="downloads/module-09-personal-workflow-kit-workbook.md">สมุดงาน Module 9</a> และโฟลเดอร์ <code>my-ai-research-kit/</code> ว่าง</li>
+<li>งานที่ทำซ้ำหนึ่งเรื่อง หรือกรณีตัวอย่างที่ไม่มีข้อมูลลับ</li>
+<li>artifacts สำหรับทดลองสร้าง note, share package และ run record</li>
+<li>messy-folder mock และแฟ้มตัวอย่างสำหรับทดสอบ backup/restore โดยไม่ใช้ข้อมูลจริง</li>
+<li>choice cards สำหรับ DEFAULT/ASK/NEVER/ESCALATE และ peer-attack checklist</li>
+<li>เวลาเพียงพอสำหรับ dry run, failure tests และแก้ kit ก่อนกำหนด Version 1.0</li>
 </ul>
 <h2 id="การนำไปใช้หลังจบโมดูล">การนำไปใช้หลังจบโมดูล</h2>
 <p>ทดลอง Version 1.0 กับงานจริงขนาดเล็กที่ได้รับอนุญาต บันทึก run record และผลกระทบ ได้แก่ เวลาที่ใช้ จำนวนข้อผิดพลาด จำนวนครั้งที่ต้องถามซ้ำ จุดที่ workflow หยุดถูกต้อง และงานตรวจเพิ่มเติม หลังมีหลักฐานจากการใช้จริงจึงออกรุ่น 1.1 ไม่ถือว่า kit ใช้งานได้ทั่วไปจากการทดสอบในชั้นเรียนเพียงครั้งเดียว</p>

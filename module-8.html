@@ -95,7 +95,7 @@
 <li>บันทึก URL วันที่ดาวน์โหลด ชื่อแฟ้ม และ checksum ใน <code>venue-manifest.md</code></li>
 <li>แตกสำเนาไปทำงานใน <code>venue-working/</code></li>
 <li>ห้ามให้ AI ดาวน์โหลด package หรือ template จากแหล่งไม่ทราบที่มาเพื่อแก้ compile โดยอัตโนมัติ</li>
-<li>compile ใน environment ของรายวิชาโดยปิดความสามารถเรียกคำสั่งระบบจาก LaTeX เว้นแต่ผู้สอนตรวจสอบและอนุญาตเป็นกรณีเฉพาะ</li>
+<li>compile ใน environment ที่ Module 1 เตรียมไว้โดยปิดความสามารถเรียกคำสั่งระบบจาก LaTeX หากจำเป็นต้องเปิดความสามารถเพิ่มเติม ให้หยุดและตรวจความเสี่ยงก่อนทุกครั้ง</li>
 </ul>
 <h2 id="no-code-latex-หมายถึงอะไร">No-code LaTeX หมายถึงอะไร</h2>
 <p>ผู้เรียนไม่ต้องเขียนหรือท่องคำสั่ง LaTeX แต่ต้องเข้าใจโครงสร้างพอที่จะสั่ง AI ตรวจไฟล์ที่ถูกชั้น และไม่แก้ <code>.cls</code> หรือ <code>.sty</code> เพียงเพื่อให้เอกสารผ่าน</p>
@@ -469,7 +469,8 @@ Target length and tone:</code></pre>
 </tr>
 </tbody>
 </table>
-<h2 id="โครงกิจกรรมในชั้นเรียน">โครงกิจกรรมในชั้นเรียน</h2>
+<h2 id="ลงมือผลิตเอกสารกับ-ai-ทีละ-gate">ลงมือผลิตเอกสารกับ AI ทีละ Gate</h2>
+<pre class="text"><code>พาฉันผลิตเอกสารทีละ Gate และหยุดรอการตรวจทุกครั้ง เริ่มจาก official guideline/author kit และ pristine build ก่อนแตะเนื้อหา ใช้เฉพาะ verified claims, paragraph contracts, citations, figures และ tables ที่ฉันให้ ห้ามแก้ template ต้นฉบับ แต่ง citation/result หรือถือว่า compile ผ่านเท่ากับเนื้อหาถูกต้อง ทุก Gate ให้รายงาน source ที่เปลี่ยน build log ผลตรวจ PDF และสิ่งที่ฉันต้องตัดสินใจก่อนเดินต่อ</code></pre>
 <ol type="1">
 <li><strong>Word or LaTeX Decision:</strong> เปรียบเทียบ author kits จริงและเลือกสายจากหลักฐานของ venue</li>
 <li><strong>Template Autopsy:</strong> แกะแม่แบบเพื่อชี้ <code>.tex/.cls/.sty/.bst/.bib</code>, master file และ citation engine โดยไม่แก้ syntax</li>
@@ -480,7 +481,7 @@ Target length and tone:</code></pre>
 <li><strong>Section Assembly:</strong> รวมย่อหน้าที่ผ่านแล้วเป็น Markdown หนึ่งส่วนและตรวจ meaning preservation</li>
 <li><strong>Citation Build:</strong> เพิ่ม BibTeX record/citation ที่ตรวจสอบแล้ว</li>
 <li><strong>Figure and Table Build:</strong> เพิ่มอย่างละหนึ่งรายการจากไฟล์ต้นทาง</li>
-<li><strong>Break-and-Repair:</strong> ผู้สอนแจกกรณี citation หาย รูปหาย ตารางล้น หรือเนื้อหาหาย ให้ผู้เรียนระบุชั้นที่ควรแก้ก่อนสั่ง AI</li>
+<li><strong>Break-and-Repair:</strong> ใช้สำเนาทดลองที่มี citation หาย รูปหาย ตารางล้น หรือเนื้อหาหาย แล้วระบุชั้นที่ควรแก้ก่อนสั่ง AI ห้ามทำให้ไฟล์ต้นฉบับเสีย</li>
 <li><strong>PDF Red-team:</strong> ตรวจเนื้อหา venue compliance และ visual quality จาก PDF ฉบับจริง</li>
 </ol>
 <h2 id="ผลผลิตและเกณฑ์ผ่าน">ผลผลิตและเกณฑ์ผ่าน</h2>
@@ -497,15 +498,13 @@ Target length and tone:</code></pre>
 <li><a href="downloads/module-08-venue-document-workbook.md">สมุดงาน Module 8</a> ที่กรอกครบ</li>
 </ul>
 <p>เกณฑ์ผ่านคือแม่แบบเดิมและ outline compile ผ่านก่อนเพิ่มเนื้อหา ทุก citation รูป ตาราง และ cross-reference แกะย้อนกลับได้ ไม่มี unresolved error สำคัญ เนื้อหาใน PDF ตรงกับ Markdown และผลที่ตรวจสอบแล้ว และเอกสารผ่านทั้ง content, venue และ visual QA</p>
-<h2 id="การเตรียมของผู้สอน">การเตรียมของผู้สอน</h2>
+<h2 id="สิ่งที่คุณต้องเตรียม">สิ่งที่คุณต้องเตรียม</h2>
 <ul>
-<li>author kit อย่างน้อยหนึ่งชุดที่ใช้ LaTeX และหนึ่งชุดที่ใช้ Word จากแหล่งทางการ</li>
-<li>ชุด LaTeX ที่ทดสอบ pristine compile แล้วและอนุญาตให้ใช้ในชั้นเรียน</li>
-<li>mock paper ที่แยก Markdown เป็นส่วน มีรูป ตาราง และ BibTeX records ที่ตรวจสอบได้</li>
-<li>baseline PDF/log และ expected outline PDF</li>
-<li>break-and-repair cases ที่แยกสาเหตุตาม content/template/generated/build layer</li>
-<li>checklist สำหรับ venue compliance, content QA และ visual QA</li>
-<li>fallback template ของรายวิชาเมื่อเว็บไซต์ venue ใช้งานไม่ได้ โดยระบุชัดว่าไม่ใช่ template สำหรับส่งจริง</li>
+<li>official author kit ของ venue เป้าหมาย หรือชุดตัวอย่างของบทเรียนเมื่อยังไม่มี venue</li>
+<li>verified content package ที่มี Markdown รูป ตาราง และ BibTeX records ที่ตรวจสอบได้</li>
+<li>environment ที่ผ่าน pristine build test และพื้นที่แยก <code>venue-original/</code>, <code>venue-working/</code>, source, generated และ build output</li>
+<li>baseline PDF/log, venue compliance checklist, content QA และ visual QA</li>
+<li>สำเนาทดลองสำหรับ break-and-repair ห้ามทดลองกับ template ต้นฉบับหรือเอกสารฉบับส่งจริง</li>
 </ul>
 <h2 id="การบ้าน">การบ้าน</h2>
 <p>ผู้เรียนเพิ่ม Markdown อีกหนึ่งส่วน รูปหรือตารางอีกหนึ่งรายการ และ citation ที่ตรวจสอบแล้ว โดย compile หลังเปลี่ยนแต่ละประเภท จากนั้นส่ง PDF สองฉบับก่อนและหลัง Red-team พร้อมบันทึกว่าแก้ source ชั้นใด เพราะเหตุใด และตรวจได้อย่างไรว่าการแก้ไม่เปลี่ยนความหมายของงานวิจัย</p>
