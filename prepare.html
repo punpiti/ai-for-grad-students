@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-9">
-  <script src="assets/app.js?v=20260805-9" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-10">
+  <script src="assets/app.js?v=20260805-10" defer></script>
   <script src="assets/site-shell.js?v=20260805-2"></script>
 </head>
 <body class="prepare-page">
@@ -237,6 +237,7 @@
       <div class="plain-note"><strong>พร้อมไปต่อเมื่อ:</strong> Sign in สำเร็จและเห็นช่องสนทนาใน AI panel</div>
       <h3 class="section-zone-heading">ฝึกบอกบริบทของคุณให้ AI</h3>
       <p>กิจกรรมนี้ฝึกให้ AI รู้ว่าใครกำลังทำงานอะไรและต้องการความช่วยเหลือแบบใด โดยให้ข้อมูลเท่าที่จำเป็น ช่องที่ไม่เกี่ยวข้องข้ามได้ และไม่ต้องระบุรหัสนิสิต เบอร์โทร อีเมล ที่อยู่ credential หรือข้อมูลส่วนบุคคลของผู้อื่น</p>
+      <div data-research-profile data-mode="edit"></div>
       <ol class="readiness-steps">
         <li><span>01</span><div><strong>คัดลอก Prompt สัมภาษณ์</strong><br>แก้ตัวเลือกใน <code>{{…}}</code> ก่อนส่ง หากยังไม่ทราบให้คงคำว่า “ถามฉัน” ไว้<p class="prompt-edit-note">✎ แก้ก่อนส่ง: เปลี่ยนข้อความใน {{…}} ให้ตรงกับคุณ หรือปล่อยให้ AI ถามทีละข้อ</p><div class="command markdown-command prompt-template"><code>ช่วยสัมภาษณ์ฉันเพื่อสร้าง Learner Profile สำหรับใช้ใน AI for Research โดยถามครั้งละหนึ่งคำถามและรอคำตอบ ห้ามสร้างหรือแก้ไขไฟล์จนกว่าฉันจะตรวจ profile และอนุมัติ
 
@@ -253,6 +254,8 @@
 10. ภาษาที่ต้องการใช้ทำงาน: {{ไทย / อังกฤษ / สองภาษา}}
 11. ข้อจำกัดด้านเวลา เครื่องมือ หรือการเข้าถึงข้อมูล: {{ถามฉัน}}
 12. ระดับความอ่อนไหวของข้อมูล: {{public / internal / confidential / sensitive / ยังไม่แน่ใจ}}
+13. วารสาร การประชุม หรือแหล่งเผยแพร่ที่สนใจ: {{ถามฉัน — หากยังไม่มีให้บันทึกว่า ยังไม่ทราบ}}
+14. กลุ่มผู้อ่านหรือผู้ใช้ผลที่ต้องการสื่อสารด้วย: {{ถามฉัน}}
 
 ก่อนถาม เตือนฉันว่าไม่ต้องให้รหัสนิสิต เบอร์โทร อีเมล ที่อยู่ credential หรือข้อมูลส่วนบุคคลที่ไม่จำเป็น เมื่อถามครบให้แสดง Learner Profile ฉบับร่าง แยก “ข้อมูลที่ฉันยืนยัน” “ยังไม่ทราบ” และ “ไม่ประสงค์ระบุ” แล้วถามว่าต้องแก้อะไรก่อนบันทึก ห้ามเดาหรือเติมข้อมูลแทนฉัน</code><button type="button" data-copy>คัดลอก Prompt สร้าง Learner Profile</button></div></div></li>
         <li><span>02</span><div><strong>ตอบทีละคำถาม</strong><br>วาง Prompt ใน <span data-agent-panel>Codex panel</span> แล้วตอบเฉพาะข้อมูลที่เกี่ยวข้อง คุณสามารถพิมพ์ “ข้าม” หรือ “ไม่ประสงค์ระบุ” ได้ทุกข้อ</div></li>

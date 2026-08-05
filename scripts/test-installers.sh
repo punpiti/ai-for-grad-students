@@ -162,4 +162,11 @@ if rg -n 'M1 · Workspace</a>|M2 · AI Boundaries</a>|M3 · Problem–Gap–RQ</
   echo 'Non-canonical module label found on the homepage.' >&2
   exit 1
 fi
+for page in prepare.html module-{2..9}.html; do
+  grep -q 'data-research-profile' "$root/$page"
+done
+grep -q 'ai-research-profile:v1' "$root/assets/app.js"
+grep -q 'คัดลอกบริบทให้ AI' "$root/assets/app.js"
+grep -q 'RESEARCH_PROFILE_CONTEXT' "$root/assets/app.js"
+grep -q 'profileKeysByModule' "$root/assets/app.js"
 echo 'Installer static checks passed.'

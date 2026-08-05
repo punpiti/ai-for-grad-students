@@ -22,6 +22,103 @@ function setPreference(name, value) {
   localStorage.setItem(name, value);
 }
 
+const researchProfileKey = "ai-research-profile:v1";
+const researchProfileFields = [
+  ["thai_name", "ชื่อภาษาไทย", "text"],
+  ["english_name", "ชื่อภาษาอังกฤษ", "text"],
+  ["affiliation", "สังกัด/หน่วยงาน", "text"],
+  ["role", "บทบาทหรือระดับการศึกษา", "text"],
+  ["field", "สาขาหรือความเชี่ยวชาญ", "text"],
+  ["advisor", "อาจารย์ที่ปรึกษา (ถ้ามีและยินยอมระบุ)", "text"],
+  ["research_topic", "หัวข้อวิจัยหรือประเด็นที่สนใจ", "textarea"],
+  ["research_stage", "ระยะของงานตอนนี้", "text"],
+  ["desired_output", "ผลงานที่อยากได้", "text"],
+  ["target_venue", "วารสาร/การประชุม/แหล่งเผยแพร่ที่สนใจ", "text"],
+  ["intended_audience", "กลุ่มผู้อ่านหรือผู้ใช้ผล", "text"],
+  ["working_language", "ภาษาที่ต้องการใช้ทำงาน", "text"],
+  ["constraints", "ข้อจำกัดด้านเวลา เครื่องมือ หรือข้อมูล", "textarea"],
+  ["data_sensitivity", "ระดับความอ่อนไหวของข้อมูล", "text"],
+];
+
+function loadResearchProfile() {
+  try { return JSON.parse(localStorage.getItem(researchProfileKey) || "{}"); }
+  catch { return {}; }
+}
+
+function saveResearchProfile(profile) {
+  localStorage.setItem(researchProfileKey, JSON.stringify(profile));
+}
+
+function hasResearchProfile(profile) {
+  return researchProfileFields.some(([key]) => String(profile[key] || "").trim());
+}
+
+const profileKeysByModule = {
+  1: researchProfileFields.map(([key]) => key),
+  2: ["role", "affiliation", "field", "research_topic", "research_stage", "working_language", "data_sensitivity"],
+  3: ["field", "research_topic", "research_stage", "desired_output", "intended_audience", "constraints", "data_sensitivity"],
+  4: ["field", "research_topic", "target_venue", "intended_audience", "working_language", "data_sensitivity"],
+  5: ["field", "research_topic", "research_stage", "target_venue", "intended_audience", "constraints", "data_sensitivity"],
+  6: ["field", "research_topic", "research_stage", "target_venue", "constraints", "data_sensitivity"],
+  7: ["field", "research_topic", "desired_output", "intended_audience", "constraints", "data_sensitivity"],
+  8: ["affiliation", "field", "target_venue", "intended_audience", "desired_output", "working_language", "constraints", "data_sensitivity"],
+  9: ["role", "field", "research_topic", "research_stage", "desired_output", "working_language", "constraints", "data_sensitivity"],
+};
+
+function currentModuleNumber() {
+  if (location.pathname.endsWith("prepare.html")) return 1;
+  const match = location.pathname.match(/module-(\d+)\.html$/);
+  return match ? Number(match[1]) : 1;
+}
+
+function profileContextText(profile) {
+  const allowed = new Set(profileKeysByModule[currentModuleNumber()] || []);
+  const lines = researchProfileFields
+    .filter(([key]) => allowed.has(key) && String(profile[key] || "").trim())
+    .map(([key, label]) => `- ${label}: ${String(profile[key]).trim()}`);
+  return lines.length ? `[RESEARCH_PROFILE_CONTEXT]\n${lines.join("\n")}\n[/RESEARCH_PROFILE_CONTEXT]` : "";
+}
+
+function renderResearchProfile(host, forceEdit = false) {
+  const profile = loadResearchProfile();
+  const hasProfile = hasResearchProfile(profile);
+  const relevantKeys = new Set(profileKeysByModule[currentModuleNumber()] || []);
+  const hasRelevantProfile = researchProfileFields.some(([key]) => relevantKeys.has(key) && String(profile[key] || "").trim());
+  const editMode = forceEdit || host.dataset.mode === "edit" || !hasRelevantProfile;
+  if (!editMode) {
+    const rows = researchProfileFields
+      .filter(([key]) => relevantKeys.has(key) && String(profile[key] || "").trim())
+      .map(([key, label]) => `<div><dt>${label}</dt><dd>${String(profile[key]).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;")}</dd></div>`)
+      .join("");
+    host.innerHTML = `<div class="profile-status"><div><p class="eyebrow">Saved research context</p><h3>โมดูลนี้จะใช้ข้อมูลที่คุณบันทึกไว้</h3><p>ข้อมูลมาจาก Research Profile ใน browser นี้ และเลือกใช้เฉพาะช่องที่เกี่ยวข้องกับโมดูล</p></div><div class="profile-summary-actions"><button type="button" class="button primary" data-profile-copy>คัดลอกบริบทให้ AI</button><button type="button" class="button secondary" data-profile-edit>แก้ไขข้อมูล</button><small aria-live="polite"></small></div></div><dl class="profile-summary">${rows}</dl>`;
+    host.querySelector("[data-profile-edit]").addEventListener("click", () => renderResearchProfile(host, true));
+    host.querySelector("[data-profile-copy]").addEventListener("click", async () => {
+      await navigator.clipboard.writeText(profileContextText(profile));
+      host.querySelector(".profile-summary-actions small").textContent = "คัดลอกแล้ว";
+    });
+    return;
+  }
+  const fields = researchProfileFields.map(([key, label, type]) => {
+    const value = String(profile[key] || "").replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+    const control = type === "textarea" ? `<textarea name="${key}" rows="3">${value}</textarea>` : `<input name="${key}" value="${value}">`;
+    return `<label><span>${label}</span>${control}</label>`;
+  }).join("");
+  host.innerHTML = `<div class="profile-status"><div><p class="eyebrow">Research Profile · saved locally</p><h3>${hasProfile ? "เติมหรือแก้ไขข้อมูลที่ใช้ร่วมกัน" : "ตอบคำถามเดียวกับ Module 1 ก่อนเริ่ม"}</h3><p>กรอกเท่าที่จำเป็น ช่องใดไม่เกี่ยวข้องให้เว้นว่าง ข้อมูลจะเก็บเฉพาะ browser นี้</p></div></div><form class="profile-form">${fields}<div class="profile-actions"><button class="button primary" type="submit">บันทึกในเครื่อง</button>${hasRelevantProfile ? '<button class="button secondary" type="button" data-profile-cancel>ยกเลิก</button>' : ""}<small aria-live="polite"></small></div></form>`;
+  const form = host.querySelector("form");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const next = {};
+    for (const [key] of researchProfileFields) next[key] = form.elements[key].value.trim();
+    saveResearchProfile(next);
+    document.dispatchEvent(new CustomEvent("research-profile-updated", { detail: next }));
+    for (const item of document.querySelectorAll("[data-research-profile]")) renderResearchProfile(item);
+  });
+  const cancel = host.querySelector("[data-profile-cancel]");
+  if (cancel) cancel.addEventListener("click", () => renderResearchProfile(host));
+}
+
+for (const host of document.querySelectorAll("[data-research-profile]")) renderResearchProfile(host);
+
 const links = document.querySelectorAll('a[href^="#"]');
 for (const link of links) {
   link.addEventListener("click", () => {
@@ -58,6 +155,34 @@ if (platformButtons.length) {
   for (const button of platformButtons) button.addEventListener("click", () => selectPlatform(button.dataset.platformButton, true));
 }
 
+const promptProfileMap = {
+  THAI_NAME: "thai_name",
+  ENGLISH_NAME: "english_name",
+  AFFILIATION: "affiliation",
+  ROLE: "role",
+  RESEARCH_FIELD: "field",
+  ADVISOR: "advisor",
+  RESEARCH_TOPIC_OR_RQ: "research_topic",
+  TARGET_VENUE: "target_venue",
+  INTENDED_AUDIENCE: "intended_audience",
+  RESEARCH_QUESTION: "research_topic",
+  OUTPUT_AUDIENCE: "intended_audience",
+  OUTPUT_TYPE: "desired_output",
+  DATA_CLASSIFICATION: "data_sensitivity",
+  WORKING_LANGUAGE: "working_language",
+  CONSTRAINTS: "constraints",
+};
+
+function applyProfileToPrompt(text, profile) {
+  text = text.replace(/^\[RESEARCH_PROFILE_CONTEXT\][\s\S]*?^\[\/RESEARCH_PROFILE_CONTEXT\]\n*/m, "");
+  for (const [variable, profileKey] of Object.entries(promptProfileMap)) {
+    const value = String(profile[profileKey] || "").trim();
+    if (value) text = text.replace(new RegExp(`(${variable}:\\s*)(?:\\{\\{[^\\n]*\\}\\}|[^\\n]*)`), `$1${value}`);
+  }
+  const context = profileContextText(profile);
+  return context ? `${context}\n\n${text}` : text;
+}
+
 for (const [index, block] of [...document.querySelectorAll(".prompt-template")].entries()) {
   const code = block.querySelector("code");
   if (!code) continue;
@@ -68,7 +193,7 @@ for (const [index, block] of [...document.querySelectorAll(".prompt-template")].
   editor.className = "prompt-editor";
   editor.setAttribute("aria-label", "แก้ไข Prompt ก่อนส่งให้ AI");
   editor.spellcheck = false;
-  editor.value = savedValue ?? initialValue;
+  editor.value = savedValue ?? applyProfileToPrompt(initialValue, loadResearchProfile());
   editor.rows = Math.min(28, Math.max(10, editor.value.split("\n").length + 1));
   code.replaceWith(editor);
 
@@ -98,6 +223,12 @@ for (const [index, block] of [...document.querySelectorAll(".prompt-template")].
   actions.append(saveButton, resetButton, status);
   block.append(actions);
 }
+
+document.addEventListener("research-profile-updated", (event) => {
+  for (const editor of document.querySelectorAll(".prompt-editor")) {
+    editor.value = applyProfileToPrompt(editor.value, event.detail);
+  }
+});
 
 async function copyCommand(event) {
   const button = event.currentTarget;
