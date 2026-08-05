@@ -9,36 +9,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-10">
-  <script src="assets/site-shell.js?v=20260805-1"></script>
-  <script src="assets/app.js?v=20260805-10" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-16">
+  <script src="assets/site-shell.js?v=20260805-4"></script>
+  <script src="assets/app.js?v=20260805-15" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
   <site-header current="8"></site-header>
   <main id="main">
-    <section class="prepare-hero module-hero"><p class="eyebrow">Module 8 · Self-paced lesson</p><h1 aria-label="Module 8 — การผลิตบทความวิจัยและสื่อการนำเสนอตามรูปแบบของแหล่งเผยแพร่">Document<br><span>Production</span></h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
+    <section class="prepare-hero module-hero"><p class="eyebrow">โมดูล 8</p><h1 aria-label="โมดูล 8 — การผลิตบทความวิจัยและสื่อการนำเสนอตามรูปแบบของแหล่งเผยแพร่">ผลิตเอกสาร<br><span>และสื่อนำเสนอ</span></h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้า หรือเริ่มที่โมดูลนี้ได้ทันที ให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
     <section class="section profile-context"><div data-research-profile></div></section>
     <div id="module-content">
-<section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><h2 id="start-heading">ก่อนเริ่ม: เลือกทางเรียนและเตรียมสิ่งที่ใช้</h2>
+<section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><p class="eyebrow">การเตรียมตัวก่อนเรียน</p><h2 id="start-heading">ของต้องมีก่อนเรียน</h2>
 </div><div class="markdown-body"><ul>
 <li><strong>เรียนต่อเนื่อง:</strong> ใช้ verified claims, ตาราง, ภาพ, citation records และผลวิเคราะห์จาก Module 4–7 เพื่อประกอบเอกสารตามข้อกำหนดของแหล่งเผยแพร่</li>
-<li><strong>เรียนแบบ Standalone:</strong> เริ่มจาก author kit และ verified content package ของตนเอง หรือใช้ mock package ของรายวิชาที่มี Markdown รูป ตาราง และรายการอ้างอิงพร้อมตรวจ</li>
+<li><strong>เริ่มที่โมดูลนี้:</strong> เปิด <a href="module-8-publication-demo.html">ห้องทดลอง Markdown → Springer/IEEE → PDF</a> แก้เฉพาะเนื้อหา Markdown แล้วลองสลับรูปแบบเอกสารได้ทันที หรือดาวน์โหลด <a href="downloads/module-08-mock-publication-case.md">กรณีตัวอย่างพร้อมใช้</a> ไปทำกับ AI</li>
 </ul>
 <h3 id="สิ่งที่ต้องเตรียม">สิ่งที่ต้องเตรียม</h3>
 <ul>
 <li>official author kit ของ venue เป้าหมาย หรือชุดตัวอย่างของบทเรียนเมื่อยังไม่มี venue</li>
 <li>verified content package ที่มี Markdown รูป ตาราง และ BibTeX records ที่ตรวจสอบได้</li>
-<li>environment ที่ผ่าน pristine build test และพื้นที่แยก <code>venue-original/</code>, <code>venue-working/</code>, source, generated และ build output</li>
+<li>โปรแกรมที่เปิดรูปแบบเอกสารตามข้อกำหนดได้ เช่น Word, Overleaf หรือบริการสร้าง PDF ที่ AI ใช้งานได้ พร้อมพื้นที่แยกต้นฉบับ สำเนาทำงาน และผลลัพธ์</li>
 <li>baseline PDF/log, venue compliance checklist, content QA และ visual QA</li>
 <li>สำเนาทดลองสำหรับ break-and-repair ห้ามทดลองกับ template ต้นฉบับหรือเอกสารฉบับส่งจริง</li>
 </ul>
+<div class="plain-note"><strong>คุณรับผิดชอบเนื้อหา ส่วนแม่แบบช่วยจัดหน้า:</strong> เขียนและแก้ข้อความหลัก เหตุผล หลักฐาน ข้อจำกัด และย่อหน้าของคุณใน Word หรือ Markdown ตามรูปแบบที่แหล่งเผยแพร่กำหนด หากใช้ LaTeX คุณให้ AI หรือ Overleaf ประกอบแฟ้มและสร้าง PDF ได้ โดยคุณตรวจเนื้อหาและหน้ากระดาษจากผลลัพธ์ ไม่ต้องแก้โค้ดหรือระบบสร้างเอกสารเอง</div>
+<div class="hero-actions"><a class="button primary" href="module-8-publication-demo.html">ลองแก้ Markdown แล้วเปลี่ยนรูปแบบ PDF →</a></div>
 </div></section>
 <section class="section markdown-section" id="คำถามแกนของโมดูล" aria-labelledby="คำถามแกนของโมดูล-heading"><div class="section-heading compact"><h2 id="คำถามแกนของโมดูล-heading">คำถามแกนของโมดูล</h2>
 </div><div class="markdown-body"><p>จะเปลี่ยนเนื้อหาวิจัยที่ตรวจสอบแล้วให้เป็นบทความ PDF โปสเตอร์ หรือสไลด์ที่ตรงตามข้อกำหนดของแหล่งเผยแพร่ โดยไม่ทำลายแม่แบบ ไม่ทำให้การอ้างอิงผิด และไม่ปล่อยให้รูปแบบบดบังข้อบกพร่องของเนื้อหาได้อย่างไร</p>
 </div></section>
-<section class="section markdown-section" id="outcomes" aria-labelledby="outcomes-heading"><div class="section-heading compact"><h2 id="outcomes-heading">สิ่งที่จะเรียนรู้</h2>
-</div><div class="markdown-body"><p>เมื่อจบโมดูล ผู้เรียนสามารถ</p>
+<section class="section markdown-section" id="outcomes" aria-labelledby="outcomes-heading"><div class="section-heading compact"><p class="eyebrow">LO</p><h2 id="outcomes-heading">สิ่งที่จะทำได้</h2>
+</div><div class="markdown-body"><p>เมื่อจบโมดูล คุณจะสามารถ</p>
 <ol type="1">
 <li>เลือกสายการผลิต Word หรือ LaTeX จากข้อกำหนดทางการของแหล่งเผยแพร่ ไม่เลือกจากความชอบส่วนบุคคล</li>
 <li>ดาวน์โหลดและเก็บชุดแม่แบบทางการ พร้อมบันทึกแหล่งที่มา รุ่น วันที่ และเงื่อนไขการใช้</li>
@@ -49,7 +51,7 @@
 <li>แทรกรูป ตาราง และรายการอ้างอิงอย่างตรวจสอบย้อนกลับได้</li>
 <li>ตรวจทั้งความถูกต้องของเนื้อหาและคุณภาพการนำเสนอใน PDF หรือเอกสารที่ส่งจริง</li>
 </ol>
-<p>โมดูลนี้ไม่รับรองการตอบรับตีพิมพ์ และไม่ถือว่า compile ผ่านเท่ากับบทความถูกต้อง ผู้เขียนยังรับผิดชอบข้อกล่าวอ้าง ข้อมูล การอ้างอิง ความเป็นผู้ประพันธ์ จริยธรรม และการเปิดเผยการใช้ AI</p>
+<p>โมดูลนี้ไม่รับรองการตอบรับตีพิมพ์ และไม่ถือว่าสร้างเอกสารผ่านเท่ากับบทความถูกต้อง คุณยังรับผิดชอบข้อกล่าวอ้าง ข้อมูล การอ้างอิง ความเป็นผู้ประพันธ์ จริยธรรม และการเปิดเผยการใช้ AI</p>
 </div></section>
 <section class="section markdown-section" id="latex-คืออะไร-และเหตุใดไม่ใช้-microsoft-word-อย่างเดียว" aria-labelledby="latex-คืออะไร-และเหตุใดไม่ใช้-microsoft-word-อย่างเดียว-heading"><div class="section-heading compact"><h2 id="latex-คืออะไร-และเหตุใดไม่ใช้-microsoft-word-อย่างเดียว-heading">LaTeX คืออะไร และเหตุใดไม่ใช้ Microsoft Word อย่างเดียว</h2>
 </div><div class="markdown-body"><p>LaTeX เป็นระบบจัดเอกสารที่แยก <strong>เนื้อหาและโครงสร้าง</strong> ออกจาก <strong>กฎการจัดรูปแบบ</strong> ผู้เขียนระบุว่าส่วนใดเป็นชื่อเรื่อง หัวข้อ สมการ รูป ตาราง หรือการอ้างอิง แล้วระบบใช้แม่แบบของแหล่งเผยแพร่จัดหน้าให้</p>
@@ -87,7 +89,7 @@
 </table>
 <p>หลักตัดสินคือ <strong>ใช้รูปแบบที่แหล่งเผยแพร่กำหนด</strong> หาก venue กำหนด Word ให้ใช้ Word หาก venue มี LaTeX template ให้เริ่มจาก template นั้น ไม่ควรแปลง PDF ตัวอย่างกลับเป็นแม่แบบเอง และไม่ควรบังคับ LaTeX เพียงเพราะดูเป็นงานวิชาการ</p>
 </div></section>
-<section class="section markdown-section" id="venue-first-intake" aria-labelledby="venue-first-intake-heading"><div class="section-heading compact"><h2 id="venue-first-intake-heading">Venue-first Intake</h2>
+<section class="section markdown-section" id="venue-first-intake" aria-labelledby="venue-first-intake-heading"><div class="section-heading compact"><h2 id="venue-first-intake-heading">เริ่มจากข้อกำหนดของแหล่งเผยแพร่</h2>
 </div><div class="markdown-body"><p>เริ่มจากหน้า Author Guidelines หรือ Submission Guidelines ทางการของ venue แล้วบันทึก</p>
 <ul>
 <li>ชื่อแหล่งเผยแพร่ ประเภทบทความ และกลุ่มผู้อ่าน</li>
@@ -108,8 +110,8 @@
 <li>compile ใน environment ที่ Module 1 เตรียมไว้โดยปิดความสามารถเรียกคำสั่งระบบจาก LaTeX หากจำเป็นต้องเปิดความสามารถเพิ่มเติม ให้หยุดและตรวจความเสี่ยงก่อนทุกครั้ง</li>
 </ul>
 </div></section>
-<section class="section markdown-section" id="no-code-latex-หมายถึงอะไร" aria-labelledby="no-code-latex-หมายถึงอะไร-heading"><div class="section-heading compact"><h2 id="no-code-latex-หมายถึงอะไร-heading">No-code LaTeX หมายถึงอะไร</h2>
-</div><div class="markdown-body"><p>ผู้เรียนไม่ต้องเขียนหรือท่องคำสั่ง LaTeX แต่ต้องเข้าใจโครงสร้างพอที่จะสั่ง AI ตรวจไฟล์ที่ถูกชั้น และไม่แก้ <code>.cls</code> หรือ <code>.sty</code> เพียงเพื่อให้เอกสารผ่าน</p>
+<section class="section markdown-section" id="no-code-latex-หมายถึงอะไร" aria-labelledby="no-code-latex-หมายถึงอะไร-heading"><div class="section-heading compact"><h2 id="no-code-latex-หมายถึงอะไร-heading">ใช้ LaTeX โดยไม่เขียนคำสั่งเองหมายถึงอะไร</h2>
+</div><div class="markdown-body"><p>คุณไม่ต้องเขียนหรือท่องคำสั่ง LaTeX แต่ควรรู้ว่าเนื้อหา แม่แบบ และผลลัพธ์อยู่ในแฟ้มใด เพื่อบอก AI ให้ตรวจถูกจุด และไม่แก้ <code>.cls</code> หรือ <code>.sty</code> เพียงเพื่อให้สร้างเอกสารผ่าน</p>
 <div class="command markdown-command"><code>Markdown sections + bibliography + figures + tables
                 ↓
       AI conversion/integration
@@ -126,7 +128,7 @@
 <tr class="header">
 <th>ส่วน</th>
 <th>หน้าที่</th>
-<th>สิ่งที่ผู้เรียนต้องตรวจ</th>
+<th>สิ่งที่คุณต้องตรวจ</th>
 </tr>
 </thead>
 <tbody>
@@ -177,7 +179,7 @@
 </tr>
 </tbody>
 </table>
-<p>ผู้เรียนต้องรู้ว่า <code>.cls/.sty/.bst</code> เป็นชั้นแม่แบบ, Markdown เป็นชั้นเนื้อหา, <code>.tex</code> ที่ AI สร้างเป็นชั้นประกอบ และ PDF เป็นผลลัพธ์ ห้ามแก้ PDF หรือ generated <code>.tex</code> เพื่อซ่อนปัญหาโดยไม่แก้ source ที่แท้จริง</p>
+<p>จำไว้ว่า <code>.cls/.sty/.bst</code> เป็นชั้นแม่แบบ, Markdown เป็นชั้นเนื้อหา, <code>.tex</code> ที่ AI สร้างเป็นชั้นประกอบ และ PDF เป็นผลลัพธ์ หากพบปัญหา ให้กลับไปแก้แฟ้มต้นทางที่เกี่ยวข้อง ไม่แก้ PDF หรือ <code>.tex</code> ที่สร้างขึ้นเพื่อซ่อนปัญหา</p>
 </div></section>
 <section class="section markdown-section" id="โครงสร้างโครงการที่แนะนำ" aria-labelledby="โครงสร้างโครงการที่แนะนำ-heading"><div class="section-heading compact"><h2 id="โครงสร้างโครงการที่แนะนำ-heading">โครงสร้างโครงการที่แนะนำ</h2>
 </div><div class="markdown-body"><div class="command markdown-command"><code>paper/
@@ -200,20 +202,20 @@
 ├── build/                    # PDF, log และไฟล์กลาง
 └── checks/                   # venue, content และ visual QA</code><button type="button" data-copy="">คัดลอก</button></div><p>ชื่อและจำนวนส่วนต้องปรับตามประเภทบทความและแม่แบบจริง ไม่บังคับโครง IMRaD หากสาขาหรือ venue ใช้โครงอื่น</p>
 </div></section>
-<section class="section markdown-section" id="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง" aria-labelledby="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง-heading"><div class="section-heading compact"><h2 id="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง-heading">Build Ladder — ทำเป็นขั้นเพื่อไม่ให้พัง</h2>
+<section class="section markdown-section" id="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง" aria-labelledby="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง-heading"><div class="section-heading compact"><h2 id="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง-heading">สร้างเอกสารทีละขั้นเพื่อลดข้อผิดพลาด</h2>
 </div><div class="markdown-body"><p>กฎสำคัญคือ <strong>เปลี่ยนงานเพียงหนึ่งประเภท แล้ว compile ทันที</strong> เมื่อพังจะรู้ว่าปัญหาเกิดจากขั้นใด</p>
-<h3 id="gate-0--venue-package-verified">Gate 0 — Venue Package Verified</h3>
+<h3 id="gate-0--venue-package-verified">ด่าน 0 — ตรวจชุดเอกสารของแหล่งเผยแพร่</h3>
 <ul>
 <li>ดาวน์โหลดแม่แบบและ guideline ทางการ</li>
 <li>บันทึก <code>venue-manifest.md</code></li>
 <li>แยก original กับ working copy</li>
 <li>ตรวจว่า venue ต้องการ Word หรือ LaTeX และใช้ citation engine ใด</li>
 </ul>
-<h3 id="gate-1--pristine-template-compiles">Gate 1 — Pristine Template Compiles</h3>
+<h3 id="gate-1--pristine-template-compiles">ด่าน 1 — ทดสอบแม่แบบเดิม</h3>
 <p>compile ตัวอย่างเดิมโดยยังไม่แก้อะไร เก็บ PDF และ log เป็น baseline หาก template เดิมยัง compile ไม่ผ่าน ให้แก้ environment หรือขอชุด template ที่ถูกต้องก่อน ห้ามเริ่มใส่เนื้อหา</p>
-<h3 id="gate-2--outline-compiles">Gate 2 — Outline Compiles</h3>
+<h3 id="gate-2--outline-compiles">ด่าน 2 — ทดสอบโครงเอกสาร</h3>
 <p>แทนเนื้อหาตัวอย่างด้วย outline และ placeholder สั้น ๆ ตามหัวข้อที่ venue อนุญาต แล้ว compile ให้ผ่านก่อนเขียนจริง ตรวจจำนวนคอลัมน์ หัวกระดาษ ชื่อส่วน และ bibliography placeholder</p>
-<h3 id="gate-3--markdown-sections-added-one-by-one">Gate 3 — Markdown Sections Added One by One</h3>
+<h3 id="gate-3--markdown-sections-added-one-by-one">ด่าน 3 — เพิ่มเนื้อหาทีละส่วน</h3>
 <p>เขียนแต่ละส่วนเป็น Markdown แยกแฟ้ม เนื้อหาของทุกส่วนควรระบุ</p>
 <ul>
 <li>หน้าที่ของส่วนและข้อกล่าวอ้างหลัก</li>
@@ -223,9 +225,9 @@
 </ul>
 <p>AI แปลงทีละส่วนและ compile หลังเพิ่มแต่ละส่วน หากผิดด้านเนื้อหาให้แก้ Markdown หากผิดด้านการแปลงให้แก้ conversion rule หากผิดร่วมทั้งเอกสารให้ตรวจ template layer โดยไม่แก้ไฟล์ต้นฉบับของ venue</p>
 </div></section>
-<section class="section markdown-section" id="จากผลการทดลองสู่ย่อหน้า--statement--explanation" aria-labelledby="จากผลการทดลองสู่ย่อหน้า--statement--explanation-heading"><div class="section-heading compact"><h2 id="จากผลการทดลองสู่ย่อหน้า--statement--explanation-heading">จากผลการทดลองสู่ย่อหน้า — Statement + Explanation</h2>
-</div><div class="markdown-body"><p>การให้ AI “เขียน Results” หรือ “เขียน Discussion” จากข้อมูลทั้งก้อนเปิดช่องให้ AI เลือกประเด็น แต่งเหตุผล หรือสรุปเกินหลักฐาน ผู้เรียนจึงต้องสร้าง <strong>Paragraph Contract</strong> ก่อน โดยมนุษย์กำหนด insight, statement และคำอธิบาย แล้วให้ AI ทำหน้าที่เรียบเรียงเป็นย่อหน้า</p>
-<p><strong>หลักแบ่งความรับผิดชอบ:</strong> ผู้วิจัยรับผิดชอบว่าจะกล่าวอะไร อธิบายจากหลักฐานใด และสรุปได้ภายในขอบเขตใด AI รับผิดชอบการเชื่อมและเรียบเรียงภาษา แต่ไม่มีอำนาจเพิ่มข้อค้นพบ เหตุผล หรือเอกสารอ้างอิง</p>
+<section class="section markdown-section" id="จากผลการทดลองสู่ย่อหน้า--statement--explanation" aria-labelledby="จากผลการทดลองสู่ย่อหน้า--statement--explanation-heading"><div class="section-heading compact"><h2 id="จากผลการทดลองสู่ย่อหน้า--statement--explanation-heading">จากผลการทดลองสู่ย่อหน้า — ข้อความหลักและคำอธิบาย</h2>
+</div><div class="markdown-body"><p>อย่าส่งข้อมูลทั้งก้อนแล้วสั่ง AI ว่า “เขียน Results” หรือ “เขียน Discussion” เพราะ AI อาจเลือกประเด็น แต่งเหตุผล หรือสรุปเกินหลักฐาน ให้คุณสร้าง <strong>ข้อตกลงของย่อหน้า</strong> ก่อน โดยกำหนดข้อค้นพบ ข้อความหลัก และคำอธิบาย แล้วจึงให้ AI ช่วยเรียบเรียงเป็นย่อหน้า</p>
+<p><strong>หลักแบ่งความรับผิดชอบ:</strong> คุณตัดสินว่าจะกล่าวอะไร ใช้หลักฐานใดอธิบาย และสรุปได้ภายในขอบเขตใด ส่วน AI ช่วยเชื่อมและเรียบเรียงภาษา แต่เพิ่มข้อค้นพบ เหตุผล หรือเอกสารอ้างอิงเองไม่ได้</p>
 <h3 id="insight-มาจากอะไร">Insight มาจากอะไร</h3>
 <p>insight ที่ใช้เขียนต้องย้อนกลับได้ถึงผลการทดลอง ตาราง รูป หรือข้อค้นพบที่ตรวจแล้ว และต้องแยกองค์ประกอบต่อไปนี้</p>
 <table>
@@ -279,8 +281,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="paragraph-contract">Paragraph Contract</h3>
-<p>ก่อนให้ AI เขียน ผู้เรียนกรอก</p>
+<h3 id="paragraph-contract">ข้อตกลงของย่อหน้า</h3>
+<p>ก่อนให้ AI เขียน ให้คุณกรอก</p>
 <div class="command markdown-command"><code>Section/purpose:
 Statement:
 Evidence and exact numbers:
@@ -292,7 +294,7 @@ Terms that must remain unchanged:
 Claims that must not be added:
 Target length and tone:</code><button type="button" data-copy="">คัดลอก</button></div><p>จากนั้นใช้คำสั่ง</p>
 <blockquote>
-<p>เขียนหนึ่งย่อหน้าจาก Paragraph Contract นี้เท่านั้น เริ่มด้วย statement เชื่อม evidence และคำอธิบายตามลำดับ รักษาตัวเลข หน่วย ทิศทาง ความไม่แน่นอน และ reference marker ทุกจุด ระบุ limitation/boundary ตามที่ให้ ห้ามเพิ่ม mechanism, citation, result, causal language หรือ generalization ที่ไม่มีใน contract หากข้อมูลไม่พอให้แทรก <code>[ข้อมูลไม่พอ: ...]</code> แทนการเดา</p>
+<p>เขียนหนึ่งย่อหน้าจาก ข้อตกลงของย่อหน้า นี้เท่านั้น เริ่มด้วย statement เชื่อม evidence และคำอธิบายตามลำดับ รักษาตัวเลข หน่วย ทิศทาง ความไม่แน่นอน และ reference marker ทุกจุด ระบุ limitation/boundary ตามที่ให้ ห้ามเพิ่ม mechanism, citation, result, causal language หรือ generalization ที่ไม่มีใน contract หากข้อมูลไม่พอให้แทรก <code>[ข้อมูลไม่พอ: ...]</code> แทนการเดา</p>
 </blockquote>
 <h3 id="รูปแบบย่อหน้าตามส่วนของบทความ">รูปแบบย่อหน้าตามส่วนของบทความ</h3>
 <table>
@@ -331,7 +333,7 @@ Target length and tone:</code><button type="button" data-copy="">คัดลอ
 </tr>
 </tbody>
 </table>
-<h3 id="paragraph-reverse-check">Paragraph Reverse Check</h3>
+<h3 id="paragraph-reverse-check">ตรวจย่อหน้าย้อนกลับ</h3>
 <p>หลัง AI ร่าง ให้แยกทุกประโยคกลับเป็นตาราง</p>
 <table>
 <thead>
@@ -352,8 +354,8 @@ Target length and tone:</code><button type="button" data-copy="">คัดลอ
 </tbody>
 </table>
 <p>ย่อหน้าผ่านเมื่อทุกประโยคย้อนกลับไปยัง contract ได้ ตัวเลขและ reference ตรงกับ source และไม่มีคำที่เพิ่มระดับความมั่นใจ เช่น “พิสูจน์”, “ทำให้เกิด”, “อย่างชัดเจน” หรือ “ใช้ได้ทั่วไป” โดยไม่มีหลักฐานรองรับ</p>
-<p>Paragraph Contract หนึ่งชุดควรสร้างหนึ่งย่อหน้าหลัก หากมีหลาย statement ให้แยกเป็นหลาย contract เพื่อให้ตรวจ logic และหลักฐานง่าย</p>
-<h3 id="gate-4--citations-and-bibliography">Gate 4 — Citations and Bibliography</h3>
+<p>ข้อตกลงของย่อหน้า หนึ่งชุดควรสร้างหนึ่งย่อหน้าหลัก หากมีหลาย statement ให้แยกเป็นหลาย contract เพื่อให้ตรวจ logic และหลักฐานง่าย</p>
+<h3 id="gate-4--citations-and-bibliography">ด่าน 4 — ตรวจการอ้างในเนื้อหาและรายการอ้างอิง</h3>
 <p>เพิ่มรายการอ้างอิงหลังส่วนข้อความพื้นฐาน compile ผ่านแล้ว</p>
 <ul>
 <li>เก็บรายการอ้างอิงใน <code>references.bib</code></li>
@@ -363,8 +365,8 @@ Target length and tone:</code><button type="button" data-copy="">คัดลอ
 <li>ใช้ BibTeX/Biber และ <code>.bst</code>/style ตามแม่แบบของ venue</li>
 <li>compile จนครบลำดับและไม่มี undefined citation; ใช้ <code>latexmk</code> หรือเครื่องมือที่ venue แนะนำให้จัดลำดับอัตโนมัติ</li>
 </ul>
-<p>ในเชิงกลไก การสร้าง bibliography อาจต้อง LaTeX → BibTeX/Biber → LaTeX → LaTeX เพื่อให้ citation และหมายเลขทุกจุดปรับครบ ผู้เรียนไม่ต้องเรียกคำสั่งเอง แต่ต้องอ่านสถานะว่าแต่ละขั้นสำเร็จหรือไม่</p>
-<h3 id="gate-5--figures">Gate 5 — Figures</h3>
+<p>การสร้างรายการอ้างอิงอาจทำงานตามลำดับ LaTeX → BibTeX/Biber → LaTeX → LaTeX เพื่อปรับการอ้างในเนื้อหาและหมายเลขให้ครบ คุณไม่ต้องเรียกคำสั่งเหล่านี้เอง แต่ต้องดูผลว่าแต่ละขั้นสำเร็จหรือมีคำเตือนใดค้างอยู่</p>
+<h3 id="gate-5--figures">ด่าน 5 — เพิ่มและตรวจรูป</h3>
 <p>เพิ่มรูปทีละรูปแล้ว compile</p>
 <ul>
 <li>เก็บข้อมูลหรือ script ต้นทางและรูปส่งออกแยกจากกัน</li>
@@ -374,8 +376,8 @@ Target length and tone:</code><button type="button" data-copy="">คัดลอ
 <li>กำหนด label และอ้างรูปจากข้อความ</li>
 <li>ตรวจขนาดจริง ตัวอักษร สี ขาวดำ การตัดขอบ และสิทธิการใช้</li>
 </ul>
-<p>ใน Markdown ผู้เรียนใส่ตำแหน่งรูป ชื่อภาพ caption, label และแหล่งที่มา จากนั้น AI แปลงเป็นโครงสร้าง LaTeX ตาม venue ไม่ต้องเขียน <code>\includegraphics</code> เอง</p>
-<h3 id="gate-6--tables">Gate 6 — Tables</h3>
+<p>ใน Markdown ให้คุณระบุตำแหน่งรูป ชื่อภาพ คำอธิบาย ป้ายอ้างถึง และแหล่งที่มา จากนั้นให้ AI แปลงเป็นโครงสร้าง LaTeX ตามแหล่งเผยแพร่ คุณไม่ต้องเขียน <code>\includegraphics</code> เอง</p>
+<h3 id="gate-6--tables">ด่าน 6 — เพิ่มและตรวจตาราง</h3>
 <p>เพิ่มตารางทีละตารางแล้ว compile</p>
 <ul>
 <li>สร้างค่าจาก CSV/XLSX หรือผลวิเคราะห์ที่ตรวจแล้ว ไม่คัดลอกตัวเลขหลายชุดด้วยมือ</li>
@@ -384,33 +386,33 @@ Target length and tone:</code><button type="button" data-copy="">คัดลอ
 <li>ตรวจหัวตาราง ตารางกว้างเกินคอลัมน์ ตารางข้ามหน้า และความสอดคล้องกับข้อความ/รูป</li>
 <li>ห้ามลดขนาดตัวอักษรจนอ่านไม่ได้เพื่อบังคับตารางให้พอดี</li>
 </ul>
-<h3 id="gate-7--full-build-and-venue-compliance">Gate 7 — Full Build and Venue Compliance</h3>
+<h3 id="gate-7--full-build-and-venue-compliance">ด่าน 7 — สร้างเอกสารเต็มและตรวจข้อกำหนด</h3>
 <p>ประกอบทุกส่วนแล้วตรวจ page/word limit, anonymous review, author block, keywords, acknowledgments, declarations, supplementary files และชื่อแฟ้มตาม guideline</p>
-<h3 id="gate-8--final-pdf-qa">Gate 8 — Final PDF QA</h3>
+<h3 id="gate-8--final-pdf-qa">ด่าน 8 — ตรวจไฟล์ PDF สุดท้าย</h3>
 <p>สร้าง PDF ฉบับส่งจริง แล้วตรวจทั้งด้วยเครื่องมือและสายตา ไม่ใช้เพียงสถานะว่า process จบด้วย exit code 0</p>
 </div></section>
-<section class="section markdown-section" id="บัตรคำสั่งสำหรับผู้เรียน" aria-labelledby="บัตรคำสั่งสำหรับผู้เรียน-heading"><div class="section-heading compact"><h2 id="บัตรคำสั่งสำหรับผู้เรียน-heading">บัตรคำสั่งสำหรับผู้เรียน</h2>
-</div><div class="markdown-body"><h3 id="venue-template-card">Venue Template Card</h3>
+<section class="section markdown-section" id="ai-command-cards" aria-labelledby="ai-command-cards-heading"><div class="section-heading compact"><h2 id="ai-command-cards-heading">คำสั่งที่ใช้ทำงานกับ AI</h2>
+</div><div class="markdown-body"><h3 id="venue-template-card">บัตรตรวจข้อกำหนดและแม่แบบ</h3>
 <blockquote>
 <p>อ่าน guideline และชุดแม่แบบจาก URL ทางการนี้ บันทึก venue, article type, version/date, required files และ citation engine ลง <code>venue-manifest.md</code> เก็บต้นฉบับไว้ใน <code>venue-original/</code> และทำงานกับสำเนาเท่านั้น ตรวจไฟล์ <code>.tex/.cls/.sty/.bst/.bib</code> แล้ว compile ตัวอย่างเดิมโดยไม่แก้ เก็บ PDF และ log เป็น baseline ห้ามดาวน์โหลดหรือแก้ package จากแหล่งอื่นโดยอัตโนมัติ</p>
 </blockquote>
-<h3 id="outline-card">Outline Card</h3>
+<h3 id="outline-card">บัตรสร้างโครงเอกสาร</h3>
 <blockquote>
 <p>สร้าง outline ตามหัวข้อและข้อจำกัดของ venue ใช้ placeholder สั้น ๆ ก่อน ยังไม่เขียนเนื้อหาเต็ม ประกอบ outline เข้ากับสำเนาแม่แบบและ compile ให้ผ่าน รายงานหัวข้อที่ venue บังคับ/ไม่อนุญาต page/word limit และความผิดปกติของ PDF</p>
 </blockquote>
-<h3 id="section-card">Section Card</h3>
+<h3 id="section-card">บัตรประกอบเนื้อหาทีละส่วน</h3>
 <blockquote>
-<p>ตรวจ Paragraph Contract และ reverse-check ของทุกย่อหน้าก่อน ใช้ Markdown ส่วนนี้เป็น source of truth ตรวจข้อกล่าวอ้าง citation รูป ตาราง uncertainty และข้อจำกัด แปลงเฉพาะส่วนนี้เข้าสู่ generated layer โดยรักษาแม่แบบ venue compile แล้วรายงาน error/warning และตำแหน่งที่เนื้อหาเปลี่ยนความหมาย ห้ามแก้ generated <code>.tex</code> เป็นแหล่งหลัก</p>
+<p>ตรวจ ข้อตกลงของย่อหน้า และ reverse-check ของทุกย่อหน้าก่อน ใช้ Markdown ส่วนนี้เป็น source of truth ตรวจข้อกล่าวอ้าง citation รูป ตาราง uncertainty และข้อจำกัด แปลงเฉพาะส่วนนี้เข้าสู่ generated layer โดยรักษาแม่แบบ venue compile แล้วรายงาน error/warning และตำแหน่งที่เนื้อหาเปลี่ยนความหมาย ห้ามแก้ generated <code>.tex</code> เป็นแหล่งหลัก</p>
 </blockquote>
-<h3 id="figuretable-card">Figure/Table Card</h3>
+<h3 id="figuretable-card">บัตรเพิ่มรูปและตาราง</h3>
 <blockquote>
 <p>ตรวจแฟ้มรูป/ตารางกับข้อมูลต้นทางก่อน ระบุ caption, label, source, unit, denominator, sample size และ uncertainty ตามที่เกี่ยวข้อง แทรกตามกฎของ venue compile และตรวจทั้งการอ้างในข้อความ หมายเลข ขนาด ตำแหน่ง และการอ่านจริงใน PDF</p>
 </blockquote>
-<h3 id="bibliography-card">Bibliography Card</h3>
+<h3 id="bibliography-card">บัตรตรวจรายการอ้างอิง</h3>
 <blockquote>
 <p>ตรวจระเบียนใน <code>references.bib</code> กับ DOI หรือแหล่งต้นทาง ใช้ citation engine และ style ของ venue ห้ามสร้างรายการที่ตรวจสอบไม่ได้ compile จนไม่มี undefined citation/reference แล้วเปรียบเทียบ citation ในข้อความกับรายการท้ายบทความ</p>
 </blockquote>
-<h3 id="pdf-qa-card">PDF QA Card</h3>
+<h3 id="pdf-qa-card">บัตรตรวจ PDF ฉบับจริง</h3>
 <blockquote>
 <p>สร้าง PDF ฉบับส่งจริง ตรวจ log และแยกข้อความจาก PDF เพื่อตรวจเนื้อหาขาดหาย จากนั้น render ทุกหน้าเพื่อตรวจชื่อเรื่อง ผู้แต่ง หัวข้อ สมการ citation รูป ตาราง caption เลขหน้า ขอบ คอลัมน์ font และ page break เปรียบเทียบกับ guideline และจัดทำรายการ PASS/FAIL พร้อมตำแหน่งและวิธีแก้</p>
 </blockquote>
@@ -485,52 +487,62 @@ Target length and tone:</code><button type="button" data-copy="">คัดลอ
 </tbody>
 </table>
 </div></section>
-<section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือผลิตเอกสารกับ AI ทีละ Gate</h2>
+<section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือผลิตเอกสารกับ AI ทีละด่าน</h2>
 </div><div class="markdown-body"><p class="prompt-edit-note">✎ แก้ก่อนส่ง: เปลี่ยนข้อความใน {{…}} ให้เป็นข้อมูลของคุณ แล้วจึงคัดลอก Prompt ไปให้ AI</p><div class="command markdown-command prompt-template"><code>ข้อมูลที่ฉันกำหนด:
-- TARGET_VENUE: {{Nature — เปลี่ยนเป็นแหล่งเผยแพร่ที่คุณสนใจ}}
-- OUTPUT_TYPE: {{research article / poster / slides / รูปแบบอื่น}}
-- AUTHOR_KIT_PATH_OR_URL: {{พิมพ์ตำแหน่งแฟ้มหรือลิงก์ทางการ}}
-- CONTENT_PACKAGE_PATH: {{พิมพ์ตำแหน่งเนื้อหา รูป ตาราง และ bibliography ที่ตรวจแล้ว}}
+- แหล่งเผยแพร่: {{พิมพ์ชื่อ หรือเขียนว่า ยังไม่ทราบ เพื่อให้ AI ถามต่อ}}
+- ชนิดผลงาน: {{บทความ / โปสเตอร์ / สไลด์ / รูปแบบอื่น}}
+- ข้อกำหนดหรือแม่แบบทางการ: {{พิมพ์ตำแหน่งแฟ้มหรือลิงก์ หรือเขียนว่า ยังไม่มี}}
+- ชุดเนื้อหา: {{พิมพ์ตำแหน่งข้อความ รูป ตาราง และรายการอ้างอิงที่ตรวจแล้ว}}
 
-พาฉันผลิตเอกสารทีละ Gate และหยุดรอการตรวจทุกครั้ง เริ่มจาก official guideline/author kit และ pristine build ก่อนแตะเนื้อหา ใช้เฉพาะ verified claims, paragraph contracts, citations, figures และ tables ที่ฉันให้ ห้ามแก้ template ต้นฉบับ แต่ง citation/result หรือถือว่า compile ผ่านเท่ากับเนื้อหาถูกต้อง ทุก Gate ให้รายงาน source ที่เปลี่ยน build log ผลตรวจ PDF และสิ่งที่ฉันต้องตัดสินใจก่อนเดินต่อ</code><button type="button" data-copy="">คัดลอก</button></div><ol type="1">
-<li><strong>Word or LaTeX Decision:</strong> เปรียบเทียบ author kits จริงและเลือกสายจากหลักฐานของ venue</li>
-<li><strong>Template Autopsy:</strong> แกะแม่แบบเพื่อชี้ <code>.tex/.cls/.sty/.bst/.bib</code>, master file และ citation engine โดยไม่แก้ syntax</li>
-<li><strong>Pristine Build:</strong> compile template เดิมและเก็บ baseline</li>
-<li><strong>Outline Build:</strong> ใส่ outline/placeholder แล้ว compile</li>
-<li><strong>Insight-to-Paragraph:</strong> กรอก statement, evidence, explanation, limitation และ boundary แล้วให้ AI ร่างหนึ่งย่อหน้า</li>
-<li><strong>Paragraph Reverse Check:</strong> แยกทุกประโยคกลับไปยัง contract และตัดสิ่งที่ไม่มีหลักฐาน</li>
-<li><strong>Section Assembly:</strong> รวมย่อหน้าที่ผ่านแล้วเป็น Markdown หนึ่งส่วนและตรวจ meaning preservation</li>
-<li><strong>Citation Build:</strong> เพิ่ม BibTeX record/citation ที่ตรวจสอบแล้ว</li>
-<li><strong>Figure and Table Build:</strong> เพิ่มอย่างละหนึ่งรายการจากไฟล์ต้นทาง</li>
-<li><strong>Break-and-Repair:</strong> ใช้สำเนาทดลองที่มี citation หาย รูปหาย ตารางล้น หรือเนื้อหาหาย แล้วระบุชั้นที่ควรแก้ก่อนสั่ง AI ห้ามทำให้ไฟล์ต้นฉบับเสีย</li>
-<li><strong>PDF Red-team:</strong> ตรวจเนื้อหา venue compliance และ visual quality จาก PDF ฉบับจริง</li>
-</ol>
+พาฉันผลิตเอกสารทีละด่านและหยุดรอการตรวจทุกครั้ง เริ่มจากข้อกำหนดและแม่แบบทางการก่อนแตะเนื้อหา ใช้เฉพาะข้อกล่าวอ้าง ย่อหน้า เอกสารอ้างอิง ภาพ และตารางที่ฉันตรวจแล้ว ห้ามแก้แม่แบบต้นฉบับ แต่งข้อมูล หรือถือว่าสร้าง PDF ผ่านเท่ากับเนื้อหาถูกต้อง ทุกด่านให้รายงานสิ่งที่เปลี่ยน ผลตรวจ และสิ่งที่ฉันต้องตัดสินใจก่อนเดินต่อ</code><button type="button" data-copy="">คัดลอก</button></div>
+<h3>ด่าน 1 — เลือกรูปแบบจากข้อกำหนดจริง</h3><div class="command markdown-command" data-m8-stage-prompt="1"><code>ถามฉันหาแหล่งเผยแพร่และข้อกำหนดทางการก่อน แล้วเปรียบเทียบ Word กับ LaTeX โดยอ้างตำแหน่งข้อความทุกข้อ ห้ามเลือกแทนฉัน สรุปหลักฐานแล้วรอให้ฉันเลือก</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>คุณตัดสิน:</strong> รูปแบบเอกสารและแม่แบบที่จะใช้</p>
+<h3>ด่าน 2 — ตรวจแม่แบบและสร้างฉบับตั้งต้น</h3><div class="command markdown-command" data-m8-stage-prompt="2"><code>สำรวจแฟ้มและอธิบายหน้าที่ทีละแฟ้มโดยยังไม่แก้ จากนั้นสร้างสำเนาแม่แบบเดิมและรายงานผล หากไม่ผ่านให้แสดงสาเหตุและถามฉันก่อนแก้ ห้ามแตะต้นฉบับ</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>ก่อนผ่าน:</strong> มี PDF ตั้งต้นที่เปิดได้และบันทึกผลการสร้าง</p>
+<h3>ด่าน 3 — วางโครงและเขียนทีละย่อหน้า</h3><div class="command markdown-command" data-m8-stage-prompt="3"><code>ถามฉันทีละส่วนเพื่อวางหัวข้อก่อน จากนั้นถามข้อความหลัก หลักฐาน คำอธิบาย ข้อจำกัด และขอบเขต เมื่อครบจึงร่างหนึ่งย่อหน้า ทำเครื่องหมายสิ่งที่ไม่มีหลักฐาน และรอฉันอนุมัติก่อนเขียนต่อ</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>คุณตัดสิน:</strong> โครงเรื่องและทุกประโยคที่จะเก็บไว้</p>
+<h3>ด่าน 4 — ตรวจย่อหน้าและเอกสารอ้างอิงย้อนกลับ</h3><div class="command markdown-command" data-m8-stage-prompt="4"><code>แยกทุกประโยคกลับไปยังหลักฐานที่ฉันให้ และตรวจรายการอ้างอิงทีละรายการ ถ้าย้อนกลับไม่ได้หรือข้อมูลไม่ครบให้หยุดถาม ห้ามสร้างชื่อผู้แต่ง ชื่อเรื่อง DOI หรือ BibTeX เอง</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>ก่อนผ่าน:</strong> ทุกข้อความและการอ้างอิงต้องมีต้นทางที่ตรวจได้</p>
+<h3>ด่าน 5 — เพิ่มภาพและตาราง</h3><div class="command markdown-command" data-m8-stage-prompt="5"><code>ถามหาแฟ้มต้นทางของภาพหรือตารางทีละรายการ ตรวจชื่อ หน่วย ตัวเลข แหล่งข้อมูล และข้อความที่อ้างถึงก่อนเพิ่ม หลังสร้าง PDF ให้เปรียบเทียบกับต้นทางและรายงานความต่าง</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>คุณตัดสิน:</strong> ยืนยันว่าตัวเลขในต้นทาง ตาราง ภาพ และข้อความตรงกัน</p>
+<h3>ด่าน 6 — ทดลองเสียและซ่อมในสำเนา</h3><div class="command markdown-command" data-m8-stage-prompt="6"><code>ทำงานเฉพาะสำเนาทดลอง แสดงอาการ หลักฐาน และต้นเหตุที่เป็นไปได้ก่อนเสนอการแก้ทีละทาง รอฉันอนุมัติก่อนแก้ และสร้าง PDF ใหม่หลังทุกการเปลี่ยนแปลง</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>คุณตัดสิน:</strong> ต้นเหตุและการแก้ที่ยอมรับ</p>
+<h3>ด่าน 7 — ตรวจ PDF ฉบับจริง</h3><div class="command markdown-command" data-m8-stage-prompt="7"><code>ตรวจ PDF ทีละหน้าเทียบกับข้อกำหนดและแฟ้มเนื้อหาที่ตรวจแล้ว แยกปัญหาเป็นเนื้อหา การอ้างอิง ข้อกำหนด และการจัดหน้า แสดงหลักฐานและถามฉันอนุมัติการแก้ทีละรายการ</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>ก่อนจบ:</strong> สรุปสิ่งที่ผ่าน จุดค้าง และแฟ้มต้นทางที่ต้องแก้ โดยไม่รับรองการตอบรับตีพิมพ์</p>
+<details class="section concept-reference"><summary>เปิดรายการตรวจละเอียดของแต่ละด่าน</summary><ol type="1">
+<li><strong>เลือกรูปแบบ:</strong> เปรียบเทียบชุดแม่แบบจริงและเลือก Word หรือ LaTeX จากข้อกำหนดของแหล่งเผยแพร่</li>
+<li><strong>สำรวจแม่แบบ:</strong> ระบุแฟ้มหลัก แฟ้มรูปแบบ และระบบอ้างอิง โดยไม่แก้แฟ้มต้นฉบับ</li>
+<li><strong>สร้างฉบับตั้งต้น:</strong> สร้าง PDF จากแม่แบบเดิมและเก็บผลไว้เปรียบเทียบ</li>
+<li><strong>สร้างโครง:</strong> ใส่เฉพาะหัวข้อและช่องรอเนื้อหา แล้วสร้างเอกสารอีกครั้ง</li>
+<li><strong>เขียนทีละย่อหน้า:</strong> ใช้ข้อความหลัก หลักฐาน คำอธิบาย ข้อจำกัด และขอบเขตที่คุณยืนยัน</li>
+<li><strong>ตรวจย่อหน้าย้อนกลับ:</strong> แยกทุกประโยคกลับไปยังข้อมูลต้นทางและตัดสิ่งที่ไม่มีหลักฐาน</li>
+<li><strong>รวมเป็นหนึ่งส่วน:</strong> รวมเฉพาะย่อหน้าที่ผ่านการตรวจและยืนยันว่าความหมายไม่เปลี่ยน</li>
+<li><strong>เพิ่มการอ้างอิง:</strong> เพิ่มเฉพาะรายการที่ตรวจชื่อผู้แต่ง ชื่อเรื่อง ปี และ DOI แล้ว</li>
+<li><strong>เพิ่มรูปและตาราง:</strong> เพิ่มจากแฟ้มต้นทางพร้อมชื่อ หน่วย คำอธิบาย และตำแหน่งอ้างถึง</li>
+<li><strong>ฝึกหาสาเหตุและซ่อม:</strong> ใช้สำเนาทดลองที่มีการอ้างอิงหรือรูปหาย ตารางล้น หรือเนื้อหาหาย ห้ามทำให้ต้นฉบับเสีย</li>
+<li><strong>ตรวจ PDF:</strong> ตรวจเนื้อหา ข้อกำหนด และคุณภาพการจัดหน้าจาก PDF ฉบับจริง</li>
+</ol></details>
 </div></section>
-<section class="section markdown-section" id="finish" aria-labelledby="finish-heading"><div class="section-heading compact"><h2 id="finish-heading">ผลผลิตและเกณฑ์ผ่าน</h2>
-</div><div class="markdown-body"><ul>
-<li><code>venue-manifest.md</code> และชุดแม่แบบ original/working ที่แยกกัน</li>
-<li>pristine-template PDF/log baseline</li>
-<li><code>source/outline.md</code> และ Markdown แยกส่วน</li>
-<li>Paragraph Contracts และ reverse-check records ของย่อหน้าหลัก</li>
-<li><code>references.bib</code> พร้อม verification record</li>
-<li>รูปและตารางพร้อม source/caption/label record</li>
-<li>generated <code>.tex</code> และ build log</li>
-<li>PDF ฉบับประกอบและฉบับแก้หลัง QA</li>
-<li><code>content-check.md</code>, <code>venue-compliance.md</code> และ <code>visual-qa.md</code></li>
-<li><a href="downloads/module-08-venue-document-workbook.md">สมุดงาน Module 8</a> ที่กรอกครบ</li>
-</ul>
-<p>เกณฑ์ผ่านคือแม่แบบเดิมและ outline compile ผ่านก่อนเพิ่มเนื้อหา ทุก citation รูป ตาราง และ cross-reference แกะย้อนกลับได้ ไม่มี unresolved error สำคัญ เนื้อหาใน PDF ตรงกับ Markdown และผลที่ตรวจสอบแล้ว และเอกสารผ่านทั้ง content, venue และ visual QA</p>
+<section class="section markdown-section" id="finish" aria-labelledby="finish-heading"><div class="section-heading compact"><p class="eyebrow">Checkpoint</p><h2 id="finish-heading">จบบทเรียน</h2>
+</div><div class="markdown-body"><p>ติ๊กเมื่อคุณตรวจชิ้นงานจริงและอธิบายหลักฐานของแต่ละข้อได้ ระบบจะจำสถานะไว้ในเบราว์เซอร์นี้</p>
+<p class="progress" aria-live="polite">ความสำเร็จ <strong data-progress>0%</strong></p>
+<div class="checklist" data-checklist="module-8">
+<label><input type="checkbox"> บันทึกแหล่งเผยแพร่ ข้อกำหนด และวันที่ตรวจแล้ว</label>
+<label><input type="checkbox"> แยกแม่แบบต้นฉบับออกจากสำเนาทำงานแล้ว</label>
+<label><input type="checkbox"> สร้างและเปิดเอกสารจากแม่แบบเดิมได้ก่อนเพิ่มเนื้อหา</label>
+<label><input type="checkbox"> โครงเอกสารตรงกับข้อกำหนดของผลงานที่เลือก</label>
+<label><input type="checkbox"> ย่อหน้าหลักทุกประโยคย้อนกลับไปยังข้อความหลัก หลักฐาน หรือข้อจำกัดได้</label>
+<label><input type="checkbox"> ตรวจชื่อผู้แต่ง ชื่อเรื่อง ปี DOI และตำแหน่งอ้างในเนื้อหาแล้ว</label>
+<label><input type="checkbox"> ตัวเลข หน่วย และคำอธิบายในรูป ตาราง และข้อความตรงกัน</label>
+<label><input type="checkbox"> เปิดตรวจ PDF ฉบับจริงครบทุกหน้า ไม่ได้ดูเพียงข้อความว่าสร้างสำเร็จ</label>
+<label><input type="checkbox"> บันทึกจุดที่ยังผิด ผู้รับผิดชอบ และสิ่งที่ต้องตรวจภายนอกแล้ว</label>
+<label><input type="checkbox"> กรอก <a href="downloads/module-08-venue-document-workbook.md">สมุดงาน Module 8</a> ครบ</label>
+<label><input type="checkbox"> ชิ้นงานผ่านการตรวจเนื้อหา ข้อกำหนด และการจัดหน้า โดยไม่มีข้อมูลหรือเอกสารอ้างอิงที่แต่งขึ้น</label>
+</div>
 </div></section>
 <section class="section markdown-section" id="การบ้าน" aria-labelledby="การบ้าน-heading"><div class="section-heading compact"><h2 id="การบ้าน-heading">การบ้าน</h2>
-</div><div class="markdown-body"><p>ผู้เรียนเพิ่ม Markdown อีกหนึ่งส่วน รูปหรือตารางอีกหนึ่งรายการ และ citation ที่ตรวจสอบแล้ว โดย compile หลังเปลี่ยนแต่ละประเภท จากนั้นส่ง PDF สองฉบับก่อนและหลัง Red-team พร้อมบันทึกว่าแก้ source ชั้นใด เพราะเหตุใด และตรวจได้อย่างไรว่าการแก้ไม่เปลี่ยนความหมายของงานวิจัย</p>
+</div><div class="markdown-body"><p>เพิ่มเนื้อหาอีกหนึ่งส่วน รูปหรือตารางอีกหนึ่งรายการ และการอ้างอิงที่ตรวจแล้ว ให้ AI สร้างเอกสารหลังเปลี่ยนงานแต่ละประเภท จากนั้นเปรียบเทียบ PDF ก่อนและหลัง พร้อมบันทึกว่าแก้เนื้อหาต้นทางส่วนใด เพราะเหตุใด และตรวจอย่างไรว่าความหมายของงานวิจัยไม่เปลี่ยน</p>
 </div></section>
 <section class="section markdown-section" id="review" aria-labelledby="review-heading"><div class="section-heading compact"><h2 id="review-heading">คำถามทบทวนท้ายบท</h2>
 </div><div class="markdown-body"><ol type="1">
-<li>ข้อกำหนดใดของ venue ทำให้คุณเลือก Word หรือ LaTeX และหลักฐานอยู่ที่ใด</li>
-<li>เหตุใดต้องให้ pristine template compile ผ่านก่อนเพิ่มเนื้อหา</li>
-<li>ทุกประโยคใน paragraph ที่สร้างย้อนกลับไปยัง statement, evidence, explanation หรือ boundary ใด</li>
-<li>หาก PDF compile ผ่านแต่เนื้อหาหาย คุณจะตรวจและแก้ที่ source, generated หรือ build layer ใดก่อน</li>
-<li>AI ช่วยประกอบและตรวจเอกสารได้อย่างไรโดยไม่รับผิดชอบ claim, citation, authorship และ venue compliance แทนคุณ</li>
+<li>ข้อกำหนดใดทำให้คุณเลือก Word หรือ LaTeX และหลักฐานอยู่ที่ใด</li>
+<li>เหตุใดต้องสร้างเอกสารจากแม่แบบเดิมให้สำเร็จก่อนเพิ่มเนื้อหา</li>
+<li>ทุกประโยคในย่อหน้าที่สร้างย้อนกลับไปยังข้อความหลัก หลักฐาน คำอธิบาย หรือขอบเขตใด</li>
+<li>หากสร้าง PDF สำเร็จแต่เนื้อหาหาย คุณจะตรวจเนื้อหาต้นทาง ขั้นประกอบ หรือขั้นสร้างเอกสารก่อน เพราะเหตุใด</li>
+<li>AI ช่วยประกอบและตรวจเอกสารได้อย่างไร โดยไม่รับผิดชอบข้อกล่าวอ้าง การอ้างอิง ความเป็นผู้ประพันธ์ และการทำตามข้อกำหนดแทนคุณ</li>
 </ol>
 </div></section>
     </div>

@@ -53,9 +53,9 @@ function New-CourseWorkspace {
   $fontDir = Join-Path $templateDir 'fonts'
   New-Item -ItemType Directory -Force -Path $fontDir | Out-Null
   $fontFiles = @(
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Regular.ttf'; Path = (Join-Path $fontDir 'Sarabun-Regular.ttf') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Bold.ttf'; Path = (Join-Path $fontDir 'Sarabun-Bold.ttf') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/fonts/OFL.txt'; Path = (Join-Path $fontDir 'OFL.txt') }
+    @{ Url = 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/fonts/Sarabun-Regular.ttf'; Path = (Join-Path $fontDir 'Sarabun-Regular.ttf') },
+    @{ Url = 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/fonts/Sarabun-Bold.ttf'; Path = (Join-Path $fontDir 'Sarabun-Bold.ttf') },
+    @{ Url = 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/fonts/OFL.txt'; Path = (Join-Path $fontDir 'OFL.txt') }
   )
   foreach ($file in $fontFiles) { Invoke-WebRequest -UseBasicParsing -Uri $file.Url -OutFile $file.Path }
   foreach ($file in $fontFiles) {
@@ -67,12 +67,12 @@ function New-CourseWorkspace {
   if (-not (Test-Path $content)) { Set-Content -Encoding utf8 $content "# My AI Research Workspace`n`nDescribe the research task here.`n" }
   if (-not (Test-Path $readme)) { Set-Content -Encoding utf8 $readme "# AI for Research`n`nKeep permitted inputs in input/ and generated work in output/.`n" }
   $starterFiles = @(
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.yaml'; Path = (Join-Path $templateDir 'modern-thai.yaml') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.lua'; Path = (Join-Path $templateDir 'modern-thai.lua') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.tex'; Path = (Join-Path $templateDir 'modern-thai.tex') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md'; Path = (Join-Path $CourseDir 'AGENTS.md') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/import-documents.sh'; Path = (Join-Path $CourseDir 'tools\import-documents.sh') },
-    @{ Url = 'https://punpiti.github.io/ai-for-research/downloads/import-documents.ps1'; Path = (Join-Path $CourseDir 'tools\import-documents.ps1') }
+    @{ Url = 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/modern-thai.yaml'; Path = (Join-Path $templateDir 'modern-thai.yaml') },
+    @{ Url = 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/modern-thai.lua'; Path = (Join-Path $templateDir 'modern-thai.lua') },
+    @{ Url = 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/modern-thai.tex'; Path = (Join-Path $templateDir 'modern-thai.tex') },
+    @{ Url = 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/starter-AGENTS.md'; Path = (Join-Path $CourseDir 'AGENTS.md') },
+    @{ Url = 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/import-documents.sh'; Path = (Join-Path $CourseDir 'tools\import-documents.sh') },
+    @{ Url = 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/import-documents.ps1'; Path = (Join-Path $CourseDir 'tools\import-documents.ps1') }
   )
   foreach ($file in $starterFiles) { Invoke-WebRequest -UseBasicParsing -Uri $file.Url -OutFile $file.Path }
   Log "workspace=$CourseDir"

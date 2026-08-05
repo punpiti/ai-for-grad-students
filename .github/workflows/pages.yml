@@ -24,11 +24,31 @@ jobs:
       - uses: actions/checkout@v4
       - name: Audit public allowlist
         run: bash scripts/audit-public.sh
+      - name: Build GitHub Pages redirect only
+        run: |
+          mkdir -p gh-pages-holding
+          cp .nojekyll gh-pages-holding/.nojekyll
+          cat > gh-pages-holding/index.html <<'HTML'
+          <!doctype html>
+          <html lang="th">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <meta name="robots" content="noindex,nofollow">
+            <meta http-equiv="refresh" content="0;url=https://urban.cpe.ku.ac.th/ai-for-research/">
+            <link rel="canonical" href="https://urban.cpe.ku.ac.th/ai-for-research/">
+            <title>AI for Research ย้ายเว็บไซต์แล้ว</title>
+          </head>
+          <body>
+            <p>เว็บไซต์ย้ายไปที่ <a href="https://urban.cpe.ku.ac.th/ai-for-research/">urban.cpe.ku.ac.th/ai-for-research/</a></p>
+          </body>
+          </html>
+          HTML
+          cp gh-pages-holding/index.html gh-pages-holding/404.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: gh-pages-holding
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-

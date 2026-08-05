@@ -3,6 +3,11 @@ set -euo pipefail
 
 root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 page="$root/prepare.html"
+grep -q 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/setup-windows.ps1' "$page"
+if grep -Rqs 'punpiti.github.io/ai-for-research' "$root/prepare.html" "$root/downloads"; then
+  echo 'Legacy GitHub Pages download host remains in learner setup files.' >&2
+  exit 1
+fi
 
 for agent in codex claude antigravity; do
   grep -q "name=\"agent\" value=\"$agent\"" "$page"
@@ -30,8 +35,15 @@ if grep -q 'open -a &quot;Visual Studio Code&quot; --args' "$page"; then
 fi
 grep -q 'โหลด Script ในข้อ 1 ใหม่ก่อนเสมอ' "$page"
 grep -q 'always allow “pandoc”' "$page"
+grep -q 'profile/learner-profile.yaml' "$page"
+grep -q 'profile/learner-profile.md' "$page"
+grep -q 'profile/learning-context.md' "$page"
+grep -q 'profile/author-profile.bib' "$page"
+grep -q 'อนุมัติและบันทึก' "$page"
 grep -q 'ไม่เลือกอนุญาต shell หรือทุกคำสั่งแบบกว้าง' "$page"
 grep -q 'mainfont: Sarabun' "$root/downloads/modern-thai.yaml"
 grep -q 'Path=templates/fonts/' "$root/downloads/modern-thai.yaml"
+grep -q 'classList.add("terminal-command")' "$root/assets/app.js"
+grep -q 'terminal-command.*background:#101c31' "$root/assets/styles.css"
 
 echo 'Prepare page learner-flow checks passed.'

@@ -46,9 +46,9 @@ make_workspace() {
   if [[ "$dry_run" == 1 ]]; then log "DRY_RUN workspace=$course_dir"; return; fi
   mkdir -p "$course_dir/input/original" "$course_dir/input/markdown" "$course_dir/output" "$course_dir/tools"
   mkdir -p "$course_dir/templates/fonts"
-  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Regular.ttf' -o "$course_dir/templates/fonts/Sarabun-Regular.ttf"
-  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/fonts/Sarabun-Bold.ttf' -o "$course_dir/templates/fonts/Sarabun-Bold.ttf"
-  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/fonts/OFL.txt' -o "$course_dir/templates/fonts/OFL.txt"
+  curl -fL 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/fonts/Sarabun-Regular.ttf' -o "$course_dir/templates/fonts/Sarabun-Regular.ttf"
+  curl -fL 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/fonts/Sarabun-Bold.ttf' -o "$course_dir/templates/fonts/Sarabun-Bold.ttf"
+  curl -fL 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/fonts/OFL.txt' -o "$course_dir/templates/fonts/OFL.txt"
   [[ -s "$course_dir/templates/fonts/Sarabun-Regular.ttf" && -s "$course_dir/templates/fonts/Sarabun-Bold.ttf" && -s "$course_dir/templates/fonts/OFL.txt" ]] || { log 'FONT_SETUP_FAILED Sarabun files are missing or empty.'; exit 2; }
   log 'FONT_READY Sarabun Regular/Bold bundled in workspace.'
   if [[ ! -e "$course_dir/content.md" ]]; then
@@ -57,12 +57,12 @@ make_workspace() {
   if [[ ! -e "$course_dir/README.md" ]]; then
     printf '# AI for Research\n\nKeep permitted inputs in `input/` and generated work in `output/`.\n' > "$course_dir/README.md"
   fi
-  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.yaml' -o "$course_dir/templates/modern-thai.yaml"
-  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.lua' -o "$course_dir/templates/modern-thai.lua"
-  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/modern-thai.tex' -o "$course_dir/templates/modern-thai.tex"
-  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/starter-AGENTS.md' -o "$course_dir/AGENTS.md"
-  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/import-documents.sh' -o "$course_dir/tools/import-documents.sh"
-  curl -fL 'https://punpiti.github.io/ai-for-research/downloads/import-documents.ps1' -o "$course_dir/tools/import-documents.ps1"
+  curl -fL 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/modern-thai.yaml' -o "$course_dir/templates/modern-thai.yaml"
+  curl -fL 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/modern-thai.lua' -o "$course_dir/templates/modern-thai.lua"
+  curl -fL 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/modern-thai.tex' -o "$course_dir/templates/modern-thai.tex"
+  curl -fL 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/starter-AGENTS.md' -o "$course_dir/AGENTS.md"
+  curl -fL 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/import-documents.sh' -o "$course_dir/tools/import-documents.sh"
+  curl -fL 'https://urban.cpe.ku.ac.th/ai-for-research/downloads/import-documents.ps1' -o "$course_dir/tools/import-documents.ps1"
   chmod +x "$course_dir/tools/import-documents.sh"
   log "workspace=$course_dir"
 }

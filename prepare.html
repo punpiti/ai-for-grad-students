@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-10">
-  <script src="assets/app.js?v=20260805-10" defer></script>
-  <script src="assets/site-shell.js?v=20260805-2"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-16">
+  <script src="assets/app.js?v=20260805-16" defer></script>
+  <script src="assets/site-shell.js?v=20260805-4"></script>
 </head>
 <body class="prepare-page">
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
@@ -22,6 +22,24 @@
       <p class="eyebrow">Module 1 · First class</p>
       <h1>Prepare Your<br>AI Research Workspace</h1>
       <p>ทำตามทีละขั้นเพื่อเตรียมเครื่อง เชื่อมต่อ AI และสร้าง PDF ตัวอย่างชิ้นแรก ไม่จำเป็นต้องมีพื้นฐานการเขียนโปรแกรม</p>
+    </section>
+
+    <section class="section" id="prerequisites">
+      <div class="section-heading compact"><p class="eyebrow">การเตรียมตัวก่อนเรียน</p><h2>ของต้องมีก่อนเรียน</h2></div>
+      <div class="check-grid">
+        <div><span>เครื่อง</span><strong>โน้ตบุ๊กที่ติดตั้งโปรแกรมได้ พร้อมที่ชาร์จและพื้นที่ว่างอย่างน้อย 20 GB</strong></div>
+        <div><span>บัญชี</span><strong>บัญชี AI ที่เข้าใช้งานได้ และอินเทอร์เน็ตสำหรับติดตั้ง</strong></div>
+        <div><span>ข้อมูล</span><strong>ไฟล์ตัวอย่างที่เปิดเผยได้ 1–3 หน้า โดยไม่มีข้อมูลลับหรือข้อมูลส่วนบุคคลที่ไม่จำเป็น</strong></div>
+      </div>
+    </section>
+
+    <section class="section" id="outcomes">
+      <div class="section-heading compact"><p class="eyebrow">LO</p><h2>สิ่งที่จะทำได้</h2></div>
+      <div class="check-grid outcome-grid">
+        <div><span>01</span><strong>เปิดพื้นที่ทำงานและเชื่อมต่อ AI ได้</strong></div>
+        <div><span>02</span><strong>สร้างและตรวจไฟล์ Markdown กับ PDF ได้</strong></div>
+        <div><span>03</span><strong>สร้างข้อมูลผู้เรียนและบริบทสำหรับใช้ในโมดูลถัดไปได้</strong></div>
+      </div>
     </section>
 
     <section class="section platform-section" id="setup">
@@ -126,7 +144,7 @@
           <p class="platform-label">Windows 11</p>
           <h3>Admin system installation</h3>
           <h4 class="phase-title"><span>1</span> เปิด PowerShell ด้วย Run as administrator แล้วโหลด script</h4>
-          <div class="command"><code>curl.exe -fL "https://punpiti.github.io/ai-for-research/downloads/setup-windows.ps1" -o "$HOME\Downloads\setup-windows.ps1"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code>curl.exe -fL "https://urban.cpe.ku.ac.th/ai-for-research/downloads/setup-windows.ps1" -o "$HOME\Downloads\setup-windows.ps1"</code><button type="button" data-copy>คัดลอก</button></div>
           <h4 class="phase-title"><span>2</span> รัน script ใน Admin PowerShell</h4>
           <div class="command"><code data-agent-command data-template="powershell -ExecutionPolicy Bypass -File &quot;$HOME\Downloads\setup-windows.ps1&quot; -Mode InstallSystem -Agent {agent}">powershell -ExecutionPolicy Bypass -File "$HOME\Downloads\setup-windows.ps1" -Mode InstallSystem -Agent codex</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected">เมื่อเครื่องพร้อมจะเห็น <code>FINAL_RESULT PASS</code> และหน้าต่างนี้จะปิดเองหลังติดตั้งเสร็จ</p>
@@ -138,7 +156,7 @@
           <p class="platform-label">macOS</p>
           <h3>System installation</h3>
           <h4 class="phase-title"><span>1</span> โหลด script</h4>
-          <div class="command"><code>curl -fL "https://punpiti.github.io/ai-for-research/downloads/setup-macos.sh" -o "$HOME/Downloads/setup-macos.sh"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code>curl -fL "https://urban.cpe.ku.ac.th/ai-for-research/downloads/setup-macos.sh" -o "$HOME/Downloads/setup-macos.sh"</code><button type="button" data-copy>คัดลอก</button></div>
           <h4 class="phase-title"><span>2</span> รัน script; ระบบขอสิทธิ์เมื่อจำเป็น</h4>
           <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash &quot;$HOME/Downloads/setup-macos.sh&quot; --install-system">AI_GRAD_AGENT=codex bash "$HOME/Downloads/setup-macos.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected">script ตรวจเครื่องก่อน หากไม่ผ่านจะหยุดโดยไม่ติดตั้ง หากผ่านจึงขอรหัสผ่านเฉพาะขั้นที่จำเป็น</p>
@@ -150,7 +168,7 @@
           <p class="platform-label">Linux / WSL2</p>
           <h3>System installation</h3>
           <h4 class="phase-title"><span>1</span> โหลด script</h4>
-          <div class="command"><code>curl -fL "https://punpiti.github.io/ai-for-research/downloads/setup-linux.sh" -o "$HOME/Downloads/setup-linux.sh"</code><button type="button" data-copy>คัดลอก</button></div>
+          <div class="command"><code>curl -fL "https://urban.cpe.ku.ac.th/ai-for-research/downloads/setup-linux.sh" -o "$HOME/Downloads/setup-linux.sh"</code><button type="button" data-copy>คัดลอก</button></div>
           <h4 class="phase-title"><span>2</span> รัน script; ระบบเรียก sudo เมื่อจำเป็น</h4>
           <div class="command"><code data-agent-command data-template="AI_GRAD_AGENT={agent} bash &quot;$HOME/Downloads/setup-linux.sh&quot; --install-system">AI_GRAD_AGENT=codex bash "$HOME/Downloads/setup-linux.sh" --install-system</code><button type="button" data-copy>คัดลอก</button></div>
           <p class="expected">script ตรวจเครื่องก่อน หากไม่ผ่านจะหยุดโดยไม่ติดตั้ง หากผ่านจึงเรียก <code>sudo</code> เฉพาะ package ที่จำเป็น</p>
@@ -257,11 +275,22 @@
 13. วารสาร การประชุม หรือแหล่งเผยแพร่ที่สนใจ: {{ถามฉัน — หากยังไม่มีให้บันทึกว่า ยังไม่ทราบ}}
 14. กลุ่มผู้อ่านหรือผู้ใช้ผลที่ต้องการสื่อสารด้วย: {{ถามฉัน}}
 
-ก่อนถาม เตือนฉันว่าไม่ต้องให้รหัสนิสิต เบอร์โทร อีเมล ที่อยู่ credential หรือข้อมูลส่วนบุคคลที่ไม่จำเป็น เมื่อถามครบให้แสดง Learner Profile ฉบับร่าง แยก “ข้อมูลที่ฉันยืนยัน” “ยังไม่ทราบ” และ “ไม่ประสงค์ระบุ” แล้วถามว่าต้องแก้อะไรก่อนบันทึก ห้ามเดาหรือเติมข้อมูลแทนฉัน</code><button type="button" data-copy>คัดลอก Prompt สร้าง Learner Profile</button></div></div></li>
+ก่อนถาม เตือนฉันว่าไม่ต้องให้รหัสนิสิต เบอร์โทร อีเมล ที่อยู่ รหัสผ่าน หรือข้อมูลส่วนบุคคลที่ไม่จำเป็น เมื่อถามครบให้แสดงข้อมูลผู้เรียนฉบับร่าง แยก “ข้อมูลที่ฉันยืนยัน” “ยังไม่ทราบ” และ “ไม่ประสงค์ระบุ” แล้วถามว่าต้องแก้อะไรก่อนบันทึก ห้ามเดาหรือเติมข้อมูลแทนฉัน
+
+เมื่อฉันพิมพ์ว่า “อนุมัติและบันทึก” เท่านั้น ให้สร้างโฟลเดอร์ profile/ และไฟล์ต่อไปนี้:
+1. profile/learner-profile.yaml — ข้อมูลที่ฉันยืนยันในรูปแบบที่โมดูลอื่นอ่านได้
+2. profile/learner-profile.md — ฉบับภาษาไทยที่ฉันอ่านและแก้ไขได้
+3. profile/learning-context.md — วิเคราะห์เฉพาะสิ่งที่ช่วยปรับบทเรียน ได้แก่ ระดับคำอธิบาย ตัวอย่างที่เกี่ยวข้อง ภาษา ข้อจำกัด ข้อมูลที่ห้ามส่งออก ค่าเริ่มต้นที่ใช้ได้ และค่าที่ยังต้องถาม ห้ามวิเคราะห์บุคลิกหรือเดาความสามารถ
+4. profile/author-profile.bib — สร้างเฉพาะเมื่อฉันต้องการ โดยใช้เพียงชื่อ สังกัด ORCID หรือข้อมูลสำหรับเผยแพร่ที่ฉันยืนยัน ห้ามใช้ BibTeX แทน learner-profile.yaml
+
+ก่อนจบ แสดงรายการข้อมูลที่ถูกบันทึก ข้อมูลที่ไม่ได้บันทึก และวิธีแก้ไขไฟล์ในภายหลัง โมดูลถัดไปต้องอ่าน profile/ ก่อนทำงาน หากข้อมูลที่จำเป็นยังไม่ทราบให้ถามฉันทีละข้อและบันทึกหลังฉันอนุมัติ</code><button type="button" data-copy>คัดลอกคำสั่งสร้างข้อมูลผู้เรียน</button></div></div></li>
         <li><span>02</span><div><strong>ตอบทีละคำถาม</strong><br>วาง Prompt ใน <span data-agent-panel>Codex panel</span> แล้วตอบเฉพาะข้อมูลที่เกี่ยวข้อง คุณสามารถพิมพ์ “ข้าม” หรือ “ไม่ประสงค์ระบุ” ได้ทุกข้อ</div></li>
-        <li><span>03</span><div><strong>ตรวจ Profile ก่อนอนุมัติ</strong><br>ตรวจการสะกดชื่อ สังกัด บทบาท หัวข้อ เป้าหมาย และระดับความอ่อนไหว แก้สิ่งที่ AI เข้าใจผิด และยืนยันว่า AI ยังไม่สร้างหรือแก้ไขไฟล์</div></li>
+        <li><span>03</span><div><strong>ตรวจข้อมูลก่อนอนุมัติ</strong><br>ตรวจการสะกดชื่อ สังกัด บทบาท หัวข้อ เป้าหมาย และระดับความอ่อนไหว แก้สิ่งที่ AI เข้าใจผิด โดย AI ต้องยังไม่สร้างหรือแก้ไขไฟล์</div></li>
+        <li><span>04</span><div><strong>อนุมัติแล้วจึงบันทึก</strong><br>เมื่อข้อมูลถูกต้อง ให้พิมพ์ “อนุมัติและบันทึก” แล้วตรวจว่าเกิด <code>profile/learner-profile.yaml</code>, <code>profile/learner-profile.md</code> และ <code>profile/learning-context.md</code></div></li>
+        <li><span>05</span><div><strong>ตรวจสิ่งที่ AI วิเคราะห์</strong><br>เปิด <code>profile/learning-context.md</code> และลบหรือแก้ข้อความที่เดาเกินข้อมูล ไฟล์นี้ควรบอกเพียงว่าจะปรับภาษา ตัวอย่าง การค้น และค่าเริ่มต้นอย่างไร</div></li>
+        <li><span>06</span><div><strong>สร้างข้อมูลผู้แต่งเมื่อจำเป็น</strong><br>หากต้องใช้ในงานเผยแพร่ จึงให้ AI สร้าง <code>profile/author-profile.bib</code> จากข้อมูลที่ยืนยันแล้ว ไฟล์นี้เป็นข้อมูลผู้แต่ง ไม่ใช่ข้อมูลผู้เรียนหลัก</div></li>
       </ol>
-      <div class="plain-note"><strong>กิจกรรมผ่านเมื่อ:</strong> AI ถามทีละข้อ ไม่เดาข้อมูล สรุป Learner Profile แยกข้อมูลที่ยืนยัน/ยังไม่ทราบ/ไม่ประสงค์ระบุ และยังไม่แก้ไขไฟล์ จากนั้นจึงเริ่มทดลอง Markdown</div>
+      <div class="plain-note"><strong>กิจกรรมผ่านเมื่อ:</strong> AI ถามทีละข้อ ไม่เดาข้อมูล รอการอนุมัติก่อนสร้างไฟล์ ผู้เรียนเปิดและตรวจข้อมูลทั้งสามไฟล์ได้ และทราบว่าโมดูลถัดไปจะอ่านข้อมูลเหล่านี้เป็นบริบทเพิ่มเติม ส่วน BibTeX เป็นเพียงไฟล์ข้อมูลผู้แต่งที่เลือกสร้างเมื่อจำเป็น</div>
       <h3 class="section-zone-heading">ทดลองไฟล์ Markdown แรก</h3>
       <ol class="readiness-steps">
         <li><span>01</span><div><strong>เปิดและแก้ Markdown</strong><br>คลิก <code>content.md</code> แล้วแก้ข้อความตัวอย่าง</div></li>
@@ -273,7 +302,9 @@
       <div class="checklist" data-checklist="practice">
         <label><input type="checkbox"> เปิด workspace ใน <span data-workspace-app>VS Code</span> ได้</label>
         <label><input type="checkbox"> <span data-agent-panel>Codex panel</span> sign in ได้</label>
-        <label><input type="checkbox"> AI ถามบริบททีละข้อและฉันตรวจ Learner Profile แล้ว โดยยังไม่แก้ไขไฟล์</label>
+        <label><input type="checkbox"> AI ถามข้อมูลทีละข้อและรอฉันอนุมัติก่อนสร้างไฟล์</label>
+        <label><input type="checkbox"> เปิดและตรวจ <code>profile/learner-profile.yaml</code>, <code>profile/learner-profile.md</code> และ <code>profile/learning-context.md</code> แล้ว</label>
+        <label><input type="checkbox"> เข้าใจว่า <code>author-profile.bib</code> เป็นข้อมูลผู้แต่งแบบเลือกทำ ไม่ใช่ข้อมูลผู้เรียนหลัก</label>
         <label><input type="checkbox"> เปิด อ่าน แก้ และ Preview <code>content.md</code> ได้</label>
         <label><input type="checkbox"> AI อ่าน <code>content.md</code> และสร้าง <code>output/content.pdf</code> ได้</label>
         <label><input type="checkbox"> เปิด PDF แล้วตรวจว่าเป็น A4 ภาษาไทยและรูปแบบถูกต้อง</label>
@@ -292,7 +323,7 @@ code .</code><button type="button" data-copy>คัดลอก</button></div></
     </section>
 
     <section class="section" id="homework" data-agent-required hidden>
-      <div class="section-heading compact"><p class="eyebrow">การบ้าน</p><h2>เปิดซ้ำด้วยตัวเองและเตรียมคาบถัดไป</h2></div>
+      <div class="section-heading compact"><p class="eyebrow">Checkpoint</p><h2>จบบทเรียน</h2><p>เปิดซ้ำด้วยตัวเองและตรวจว่าพร้อมใช้ในโมดูลถัดไป</p></div>
       <div class="homework-grid">
         <article><h3>ทบทวน</h3><p>ปิดแล้วเปิด <span data-workspace-app>VS Code</span> ใหม่ รัน script ในโหมด check และยืนยันว่า workspace, agent และ Markdown ยังทำงาน</p></article>
         <article><h3>หากต้องการความช่วยเหลือ</h3><p>เก็บข้อความที่เห็นบนหน้าจอหรือถ่ายภาพไว้ แล้วนำมาถามผู้สอนในชั้นเรียน</p></article>

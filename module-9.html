@@ -9,47 +9,48 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-10">
-  <script src="assets/site-shell.js?v=20260805-1"></script>
-  <script src="assets/app.js?v=20260805-10" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-16">
+  <script src="assets/site-shell.js?v=20260805-4"></script>
+  <script src="assets/app.js?v=20260805-15" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
   <site-header current="9"></site-header>
   <main id="main">
-    <section class="prepare-hero module-hero"><p class="eyebrow">Module 9 · Self-paced lesson</p><h1 aria-label="Module 9 — Personal AI Research Workflow Kit">Personal AI<br><span>Research Workflow</span></h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
+    <section class="prepare-hero module-hero"><p class="eyebrow">โมดูล 9</p><h1 aria-label="โมดูล 9 — สร้างชุดวิธีทำงานวิจัยส่วนบุคคลกับ AI">วิธีทำงานวิจัย<br><span>ส่วนบุคคลกับ AI</span></h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้า หรือเริ่มที่โมดูลนี้ได้ทันที ให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
     <section class="section profile-context"><div data-research-profile></div></section>
     <div id="module-content">
-<section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><h2 id="start-heading">ก่อนเริ่ม: เลือกทางเรียนและเตรียมสิ่งที่ใช้</h2>
+<section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><p class="eyebrow">การเตรียมตัวก่อนเรียน</p><h2 id="start-heading">ของต้องมีก่อนเรียน</h2>
 </div><div class="markdown-body"><ul>
-<li><strong>เรียนต่อเนื่อง:</strong> เลือก artifacts และจุดตรวจจาก Module 1–8 หรือจาก Build-up, Reviews หรือ Publication มาประกอบเป็น Personal AI Research Kit</li>
-<li><strong>เรียนแบบ Standalone:</strong> เลือกงานวิจัยที่ทำซ้ำหนึ่งเรื่อง ใช้กรณีตัวอย่างที่ไม่อ่อนไหว แล้วสร้าง workflow card, guardrails, tests และ run record รุ่นแรกโดยไม่ต้องมีผลงานจากโมดูลก่อนหน้า</li>
+<li><strong>เรียนต่อเนื่อง:</strong> เลือกชิ้นงานและจุดตรวจจากโมดูล 1–8 มาประกอบเป็นชุดวิธีทำงานของตนเอง</li>
+<li><strong>เริ่มที่โมดูลนี้:</strong> เลือกงานวิจัยที่ทำซ้ำหนึ่งเรื่อง หรือดาวน์โหลด <a href="downloads/module-09-mock-workflow-case.md">กรณีตัวอย่างพร้อมใช้</a> แล้วสร้างวิธีทำงาน กติกา การทดสอบ และบันทึกการใช้งานรุ่นแรก</li>
 </ul>
 <h3 id="สิ่งที่ต้องเตรียม">สิ่งที่ต้องเตรียม</h3>
 <ul>
 <li><a href="downloads/module-09-personal-workflow-kit-workbook.md">สมุดงาน Module 9</a> และโฟลเดอร์ <code>my-ai-research-kit/</code> ว่าง</li>
 <li>งานที่ทำซ้ำหนึ่งเรื่อง หรือกรณีตัวอย่างที่ไม่มีข้อมูลลับ</li>
-<li>artifacts สำหรับทดลองสร้าง note, share package และ run record</li>
-<li>messy-folder mock และแฟ้มตัวอย่างสำหรับทดสอบ backup/restore โดยไม่ใช้ข้อมูลจริง</li>
-<li>choice cards สำหรับ DEFAULT/ASK/NEVER/ESCALATE และ peer-attack checklist</li>
-<li>เวลาเพียงพอสำหรับ dry run, failure tests และแก้ kit ก่อนกำหนด Version 1.0</li>
+<li>ชิ้นงานตัวอย่างสำหรับทดลองสร้างบันทึก ชุดแชร์ และบันทึกการใช้งาน</li>
+<li>โฟลเดอร์จำลองที่จัดไม่เป็นระเบียบ และแฟ้มตัวอย่างสำหรับทดสอบการสำรอง/กู้คืนโดยไม่ใช้ข้อมูลจริง</li>
+<li>แบบบันทึกสิ่งที่ทำตามค่าที่กำหนด ต้องถาม ห้ามทำ และต้องส่งต่อ พร้อมรายการช่วยหาจุดอ่อน</li>
+<li>กรณีตัวอย่างขนาดเล็กสำหรับทดลองทั้งกรณีปกติและกรณีผิดพลาดก่อนกำหนดเป็นรุ่นแรก</li>
 </ul>
+<div class="plain-note"><strong>คุณกำหนดวิธีและกติกา ส่วน AI ช่วยจัดชุดใช้งาน:</strong> เริ่มจากหน้าสนทนา เขียนข้อมูลของคุณ เหตุผล กติกา ข้อห้าม และการตัดสินใจ แล้วให้ AI ช่วยสร้างโครงแฟ้มและตรวจความครบถ้วน คุณต้องตรวจทุกแฟ้มก่อนนำไปใช้หรือแชร์</div>
 </div></section>
 <section class="section markdown-section" id="คำถามแกนของโมดูล" aria-labelledby="คำถามแกนของโมดูล-heading"><div class="section-heading compact"><h2 id="คำถามแกนของโมดูล-heading">คำถามแกนของโมดูล</h2>
-</div><div class="markdown-body"><p>จะเปลี่ยนวิธีทำงานที่ได้เรียนมาให้เป็นชุด AI research workflow ของตนเอง ซึ่งมีค่าเริ่มต้น ตัวเลือก ข้อห้าม จุดตรวจ และทางออกเมื่อเกิดปัญหา พร้อมนำไปใช้ซ้ำกับโครงการใหม่ได้อย่างไร</p>
+</div><div class="markdown-body"><p>จะเปลี่ยนวิธีทำงานที่ได้เรียนมาให้เป็นชุดวิธีทำงานกับ AI ของตนเอง ซึ่งมีค่าที่กำหนดไว้ ตัวเลือก ข้อห้าม จุดตรวจ และทางออกเมื่อเกิดปัญหา พร้อมนำไปใช้ซ้ำกับโครงการใหม่ได้อย่างไร</p>
 </div></section>
-<section class="section markdown-section" id="outcomes" aria-labelledby="outcomes-heading"><div class="section-heading compact"><h2 id="outcomes-heading">สิ่งที่จะเรียนรู้</h2>
-</div><div class="markdown-body"><p>เมื่อจบโมดูล ผู้เรียนสามารถ</p>
+<section class="section markdown-section" id="outcomes" aria-labelledby="outcomes-heading"><div class="section-heading compact"><p class="eyebrow">LO</p><h2 id="outcomes-heading">สิ่งที่จะทำได้</h2>
+</div><div class="markdown-body"><p>เมื่อจบโมดูล คุณจะสามารถ</p>
 <ol type="1">
-<li>ใช้ Personal AI Research Workflow Framework เดียวกันในการออกแบบงานทุกชนิด</li>
+<li>ใช้ กรอบวิธีทำงานกับ AI สำหรับงานวิจัยส่วนบุคคล เดียวกันในการออกแบบงานทุกชนิด</li>
 <li>กำหนดตัวเลือกส่วนบุคคลไว้ล่วงหน้าโดยไม่ฝืนข้อกำหนดของสถาบัน สาขา ข้อมูล หรือแหล่งเผยแพร่</li>
 <li>แยกสิ่งที่ AI ทำอัตโนมัติ สิ่งที่ต้องถามก่อน สิ่งที่ห้ามทำ และสิ่งที่ต้องให้มนุษย์หรือหลักฐานภายนอกตัดสิน</li>
-<li>ประกอบ workflow cards, templates, checklists, examples และ tests เป็น Personal AI Research Kit</li>
-<li>ทดสอบ workflow ทั้งกรณีปกติ ข้อมูลไม่ครบ หลักฐานขัดแย้ง ข้อมูลอ่อนไหว และเครื่องมือทำงานผิดพลาด</li>
-<li>ปรับรุ่นและบันทึกการเปลี่ยนแปลงจากผลใช้จริง โดยไม่ถือว่า workflow ใช้ได้เพียงเพราะ AI ทำตามคำสั่งได้</li>
+<li>ประกอบบัตรวิธีทำงาน แบบฟอร์ม รายการตรวจ ตัวอย่าง และการทดสอบเป็นชุดใช้งานส่วนบุคคล</li>
+<li>ทดสอบวิธีทำงานทั้งกรณีปกติ ข้อมูลไม่ครบ หลักฐานขัดแย้ง ข้อมูลอ่อนไหว และเครื่องมือทำงานผิดพลาด</li>
+<li>ปรับรุ่นและบันทึกการเปลี่ยนแปลงจากผลใช้จริง โดยไม่ถือว่าใช้ได้เพียงเพราะ AI ทำตามคำสั่งได้</li>
 </ol>
 </div></section>
-<section class="section markdown-section" id="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว" aria-labelledby="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว-heading"><div class="section-heading compact"><h2 id="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว-heading">หลักคิด: Framework เดียว แต่ไม่ใช่ Workflow เดียว</h2>
+<section class="section markdown-section" id="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว" aria-labelledby="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว-heading"><div class="section-heading compact"><h2 id="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว-heading">หลักคิด: ใช้กรอบร่วม แต่ปรับวิธีทำงานให้เหมาะกับแต่ละคน</h2>
 </div><div class="markdown-body"><p>ทุกคนใช้กรอบร่วมเพื่อให้ตรวจสอบได้ แต่เลือกค่าเริ่มต้นและเครื่องมือให้เหมาะกับสาขา งาน และข้อจำกัดของตน</p>
 <div class="command markdown-command"><code>Shared Framework
   ├─ โครงสร้างงานและจุดตรวจเหมือนกัน
@@ -62,10 +63,10 @@ Personal Choices
   ├─ แหล่งค้นและโปรแกรมจัดการเอกสารอ้างอิง
   ├─ เครื่องมือวิเคราะห์/สร้างภาพ
   ├─ รูปแบบ Word/LaTeX และ venue ที่ใช้บ่อย
-  └─ ค่าเริ่มต้น ข้อยกเว้น และทางเลือกสำรอง</code><button type="button" data-copy="">คัดลอก</button></div><p>ความเป็นส่วนบุคคลไม่ได้หมายถึงลดมาตรฐาน ตัวเลือกของผู้เรียนเปลี่ยนได้เฉพาะส่วนที่เจ้าของงานมีอำนาจตัดสิน ข้อกำหนด IRB, privacy, copyright, institutional policy, data-use agreement และ venue guideline ยังคงอยู่เหนือค่าเริ่มต้นส่วนตัว</p>
+  └─ ค่าเริ่มต้น ข้อยกเว้น และทางเลือกสำรอง</code><button type="button" data-copy="">คัดลอก</button></div><p>ความเป็นส่วนบุคคลไม่ได้หมายถึงลดมาตรฐาน คุณเปลี่ยนได้เฉพาะส่วนที่เจ้าของงานมีอำนาจตัดสิน ข้อกำหนดด้านจริยธรรม ความเป็นส่วนตัว ลิขสิทธิ์ นโยบายหน่วยงาน ข้อตกลงการใช้ข้อมูล และข้อกำหนดของแหล่งเผยแพร่ยังอยู่เหนือค่าเริ่มต้นส่วนตัว</p>
 </div></section>
-<section class="section markdown-section" id="personal-ai-research-workflow-framework" aria-labelledby="personal-ai-research-workflow-framework-heading"><div class="section-heading compact"><h2 id="personal-ai-research-workflow-framework-heading">Personal AI Research Workflow Framework</h2>
-</div><div class="markdown-body"><p>workflow ทุกใบต้องมี 12 ส่วน</p>
+<section class="section markdown-section" id="personal-ai-research-workflow-framework" aria-labelledby="personal-ai-research-workflow-framework-heading"><div class="section-heading compact"><h2 id="personal-ai-research-workflow-framework-heading">กรอบวิธีทำงานกับ AI สำหรับงานวิจัยส่วนบุคคล</h2>
+</div><div class="markdown-body"><p>บัตรวิธีทำงานทุกใบต้องตอบคำถาม 12 ส่วน</p>
 <table>
 <thead>
 <tr class="header">
@@ -75,59 +76,59 @@ Personal Choices
 </thead>
 <tbody>
 <tr class="odd">
-<td>1. Purpose</td>
+<td>1. เป้าหมาย</td>
 <td>งานนี้แก้ปัญหาอะไร และไม่ครอบคลุมอะไร</td>
 </tr>
 <tr class="even">
-<td>2. Trigger</td>
-<td>เมื่อใดควรเริ่มใช้ workflow นี้</td>
+<td>2. จุดเริ่ม</td>
+<td>เมื่อใดควรเริ่มใช้วิธีทำงานนี้</td>
 </tr>
 <tr class="odd">
-<td>3. Intake</td>
+<td>3. ของที่ต้องมีก่อนเริ่ม</td>
 <td>ต้องมีข้อมูล เอกสาร หลักฐาน สิทธิ และบริบทใดก่อนเริ่ม</td>
 </tr>
 <tr class="even">
-<td>4. Defaults</td>
+<td>4. ค่าที่กำหนดไว้</td>
 <td>ตัวเลือกใดใช้เป็นค่าเริ่มต้นได้โดยไม่ถามซ้ำ</td>
 </tr>
 <tr class="odd">
-<td>5. Decisions</td>
+<td>5. เรื่องที่ต้องตัดสินใจ</td>
 <td>ตัวเลือกใดต้องถามเจ้าของงานหรือผู้เชี่ยวชาญทุกครั้ง</td>
 </tr>
 <tr class="even">
-<td>6. Steps</td>
-<td>ลำดับงานหลักและ artifact ที่สร้างในแต่ละขั้นคืออะไร</td>
+<td>6. ขั้นตอน</td>
+<td>ลำดับงานหลักและชิ้นงานที่สร้างในแต่ละขั้นคืออะไร</td>
 </tr>
 <tr class="odd">
-<td>7. Evidence</td>
+<td>7. หลักฐาน</td>
 <td>ข้อกล่าวอ้างและผลลัพธ์ย้อนกลับไปยังแหล่งใด</td>
 </tr>
 <tr class="even">
-<td>8. Evals</td>
+<td>8. เกณฑ์ตรวจ</td>
 <td>เกณฑ์ผ่าน/ไม่ผ่านของแต่ละขั้นคืออะไร</td>
 </tr>
 <tr class="odd">
-<td>9. Human Gate</td>
+<td>9. จุดที่มนุษย์ตัดสิน</td>
 <td>จุดใดต้องใช้วิจารณญาณของผู้วิจัย อาจารย์ หรือผู้เชี่ยวชาญ</td>
 </tr>
 <tr class="even">
-<td>10. External Gate</td>
-<td>จุดใดต้องใช้ข้อมูลจริง guideline, IRB, reviewer, experiment หรือ stakeholder</td>
+<td>10. จุดที่ต้องพึ่งภายนอก</td>
+<td>จุดใดต้องใช้ข้อมูลจริง ข้อกำหนด การพิจารณาจริยธรรม ผู้ทบทวน การทดลอง หรือผู้เกี่ยวข้อง</td>
 </tr>
 <tr class="odd">
-<td>11. Stop/Escalation</td>
+<td>11. เงื่อนไขหยุดหรือส่งต่อ</td>
 <td>เมื่อใดต้องหยุด ห้ามเดา หรือเปลี่ยนไปใช้ทางเลือกสำรอง</td>
 </tr>
 <tr class="even">
-<td>12. Record</td>
-<td>ต้องบันทึก input, output, version, decision, error และการเปลี่ยนแปลงอะไร</td>
+<td>12. บันทึก</td>
+<td>ต้องบันทึกข้อมูลเข้า ชิ้นงาน รุ่น การตัดสินใจ ข้อผิดพลาด และการเปลี่ยนแปลงอะไร</td>
 </tr>
 </tbody>
 </table>
-<p>framework กำหนดโครงขั้นต่ำ ไม่กำหนดว่าเครื่องมือใดดีที่สุดสำหรับทุกคน</p>
+<p>กรอบนี้กำหนดเพียงส่วนขั้นต่ำ ไม่ได้กำหนดว่าเครื่องมือใดดีที่สุดสำหรับทุกคน</p>
 </div></section>
-<section class="section markdown-section" id="choice-architecture--ตัดสินใจล่วงหน้าอย่างมีขอบเขต" aria-labelledby="choice-architecture--ตัดสินใจล่วงหน้าอย่างมีขอบเขต-heading"><div class="section-heading compact"><h2 id="choice-architecture--ตัดสินใจล่วงหน้าอย่างมีขอบเขต-heading">Choice Architecture — ตัดสินใจล่วงหน้าอย่างมีขอบเขต</h2>
-</div><div class="markdown-body"><p>ผู้เรียนจัดทุกตัวเลือกไว้หนึ่งในสี่สถานะ</p>
+<section class="section markdown-section" id="choice-architecture--ตัดสินใจล่วงหน้าอย่างมีขอบเขต" aria-labelledby="choice-architecture--ตัดสินใจล่วงหน้าอย่างมีขอบเขต-heading"><div class="section-heading compact"><h2 id="choice-architecture--ตัดสินใจล่วงหน้าอย่างมีขอบเขต-heading">ออกแบบทางเลือก — ตัดสินใจล่วงหน้าอย่างมีขอบเขต</h2>
+</div><div class="markdown-body"><p>จัดทุกตัวเลือกของคุณไว้ในหนึ่งในสี่สถานะ</p>
 <table>
 <thead>
 <tr class="header">
@@ -138,22 +139,22 @@ Personal Choices
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>DEFAULT</strong></td>
+<td><strong>ทำตามค่าที่กำหนด</strong></td>
 <td>ใช้อัตโนมัติได้เมื่อไม่มีเงื่อนไขขัดแย้ง</td>
 <td>ภาษาเอกสารหลัก โครงสร้างโฟลเดอร์ รูปแบบชื่อแฟ้ม แหล่งค้นเริ่มต้น รูปแบบบันทึกผล</td>
 </tr>
 <tr class="even">
-<td><strong>ASK</strong></td>
+<td><strong>ต้องถามก่อน</strong></td>
 <td>ต้องถามก่อน เพราะคำตอบเปลี่ยนผลหรือมีความเสี่ยง</td>
 <td>target venue, research claim, วิธีสถิติ, การตัดข้อมูลสูญหาย, การเปิดเผยข้อมูล, การติดตั้งเครื่องมือ</td>
 </tr>
 <tr class="odd">
-<td><strong>NEVER</strong></td>
+<td><strong>ห้ามทำ</strong></td>
 <td>ห้าม AI ทำ แม้ผู้ใช้ไม่ได้เตือน</td>
 <td>แต่ง citation/ผลทดลอง ส่งข้อมูลลับไปบริการภายนอก เปลี่ยนไฟล์ต้นฉบับ ลบข้อมูล หรือรับรอง IRB/acceptance</td>
 </tr>
 <tr class="even">
-<td><strong>ESCALATE</strong></td>
+<td><strong>ต้องส่งต่อ</strong></td>
 <td>ส่งให้บุคคลหรือหลักฐานภายนอกตัดสิน</td>
 <td>novelty, domain validity, ethics approval, legal interpretation, authorship dispute, final submission</td>
 </tr>
@@ -167,7 +168,7 @@ Personal Choices
   &gt; ระเบียบวิธีและหลักฐานเฉพาะงาน
   &gt; ค่าเริ่มต้นส่วนบุคคล
   &gt; ความสะดวกของเครื่องมือ</code><button type="button" data-copy="">คัดลอก</button></div></div></section>
-<section class="section markdown-section" id="personal-research-profile" aria-labelledby="personal-research-profile-heading"><div class="section-heading compact"><h2 id="personal-research-profile-heading">Personal Research Profile</h2>
+<section class="section markdown-section" id="personal-research-profile" aria-labelledby="personal-research-profile-heading"><div class="section-heading compact"><h2 id="personal-research-profile-heading">ข้อมูลบริบทงานวิจัยส่วนบุคคล</h2>
 </div><div class="markdown-body"><p>ก่อนสร้าง workflow ให้กำหนดบริบทที่ใช้บ่อย</p>
 <ul>
 <li>สาขา หัวข้อ และชนิดคำถามวิจัย</li>
@@ -184,7 +185,7 @@ Personal Choices
 </ul>
 <p>Profile มีไว้ลดคำถามซ้ำ ไม่ใช่ใช้แทน intake ของโครงการใหม่</p>
 </div></section>
-<section class="section markdown-section" id="personal-ai-research-kit" aria-labelledby="personal-ai-research-kit-heading"><div class="section-heading compact"><h2 id="personal-ai-research-kit-heading">Personal AI Research Kit</h2>
+<section class="section markdown-section" id="personal-ai-research-kit" aria-labelledby="personal-ai-research-kit-heading"><div class="section-heading compact"><h2 id="personal-ai-research-kit-heading">ชุดเครื่องมือ AI สำหรับงานวิจัยส่วนบุคคล</h2>
 </div><div class="markdown-body"><p>ชุดที่ส่งต้องเป็นโฟลเดอร์ standalone ซึ่งเปิดแล้วรู้ว่าจะเริ่มอย่างไร</p>
 <div class="command markdown-command"><code>my-ai-research-kit/
 ├── README.md                  # เริ่มใช้อย่างไรและขอบเขตของชุด
@@ -205,7 +206,7 @@ Personal Choices
 ├── records/                   # run log ตัวอย่าง
 └── CHANGELOG.md               # รุ่น เหตุผล และผลกระทบของการแก้</code><button type="button" data-copy="">คัดลอก</button></div><p>ชุดนี้ต้องเป็น tool-neutral ก่อน กล่าวคืออ่านและใช้ได้แม้เปลี่ยน AI frontend จากนั้นจึงมี adapter หรือคำแนะนำเฉพาะเครื่องมือเมื่อจำเป็น</p>
 </div></section>
-<section class="section markdown-section" id="research-operations--ให้-workflow-อยู่รอดในงานจริง" aria-labelledby="research-operations--ให้-workflow-อยู่รอดในงานจริง-heading"><div class="section-heading compact"><h2 id="research-operations--ให้-workflow-อยู่รอดในงานจริง-heading">Research Operations — ให้ Workflow อยู่รอดในงานจริง</h2>
+<section class="section markdown-section" id="research-operations--ให้-workflow-อยู่รอดในงานจริง" aria-labelledby="research-operations--ให้-workflow-อยู่รอดในงานจริง-heading"><div class="section-heading compact"><h2 id="research-operations--ให้-workflow-อยู่รอดในงานจริง-heading">การจัดการงานวิจัย — ให้ระบบทำงานอยู่รอดในงานจริง</h2>
 </div><div class="markdown-body"><p>Personal Kit ต้องครอบคลุมการจัดแฟ้ม การจดบันทึก การทำงานร่วมกัน และการกู้คืนข้อมูล ไม่ใช่เฉพาะคำสั่งให้ AI ผลิตผลลัพธ์</p>
 <h3 id="1-ให้-ai-ช่วยจัดโฟลเดอร์อย่างปลอดภัย">1. ให้ AI ช่วยจัดโฟลเดอร์อย่างปลอดภัย</h3>
 <p>โครงเริ่มต้นปรับได้ตามสาขา แต่ควรแยกข้อมูลต้นฉบับ งานระหว่างทำ บันทึก และผลส่งออก</p>
@@ -332,8 +333,8 @@ Personal Choices
 <p>จัดทำแผนสำรองสำหรับโครงการนี้จาก data classification และสิทธิที่ระบุ แยก working copy, sync, version control และ backup ระบุแฟ้ม/โฟลเดอร์ที่รวมและไม่รวม ความถี่ retention encryption owner และ restore procedure สร้าง inventory/checksum แบบอ่านอย่างเดียวก่อน ห้ามคัดลอกข้อมูลหรือเชื่อมปลายทางภายนอกจนกว่าจะอนุมัติ จากนั้นทดสอบกู้คืนด้วยแฟ้มตัวอย่างที่ไม่อ่อนไหวและบันทึกผล</p>
 </blockquote>
 </div></section>
-<section class="section markdown-section" id="workflow-cards-ที่เลือกประกอบเป็นชุด" aria-labelledby="workflow-cards-ที่เลือกประกอบเป็นชุด-heading"><div class="section-heading compact"><h2 id="workflow-cards-ที่เลือกประกอบเป็นชุด-heading">Workflow Cards ที่เลือกประกอบเป็นชุด</h2>
-</div><div class="markdown-body"><p>ไม่จำเป็นต้องมีทุกใบ ผู้เรียนเลือกตามหลักสูตรและงานของตน</p>
+<section class="section markdown-section" id="workflow-cards-ที่เลือกประกอบเป็นชุด" aria-labelledby="workflow-cards-ที่เลือกประกอบเป็นชุด-heading"><div class="section-heading compact"><h2 id="workflow-cards-ที่เลือกประกอบเป็นชุด-heading">บัตรวิธีทำงานที่เลือกประกอบเป็นชุด</h2>
+</div><div class="markdown-body"><p>ไม่จำเป็นต้องมีทุกใบ ให้คุณเลือกตามงานที่ทำจริง</p>
 <table>
 <thead>
 <tr class="header">
@@ -392,27 +393,27 @@ Personal Choices
 <li><strong>Reviews:</strong> Literature/Citation หรือ Research Logic Review เป็น core และ checklist ที่ใช้ซ้ำได้</li>
 <li><strong>Publication:</strong> Venue Document Production เป็น core และ Data Visualization หรือ Presentation เป็น support</li>
 </ul>
-<p>ผู้เรียนอาจเพิ่มใบอื่นได้ แต่จำนวนมากไม่ใช่คุณภาพ หาก workflow ไม่ผ่าน tests ให้ลดขอบเขตก่อนเพิ่มความสามารถ</p>
+<p>คุณเพิ่มบัตรอื่นได้ แต่จำนวนมากไม่ได้แปลว่าดีขึ้น หากวิธีทำงานยังไม่ผ่านการทดสอบ ให้ลดขอบเขตก่อนเพิ่มความสามารถ</p>
 </div></section>
-<section class="section markdown-section" id="จาก-framework-สู่-workflow-ของเรา" aria-labelledby="จาก-framework-สู่-workflow-ของเรา-heading"><div class="section-heading compact"><h2 id="จาก-framework-สู่-workflow-ของเรา-heading">จาก Framework สู่ Workflow ของเรา</h2>
-</div><div class="markdown-body"><h3 id="step-1--select-one-repeated-pain">Step 1 — Select One Repeated Pain</h3>
+<section class="section markdown-section" id="จาก-framework-สู่-workflow-ของเรา" aria-labelledby="จาก-framework-สู่-workflow-ของเรา-heading"><div class="section-heading compact"><h2 id="จาก-framework-สู่-workflow-ของเรา-heading">จากกรอบร่วมสู่วิธีทำงานของเรา</h2>
+</div><div class="markdown-body"><h3 id="step-1--select-one-repeated-pain">ขั้น 1 — เลือกงานที่ต้องทำซ้ำและยังติดขัด</h3>
 <p>เลือกงานที่เกิดซ้ำและมีต้นทุนจริง เช่น ตรวจ citation, เตรียมข้อมูลแบบสอบถาม, สร้างกราฟ, ตรวจ logic หรือประกอบบทความ หลีกเลี่ยงโจทย์กว้างว่า “ทำวิจัยทั้งหมดให้ฉัน”</p>
-<h3 id="step-2--map-current-practice">Step 2 — Map Current Practice</h3>
+<h3 id="step-2--map-current-practice">ขั้น 2 — บันทึกวิธีทำงานปัจจุบัน</h3>
 <p>เขียนวิธีที่ทำอยู่จริง ระบุจุดเสียเวลา จุดผิดพลาด ผู้ที่ต้องตัดสินใจ และหลักฐานที่ต้องรอ ไม่เริ่มจากความสามารถของ AI</p>
-<h3 id="step-3--fill-the-12-part-framework">Step 3 — Fill the 12-Part Framework</h3>
+<h3 id="step-3--fill-the-12-part-framework">ขั้น 3 — กรอกกรอบการทำงาน 12 ส่วน</h3>
 <p>กำหนด purpose, trigger, intake, outputs, evidence, evals, human/external gates และ stop conditions ให้ครบก่อนเลือกเครื่องมือ</p>
-<h3 id="step-4--preselect-choices">Step 4 — Preselect Choices</h3>
+<h3 id="step-4--preselect-choices">ขั้น 4 — กำหนดตัวเลือกไว้ล่วงหน้า</h3>
 <p>กรอก <code>defaults.md</code> และอธิบายเหตุผลของ DEFAULT/ASK/NEVER/ESCALATE แต่ละข้อ เลือกทางสำรองอย่างน้อยหนึ่งทางสำหรับแหล่งข้อมูล เครื่องมือหลัก หรือรูปแบบส่งออกที่สำคัญ</p>
-<h3 id="step-5--assemble-the-kit">Step 5 — Assemble the Kit</h3>
-<p>ให้ AI สร้างโฟลเดอร์และไฟล์จาก template แต่ผู้เรียนตรวจชื่อ ขอบเขต ความซ้ำซ้อน และความสามารถในการย้ายไปโครงการอื่น ห้ามฝัง path, credential หรือข้อมูลลับจากเครื่องส่วนตัว</p>
-<h3 id="step-6--dry-run">Step 6 — Dry Run</h3>
+<h3 id="step-5--assemble-the-kit">ขั้น 5 — ประกอบชุดใช้งาน</h3>
+<p>ให้ AI สร้างโฟลเดอร์และแฟ้มจากแม่แบบ แล้วคุณตรวจชื่อ ขอบเขต ความซ้ำซ้อน และการย้ายไปโครงการอื่น ห้ามใส่ตำแหน่งเฉพาะเครื่อง รหัสผ่าน หรือข้อมูลลับจากเครื่องส่วนตัว</p>
+<h3 id="step-6--dry-run">ขั้น 6 — ทดลองใช้งาน</h3>
 <p>ใช้กรณีตัวอย่างที่ทราบคำตอบบางส่วน ตรวจว่า workflow เริ่มถูกจุด สร้าง artifact ครบ หยุดเมื่อควรหยุด และไม่ถามสิ่งที่กำหนดเป็น DEFAULT แล้ว</p>
-<h3 id="step-7--red-team-and-revise">Step 7 — Red-team and Revise</h3>
+<h3 id="step-7--red-team-and-revise">ขั้น 7 — ท้าทายและแก้ไข</h3>
 <p>ทดสอบ failure cases แก้ workflow และบันทึกใน <code>CHANGELOG.md</code> ว่าเปลี่ยนอะไร เพราะอะไร และ test ใดพิสูจน์การแก้</p>
-<h3 id="step-8--freeze-version-10">Step 8 — Freeze Version 1.0</h3>
+<h3 id="step-8--freeze-version-10">ขั้น 8 — บันทึกรุ่น 1.0</h3>
 <p>กำหนดรุ่น วันที่ ขอบเขตที่ผ่านการทดสอบ และ known limitations พร้อมงานจริงขนาดเล็กที่จะทดลองภายหลัง</p>
 </div></section>
-<section class="section markdown-section" id="test-suite-ขั้นต่ำ" aria-labelledby="test-suite-ขั้นต่ำ-heading"><div class="section-heading compact"><h2 id="test-suite-ขั้นต่ำ-heading">Test Suite ขั้นต่ำ</h2>
+<section class="section markdown-section" id="test-suite-ขั้นต่ำ" aria-labelledby="test-suite-ขั้นต่ำ-heading"><div class="section-heading compact"><h2 id="test-suite-ขั้นต่ำ-heading">ชุดทดสอบขั้นต่ำ</h2>
 </div><div class="markdown-body"><table>
 <thead>
 <tr class="header">
@@ -486,7 +487,7 @@ Personal Choices
 </table>
 <p>workflow ผ่านเมื่อผลการตัดสินใจถูกต้อง ไม่ใช่เมื่อถ้อยคำตอบตรงกับตัวอย่างทุกคำ</p>
 </div></section>
-<section class="section markdown-section" id="run-record--หลักฐานจากการใช้-workflow" aria-labelledby="run-record--หลักฐานจากการใช้-workflow-heading"><div class="section-heading compact"><h2 id="run-record--หลักฐานจากการใช้-workflow-heading">Run Record — หลักฐานจากการใช้ Workflow</h2>
+<section class="section markdown-section" id="run-record--หลักฐานจากการใช้-workflow" aria-labelledby="run-record--หลักฐานจากการใช้-workflow-heading"><div class="section-heading compact"><h2 id="run-record--หลักฐานจากการใช้-workflow-heading">บันทึกการใช้งาน — หลักฐานจากการทำงานจริง</h2>
 </div><div class="markdown-body"><p>ทุกครั้งที่ใช้จริงให้บันทึกอย่างน้อย</p>
 <ul>
 <li>workflow/version และวันที่</li>
@@ -502,28 +503,36 @@ Personal Choices
 </ul>
 <p>ห้ามบันทึก credential, token, password หรือข้อมูลลับลงใน kit</p>
 </div></section>
-<section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือสร้าง Personal AI Research Kit</h2>
+<section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือสร้างชุดวิธีทำงานกับ AI ของคุณ</h2>
 </div><div class="markdown-body"><p class="prompt-edit-note">✎ แก้ก่อนส่ง: เปลี่ยนข้อความใน {{…}} ให้เป็นข้อมูลของคุณ แล้วจึงคัดลอก Prompt ไปให้ AI</p><div class="command markdown-command prompt-template"><code>ข้อมูลที่ฉันกำหนด:
-- REPEATED_TASK: {{พิมพ์งานวิจัยที่ทำซ้ำและต้องการสร้าง workflow}}
-- PROJECT_OR_CASE: {{พิมพ์ชื่อโครงการหรือกรณีตัวอย่างที่ไม่เปิดเผยข้อมูลลับ}}
-- PRIMARY_OUTPUT: {{พิมพ์ชิ้นงานที่ต้องการได้จาก workflow}}
-- DATA_CLASSIFICATION: {{public / internal / confidential / sensitive หรือยังไม่แน่ใจ}}
+- งานที่ทำซ้ำ: {{พิมพ์งานที่ต้องการปรับ หรือเขียนว่า ยังเลือกไม่ได้}}
+- โครงการหรือกรณีตัวอย่าง: {{ใช้ชื่อที่ไม่เปิดเผยข้อมูลลับ}}
+- ชิ้นงานที่ต้องการ: {{พิมพ์ผลลัพธ์ที่อยากได้}}
+- ระดับความลับของข้อมูล: {{สาธารณะ / ใช้ภายใน / ลับ / อ่อนไหว / ยังไม่แน่ใจ}}
 
-พาฉันสร้าง Personal AI Research Kit จากงานซ้ำหนึ่งเรื่อง ถามทีละหนึ่งคำถามและรอคำตอบ เริ่มจาก trigger, input, output, data classification, decision owner และความเสี่ยง ก่อนช่วยจัด DEFAULT/ASK/NEVER/ESCALATE ห้ามย้ายไฟล์ ส่งข้อมูล เปลี่ยน permission เชื่อมบริการภายนอก หรือเก็บ credential ทำทีละ artifact แล้วให้ฉันทดสอบ happy path และ failure case ก่อน freeze Version 1.0</code><button type="button" data-copy="">คัดลอก</button></div><ol type="1">
-<li><strong>Pain-point Inventory:</strong> เลือกงานซ้ำที่มีประโยชน์จริงหนึ่งเรื่อง</li>
-<li><strong>Framework Mapping:</strong> เติมกรอบ 12 ส่วนโดยยังไม่เลือก AI tool</li>
-<li><strong>Choice Clinic:</strong> จัดตัวเลือกเป็น DEFAULT/ASK/NEVER/ESCALATE และตรวจลำดับอำนาจ</li>
-<li><strong>Kit Assembly:</strong> สร้างโฟลเดอร์ <code>my-ai-research-kit/</code> และ project template</li>
-<li><strong>Messy Folder Drill:</strong> ให้ AI inventory และเสนอ move-only plan จากโฟลเดอร์จำลอง</li>
-<li><strong>Research Note Drill:</strong> สร้าง daily/decision/AI-use note จาก artifacts ชุดเดียวกัน</li>
-<li><strong>Share Package Drill:</strong> เตรียมชุดแชร์แบบ redacted พร้อม manifest โดยยังไม่อัปโหลด</li>
-<li><strong>Restore Drill:</strong> ตรวจแผน backup และกู้แฟ้มตัวอย่างหนึ่งชุด</li>
-<li><strong>Dry Run:</strong> ใช้กรณีปกติและบันทึก run record</li>
-<li><strong>Chaos Test:</strong> สุ่ม missing input, conflict, privacy, phantom citation, tool failure, venue change, file collision หรือ unsafe share</li>
-<li><strong>Peer Attack:</strong> เพื่อนพยายามหาจุดที่ workflow เดา ข้ามหลักฐาน ถามมากเกินไป หรือจัดการแฟ้มไม่ปลอดภัย</li>
-<li><strong>Revise and Freeze:</strong> แก้ tests, บันทึก changelog และกำหนด Version 1.0</li>
-<li><strong>Walkthrough:</strong> สาธิต trigger → defaults → steps → evidence/evals → human gate → output ภายในกรณีเดียว</li>
-</ol>
+พาฉันสร้างชุดวิธีทำงานกับ AI จากงานซ้ำหนึ่งเรื่อง ถามทีละหนึ่งคำถามและรอคำตอบ เริ่มจากงาน ข้อมูลเข้า ผลลัพธ์ ระดับความลับ เจ้าของการตัดสินใจ และความเสี่ยง ก่อนกำหนดสิ่งที่ทำได้ ต้องถาม ห้ามทำ และต้องส่งต่อ ห้ามย้ายไฟล์ ส่งข้อมูล เปลี่ยนสิทธิ เชื่อมบริการภายนอก หรือเก็บรหัสผ่าน ทำทีละชิ้นและให้ฉันทดสอบก่อนกำหนดเป็นรุ่นแรก</code><button type="button" data-copy="">คัดลอก</button></div>
+<h3>ด่าน 1 — เลือกงานซ้ำที่ควรปรับ</h3><div class="command markdown-command" data-m9-stage-prompt="1"><code>ถามฉันทีละข้อว่างานใดทำซ้ำบ่อย ใช้เวลา และผิดพลาดง่าย ช่วยเปรียบเทียบไม่เกินสามงานแต่ห้ามเลือกแทน เมื่อฉันเลือกแล้วให้บันทึกจุดเริ่ม ข้อมูลเข้า ผลลัพธ์ และเจ้าของการตัดสินใจ</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>คุณตัดสิน:</strong> งานซ้ำหนึ่งเรื่องและเหตุผลที่คุ้มค่าจะปรับ</p>
+<h3>ช่วง 2 — วางวิธีทำงานและขอบเขตอำนาจ</h3><div class="command markdown-command" data-m9-stage-prompt="2"><code>พาฉันเติมส่วนประกอบของวิธีทำงานทีละส่วน อธิบายเฉพาะส่วนปัจจุบัน แล้วถามให้ฉันจัดการตัดสินใจเป็น ทำตามค่าที่กำหนด / ต้องถาม / ห้ามทำ / ต้องส่งต่อ พร้อมเหตุผล</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>ก่อนผ่าน:</strong> ทุกการตัดสินใจมีเจ้าของและกติกาเมื่อข้อมูลไม่ครบ</p>
+<h3>ด่าน 3 — ประกอบชุดใช้งานรุ่นทดลอง</h3><div class="command markdown-command" data-m9-stage-prompt="3"><code>เสนอรายการแฟ้มขั้นต่ำพร้อมหน้าที่ รอฉันอนุมัติก่อนสร้าง แล้วทำทีละแฟ้มจากข้อมูลที่ฉันยืนยัน ห้ามใส่รหัสผ่าน ข้อมูลลับ หรือตำแหน่งเฉพาะเครื่องโดยไม่ถาม</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>คุณตัดสิน:</strong> แฟ้มที่จำเป็นและข้อมูลส่วนบุคคลที่อนุญาตให้บันทึก</p>
+<h3>ช่วง 4 — ฝึกจัดโฟลเดอร์และทำบันทึก</h3><div class="command markdown-command" data-m9-stage-prompt="4"><code>ทำรายการแฟ้มในโฟลเดอร์จำลองแบบอ่านอย่างเดียว แล้วเสนอแผนย้ายพร้อมตำแหน่งเดิมและใหม่ ห้ามย้ายจนกว่าฉันอนุมัติ ห้ามลบหรือเขียนทับ หลังทำแล้วให้ตรวจรายการและสร้างบันทึกจากสิ่งที่เกิดขึ้นจริง</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>ก่อนผ่าน:</strong> ย้อนกลับตำแหน่งเดิมได้และมีบันทึกการอนุมัติ</p>
+<h3>ด่าน 5 — เตรียมชุดแชร์และทดสอบการกู้คืน</h3><div class="command markdown-command" data-m9-stage-prompt="5"><code>ถามระดับความลับ ผู้รับ และวัตถุประสงค์ก่อน ตรวจแฟ้มทีละรายการและเสนอสิ่งที่ต้องปกปิด สร้างรายการสิ่งที่จะแชร์แต่ห้ามอัปโหลดหรือเปลี่ยนสิทธิ จากนั้นพาฉันทดสอบกู้แฟ้มตัวอย่างและบันทึกผล</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>คุณตัดสิน:</strong> สิ่งที่แชร์ได้ ผู้รับ และหลักฐานว่ากู้คืนได้จริง</p>
+<h3>ช่วง 6 — ทดลองกรณีปกติและกรณีผิดพลาด</h3><div class="command markdown-command" data-m9-stage-prompt="6"><code>พาฉันทดลองกรณีปกติและบันทึกข้อมูลเข้า ขั้นตอน การตัดสินใจ หลักฐาน และผลลัพธ์ จากนั้นเสนอกรณีผิดพลาดทีละหนึ่งกรณีและตรวจว่าวิธีทำงานหยุด ถาม ส่งต่อ หรือฟื้นตัวตามกติกาหรือไม่</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>ก่อนผ่าน:</strong> มีอย่างน้อยหนึ่งกรณีที่หยุดอย่างปลอดภัย</p>
+<h3>ช่วง 7 — ท้าทาย แก้ และกำหนดรุ่นแรก</h3><div class="command markdown-command" data-m9-stage-prompt="7"><code>ท้าทายวิธีทำงานทีละประเด็นโดยอ้างแฟ้ม กติกา หรือผลทดสอบ รอคำตอบฉันก่อนถามต่อ เมื่อฉันยืนยันการแก้ ให้ปรับการทดสอบและบันทึกสิ่งที่เปลี่ยน สุดท้ายแสดงหลักฐานผ่าน/ไม่ผ่านและถามฉันว่าจะกำหนดเป็นรุ่น 1.0 หรือยัง</code><button type="button" data-copy="">คัดลอก</button></div><p><strong>ก่อนจบ:</strong> สาธิตตั้งแต่งานเริ่มต้นจนถึงชิ้นงาน โดย AI ไม่รับรองความพร้อมแทนคุณ</p>
+<details class="section concept-reference"><summary>เปิดรายการฝึกและทดสอบฉบับละเอียด</summary><ol type="1">
+<li><strong>เลือกปัญหา:</strong> เลือกงานซ้ำที่มีประโยชน์จริงหนึ่งเรื่อง</li>
+<li><strong>เติมกรอบ:</strong> ตอบคำถาม 12 ส่วนโดยยังไม่ต้องเลือกเครื่องมือ AI</li>
+<li><strong>กำหนดขอบเขต:</strong> แยกสิ่งที่ทำตามค่าที่กำหนด ต้องถาม ห้ามทำ และต้องส่งต่อ</li>
+<li><strong>ประกอบชุดใช้งาน:</strong> สร้างโฟลเดอร์และแบบเริ่มต้นของโครงการ</li>
+<li><strong>ฝึกจัดแฟ้ม:</strong> ให้ AI สำรวจและเสนอแผนย้ายจากโฟลเดอร์จำลอง โดยไม่ลบหรือเขียนทับ</li>
+<li><strong>ฝึกทำบันทึก:</strong> สร้างบันทึกประจำวัน การตัดสินใจ และการใช้ AI จากชิ้นงานชุดเดียวกัน</li>
+<li><strong>ฝึกเตรียมชุดแชร์:</strong> ปกปิดข้อมูลและทำรายการแฟ้ม โดยยังไม่อัปโหลด</li>
+<li><strong>ฝึกกู้คืน:</strong> ตรวจแผนสำรองและกู้แฟ้มตัวอย่างหนึ่งชุด</li>
+<li><strong>ทดลองกรณีปกติ:</strong> ใช้งานหนึ่งรอบและบันทึกสิ่งที่เกิดขึ้นจริง</li>
+<li><strong>ทดลองกรณีผิดพลาด:</strong> ทดสอบข้อมูลขาด คำสั่งขัดกัน ข้อมูลส่วนตัว เอกสารอ้างอิงไม่มีจริง เครื่องมือล้มเหลว หรือการแชร์ไม่ปลอดภัย</li>
+<li><strong>ให้ผู้อื่นช่วยหาจุดอ่อน:</strong> ตรวจจุดที่วิธีทำงานเดา ข้ามหลักฐาน ถามมากเกินไป หรือจัดการแฟ้มไม่ปลอดภัย</li>
+<li><strong>แก้และกำหนดรุ่นแรก:</strong> แก้การทดสอบและบันทึกสิ่งที่เปลี่ยน</li>
+<li><strong>สาธิตครบหนึ่งรอบ:</strong> แสดงจุดเริ่ม ค่าที่กำหนด ขั้นตอน หลักฐาน จุดตัดสินใจ และชิ้นงาน</li>
+</ol></details>
 </div></section>
 <section class="section markdown-section" id="การประเมินคุณภาพ" aria-labelledby="การประเมินคุณภาพ-heading"><div class="section-heading compact"><h2 id="การประเมินคุณภาพ-heading">การประเมินคุณภาพ</h2>
 </div><div class="markdown-body"><table>
@@ -535,69 +544,73 @@ Personal Choices
 </thead>
 <tbody>
 <tr class="odd">
-<td>Framework completeness</td>
+<td>ความครบถ้วน</td>
 <td>12 ส่วนครบและเชื่อมกันหรือไม่</td>
 </tr>
 <tr class="even">
-<td>Personal fit</td>
-<td>defaults สอดคล้องกับสาขา เครื่องมือ ข้อมูล และงานซ้ำจริงหรือไม่</td>
+<td>ความเหมาะกับผู้ใช้</td>
+<td>ค่าที่กำหนดสอดคล้องกับสาขา เครื่องมือ ข้อมูล และงานซ้ำจริงหรือไม่</td>
 </tr>
 <tr class="odd">
-<td>Choice discipline</td>
-<td>ASK/NEVER/ESCALATE ป้องกันการตัดสินใจเกินอำนาจหรือไม่</td>
+<td>ขอบเขตการตัดสินใจ</td>
+<td>กติกาต้องถาม ห้ามทำ และต้องส่งต่อ ป้องกันการตัดสินใจเกินอำนาจหรือไม่</td>
 </tr>
 <tr class="even">
-<td>Evidence and QA</td>
-<td>output ย้อนกลับได้และมีเกณฑ์ผ่าน/ไม่ผ่านหรือไม่</td>
+<td>หลักฐานและการตรวจ</td>
+<td>ชิ้นงานย้อนกลับได้และมีเกณฑ์ผ่าน/ไม่ผ่านหรือไม่</td>
 </tr>
 <tr class="odd">
-<td>Failure handling</td>
-<td>มี stop/fallback/recovery ที่ทดสอบแล้วหรือไม่</td>
+<td>การรับมือข้อผิดพลาด</td>
+<td>มีเงื่อนไขหยุด ทางสำรอง และวิธีกู้คืนที่ทดสอบแล้วหรือไม่</td>
 </tr>
 <tr class="even">
-<td>Portability</td>
-<td>ย้ายไปโครงการหรือ AI frontend อื่นโดยไม่พึ่ง path/credential ส่วนตัวได้หรือไม่</td>
+<td>การนำไปใช้ที่อื่น</td>
+<td>ย้ายไปโครงการหรือ AI อื่นโดยไม่พึ่งตำแหน่งแฟ้มหรือรหัสผ่านส่วนตัวได้หรือไม่</td>
 </tr>
 <tr class="odd">
-<td>Maintainability</td>
-<td>มี version, changelog, owner และเงื่อนไขทบทวนหรือไม่</td>
+<td>การดูแลต่อ</td>
+<td>มีเลขรุ่น บันทึกการเปลี่ยนแปลง ผู้รับผิดชอบ และเงื่อนไขทบทวนหรือไม่</td>
 </tr>
 <tr class="even">
-<td>Research operations</td>
-<td>โฟลเดอร์ บันทึก การแชร์ backup และ restore มีเจ้าของ กติกา และหลักฐานหรือไม่</td>
+<td>การจัดการงานวิจัย</td>
+<td>โฟลเดอร์ บันทึก การแชร์ การสำรอง และการกู้คืนมีเจ้าของ กติกา และหลักฐานหรือไม่</td>
 </tr>
 <tr class="odd">
-<td>Practical value</td>
+<td>ประโยชน์ในการใช้งาน</td>
 <td>ลดงานซ้ำหรือความเสี่ยงจริง โดยไม่เพิ่มภาระตรวจมากเกินประโยชน์หรือไม่</td>
 </tr>
 </tbody>
 </table>
 </div></section>
-<section class="section markdown-section" id="finish" aria-labelledby="finish-heading"><div class="section-heading compact"><h2 id="finish-heading">ผลผลิตและเกณฑ์ผ่าน</h2>
-</div><div class="markdown-body"><ul>
-<li>โฟลเดอร์ <code>my-ai-research-kit/</code> ที่มี README, profile, defaults, guardrails, workflow cards, templates, checklists, examples, tests และ changelog</li>
-<li>core workflow ที่กรอก framework ครบ 12 ส่วน</li>
-<li>test results อย่างน้อย happy path และ failure cases สามประเภท</li>
-<li>run record หนึ่งกรณี</li>
-<li><code>folder-plan.md</code>, <code>file-manifest.csv</code> และ research-note templates</li>
-<li>share-package protocol/manifest และ <code>backup-plan.md</code> พร้อม restore-test record</li>
-<li>Version 1.0 พร้อม known limitations</li>
-<li>walkthrough และ peer-review findings พร้อมการแก้อย่างน้อยหนึ่งข้อ</li>
-<li><a href="downloads/module-09-personal-workflow-kit-workbook.md">สมุดงาน Module 9</a> ที่กรอกครบ</li>
-</ul>
-<p>เกณฑ์ผ่านคือบุคคลอื่นสามารถอ่าน README แล้วใช้กรณีตัวอย่างเพื่อเรียก workflow ได้ เข้าใจว่าค่าใดกำหนดไว้แล้ว จุดใดต้องถาม จุดใดห้ามทำ จุดใดต้องส่งต่อ และสามารถตรวจผลจาก artifacts/tests/run record ได้</p>
+<section class="section markdown-section" id="finish" aria-labelledby="finish-heading"><div class="section-heading compact"><p class="eyebrow">Checkpoint</p><h2 id="finish-heading">จบบทเรียน</h2>
+</div><div class="markdown-body"><p>ติ๊กเมื่อคุณทดลองใช้และอธิบายหลักฐานของแต่ละข้อได้ ระบบจะจำสถานะไว้ในเบราว์เซอร์นี้</p>
+<p class="progress" aria-live="polite">ความสำเร็จ <strong data-progress>0%</strong></p>
+<div class="checklist" data-checklist="module-9">
+<label><input type="checkbox"> เลือกงานซ้ำหนึ่งเรื่องและอธิบายประโยชน์ที่ต้องการได้</label>
+<label><input type="checkbox"> ระบุจุดเริ่ม ข้อมูลเข้า ชิ้นงาน และเจ้าของการตัดสินใจครบ</label>
+<label><input type="checkbox"> กำหนดสิ่งที่ทำตามค่าที่กำหนด ต้องถาม ห้ามทำ และต้องส่งต่อแล้ว</label>
+<label><input type="checkbox"> ชุดใช้งานมีข้อมูลผู้ใช้ กติกา แบบฟอร์ม จุดตรวจ ตัวอย่าง และการทดสอบที่จำเป็น</label>
+<label><input type="checkbox"> ไม่มีรหัสผ่าน ข้อมูลลับ หรือตำแหน่งเฉพาะเครื่องปะปนในชุดใช้งาน</label>
+<label><input type="checkbox"> ทดลองกรณีปกติและบันทึกสิ่งที่เกิดขึ้นจริงหนึ่งรอบ</label>
+<label><input type="checkbox"> ทดลองกรณีผิดพลาดอย่างน้อยสามแบบ และมีอย่างน้อยหนึ่งกรณีที่หยุดอย่างปลอดภัย</label>
+<label><input type="checkbox"> ทดลองแผนจัดแฟ้ม ชุดแชร์ และการกู้คืนกับข้อมูลตัวอย่างแล้ว</label>
+<label><input type="checkbox"> แก้วิธีทำงานอย่างน้อยหนึ่งจุดจากข้อท้าทายที่มีเหตุผล</label>
+<label><input type="checkbox"> บันทึกข้อจำกัด ผู้รับผิดชอบ และเงื่อนไขที่จะกลับมาทบทวนแล้ว</label>
+<label><input type="checkbox"> กรอก <a href="downloads/module-09-personal-workflow-kit-workbook.md">สมุดงาน Module 9</a> ครบ</label>
+<label><input type="checkbox"> บุคคลอื่นอ่านคำแนะนำแล้วทดลองกรณีตัวอย่างได้ โดยเข้าใจจุดที่ต้องถาม ห้ามทำ และส่งต่อ</label>
+</div>
 </div></section>
 <section class="section markdown-section" id="review" aria-labelledby="review-heading"><div class="section-heading compact"><h2 id="review-heading">คำถามทบทวนท้ายบท</h2>
 </div><div class="markdown-body"><ol type="1">
-<li>trigger, input และ output ของ core workflow ของคุณคืออะไร</li>
-<li>ตัวเลือกใดเป็น DEFAULT, ASK, NEVER และ ESCALATE และเหตุใด</li>
-<li>failure case ใดทำให้ workflow ต้องหยุดแทนที่จะพยายามทำต่อ</li>
-<li>ผู้ร่วมงานตรวจผลจาก artifacts, tests และ run record ได้อย่างไร</li>
-<li>หลังใช้จริง คุณต้องเห็นหลักฐานอะไรจึงจะปรับจาก Version 1.0 เป็น 1.1</li>
+<li>อะไรคือจุดเริ่ม ข้อมูลเข้า และชิ้นงานของวิธีทำงานนี้</li>
+<li>เรื่องใดทำตามค่าที่กำหนดได้ เรื่องใดต้องถาม ห้ามทำ หรือต้องส่งต่อ และเพราะเหตุใด</li>
+<li>กรณีผิดพลาดใดทำให้ต้องหยุดแทนที่จะพยายามทำต่อ</li>
+<li>ผู้ร่วมงานตรวจชิ้นงาน ผลทดสอบ และบันทึกการใช้งานได้อย่างไร</li>
+<li>หลังใช้จริง ต้องเห็นหลักฐานอะไรจึงจะปรับจากรุ่นแรกเป็นรุ่นถัดไป</li>
 </ol>
 </div></section>
 <section class="section markdown-section" id="การนำไปใช้หลังจบโมดูล" aria-labelledby="การนำไปใช้หลังจบโมดูล-heading"><div class="section-heading compact"><h2 id="การนำไปใช้หลังจบโมดูล-heading">การนำไปใช้หลังจบโมดูล</h2>
-</div><div class="markdown-body"><p>ทดลอง Version 1.0 กับงานจริงขนาดเล็กที่ได้รับอนุญาต บันทึก run record และผลกระทบ ได้แก่ เวลาที่ใช้ จำนวนข้อผิดพลาด จำนวนครั้งที่ต้องถามซ้ำ จุดที่ workflow หยุดถูกต้อง และงานตรวจเพิ่มเติม หลังมีหลักฐานจากการใช้จริงจึงออกรุ่น 1.1 ไม่ถือว่า kit ใช้งานได้ทั่วไปจากการทดสอบในชั้นเรียนเพียงครั้งเดียว</p>
+</div><div class="markdown-body"><p>ทดลองรุ่นแรกกับงานจริงขนาดเล็กที่ได้รับอนุญาต บันทึกเวลาที่ใช้ จำนวนข้อผิดพลาด จำนวนครั้งที่ต้องถามซ้ำ จุดที่วิธีทำงานหยุดถูกต้อง และงานตรวจเพิ่มเติม หลังมีหลักฐานจากการใช้จริงจึงปรับเป็นรุ่นถัดไป ไม่ถือว่าชุดใช้งานนี้ใช้ได้ทั่วไปจากการทดสอบเพียงครั้งเดียว</p>
 </div></section>
     </div>
     <section class="section final-cta"><nav class="module-pagination" aria-label="โมดูลก่อนหน้าและถัดไป"><a class="button secondary" href="module-8.html">← ก่อนหน้า</a><a class="button primary" href="index.html">กลับหน้าหลัก →</a></nav></section>

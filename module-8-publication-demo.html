@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Markdown → Springer/IEEE → PDF | โมดูล 8</title>
+  <meta name="description" content="ทดลองแก้ Markdown ชุดเดียว แล้วสลับรูปแบบ Springer หรือ IEEE ก่อนพิมพ์เป็น PDF">
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-16">
+  <link rel="stylesheet" href="assets/publication-demo.css?v=20260805-5">
+  <script src="assets/site-shell.js?v=20260805-4"></script>
+  <script src="assets/publication-demo.js?v=20260805-3" defer></script>
+</head>
+<body>
+  <site-header></site-header>
+  <main class="site-main publication-lab">
+    <section class="prepare-hero"><p class="eyebrow">โมดูล 8 · ห้องทดลอง</p><h1>ต้นฉบับพร้อมส่งให้ผู้ประเมิน<br><span>จาก Markdown ชุดเดียว</span></h1><p>เลือก Springer หรือ IEEE แล้วดูเนื้อหาเดียวกันกลายเป็นต้นฉบับบทความที่มีหัวกระดาษ ข้อมูลบทความ บทคัดย่อ ตาราง หมายเหตุผู้ประเมิน และรูปแบบคอลัมน์ครบ จากนั้นบันทึกเป็น PDF โดยไม่ต้องไล่จัดหน้าใน Word</p></section>
+    <section class="section demo-warning"><strong>แม่แบบจำลองเพื่อการเรียนรู้:</strong> หน้านี้ทำให้เห็นหลักการแยก “เนื้อหา” ออกจาก “รูปแบบ” ไม่ใช่แม่แบบส่งบทความอย่างเป็นทางการ งานจริงต้องใช้ชุดแม่แบบและข้อกำหนดล่าสุดจากแหล่งเผยแพร่ที่เลือก</section>
+    <section class="section demo-controls" aria-labelledby="demo-heading">
+      <div class="section-heading compact"><p class="eyebrow">อ่านไป ทำไป</p><h2 id="demo-heading">1. แก้เนื้อหา 2. เลือกรูปแบบ 3. บันทึก PDF</h2></div>
+      <div class="template-actions" role="group" aria-label="เลือกรูปแบบเอกสาร">
+        <button class="button primary" type="button" data-template="springer" aria-pressed="true">รูปแบบ Springer</button>
+        <button class="button secondary" type="button" data-template="ieee" aria-pressed="false">รูปแบบ IEEE</button>
+        <button class="button secondary" type="button" data-reset>คืนเนื้อหาตัวอย่าง</button>
+        <button class="button primary" type="button" data-print>พิมพ์ / บันทึกเป็น PDF</button>
+      </div>
+      <p class="plain-note">ลองแก้ชื่อเรื่อง ตัวเลข หรือเพิ่มหัวข้อในช่อง Markdown ด้านซ้าย เอกสารด้านขวาจะเปลี่ยนทันที แต่รูปแบบหน้ากระดาษ เลขหัวข้อ ตาราง และคอลัมน์ถูกควบคุมโดยแม่แบบ</p>
+    </section>
+    <section class="demo-workspace">
+      <div class="source-panel"><label for="markdown-source"><strong>เนื้อหา Markdown — แก้เฉพาะตรงนี้</strong></label><textarea id="markdown-source" spellcheck="false" data-markdown-source></textarea></div>
+      <div class="preview-panel"><div class="preview-toolbar"><p class="preview-label">ตัวอย่างต้นฉบับสำหรับผู้ประเมิน: <strong data-template-name>Springer</strong></p><span class="render-status">● พร้อมสร้าง PDF</span></div><article class="paper springer" data-paper>
+        <header class="paper-masthead"><div><strong data-publication-name>Springer Nature</strong><small data-publication-series>Research Article · Review Manuscript</small></div><div class="paper-mark" data-paper-mark>SN</div></header>
+        <div class="manuscript-strip"><span>MANUSCRIPT</span><span>For peer review</span><span>Live preview</span></div>
+        <div class="paper-content" data-preview></div>
+        <aside class="review-note"><strong>จุดตรวจของผู้ประเมิน</strong><span>ผลต่างของค่าเฉลี่ยยังไม่ใช่หลักฐานเชิงเหตุและผล</span></aside>
+        <footer class="paper-footer"><span>ตัวอย่างเพื่อการเรียนรู้ · ไม่ใช่ข้อมูลวิจัยจริง</span><span data-footer-code>SN-M8-2026</span></footer>
+      </article></div>
+    </section>
+    <section class="section"><div class="section-heading compact"><h2>สิ่งที่ควรสังเกต</h2></div><div class="markdown-body"><ul><li>เนื้อหา Markdown ไม่เปลี่ยนเมื่อสลับแม่แบบ</li><li>Springer จำลองหน้าบทความแบบหนึ่งคอลัมน์ ส่วน IEEE จำลองบทคัดย่อและเนื้อหาแบบสองคอลัมน์</li><li>เมื่อแก้เนื้อหา ไม่ต้องเลื่อนตาราง แก้เลขหัวข้อ หรือจัดคอลัมน์ด้วยมือ</li><li>ปุ่มบันทึก PDF ใช้หน้าต่างพิมพ์ของเบราว์เซอร์ เลือก “Save as PDF” หรือ “บันทึกเป็น PDF”</li></ul><div class="hero-actions"><a class="button secondary" href="module-8.html">← กลับโมดูล 8</a></div></div></section>
+  </main>
+  <site-footer></site-footer>
+</body>
+</html>

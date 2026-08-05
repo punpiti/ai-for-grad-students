@@ -10,6 +10,13 @@ const MODULE_LINKS = [
   [9, "module-9.html", "Personal AI Research Workflow"],
 ];
 
+const PRODUCTION_BASE = "https://urban.cpe.ku.ac.th/ai-for-research/";
+const productionFile = location.pathname.endsWith("/") ? "" : location.pathname.split("/").pop();
+const canonical = document.createElement("link");
+canonical.rel = "canonical";
+canonical.href = PRODUCTION_BASE + productionFile;
+document.head.append(canonical);
+
 const LOCAL_LINKS = {
   home: [["course", "หลักสูตร"], ["requirements", "ข้อกำหนด"]],
   1: [["setup", "ก่อนเริ่ม"], ["practice", "ฝึกทำ"], ["homework", "งานท้ายบท"]],
@@ -22,6 +29,8 @@ const LOCAL_LINKS = {
   8: [["start", "ก่อนเริ่ม"], ["activity", "ลงมือทำ"], ["review", "ทบทวน"]],
   9: [["start", "ก่อนเริ่ม"], ["activity", "ลงมือทำ"], ["review", "ทบทวน"]],
   example: [["definition", "โจทย์วิจัย"], ["method", "วิธีวิจัย"], ["review", "ทบทวน"]],
+  register: [["form", "เตรียมข้อมูลสมัคร"]],
+  checkout: [],
 };
 
 class SiteHeader extends HTMLElement {
@@ -41,7 +50,7 @@ class SiteHeader extends HTMLElement {
         ${isHome ? "" : '<a href="index.html">หน้าหลัก</a>'}
         <details class="module-menu"><summary>โมดูล 1–9</summary><div>${moduleLinks}</div></details>
         ${localLinks}
-        <a class="nav-cta" href="prepare.html">เริ่ม Module 1</a>
+        <a class="nav-cta" href="${current === "register" ? "index.html#course" : "register.html"}">${current === "register" ? "ดูรายละเอียดคลาส" : "สมัครเป็นกลุ่ม"}</a>
       </nav>
     </header>`;
   }

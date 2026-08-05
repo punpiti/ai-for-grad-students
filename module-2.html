@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-10">
-  <script src="assets/app.js?v=20260805-10" defer></script>
-  <script src="assets/site-shell.js?v=20260805-2"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-16">
+  <script src="assets/app.js?v=20260805-15" defer></script>
+  <script src="assets/site-shell.js?v=20260805-4"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
@@ -19,7 +19,7 @@
 
   <main id="main">
     <section class="prepare-hero module-hero">
-      <p class="eyebrow">Module 2 · 90 minutes</p>
+      <p class="eyebrow">Module 2</p>
       <h1>Your First<br><span>AI Research Task</span></h1>
       <p>ให้ AI อ่านเรื่องที่เราสนใจ แล้วพิสูจน์ด้วยตนเองว่าคำตอบส่วนไหนมาจากหลักฐาน ส่วนไหนเป็นการตีความ และส่วนไหนยังไม่ควรเชื่อ</p>
     </section>
@@ -27,8 +27,8 @@
 
     <section class="section" id="outcomes">
       <div class="section-heading compact">
-        <p class="eyebrow">สิ่งที่จะได้</p>
-        <h2>ไม่ได้แค่รู้ว่า AI ทำอะไรได้<br>แต่รู้ว่าจะตรวจมันอย่างไร</h2>
+        <p class="eyebrow">LO</p>
+        <h2>สิ่งที่จะทำได้</h2><p>ไม่ได้แค่รู้ว่า AI ทำอะไรได้ แต่รู้ว่าจะตรวจมันอย่างไร</p>
       </div>
       <div class="check-grid outcome-grid">
         <div><span>01 · Prepare</span><strong>เปลี่ยน PDF รูปภาพ และเอกสารเป็น Markdown ที่ค้นและตรวจได้</strong></div>
@@ -39,7 +39,7 @@
     </section>
 
     <section class="section" id="sources">
-      <div class="section-heading compact"><p class="eyebrow">การบ้านก่อนมาเรียน</p><h2>เตรียมเรื่องที่สนใจ</h2></div>
+      <div class="section-heading compact"><p class="eyebrow">การเตรียมตัวก่อนเรียน</p><h2>ของต้องมีก่อนเรียน</h2><p>เตรียมเรื่องที่สนใจ</p></div>
       <p>ก่อนวันเรียน เลือกเอกสารที่เปิดเผยและใช้กับ AI ได้ประมาณ <strong>6–8 ชิ้น รวม 15–20 หน้า</strong> เช่น ข่าว รายงาน บทความ หรือบทวิจารณ์ หากมี 10–15 ชิ้น แต่ละชิ้นควรสั้นประมาณครึ่งหน้าถึงหนึ่งหน้า เพื่อให้เรายังอ่านตรวจต้นฉบับเองได้</p>
       <div class="concept-grid">
         <article><h3>ไฟล์ต้นฉบับ</h3><p>วาง PDF, DOCX, TXT หรือรูปภาพไว้ใน <code>input/original/</code> และเก็บไฟล์นี้ไว้เสมอ</p></article>
@@ -64,30 +64,98 @@
 
       <h3 class="section-zone-heading">ช่วงที่ 1 · ดูคำตอบก่อนกำหนดกติกา</h3>
       <ol class="readiness-steps activity-steps">
-        <li><span>01</span><div><strong>แปลงเอกสารเป็นข้อความที่ค้นได้</strong><p><strong>ผู้เรียนทำ:</strong> วางเอกสารใน <code>input/original/</code> แล้วส่งคำสั่งด้านล่างให้ AI หลังทำเสร็จ เปิดไฟล์ Markdown อย่างน้อยหนึ่งไฟล์เทียบกับต้นฉบับ โดยเฉพาะข้อความที่ผ่าน OCR</p><p class="expected"><strong>ข้อความด้านล่างเป็นคำสั่งเตรียมไฟล์</strong> ไม่ใช่คำถามวิจัย</p><div class="command"><code>ตรวจไฟล์ทั้งหมดใน input/original/ แล้วใช้เครื่องมือที่เตรียมไว้ใน Workspace สร้าง Markdown ใน input/markdown/ ห้ามแก้หรือลบไฟล์ต้นฉบับ บอกด้วยว่าไฟล์ใดใช้ OCR และส่วนใดควรตรวจเทียบต้นฉบับ</code><button type="button" data-copy>คัดลอกคำสั่งเตรียมไฟล์</button></div></div></li>
+        <li><span>01</span><div><strong>แปลงเอกสารเป็นข้อความที่ค้นได้</strong><p><strong>คุณทำ:</strong> วางเอกสารใน <code>input/original/</code> แล้วส่งคำสั่งด้านล่างให้ AI หลังทำเสร็จ เปิดไฟล์ Markdown อย่างน้อยหนึ่งไฟล์เทียบกับต้นฉบับ โดยเฉพาะข้อความที่ผ่าน OCR</p><p class="expected"><strong>ข้อความด้านล่างเป็นคำสั่งเตรียมไฟล์</strong> ไม่ใช่คำถามวิจัย</p><div class="command markdown-command"><code>งาน: เตรียมเอกสารให้ค้นข้อความได้
+
+1. ตรวจไฟล์ทั้งหมดใน input/original/
+2. ใช้เครื่องมือที่มีใน Workspace สร้าง Markdown ใน input/markdown/
+3. รายงานว่าไฟล์ใดใช้ OCR
+4. ระบุส่วนที่ฉันควรเปิดเทียบกับต้นฉบับ
+
+ห้ามแก้ ลบ หรือเขียนทับไฟล์ต้นฉบับ
+
+เมื่อเสร็จ ให้แสดงรายชื่อไฟล์ที่สร้างและรอฉันตรวจ</code><button type="button" data-copy>คัดลอกคำสั่งเตรียมไฟล์</button></div></div></li>
         <li><span>02</span><div><strong>ขอคำตอบรอบแรก</strong><p><strong>ส่งให้ AI:</strong> ใช้ Prompt สั้นด้านล่างโดยยังไม่เพิ่มกติกาเรื่องแหล่งที่มา เก็บคำตอบนี้ไว้เป็นผลรอบแรกสำหรับเปรียบเทียบภายหลัง</p><div class="command"><code>อ่านเอกสารทั้งหมดใน input/markdown/ แล้วสรุปประเด็นสำคัญของเรื่องที่ฉันสนใจ</code><button type="button" data-copy>คัดลอก Prompt รอบแรก</button></div></div></li>
       </ol>
 
       <h3 class="section-zone-heading">ช่วงที่ 2 · ตรวจคำตอบกับต้นฉบับ</h3>
       <ol class="readiness-steps activity-steps">
-        <li><span>03</span><div><strong>แยกคำตอบออกเป็นข้ออ้างที่ตรวจได้</strong><p><strong>ส่งให้ AI:</strong> ให้ AI เลือก 8–10 Claims และถามคำถามตรวจทีละข้อ แต่ยังไม่ให้เฉลยระดับ L1–L4 ผู้เรียนจะเป็นคนเปิดต้นฉบับและตอบเองก่อน</p><div class="command"><code>เลือกข้อความสำคัญ 8–10 Claims จากคำตอบของคุณ แล้วช่วยฉันตรวจทีละ Claim โดยถามเพียงว่า: พบข้อความนี้โดยตรงในไฟล์ใด, เป็นข้อเท็จจริงหรือความเห็นของใคร, ต้องเชื่อมหลายเอกสารหรือไม่, และมีส่วนใดเกินข้อมูลที่ให้ ห้ามบอกว่าเป็น L1–L4 จนกว่าฉันจะตอบครบทุก Claim</code><button type="button" data-copy>คัดลอก Prompt แยก Claims</button></div></div></li>
+        <li><span>03</span><div><strong>แยกคำตอบออกเป็นข้ออ้างที่ตรวจได้</strong><p><strong>ส่งให้ AI:</strong> ให้ AI เลือกข้ออ้าง 8–10 ข้อและถามเพื่อตรวจทีละข้อ แต่ยังไม่ให้เฉลยระดับ L1–L4 คุณเป็นคนเปิดต้นฉบับและตอบเองก่อน</p><div class="command markdown-command"><code>งาน: แยกคำตอบก่อนหน้าเป็นข้ออ้างที่ตรวจได้
+
+เลือกข้อความสำคัญ 8–10 ข้อจากคำตอบของคุณ
+
+ตรวจทีละข้อ โดยถามฉันตามลำดับ:
+1. พบข้อความนี้โดยตรงในไฟล์ใดและตำแหน่งใด
+2. ข้อความนี้เป็นข้อเท็จจริง หรือเป็นความเห็นของใคร
+3. ต้องเชื่อมข้อมูลจากหลายเอกสารจึงจะสรุปได้หรือไม่
+4. มีคำหรือส่วนใดเกินข้อมูลที่เอกสารให้ไว้หรือไม่
+
+กติกา:
+- ถามทีละหนึ่งข้ออ้างและรอคำตอบของฉัน
+- ยังไม่ต้องเฉลยหรือจัดระดับ L1–L4
+- เมื่อฉันตอบครบ 8–10 ข้อแล้ว ให้สรุปคำตอบของฉันเป็นตาราง
+- จากนั้นหยุดและรอให้ฉันตรวจตารางก่อนทำขั้นต่อไป</code><button type="button" data-copy>คัดลอก Prompt แยก Claims</button></div></div></li>
         <li><span>04</span><div><strong>ตรวจและจัด L1–L4 ด้วยตนเอง</strong><p><strong>ผู้เรียนทำ:</strong> เปิดต้นฉบับตรวจ Claims ทีละข้อ บันทึกระดับ L1–L4 เหตุผล ชื่อไฟล์ และตำแหน่งที่พบ ขั้นนี้ไม่มี Prompt ให้คัดลอก เพราะผู้เรียนต้องตัดสินจากหลักฐานเอง</p></div></li>
         <li><span>05</span><div><strong>ทดสอบคำถามที่เอกสารตอบไม่ได้</strong><p><strong>ผู้เรียนทำ:</strong> เขียนและส่งคำถามของตนเองสองข้อ ข้อหนึ่งถามข้อมูลที่ไม่มีในเอกสาร อีกข้อถามสาเหตุหรือการคาดการณ์ แล้วสังเกตว่า AI ยอมรับว่าไม่รู้ ระบุว่าเป็นการอนุมาน หรือแต่งคำตอบ ขั้นนี้ไม่มี Prompt สำเร็จรูป เพราะคำถามต้องสัมพันธ์กับเอกสารของผู้เรียน</p></div></li>
-        <li><span>06</span><div><strong>ให้ AI ตรวจคำตอบของตัวเอง</strong><p><strong>ส่งให้ AI:</strong> ขอให้แยกข้อความที่มีหลักฐาน การอนุมาน และข้อความที่ไม่มีหลักฐาน จากนั้นเปรียบเทียบผลของ AI กับสิ่งที่ผู้เรียนตรวจในข้อ 4–5</p><div class="command"><code>ตรวจคำตอบก่อนหน้าทีละข้อ: ส่วนใดอ้างจากเอกสาร ส่วนใดเป็นการอนุมาน และส่วนใดไม่มีหลักฐาน หากเติมข้อมูลขึ้นมา ให้อธิบายว่าทำไมจึงตอบเช่นนั้น แล้วแก้คำตอบโดยไม่ทำให้สิ่งที่ยังไม่รู้ดูเหมือนข้อเท็จจริง</code><button type="button" data-copy>คัดลอก Prompt ตรวจคำตอบ</button></div></div></li>
+        <li><span>06</span><div><strong>ให้ AI ตรวจคำตอบของตัวเอง</strong><p><strong>ส่งให้ AI:</strong> ขอให้แยกข้อความที่มีหลักฐาน การอนุมาน และข้อความที่ไม่มีหลักฐาน แล้วเปรียบเทียบกับสิ่งที่คุณตรวจในข้อ 4–5</p><div class="command markdown-command"><code>งาน: ตรวจคำตอบก่อนหน้ากับเอกสารต้นทาง
+
+ตรวจทีละข้อและจัดเป็น:
+1. อ้างจากเอกสารโดยตรง
+2. เป็นการอนุมานจากหลายข้อความ
+3. ยังไม่มีหลักฐานรองรับ
+
+หากคำตอบเติมข้อมูลขึ้นมา:
+- ชี้ข้อความที่เติม
+- อธิบายว่าเหตุใดจึงตอบเช่นนั้น
+- แก้คำตอบโดยไม่ทำให้สิ่งที่ยังไม่รู้ดูเหมือนข้อเท็จจริง
+
+แสดงผลเป็นตารางและรอฉันตรวจ</code><button type="button" data-copy>คัดลอก Prompt ตรวจคำตอบ</button></div></div></li>
       </ol>
 
       <h3 class="section-zone-heading">ช่วงที่ 3 · ปรับคำสั่งแล้วเปรียบเทียบผล</h3>
       <ol class="readiness-steps activity-steps">
         <li><span>07</span><div><strong>เขียน Prompt รอบสองด้วยตนเอง</strong><p><strong>ผู้เรียนทำ:</strong> เขียน Prompt ใหม่ให้มีงานที่ต้องการ ขอบเขตไฟล์ รูปแบบคำตอบ วิธีระบุแหล่งที่มา และกติกาเมื่อไม่พบข้อมูล ขั้นนี้ไม่มีข้อความให้คัดลอก เพราะเป้าหมายคือให้ผู้เรียนแก้จุดอ่อนที่ตนพบจากรอบแรก</p></div></li>
         <li><span>08</span><div><strong>ใช้ Prompt รอบสองและเปรียบเทียบ</strong><p><strong>ผู้เรียนทำ:</strong> ส่ง Prompt ที่เขียนในข้อ 7 แล้วเปรียบเทียบกับรอบแรก โดยดูจำนวน Claims ที่ตรวจย้อนกลับได้ ข้อความที่ไม่มีหลักฐาน การแยกข้อเท็จจริงกับความเห็น และจำนวนครั้งที่ต้องถามซ้ำ</p></div></li>
-        <li><span>09</span><div><strong>เปรียบเทียบการจัด L1–L4 กับ AI</strong><p><strong>ส่งให้ AI หลังจากผู้เรียนตอบเองแล้ว:</strong> ขอผลจัดระดับเป็นตาราง จากนั้นเปิดต้นฉบับตรวจเฉพาะข้อที่เห็นต่างกัน AI ทำหน้าที่เป็นคู่เปรียบเทียบ ไม่ใช่เฉลยสุดท้าย</p><div class="command"><code>ตอนนี้ฉันจัด L1–L4 ด้วยตนเองครบแล้ว จงเสนอการจัดระดับสำหรับ 8–10 Claims เป็นตาราง: Claim, ระดับ L1–L4, เหตุผล, ชื่อไฟล์, ข้อความหรือตำแหน่งที่รองรับ และความมั่นใจ เปรียบเทียบกับคำตอบของฉันและอธิบายเฉพาะข้อที่ต่างกัน หากหาแหล่งรองรับไม่ได้ให้จัดเป็น L4 ห้ามใช้ความรู้ภายนอก และเตือนว่าฉันต้องเปิดต้นฉบับตรวจผลนี้อีกครั้ง</code><button type="button" data-copy>คัดลอก Prompt เปรียบเทียบ L1–L4</button></div></div></li>
-        <li><span>10</span><div><strong>บันทึกผลการทดลองเป็นรายงาน</strong><p><strong>ส่งให้ AI:</strong> หลังผู้เรียนตรวจและอนุมัติข้อมูลแล้ว ใช้คำสั่งนี้รวบรวมผลเป็น Markdown และ PDF</p><p class="expected"><strong>ข้อความด้านล่างเป็นคำสั่งสร้างชิ้นงาน</strong> ไม่ใช่ Prompt สำหรับวิเคราะห์หลักฐานรอบใหม่</p><div class="command"><code>สร้าง output/first-ai-research-task.md โดยมีคำถามที่สนใจ ผลจาก Prompt รอบแรก การตรวจ 8–10 Claims ด้วย L1–L4 คำถามที่ไม่มีในข้อมูล Prompt รอบสอง ตารางเปรียบเทียบก่อน–หลัง ผลเปรียบเทียบคำตอบของฉันกับผลจาก AI และข้อสรุปว่างานใดให้ AI ทำได้ งานใดต้องตรวจ และงานใดต้องตัดสินใจเอง จากนั้นสร้าง output/first-ai-research-task.pdf ด้วย template A4 ภาษาไทยใน Workspace</code><button type="button" data-copy>คัดลอกคำสั่งสร้างชิ้นงาน</button></div></div></li>
+        <li><span>09</span><div><strong>เปรียบเทียบการจัด L1–L4 กับ AI</strong><p><strong>ส่งให้ AI หลังจากคุณตอบเองแล้ว:</strong> ขอผลจัดระดับเป็นตาราง จากนั้นเปิดต้นฉบับตรวจเฉพาะข้อที่เห็นต่างกัน AI ทำหน้าที่เป็นคู่เปรียบเทียบ ไม่ใช่เฉลยสุดท้าย</p><div class="command markdown-command"><code>งาน: เปรียบเทียบการจัดระดับ L1–L4
+
+ตอนนี้ฉันจัดระดับ 8–10 ข้ออ้างด้วยตนเองครบแล้ว
+
+สร้างตารางที่มี:
+- ข้ออ้าง
+- ระดับ L1–L4 ที่ AI เสนอ
+- เหตุผล
+- ชื่อไฟล์และตำแหน่งที่รองรับ
+- ความมั่นใจ
+
+เปรียบเทียบกับคำตอบของฉัน และอธิบายเฉพาะข้อที่เห็นต่างกัน
+
+กติกา:
+- หากหาแหล่งรองรับไม่ได้ ให้จัดเป็น L4
+- ห้ามใช้ความรู้ภายนอก
+- เตือนให้ฉันเปิดต้นฉบับตรวจผลอีกครั้ง</code><button type="button" data-copy>คัดลอก Prompt เปรียบเทียบ L1–L4</button></div></div></li>
+        <li><span>10</span><div><strong>บันทึกผลการทดลองเป็นรายงาน</strong><p><strong>ส่งให้ AI:</strong> หลังคุณตรวจและอนุมัติข้อมูลแล้ว ใช้คำสั่งนี้รวบรวมผลเป็น Markdown และ PDF</p><p class="expected"><strong>ข้อความด้านล่างเป็นคำสั่งสร้างชิ้นงาน</strong> ไม่ใช่ Prompt สำหรับวิเคราะห์หลักฐานรอบใหม่</p><div class="command markdown-command"><code>งาน: สร้างรายงานสรุปการทดลองใช้ AI กับหลักฐาน
+
+สร้าง output/first-ai-research-task.md โดยมี:
+1. คำถามที่สนใจ
+2. ผลจาก Prompt รอบแรก
+3. ผลตรวจข้ออ้าง 8–10 ข้อด้วย L1–L4
+4. คำถามที่เอกสารตอบไม่ได้
+5. Prompt รอบสอง
+6. ตารางเปรียบเทียบก่อน–หลัง
+7. จุดที่คำตอบของฉันกับ AI เห็นต่างกัน
+8. ข้อสรุปว่างานใดให้ AI ทำได้ งานใดต้องตรวจ และงานใดฉันต้องตัดสินใจเอง
+
+ใช้เฉพาะข้อมูลที่ฉันตรวจและอนุมัติแล้ว
+
+จากนั้นสร้าง output/first-ai-research-task.pdf ด้วยแม่แบบ A4 ภาษาไทยใน Workspace</code><button type="button" data-copy>คัดลอกคำสั่งสร้างชิ้นงาน</button></div></div></li>
       </ol>
     </section>
 
-    <section class="section" id="finish">
-      <div class="section-heading compact"><p class="eyebrow">จบบทเรียน</p><h2>คุณควรตอบคำถามนี้ได้</h2></div>
+    <section class="section markdown-section" id="finish" aria-labelledby="finish-heading">
+      <div class="section-heading compact"><p class="eyebrow">Checkpoint</p><h2 id="finish-heading">จบบทเรียน</h2></div>
+      <div class="markdown-body">
+      <p>ติ๊กเมื่อคุณตรวจชิ้นงานและอธิบายหลักฐานของแต่ละข้อได้ ระบบจะจำสถานะไว้ในเบราว์เซอร์นี้</p>
       <div class="plain-note"><strong>AI ทำอะไรได้แค่ไหน?</strong> AI ช่วยอ่าน จัดหมวด เปรียบเทียบ สังเคราะห์ และร่างเอกสารได้ แต่คำตอบที่สำคัญต้องชี้กลับไปยังหลักฐานได้ การตีความต้องถูกระบุว่าเป็นการตีความ และเรื่องที่ไม่มีข้อมูลต้องไม่ถูกแต่งให้ดูเหมือนข้อเท็จจริง</div>
+      <p class="progress" aria-live="polite">ความสำเร็จ <strong data-progress>0%</strong></p>
       <div class="checklist" data-checklist="module-2">
         <label><input type="checkbox"> มีไฟล์ต้นฉบับใน <code>input/original/</code> และ Markdown ใน <code>input/markdown/</code></label>
         <label><input type="checkbox"> ตรวจจุดสำคัญของข้อความ OCR เทียบกับต้นฉบับแล้ว</label>
@@ -97,7 +165,7 @@
         <label><input type="checkbox"> เปิดเฉลย L1–L4 หลังตอบเอง และตรวจข้อที่เห็นต่างกับต้นฉบับแล้ว</label>
         <label><input type="checkbox"> เปิด <code>output/first-ai-research-task.md</code> และ PDF ได้</label>
       </div>
-      <p class="progress" aria-live="polite">ความคืบหน้า: <strong data-progress>0%</strong></p>
+      </div>
       <div class="hero-actions module-next"><a class="button secondary" href="prepare.html">← กลับ Module 1</a><a class="button primary" href="module-3.html">ไป Module 3 →</a></div>
     </section>
   </main>

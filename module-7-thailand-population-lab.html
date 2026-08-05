@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="กรณีฝึก Module 7 วิเคราะห์ประชากรไทย สถิติแบบสอบถาม กราฟ และแผนที่ด้วย AI">
+  <meta name="theme-color" content="#101817">
+  <title>กรณีฝึกประชากรไทย — AI for Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-16">
+  <script src="assets/site-shell.js?v=20260805-4"></script>
+  <script src="assets/app.js?v=20260805-15" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+  <site-header current="7"></site-header>
+  <main id="main">
+    <section class="prepare-hero module-hero"><p class="eyebrow">กรณีฝึกสำรอง · โมดูล 7</p><h1>ประชากรไทย<br><span>จากตารางสู่แผนที่</span></h1><p>ใช้เมื่อยังไม่มีข้อมูลของตนเอง ฝึกตั้งคำถาม ตรวจตัวหาร วิเคราะห์สถิติ สร้างกราฟ และอ่านความแตกต่างเชิงพื้นที่กับ AI ทีละขั้น</p></section>
+    <section class="section profile-context"><div data-research-profile></div></section>
+
+    <section class="section markdown-section" id="start"><div class="section-heading compact"><p class="eyebrow">การเตรียมตัวก่อนเรียน</p><h2>ของต้องมีก่อนเรียน</h2></div><div class="markdown-body">
+      <div class="plain-note"><strong>ยังไม่ต้องดาวน์โหลดข้อมูลเอง:</strong> หน้านี้มีชุดข้อมูลตัวอย่างและคำสั่งพร้อมใช้ คุณจะให้ AI ดาวน์โหลดและตรวจข้อมูลในด่าน 1</div>
+      <ol>
+        <li><strong>สร้างโฟลเดอร์งานหนึ่งโฟลเดอร์</strong> ใน project workspace เช่น <code>module-7-population-lab/</code></li>
+        <li><strong>เปิด AI ที่สร้างและดาวน์โหลดแฟ้มได้</strong> แล้วอนุญาตให้ทำงานเฉพาะในโฟลเดอร์นี้</li>
+        <li><strong>เลือกคำถามง่าย ๆ หนึ่งข้อ</strong> เช่น “จังหวัดใดมีประชากรมากที่สุด” หรือ “สัดส่วนหญิงต่างกันระหว่างจังหวัดอย่างไร” ถ้ายังคิดไม่ออก ให้เริ่มจากประชากรชาย–หญิงระดับจังหวัด</li>
+        <li><strong>เตรียมเวลาตรวจผลด้วยตนเอง</strong> คุณต้องตรวจปี หน่วย จำนวนแถว ตัวหาร และกราฟก่อนเชื่อข้อสรุปของ AI</li>
+      </ol>
+      <p><strong>เมื่อพร้อม:</strong> กดปุ่มด้านล่าง แล้วเริ่มจากคำสั่งใน “ด่าน 1 — ดาวน์โหลดและออกใบรับข้อมูล” ไม่ต้องอ่านรายละเอียดทั้งหน้าก่อน</p>
+      <div class="hero-actions"><a class="button primary" href="#activity">พร้อมแล้ว—ไปด่าน 1 ↓</a></div>
+      <details class="concept-reference"><summary>แหล่งข้อมูลที่บทเรียนเตรียมไว้ — เปิดเมื่อต้องการตรวจที่มา</summary>
+        <ul>
+          <li><a href="https://catalog.nso.go.th/dataset/0405_01_0005/resource/c843a481-2c81-4da6-8c14-1e1b94c161c9?inner_span=True">ประชากรจากทะเบียน จำแนกตามเพศ จังหวัด และอำเภอ</a> — สำนักงานสถิติแห่งชาติ; 15,090 แถว ปี 2564–2566</li>
+          <li><a href="https://catalog.nso.go.th/api/3/action/datastore_search?resource_id=c843a481-2c81-4da6-8c14-1e1b94c161c9&amp;limit=10000&amp;offset=0">CKAN API ชุดที่ 1</a> และ <a href="https://catalog.nso.go.th/api/3/action/datastore_search?resource_id=c843a481-2c81-4da6-8c14-1e1b94c161c9&amp;limit=10000&amp;offset=10000">CKAN API ชุดที่ 2</a> — AI ต้องเรียกสองชุดแล้วตรวจว่ารวมได้ 15,090 แถว</li>
+          <li><a href="https://www.nso.go.th/nsoweb/storage/survey_detail/2025/20250818145442_49254.pdf">ประชากรอายุ 15 ปีขึ้นไป จำแนกตามระดับการศึกษา เพศ และจังหวัด</a> — ตารางจากการสำรวจภาวะการทำงาน</li>
+          <li><a href="https://www.geoboundaries.org/api/current/gbOpen/THA/ADM1/">ขอบเขตจังหวัด geoBoundaries</a> — ใช้ฝึกทำแผนที่ 77 จังหวัด ไม่ใช่ขอบเขตทางกฎหมาย</li>
+        </ul>
+        <p>เริ่มจากข้อมูลประชากรชุดแรกเพียงชุดเดียว อย่าเพิ่งรวมข้อมูลทะเบียน การสำรวจ และการศึกษา เพราะอาจใช้ปี ประชากรฐาน นิยาม และตัวหารต่างกัน</p>
+      </details>
+    </div></section>
+
+    <section class="section markdown-section" id="outcomes"><div class="section-heading compact"><p class="eyebrow">LO</p><h2>สิ่งที่จะทำได้</h2></div><div class="markdown-body"><ul>
+      <li>ตรวจปี หน่วยพื้นที่ ประชากรฐาน ตัวหาร และข้อมูลสูญหายก่อนวิเคราะห์</li>
+      <li>คำนวณจำนวน ร้อยละ อัตราส่วน ความต่าง ช่วงความเชื่อมั่น และตารางไขว้เมื่อข้อมูลรองรับ</li>
+      <li>สร้างกราฟมาตรฐานแบบงานสำรวจและกราฟเด่นที่ยังรักษาความหมายของข้อมูล</li>
+      <li>สร้างแผนที่ระดับจังหวัดหรืออำเภอ พร้อมตรวจชื่อพื้นที่ รหัสพื้นที่ และค่าที่เชื่อมไม่สำเร็จ</li>
+      <li>แยกสิ่งที่ข้อมูลแสดงออกจากคำอธิบายเชิงเหตุและผลที่ข้อมูลยังพิสูจน์ไม่ได้</li>
+    </ul></div></section>
+
+    <section class="section markdown-section" id="data-and-tools"><div class="section-heading compact"><p class="eyebrow">อ่านก่อนเริ่ม</p><h2>ข้อมูลมาจากไหน เอามาอย่างไร และใช้เครื่องมืออะไร</h2></div><div class="markdown-body">
+      <h3>1. ข้อมูลประชากรมาจากไหน</h3>
+      <p>ข้อมูลแกนมาจากชุด <strong>“จำนวนประชากรตามพื้นที่จากการทะเบียน จำแนกตามเพศ อำเภอ จังหวัด”</strong> ในบัญชีข้อมูลของสำนักงานสถิติแห่งชาติ โดยหน้าชุดข้อมูลระบุแหล่งต้นทางเป็น <strong>กรมการปกครอง</strong> หน่วยเป็นคน และเผยแพร่ภายใต้สัญญาอนุญาต Creative Commons Attribution</p>
+      <p>ข้อมูลที่ใช้ในกิจกรรมมีปี 2564–2566 และมีคอลัมน์ดังนี้:</p>
+      <table><thead><tr><th>คอลัมน์</th><th>ความหมาย</th><th>ตัวอย่าง</th></tr></thead><tbody>
+        <tr><td><code>YEAR</code></td><td>ปี พ.ศ.</td><td>2566</td></tr>
+        <tr><td><code>PROVINCE</code></td><td>จังหวัด</td><td>เชียงใหม่</td></tr>
+        <tr><td><code>DISTRIC</code></td><td>อำเภอ หรือคำว่า “รวม”</td><td>เมืองเชียงใหม่</td></tr>
+        <tr><td><code>SEX</code></td><td>รวม ชาย หรือหญิง</td><td>หญิง</td></tr>
+        <tr><td><code>VALUE</code></td><td>จำนวนประชากร</td><td>933,533</td></tr>
+        <tr><td><code>UNIT</code></td><td>หน่วยวัด</td><td>คน</td></tr>
+        <tr><td><code>SOURCE</code></td><td>หน่วยงานต้นทาง</td><td>กรมการปกครอง</td></tr>
+      </tbody></table>
+
+      <h3>2. นำข้อมูลมาใช้อย่างไร</h3>
+      <ol>
+        <li>AI เรียก <strong>CKAN Data API</strong> ของสำนักงานสถิติแห่งชาติ ไม่ได้คัดลอกตัวเลขจากหน้าเว็บหรือ PDF</li>
+        <li>API จำกัดไม่เกิน 10,000 แถวต่อครั้ง จึงเรียกสองหน้า: <code>offset=0</code> และ <code>offset=10000</code></li>
+        <li>AI ตรวจว่า API ตอบ <code>success=true</code> และค่า <code>total=15090</code></li>
+        <li>เก็บ JSON ต้นฉบับทั้งสองหน้าไว้ใน <code>data/raw/</code> โดยไม่แก้ไข</li>
+        <li>นำเฉพาะรายการใน <code>result.records</code> มาต่อกัน แล้วตรวจว่าครบ 15,090 แถวก่อนสร้าง <code>population.csv</code></li>
+        <li>การวิเคราะห์ระดับจังหวัดกรอง <code>DISTRIC=รวม</code> เพื่อไม่ให้นับยอดจังหวัดซ้ำกับยอดอำเภอ</li>
+      </ol>
+      <div class="plain-note"><strong>ตรวจย้อนกลับได้:</strong> ทุกครั้งต้องเก็บ URL เวลาดาวน์โหลด จำนวนแถว ชื่อคอลัมน์ และ checksum ไว้ใน <code>import-report.md</code> หากจำนวนแถวไม่ตรง ให้หยุด ไม่เติมข้อมูลเอง</div>
+
+      <h3>3. ขอบเขตแผนที่มาจากไหน</h3>
+      <p>รูปทรงจังหวัดมาจาก <strong>geoBoundaries API</strong> ชุด <code>gbOpen/THA/ADM1</code> แล้วดาวน์โหลดแฟ้ม <code>simplifiedGeometryGeoJSON</code> ซึ่งมีพื้นที่ระดับจังหวัด 77 หน่วย แหล่งดังกล่าวระบุว่ารวบรวมจาก OpenStreetMap และใช้สัญญาอนุญาต ODbL</p>
+      <p>ก่อนวาดแผนที่ AI ต้องสร้างตารางเทียบชื่อจังหวัดภาษาไทยในข้อมูลประชากรกับชื่อจังหวัดใน GeoJSON และรายงานชื่อที่จับคู่ไม่ได้ ห้ามลบพื้นที่ที่เชื่อมไม่สำเร็จโดยไม่แจ้ง</p>
+
+      <h3>4. กราฟเรียกว่าอะไร และสร้างด้วยอะไร</h3>
+      <table><thead><tr><th>ชื่อภาพ</th><th>ชื่อที่ใช้ในโปรแกรม</th><th>เครื่องมือที่ AI ใช้</th><th>ภาพนี้แสดงอะไร</th></tr></thead><tbody>
+        <tr><td><strong>ตารางสรุป</strong><br>Summary table</td><td><code>groupby</code>, <code>pivot_table</code></td><td>Python และ pandas</td><td>จำนวน ร้อยละ อัตราส่วน และผลรวมที่ผู้อ่านต้องการเห็นค่าตรง ๆ</td></tr>
+        <tr><td><strong>กราฟแท่ง</strong><br>Bar chart</td><td><code>barplot</code></td><td>Python, pandas, Seaborn และ Matplotlib</td><td>เปรียบเทียบจำนวนหรือสัดส่วนระหว่างจังหวัด เพศ หรือกลุ่มที่แยกจากกัน</td></tr>
+        <tr><td><strong>กราฟเส้น</strong><br>Line chart</td><td><code>lineplot</code></td><td>Python, pandas, Seaborn และ Matplotlib</td><td>การเปลี่ยนแปลงตามเวลา เช่น ประชากรปี 2564–2566 โดยเรียงปีให้ถูกต้อง</td></tr>
+        <tr><td><strong>กราฟวงกลม</strong><br>Pie chart</td><td><code>pie</code></td><td>Python และ Matplotlib</td><td>ส่วนประกอบของยอดรวมหนึ่งชุดเมื่อมีหมวดหมู่น้อย เช่น ชาย–หญิงในจังหวัดเดียวและปีเดียว</td></tr>
+        <tr><td><strong>แผนภาพการกระจาย</strong><br>Scatter plot</td><td><code>scatterplot</code></td><td>Python, pandas, Seaborn และ Matplotlib</td><td>ประชากรชายเทียบหญิงรายจังหวัด ขนาดจุดแทนประชากรรวม และเส้นทแยงแสดงชายเท่ากับหญิง</td></tr>
+        <tr><td><strong>กราฟความสัมพันธ์หลายคู่</strong><br>Pairplot</td><td><code>pairplot</code></td><td>Python, pandas และ Seaborn</td><td>การกระจายและความสัมพันธ์เป็นคู่ของจำนวนชาย หญิง รวม สัดส่วนหญิง อัตราส่วนเพศ และการเปลี่ยนแปลงข้ามปี</td></tr>
+        <tr><td><strong>กราฟแท่งเทียนแสดงการเปลี่ยนแปลง</strong><br>Candlebar/Candlestick</td><td><code>Candlestick</code></td><td>Python, pandas และ Plotly</td><td>ค่าเริ่มปี 2564 ค่าจบปี 2566 และค่าต่ำสุด–สูงสุดระหว่างสามปีของแต่ละจังหวัด</td></tr>
+        <tr><td><strong>แผนที่ระบายสีตามค่า</strong><br>Choropleth map</td><td><code>choropleth</code></td><td>Python, pandas, GeoPandas และ Plotly; ใช้ Folium ได้เมื่อเน้นการชี้ดูข้อมูล</td><td>สัดส่วนหญิงรายจังหวัด โดยสีเข้มหรืออ่อนแทนค่าที่มากหรือน้อยตามคำอธิบายสี</td></tr>
+      </tbody></table>
+      <div class="plain-note"><strong>กราฟวงกลมใช้แบบจำกัด:</strong> ใช้เมื่อเป็นส่วนประกอบของยอดรวมเดียว มีประมาณ 2–5 ส่วน และผลรวมเท่ากับ 100% ไม่ใช้เปรียบเทียบ 77 จังหวัด หลายปี หรือหลายวงพร้อมกัน; กราฟแท่งจะเปรียบเทียบความต่างได้ชัดกว่า</div>
+      <div class="plain-note"><strong>คุณไม่ต้องเขียนโปรแกรม:</strong> ให้ AI สร้างและเรียกใช้ Python แต่ต้องแสดงชื่อแฟ้มโปรแกรม รุ่น Python รุ่นไลบรารี ตารางข้อมูลที่ใช้วาด และคำเตือนทุกครั้ง คุณเป็นผู้ตรวจความหมาย ตัวหาร และข้อสรุป</div>
+    </div></section>
+
+    <section class="section markdown-section" id="activity"><div class="section-heading compact"><p class="eyebrow">เรียนด้วย AI</p><h2>ทำทีละช่วง ไม่ต้องอ่านทั้งหมดก่อน</h2></div><div class="markdown-body">
+      <h3>ช่วง 1 — ดาวน์โหลดและออกใบรับข้อมูล</h3>
+      <p><strong>เครื่องมือ:</strong> Python, requests, json และ pandas</p>
+      <div class="command markdown-command"><code>ทำงานเฉพาะใน project workspace ที่ฉันเปิดอยู่ และเริ่มจากข้อมูลประชากรชุดนี้เพียงชุดเดียว
+
+หน้าคำอธิบายข้อมูลของสำนักงานสถิติแห่งชาติ:
+https://catalog.nso.go.th/dataset/0405_01_0005/resource/c843a481-2c81-4da6-8c14-1e1b94c161c9?inner_span=True
+
+CKAN API หน้าแรก:
+https://catalog.nso.go.th/api/3/action/datastore_search?resource_id=c843a481-2c81-4da6-8c14-1e1b94c161c9&amp;limit=10000&amp;offset=0
+
+CKAN API หน้าที่สอง:
+https://catalog.nso.go.th/api/3/action/datastore_search?resource_id=c843a481-2c81-4da6-8c14-1e1b94c161c9&amp;limit=10000&amp;offset=10000
+
+ใช้ Python กับ requests และ json ดาวน์โหลด JSON จาก API ทั้งสองหน้าแบบอ่านอย่างเดียว ตรวจว่า success=true และค่า total=15090 รวม result.records แล้วต้องได้ 15,090 แถว เก็บ JSON เดิมทั้งสองแฟ้มไว้ใน data/raw/ โดยไม่แก้หรือเขียนทับ จากนั้นใช้ pandas สร้าง data/working/population.csv
+
+สร้าง import-report.md ระบุชื่อชุดข้อมูล หน่วยงานต้นทาง URL ทั้งสาม วันที่และเวลาดาวน์โหลด ปีข้อมูล จำนวนแถว ชื่อคอลัมน์ หน่วยวัด สิทธิใช้ checksum และคำเตือน เริ่มวิเคราะห์ที่ระดับจังหวัด โดยใช้แถว DISTRIC=รวม และจำแนกเพศ หากจำนวนแถวหรือค่า total ไม่ตรงให้หยุดและรายงาน ห้ามเดา เติมแถว หรือเริ่มทำกราฟ
+
+เมื่อทำเสร็จ แสดงรายชื่อแฟ้มที่สร้าง สรุปผลตรวจ และถามฉันเพียงข้อเดียวว่าจะตรวจข้อมูลต่อหรือแก้ปัญหาที่พบก่อน</code><button type="button" data-copy="">คัดลอก</button></div>
+      <p><strong>ก่อนผ่าน:</strong> คุณอธิบายได้ว่า “หนึ่งแถวแทนอะไร” และ “ตัวหารของแต่ละร้อยละคือใคร”</p>
+
+      <h3>ช่วง 2 — ตรวจและเตรียมข้อมูล</h3>
+      <p><strong>เครื่องมือ:</strong> pandas; ใช้ rapidfuzz เฉพาะเมื่อต้องช่วยหาชื่อพื้นที่ที่อาจสะกดต่างกัน แต่ห้ามจับคู่ให้อัตโนมัติ</p>
+      <div class="command markdown-command"><code>งาน: ตรวจและเตรียมข้อมูลประชากร
+เครื่องมือ: Python, pandas และ rapidfuzz เฉพาะช่วยเทียบชื่อ
+
+ทำตามลำดับ:
+1. รายงานจำนวนแถว–คอลัมน์ ชื่อและชนิดตัวแปร
+2. ตรวจปี จังหวัด/อำเภอ เพศ ค่าซ้ำ ค่าว่าง และยอดรวม
+3. แสดงชื่อพื้นที่ที่สะกดไม่ตรง
+4. หากใช้ rapidfuzz ให้แสดงชื่อคู่เทียบและคะแนน แต่ห้ามจับคู่อัตโนมัติ
+5. แสดงตัวอย่างก่อน–หลังทุกการแปลง
+
+ห้ามทำ:
+- ห้ามเขียนทับข้อมูลต้นฉบับ
+- ห้ามเติมหรือจับคู่ค่าที่ฉันยังไม่อนุมัติ
+
+ส่งมอบ: clean-data.csv, data-dictionary.csv และ cleaning-log.md แล้วรอฉันตรวจ</code><button type="button" data-copy="">คัดลอก</button></div>
+      <p><strong>จุดตรวจสำคัญ:</strong> ยอดชาย + หญิงตรงกับยอดรวมหรือไม่ และจังหวัด/อำเภอทุกแห่งเชื่อมกับรหัสพื้นที่ได้หรือไม่</p>
+
+      <h3>ช่วง 3 — สถิติมาตรฐานแบบงานสำรวจ</h3>
+      <p><strong>เครื่องมือ:</strong> pandas สำหรับสรุปตาราง; SciPy หรือ statsmodels เฉพาะเมื่อข้อมูลและคำถามรองรับการอนุมานทางสถิติ</p>
+      <div class="command markdown-command"><code>งาน: เลือกและทำสถิติที่ตอบคำถามของฉัน
+เครื่องมือ: pandas; ใช้ SciPy หรือ statsmodels เฉพาะเมื่อจำเป็น
+
+ทำตามลำดับ:
+1. ถามคำถามที่ฉันต้องการตอบ
+2. เสนอวิธีวิเคราะห์ไม่เกิน 3 แบบ พร้อมเหตุผล
+3. ระบุสูตร ตัวหาร ข้อสมมติ และสิ่งที่ข้อมูลทำไม่ได้
+4. รอฉันเลือกก่อนคำนวณ
+5. หากใช้ SciPy หรือ statsmodels ให้บอกรุ่นและฟังก์ชัน
+
+ตัวเลือกที่พิจารณาได้: จำนวนและร้อยละ ตารางไขว้ ความต่างของสัดส่วน อัตราส่วนเพศ ค่าเฉลี่ยหรือมัธยฐาน และช่วงความเชื่อมั่นเมื่อข้อมูลรองรับ
+
+ส่งมอบ: results-table.csv และคำอธิบายภาษาไทย</code><button type="button" data-copy="">คัดลอก</button></div>
+      <p><strong>ตัวอย่างคำถาม:</strong> จังหวัดใดมีสัดส่วนหญิงสูงกว่าชายมากที่สุด? โครงสร้างระดับการศึกษาแตกต่างระหว่างเพศเพียงใด? ความต่างที่เห็นเป็นจำนวนคนหรือเป็นสัดส่วน?</p>
+
+      <h3>ช่วง 4 — ตารางและกราฟพื้นฐาน</h3>
+      <p><strong>เครื่องมือ:</strong> pandas ทำตาราง, Seaborn สร้างกราฟแท่งและกราฟเส้น, Matplotlib ปรับชื่อแกนและส่งออก; ใช้ Matplotlib ทำกราฟวงกลมเฉพาะตัวอย่างที่เหมาะสม</p>
+      <div class="command markdown-command"><code>งาน: สร้างตารางและกราฟพื้นฐานทีละชิ้น
+เครื่องมือ: pandas, Seaborn และ Matplotlib
+
+ชิ้นงาน:
+1. ตารางจำนวนและร้อยละชาย–หญิงรายจังหวัด
+2. กราฟแท่ง 10 จังหวัดที่มีประชากรมากที่สุด — Seaborn
+3. กราฟเส้นประชากรรวมปี 2564–2566 ของจังหวัดที่ฉันเลือก — Seaborn
+4. กราฟวงกลมชาย–หญิงหนึ่งจังหวัดหนึ่งปี — Matplotlib pie
+
+ก่อนวาดทุกชิ้น:
+- แสดงตารางข้อมูลที่ใช้
+- ระบุตัวหาร หน่วย ปี และแหล่งข้อมูล
+- รอฉันอนุมัติ
+
+ใช้ Matplotlib ปรับชื่อแกน แบบอักษร ขนาด และส่งออก PNG/SVG พร้อมรายงานไลบรารีและฟังก์ชันที่ใช้</code><button type="button" data-copy="">คัดลอก</button></div>
+      <p><strong>ก่อนผ่าน:</strong> ตัวเลขในตารางต้องตรงกับป้ายกำกับและผลรวมในกราฟทุกภาพ กราฟเส้นต้องใช้แกนเวลา ส่วนกราฟวงกลมต้องรวมเป็น 100%</p>
+
+      <h3>ช่วง 5 — Scatter plot: ชายกับหญิงรายจังหวัด</h3>
+      <p><strong>เครื่องมือ:</strong> pandas, Seaborn <code>scatterplot</code> และ Matplotlib สำหรับเส้นอ้างอิงกับป้ายชื่อ</p>
+      <div class="command markdown-command"><code>งาน: สร้าง Scatter plot ชาย–หญิงรายจังหวัด
+เครื่องมือ: pandas, Seaborn scatterplot และ Matplotlib
+
+ทำตามลำดับ:
+1. กรองปีล่าสุดและแถว DISTRIC=รวม
+2. แยก SEX เป็นคอลัมน์ชาย หญิง และรวม
+3. ตรวจว่าชาย + หญิง = รวมทุกจังหวัด
+4. วาด x=ชาย, y=หญิง, ขนาดจุด=ประชากรรวม
+5. ใช้สีแยกภูมิภาคเฉพาะเมื่อมีข้อมูลที่ตรวจแล้ว
+6. เพิ่มเส้น x=y และป้ายจังหวัดที่ห่างจากเส้นมากที่สุด
+
+ส่งมอบ: PNG, SVG, plot-data.csv และรุ่นไลบรารี
+ห้ามสรุปความสัมพันธ์เชิงเหตุและผล</code><button type="button" data-copy="">คัดลอก</button></div>
+
+      <h3>ช่วง 6 — Pairplot: ดูหลายความสัมพันธ์พร้อมกัน</h3>
+      <p><strong>เครื่องมือ:</strong> pandas และ Seaborn <code>pairplot</code></p>
+      <div class="command markdown-command"><code>งาน: สร้าง Pairplot เพื่อสำรวจหลายความสัมพันธ์
+เครื่องมือ: pandas และ Seaborn pairplot
+
+เตรียมตัวแปรระดับจังหวัด:
+- ประชากรชาย หญิง และรวม
+- สัดส่วนหญิง
+- อัตราส่วนชายต่อหญิง
+- การเปลี่ยนแปลงปี 2564–2566
+
+ตรวจสูตรและหน่วยก่อนวาด เลือกเฉพาะตัวแปรที่ไม่ซ้ำความหมายเกินไป และใช้สีแยกภูมิภาคเฉพาะเมื่อมีข้อมูลที่ตรวจแล้ว
+
+ส่งมอบ: PNG, plot-data.csv และรุ่น Seaborn
+อธิบายแนวทแยง การกระจาย ค่านอกกลุ่ม และความสัมพันธ์ที่เกิดเพราะคำนวณจากฐานเดียวกัน</code><button type="button" data-copy="">คัดลอก</button></div>
+      <p><strong>ระวัง:</strong> ชาย หญิง และรวมสัมพันธ์กันสูงโดยโครงสร้าง Pairplot ใช้เพื่อสำรวจรูปแบบ ไม่ใช่หลักฐานว่าตัวแปรหนึ่งทำให้อีกตัวแปรเปลี่ยน</p>
+
+      <h3>ช่วง 7 — Candlebar: การเปลี่ยนแปลงประชากร 2564–2566</h3>
+      <p><strong>เครื่องมือ:</strong> pandas และ Plotly <code>graph_objects.Candlestick</code>; ส่งออก HTML แบบโต้ตอบก่อน</p>
+      <div class="command markdown-command"><code>งาน: สร้าง Candlebar แสดงการเปลี่ยนแปลงประชากร
+เครื่องมือ: pandas และ Plotly graph_objects.Candlestick
+
+กำหนดค่า:
+- open = ปี 2564
+- close = ปี 2566
+- low = ค่าต่ำสุดระหว่างปี 2564–2566
+- high = ค่าสูงสุดระหว่างปี 2564–2566
+
+ใช้สีบอกเพิ่มหรือลด เรียงตามร้อยละการเปลี่ยนแปลง และแสดง 15 จังหวัดที่เปลี่ยนมากที่สุดพร้อมตารางตัวเลข
+
+ส่งมอบ: HTML แบบโต้ตอบ; ส่งออก PNG เฉพาะเมื่อเครื่องมือพร้อมอยู่แล้ว ห้ามติดตั้งเพิ่มเอง
+อธิบาย open/high/low/close บนภาพ และห้ามเรียกว่า candlestick ทางการเงิน</code><button type="button" data-copy="">คัดลอก</button></div>
+      <p><strong>เหตุผลที่ใช้ได้:</strong> ค่าเปิด–ปิดและช่วงสูง–ต่ำมีนิยามตามเวลาอย่างชัดเจน ไม่ได้ยืมรูปทรงกราฟมาใช้โดยไม่มีความหมาย</p>
+
+      <h3>ช่วง 8 — Map: สัดส่วนหญิงรายจังหวัด</h3>
+      <p><strong>เครื่องมือ:</strong> GeoPandas ตรวจและเชื่อมพื้นที่; Plotly สร้างแผนที่สีแบบโต้ตอบ หรือ Folium เมื่อเน้นการชี้ดูรายละเอียด</p>
+      <div class="command markdown-command"><code>งาน: สร้างแผนที่สีสัดส่วนหญิงรายจังหวัด
+เครื่องมือ: pandas, GeoPandas และ Plotly; ใช้ Folium เป็นทางเลือก
+
+ทำตามลำดับ:
+1. เปิด GeoJSON และตรวจระบบพิกัดด้วย GeoPandas
+2. เชื่อมข้อมูลกับพื้นที่
+3. รายงานชื่อหรือรหัสที่จับคู่ได้ ไม่ได้ และซ้ำ
+4. รอฉันตรวจการเชื่อม
+5. ใช้ Plotly สร้าง choropleth แบบโต้ตอบ
+
+หาก Plotly ใช้กับ GeoJSON ไม่ได้ ให้เสนอ Folium และรอฉันอนุมัติก่อนเปลี่ยน ห้ามทิ้งพื้นที่ที่เชื่อมไม่ได้เงียบ ๆ
+
+ส่งมอบ: HTML; PNG เฉพาะเมื่อเครื่องมือพร้อมอยู่แล้ว พร้อมช่วงสี ค่าว่าง แหล่งข้อมูล ปี ตัวหาร และรุ่นไลบรารี</code><button type="button" data-copy="">คัดลอก</button></div>
+      <p><strong>ลองต่อ:</strong> ทำแผนที่สองแบบจากข้อมูลเดียวกัน—จำนวนคนและสัดส่วน—แล้วอธิบายว่าเหตุใดภาพจึงเล่าเรื่องต่างกัน</p>
+
+      <h3>ช่วง 9 — ท้าทายข้อสรุปและสร้างเรื่องเล่า</h3>
+      <div class="command markdown-command"><code>งาน: ตรวจความสอดคล้องและท้าทายข้อสรุป
+
+ตรวจทีละชิ้น:
+1. ตาราง กราฟ และแผนที่ใช้ตัวเลขตรงกันหรือไม่
+2. ตัวหารและปีข้อมูลตรงกันหรือไม่
+3. มีการปนประชากรทะเบียนกับประชากรสำรวจหรือไม่
+4. ขนาดจังหวัดหรือการรวมระดับพื้นที่ทำให้เข้าใจผิดหรือไม่
+5. มีข้อความใดอ้างเหตุและผลเกินข้อมูลหรือไม่
+
+ถามฉันทีละข้อและรอคำตอบ เมื่อผ่านแล้วช่วยเขียนคำอธิบาย 150–200 คำ โดยแยกหัวว่า:
+- ข้อมูลแสดงว่า
+- อาจอธิบายได้ว่า
+- ยังสรุปไม่ได้ว่า</code><button type="button" data-copy="">คัดลอก</button></div>
+    </div></section>
+
+    <section class="section markdown-section" id="ideas"><div class="section-heading compact"><h2>จากภาพพื้นฐานสู่ภาพขั้นต่อไป</h2></div><div class="markdown-body">
+      <table><thead><tr><th>ภาพ</th><th>เหมาะกับคำถาม</th><th>จุดที่ต้องระวัง</th></tr></thead><tbody>
+        <tr><td>ตาราง</td><td>ต้องการอ่านค่าจำนวน ร้อยละ หรืออัตราส่วนอย่างแม่นยำ</td><td>ระบุหน่วย ตัวหาร ปี และยอดรวม</td></tr>
+        <tr><td>กราฟแท่ง</td><td>เปรียบเทียบค่าระหว่างจังหวัดหรือกลุ่ม</td><td>เริ่มแกนที่ศูนย์เมื่อความยาวแท่งแทนขนาด</td></tr>
+        <tr><td>กราฟเส้น</td><td>ดูการเปลี่ยนแปลงตามเวลา</td><td>อย่าเชื่อมหมวดหมู่ที่ไม่มีลำดับเวลา</td></tr>
+        <tr><td>กราฟวงกลม</td><td>แสดงส่วนประกอบของยอดรวมหนึ่งชุดที่มีหมวดหมู่น้อย</td><td>ต้องรวม 100% และไม่ใช้หลายวงเพื่อเปรียบเทียบ</td></tr>
+        <tr><td>Scatter plot</td><td>ชาย–หญิงสัมพันธ์และต่างกันอย่างไรในแต่ละจังหวัด</td><td>ขนาดจังหวัดครอบงำภาพและไม่ใช่เหตุ–ผล</td></tr>
+        <tr><td>Pairplot</td><td>สำรวจการกระจาย ค่านอกกลุ่ม และความสัมพันธ์หลายคู่</td><td>หลายตัวแปรคำนวณจากฐานเดียวกันจึงสัมพันธ์โดยโครงสร้าง</td></tr>
+        <tr><td>Candlebar</td><td>ค่าเริ่ม–จบและช่วงสูง–ต่ำของประชากรระหว่างปี</td><td>ต้องนิยาม open/high/low/close ชัดและไม่อ้างว่าเป็นข้อมูลการเงิน</td></tr>
+        <tr><td>แผนที่สี</td><td>รูปแบบเชิงพื้นที่ของอัตราหรือสัดส่วน</td><td>ตรวจการเชื่อมชื่อพื้นที่ ช่วงสี และพื้นที่ไม่มีข้อมูล</td></tr>
+      </tbody></table>
+    </div></section>
+
+    <section class="section markdown-section" id="finish"><div class="section-heading compact"><p class="eyebrow">Checkpoint</p><h2>จบบทเรียน</h2></div><div class="markdown-body"><p>ติ๊กเมื่อคุณเปิดตรวจชิ้นงานจริงแล้ว ระบบจะจำสถานะไว้ในเบราว์เซอร์นี้</p><p class="progress" aria-live="polite">ความสำเร็จ <strong data-progress>0%</strong></p><div class="checklist" data-checklist="module-7-thailand-population">
+      <label><input type="checkbox"> เก็บข้อมูลต้นฉบับ URL วันที่ดาวน์โหลด และคำอธิบายตัวแปรครบ</label>
+      <label><input type="checkbox"> ระบุหนึ่งแถว หน่วยพื้นที่ ประชากรฐาน ปี และตัวหารได้</label>
+      <label><input type="checkbox"> ตรวจยอดรวม ค่าซ้ำ ค่าว่าง และพื้นที่ที่เชื่อมไม่สำเร็จแล้ว</label>
+      <label><input type="checkbox"> มีตารางสถิติมาตรฐานอย่างน้อยหนึ่งตาราง</label>
+      <label><input type="checkbox"> มีกราฟมาตรฐานหนึ่งภาพและกราฟเด่นหนึ่งภาพที่ไม่ทำให้เข้าใจผิด</label>
+      <label><input type="checkbox"> มีแผนที่พร้อมแหล่งข้อมูล ปี วิธีแบ่งช่วงสี และค่าที่ขาด</label>
+      <label><input type="checkbox"> ตาราง กราฟ แผนที่ และข้อความใช้ตัวเลขตรงกัน</label>
+      <label><input type="checkbox"> คำอธิบายแยกสิ่งที่พบ สิ่งที่อาจอธิบาย และสิ่งที่ยังสรุปไม่ได้</label>
+    </div></div></section>
+
+    <section class="section final-cta"><nav class="module-pagination" aria-label="กลับไปโมดูล 7"><a class="button secondary" href="module-7.html">← กลับไปโมดูล 7</a><a class="button primary" href="#activity">เริ่มกรณีฝึก →</a></nav></section>
+  </main>
+  <site-footer></site-footer>
+</body>
+</html>

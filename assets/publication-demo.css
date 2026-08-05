@@ -1,0 +1,82 @@
+.publication-lab { max-width:none; }
+.publication-lab .prepare-hero { padding-top:4.5rem; padding-bottom:3.5rem; }
+.publication-lab .prepare-hero h1 { max-width:1050px; font-size:clamp(2.6rem,5vw,4.8rem); }
+.publication-lab .prepare-hero > p:last-child { max-width:780px; font-size:1.12rem; }
+.demo-warning { border:1px solid rgba(239,125,85,.45); border-left:.4rem solid var(--accent); border-radius:1rem; background:#291b17; box-shadow:inset 0 0 0 1px rgba(255,255,255,.025); }
+.demo-warning strong { color:#ffc5ad; }
+.template-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin:1.25rem 0; }
+.template-actions .button { color:var(--ink); }
+.template-actions .button.primary { color:var(--surface-strong); }
+.template-actions .button.secondary { border-color:rgba(242,239,231,.65); background:rgba(255,255,255,.025); }
+.template-actions .button.secondary:hover,.template-actions .button.secondary:focus-visible { border-color:var(--mint); background:#173a34; color:var(--white); }
+.demo-controls .section-heading h2 { max-width:850px; font-size:clamp(2.25rem,4vw,3.75rem); }
+.demo-controls .plain-note { max-width:900px; }
+.demo-workspace { display:grid; grid-template-columns:minmax(22rem,.72fr) minmax(34rem,1.28fr); gap:1.5rem; align-items:start; max-width:1380px; margin:0 auto 3rem; padding:0 1.25rem; }
+.source-panel,.preview-panel { padding:1.25rem; border:1px solid var(--line); border-radius:1.2rem; }
+.source-panel { background:#291b17; box-shadow:inset 4px 0 0 var(--accent); }
+.source-panel > label { display:block; color:#ffc5ad; font-size:1rem; }
+.source-panel > label::before { content:"✎"; margin-right:.45rem; color:var(--accent); }
+.preview-panel { background:var(--surface-strong); box-shadow:inset 0 0 0 1px rgba(135,199,178,.04); }
+.preview-toolbar { display:flex; justify-content:space-between; gap:1rem; align-items:center; margin:0 0 1rem; color:var(--ink); }
+.preview-label { margin:0; color:var(--ink-soft); font-size:.92rem; }
+.preview-label strong { color:var(--mint); }
+.render-status { padding:.3rem .65rem; border:1px solid rgba(135,199,178,.36); border-radius:999px; background:#0c2923; color:#bde8d9; font-size:.75rem; font-weight:600; white-space:nowrap; }
+#markdown-source { box-sizing:border-box; width:100%; min-height:70vh; margin-top:.75rem; padding:1rem; resize:vertical; border:2px solid #ef9a79; border-radius:.7rem; outline:none; background:#fff1e9; color:#2a1812; box-shadow:inset 0 0 0 1px rgba(255,255,255,.7); font:.88rem/1.6 ui-monospace,SFMono-Regular,Consolas,monospace; tab-size:2; }
+#markdown-source:focus { outline:2px solid var(--accent); outline-offset:3px; }
+.paper { position:relative; box-sizing:border-box; width:min(100%,210mm); min-height:297mm; margin:auto; padding:14mm 18mm 12mm; overflow:visible; box-shadow:0 14px 45px #1f293755; background:white; color:#1a1a1a; font-family:Georgia,"Times New Roman",serif; font-size:10.2pt; line-height:1.42; counter-reset:review-line; }
+.paper::after { content:"REVIEW MANUSCRIPT"; position:absolute; top:48%; left:12%; z-index:0; transform:rotate(-32deg); color:#8b1e1e0b; font:700 42pt Arial,sans-serif; letter-spacing:.12em; pointer-events:none; }
+.paper > * { position:relative; z-index:1; }
+.paper-masthead { display:flex; justify-content:space-between; align-items:center; padding-bottom:3mm; border-bottom:3px solid #17365d; color:#17365d; font-family:Arial,sans-serif; }
+.paper-masthead strong { display:block; font-size:16pt; letter-spacing:-.02em; }
+.paper-masthead small { display:block; margin-top:.15rem; color:#4f5f70; font-size:7.5pt; text-transform:uppercase; letter-spacing:.08em; }
+.paper-mark { display:grid; place-items:center; width:13mm; height:13mm; border:2px solid currentColor; border-radius:50%; font:700 8pt Arial,sans-serif; }
+.manuscript-strip { display:flex; justify-content:space-between; margin:2mm 0 7mm; padding:1.3mm 2mm; background:#edf3f8; color:#40566c; font:700 6.8pt Arial,sans-serif; letter-spacing:.07em; text-transform:uppercase; }
+.paper-content { max-width:100%; }
+.paper h1 { max-width:165mm; margin:0 auto 2mm; color:#18212a; font-size:22pt; font-weight:500; line-height:1.15; text-align:left; letter-spacing:-.02em; }
+.paper .authors { margin:.5mm 0 1mm; color:#174f78; font:700 10pt Arial,sans-serif; text-align:left; }
+.paper .affiliation { margin:0 0 5mm; padding-bottom:3mm; border-bottom:1px solid #ccd3d9; color:#4b5963; font:8pt/1.45 Arial,sans-serif; text-align:left; }
+.paper h2 { margin:5mm 0 1.5mm; padding-bottom:1mm; border-bottom:1px solid #b9c5cf; color:#17365d; font:700 12.5pt Arial,sans-serif; }
+.paper p { margin:1.8mm 0; text-align:justify; hyphens:auto; }
+.paper .abstract { margin:4mm 0 2mm; padding:3mm 4mm; border-left:3px solid #2d6f9f; background:#f4f7f9; }
+.paper .abstract h2 { margin:0 0 1.5mm; padding:0; border:0; font-size:10pt; }
+.paper .abstract p { margin:0; font-size:9.2pt; line-height:1.5; }
+.paper .keywords { margin:2mm 0 5mm; color:#334b5d; font:8.2pt/1.4 Arial,sans-serif; }
+.paper strong { color:#17365d; }
+.paper-section { break-inside:avoid-page; }
+.table-wrap { max-width:100%; break-inside:avoid; }
+.paper table { width:100%; margin:4mm 0; border-collapse:collapse; border-top:2px solid #17365d; border-bottom:2px solid #17365d; font:8.5pt Arial,sans-serif; }
+.paper th,.paper td { padding:2.2mm 2mm; border:0; border-bottom:1px solid #cbd4db; text-align:left; }
+.paper th { background:#eaf0f5; color:#17365d; font-weight:700; }
+.paper tr:nth-child(even) td { background:#f7f9fa; }
+.review-note { margin:6mm 0 3mm; padding:3mm 4mm; border:1px solid #e2bb74; border-left:4px solid #c47c12; background:#fff9eb; color:#5e4218; font:8pt/1.45 Arial,sans-serif; }
+.review-note strong { display:block; margin-bottom:.8mm; color:#8b570c; text-transform:uppercase; letter-spacing:.06em; }
+.paper-footer { display:flex; justify-content:space-between; margin-top:7mm; padding-top:2mm; border-top:1px solid #b9c5cf; color:#697781; font:6.8pt Arial,sans-serif; }
+.paper.ieee { padding:10mm 13mm 15mm; font-family:"Times New Roman",serif; font-size:9.1pt; line-height:1.23; }
+.paper.ieee .paper-masthead { border-bottom:1px solid #111; color:#111; }
+.paper.ieee .paper-masthead strong { font-size:13pt; letter-spacing:.08em; }
+.paper.ieee .paper-mark { width:auto; border:0; border-radius:0; font-size:12pt; }
+.paper.ieee .manuscript-strip { margin-bottom:5mm; background:#f1f1f1; color:#222; }
+.paper.ieee h1 { max-width:175mm; font-size:19pt; text-align:center; }
+.paper.ieee .authors { color:#111; text-align:center; font-family:"Times New Roman",serif; font-weight:400; }
+.paper.ieee .affiliation { margin-bottom:3mm; border:0; text-align:center; }
+.paper.ieee .abstract { padding:2mm 0; border:0; border-top:1px solid #888; border-bottom:1px solid #888; background:none; }
+.paper.ieee .abstract h2 { display:inline; margin-right:.25rem; font:700 8.5pt "Times New Roman",serif; text-transform:none; }
+.paper.ieee .abstract h2::after { content:"—"; margin-left:.25rem; }
+.paper.ieee .abstract p { display:inline; font-size:8.5pt; line-height:1.25; }
+.paper.ieee .keywords { margin-bottom:4mm; font-family:"Times New Roman",serif; font-size:8pt; }
+.paper.ieee .paper-body { column-count:2; column-gap:7mm; column-rule:1px solid #dedede; }
+.paper.ieee h2 { margin:3.5mm 0 1mm; padding:0; border:0; color:#111; break-after:avoid; font:700 9.2pt "Times New Roman",serif; text-align:center; text-transform:uppercase; }
+.paper.ieee strong { color:#111; }
+.paper.ieee table { break-inside:avoid; margin:3mm 0; border-color:#111; font-size:7.2pt; }
+.paper.ieee th { background:#eee; color:#111; }
+.paper.ieee .review-note { clear:both; margin-top:5mm; }
+@media (min-width: 1101px) { .source-panel { position:sticky; top:5.5rem; } }
+@media (max-width: 1100px) { .demo-workspace { grid-template-columns:1fr; max-width:900px; } .paper { min-height:auto; } }
+@media (max-width: 560px) { .publication-lab .prepare-hero { padding-top:3rem; padding-bottom:2.5rem; } .publication-lab .prepare-hero h1 { font-size:clamp(2.35rem,12vw,3.2rem); } .demo-controls .section-heading h2 { font-size:clamp(2rem,10vw,2.7rem); } .template-actions .button { width:100%; } .source-panel,.preview-panel { padding:.8rem; border-radius:.85rem; } .preview-toolbar { align-items:flex-start; flex-direction:column; } }
+@media print {
+  site-header,site-footer,.prepare-hero,.demo-warning,.demo-controls,.source-panel,.preview-label,.publication-lab > .section { display:none!important; }
+  body,.publication-lab,.demo-workspace,.preview-panel { margin:0!important; padding:0!important; max-width:none!important; border:0!important; background:white!important; }
+  .demo-workspace { display:block; }
+  .paper { width:100%; min-height:297mm; margin:0; box-shadow:none; }
+  @page { size:A4; margin:0; }
+}

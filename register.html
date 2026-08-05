@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="เตรียมข้อมูลสมัครอบรม AI for Research แบบกลุ่ม"><meta name="theme-color" content="#101817">
+  <title>รับสมัคร · AI for Research</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-20">
+  <script src="assets/site-shell.js?v=20260805-4"></script><script src="assets/registration.js?v=20260805-1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a><site-header current="register"></site-header>
+  <main id="main">
+    <section class="registration-hero"><p class="eyebrow">Group registration</p><h1>เตรียมข้อมูล<br><span>สมัครเป็นกลุ่ม</span></h1><p class="hero-lead">เลือกคลาส จำนวนผู้เรียน และอาหารไว้ในใบเดียว ผู้ประสานงานหนึ่งคนดูแลรายชื่อของทั้งกลุ่ม ไม่ต้องกรอกข้อมูลซ้ำทีละคน</p><div class="registration-status"><strong>สถานะ: เตรียมเปิดโครงการ</strong><span>ขณะนี้ยังไม่รับชำระเงินและยังไม่ส่งข้อมูลออกจากเว็บไซต์</span></div></section>
+    <section class="section registration-layout" id="form">
+      <div class="registration-guide"><p class="eyebrow">ก่อนกรอก</p><h2>หนึ่งกลุ่ม<br>หนึ่งผู้ประสานงาน</h2><ol class="registration-steps"><li><span>1</span><p>เลือกคลาสเดียวหรือ Bundle 4 วัน</p></li><li><span>2</span><p>ระบุกลุ่มผู้สมัครและจำนวนที่นั่ง</p></li><li><span>3</span><p>สรุปจำนวนอาหารและข้อจำกัด</p></li><li><span>4</span><p>ดาวน์โหลดร่างไว้ตรวจภายในกลุ่ม</p></li></ol><div class="plain-note"><strong>ยังไม่ต้องใส่รายชื่อผู้เรียนทุกคน</strong> หน้านี้เก็บเฉพาะข้อมูลสำหรับวางแผนกลุ่ม รายชื่อจริงและข้อมูลออกใบเสร็จจะขอผ่านแบบฟอร์มทางการหลังโครงการได้รับอนุมัติ</div></div>
+      <form class="registration-form" data-registration-form>
+        <fieldset><legend>1 · เลือกคลาส</legend><label><span>แพ็กเกจที่สนใจ</span><select name="course" required><option value="">เลือกแพ็กเกจ</option><option>Build-up · 2 วัน</option><option>Reviews · 1 วัน</option><option>Publication · 1 วัน</option><option>Bundle · ครบสามคลาส 4 วัน</option></select></label><label><span>กลุ่มผู้สมัคร</span><select name="group_type" required><option value="">เลือกกลุ่ม</option><option>นิสิตมหาวิทยาลัยเกษตรศาสตร์</option><option>บุคลากรมหาวิทยาลัยเกษตรศาสตร์</option><option>บุคคลภายนอก</option><option>หน่วยงานเหมารุ่น</option></select></label><label><span>จำนวนผู้เรียนโดยประมาณ</span><input name="headcount" type="number" min="1" max="40" inputmode="numeric" required></label></fieldset>
+        <fieldset><legend>2 · ผู้ประสานงานกลุ่ม</legend><label><span>ชื่อผู้ประสานงาน</span><input name="contact_name" autocomplete="name" required></label><label><span>สังกัดหรือชื่อกลุ่ม</span><input name="organization" autocomplete="organization" required></label><p class="form-privacy">ยังไม่ขออีเมล เบอร์โทร หรือข้อมูลผู้เรียนรายบุคคล จนกว่าจะมีแบบฟอร์มทางการและคำชี้แจงการใช้ข้อมูล</p></fieldset>
+        <fieldset><legend>3 · อาหารและการจัดกลุ่ม</legend><label><span>ต้องการอาหารจากผู้จัดหรือไม่</span><select name="meal_plan" required><option value="">เลือกคำตอบ</option><option>ต้องการอาหารสำหรับทุกคน</option><option>ต้องการบางคน — จะแจ้งจำนวนภายหลัง</option><option>กลุ่มจัดอาหารเอง</option><option>ยังไม่ทราบ</option></select></label><label class="span-all"><span>ข้อจำกัดอาหารที่ทราบตอนนี้</span><textarea name="dietary" rows="3" placeholder="เช่น มังสวิรัติ ฮาลาล แพ้อาหาร หรือยังไม่ทราบ"></textarea></label><label class="span-all"><span>หมายเหตุสำหรับผู้จัด</span><textarea name="notes" rows="3" placeholder="เช่น ต้องการใบเสนอราคา หรือสนใจจัดเป็นรุ่นเฉพาะ"></textarea></label></fieldset>
+        <div class="registration-actions"><button class="button primary" type="submit">สร้างร่างข้อมูลสมัคร</button><button class="button secondary" type="reset">ล้างข้อมูล</button><p>ข้อมูลอยู่ในเบราว์เซอร์หน้านี้เท่านั้น และจะไม่ถูกส่งไปยังผู้จัด</p></div>
+      </form>
+    </section>
+    <section class="section registration-result" data-registration-result hidden aria-live="polite"><div class="section-heading compact"><p class="eyebrow">Registration draft</p><h2>ตรวจร่างก่อนส่งให้กลุ่ม</h2><p>ดาวน์โหลดเก็บไว้ก่อน เมื่อแบบฟอร์มทางการเปิด คุณสามารถนำข้อมูลชุดนี้มากรอกโดยไม่ต้องคิดใหม่</p></div><pre><code data-registration-summary></code></pre><div class="hero-actions"><button class="button primary" type="button" data-download-registration>ดาวน์โหลดร่าง .txt</button><button class="button secondary" type="button" data-copy-registration>คัดลอกสรุป</button></div></section>
+  </main><site-footer></site-footer>
+</body></html>
