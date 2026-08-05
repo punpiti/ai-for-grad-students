@@ -1,13 +1,13 @@
 const MODULE_LINKS = [
-  [1, "prepare.html", "Prepare Workspace"],
-  [2, "module-2.html", "First AI Research Task"],
-  [3, "module-3.html", "Problem–Gap–RQ"],
+  [1, "prepare.html", "Prepare Your AI Research Workspace"],
+  [2, "module-2.html", "Your First AI Research Task"],
+  [3, "module-3.html", "Problem → Gap → Research Question"],
   [4, "module-4.html", "Literature Evidence"],
   [5, "module-5.html", "Research Logic"],
-  [6, "module-6.html", "Experiment Design"],
-  [7, "module-7.html", "Analysis & Visuals"],
+  [6, "module-6.html", "Experiment Design Stress Test"],
+  [7, "module-7.html", "Analysis & Visualization"],
   [8, "module-8.html", "Document Production"],
-  [9, "module-9.html", "Personal Workflow"],
+  [9, "module-9.html", "Personal AI Research Workflow"],
 ];
 
 const LOCAL_LINKS = {

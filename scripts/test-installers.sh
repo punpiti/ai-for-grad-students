@@ -131,4 +131,35 @@ if rg -n --glob '!test-installers.sh' 'gemini|Gemini CLI|@google/gemini-cli' "$r
   echo 'Obsolete Gemini CLI reference found.' >&2
   exit 1
 fi
+
+canonical_module_names=(
+  'Prepare Your AI Research Workspace'
+  'Your First AI Research Task'
+  'Problem → Gap → Research Question'
+  'Literature Evidence'
+  'Research Logic'
+  'Experiment Design Stress Test'
+  'Analysis &amp; Visualization'
+  'Document Production'
+  'Personal AI Research Workflow'
+)
+for name in "${canonical_module_names[@]}"; do
+  grep -Fq "$name" "$root/index.html"
+done
+for name in \
+  'Prepare Your AI Research Workspace' \
+  'Your First AI Research Task' \
+  'Problem → Gap → Research Question' \
+  'Literature Evidence' \
+  'Research Logic' \
+  'Experiment Design Stress Test' \
+  'Analysis & Visualization' \
+  'Document Production' \
+  'Personal AI Research Workflow'; do
+  grep -Fq "$name" "$root/assets/site-shell.js"
+done
+if rg -n 'M1 · Workspace</a>|M2 · AI Boundaries</a>|M3 · Problem–Gap–RQ</a>|M4 · Literature</a>|M5 · Logic Review</a>|M6 · (Experiment Design|Design Review|Result–Claim)</a>|M7 · (Analysis Review|Analysis &amp; Visuals)</a>|M8 · Document QA</a>|M9 · (Build-up Kit|Reviews Kit|Publication Kit)</a>' "$root/index.html"; then
+  echo 'Non-canonical module label found on the homepage.' >&2
+  exit 1
+fi
 echo 'Installer static checks passed.'
