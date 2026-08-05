@@ -77,7 +77,7 @@ h1 span { color: var(--accent); }
 .button.disabled { opacity: .55; cursor: not-allowed; }
 .pilot-note { margin-top: 1.5rem; font-size: 1rem; color: var(--ink-soft); }
 .institution-lockup { display:flex; align-items:center; gap:.75rem; margin:0 0 1.25rem; color:var(--mint); font-size:.85rem; font-weight:500; line-height:1.45; }
-.institution-lockup img { width:2.75rem; height:2.75rem; padding:.2rem; border-radius:50%; background:var(--white); object-fit:contain; }
+.institution-lockup img { width:auto; height:4.6rem; padding:.3rem; border-radius:.35rem; background:var(--white); object-fit:contain; }
 .hero-panel { padding: 2rem; color: var(--white); background: var(--surface-strong); border: 1px solid var(--line); border-radius: 1.5rem; box-shadow: 1.5rem 1.5rem 0 #25483f; }
 .panel-label { font-family: Inter, sans-serif; font-size: .84rem; letter-spacing: .1em; text-transform: uppercase; color: var(--mint); }
 .chain { list-style: none; padding: 0; margin: 1.5rem 0 2rem; }
@@ -201,7 +201,7 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
 .footer-credit p { margin: 0 0 .25rem; }
 .footer-owner p { margin:0 0 .55rem; }
 .footer-institution { margin:0; color:var(--ink-soft); }
-.footer-institution img { width:2.4rem; height:2.4rem; }
+.footer-institution img { width:auto; height:3.8rem; }
 .prepare-hero { max-width: var(--max); margin: auto; padding: 7rem 1.25rem 5rem; }
 .prepare-hero h1 { font-size: clamp(3rem, 7vw, 6.5rem); }
 .prepare-hero > p:last-child { max-width: 680px; font-size: 1.3rem; }
