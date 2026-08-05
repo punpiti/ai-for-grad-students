@@ -82,6 +82,10 @@ h1 span { color: var(--accent); }
 .course-number { margin-bottom: 1.5rem; color: var(--mint); font-family: Inter, sans-serif; font-size: .84rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
 .course-card h3 { font-size: 1.65rem; }
 .course-card > p { color: rgba(255,253,248,.78); }
+.course-duration { padding: .8rem 0; border-top: 1px solid rgba(255,255,255,.16); border-bottom: 1px solid rgba(255,255,255,.16); }
+.course-duration strong, .course-duration span { display: block; }
+.course-duration strong { color: var(--accent); font-size: 1.15rem; }
+.course-duration span { margin-top: .15rem; font-size: .85rem; }
 .course-modules { margin: 1rem 0 1.5rem; }
 .course-modules > p { margin: 0 0 .55rem; color: rgba(255,253,248,.72); font-size: .92rem; }
 .course-modules > p strong { color: var(--white); }
