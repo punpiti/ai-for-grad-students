@@ -76,7 +76,7 @@ class SiteHeader extends HTMLElement {
 class SiteFooter extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `<footer>
-      <p><a href="index.html">AI for Research</a></p>
+      <div class="footer-owner"><p><a href="index.html">AI for Research</a></p><p>Department of Computer Engineering<br>Kasetsart University</p></div>
       <div class="footer-credit"><p>Developed by One234@KU</p><p>© 2026 พันธุ์ปิติ เปี่ยมสง่า. All rights reserved.</p></div>
     </footer>`;
   }
