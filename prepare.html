@@ -235,13 +235,30 @@
       </ol>
       <p class="expected">รายละเอียดจากผู้ให้บริการ: <a data-login-source href="https://developers.openai.com/codex/" target="_blank" rel="noopener">คู่มือ Codex ของ OpenAI</a></p>
       <div class="plain-note"><strong>พร้อมไปต่อเมื่อ:</strong> Sign in สำเร็จและเห็นช่องสนทนาใน AI panel</div>
-      <h3 class="section-zone-heading">ทดลอง Prompt แรก</h3>
+      <h3 class="section-zone-heading">ฝึกบอกบริบทของคุณให้ AI</h3>
+      <p>กิจกรรมนี้ฝึกให้ AI รู้ว่าใครกำลังทำงานอะไรและต้องการความช่วยเหลือแบบใด โดยให้ข้อมูลเท่าที่จำเป็น ช่องที่ไม่เกี่ยวข้องข้ามได้ และไม่ต้องระบุรหัสนิสิต เบอร์โทร อีเมล ที่อยู่ credential หรือข้อมูลส่วนบุคคลของผู้อื่น</p>
       <ol class="readiness-steps">
-        <li><span>01</span><div><strong>คัดลอก Prompt</strong><br>ใช้ข้อความสั้น ๆ ด้านล่าง โดยยังไม่ต้องเปิด Terminal หรือไฟล์ใด<div class="command"><code>แนะนำตัวสั้น ๆ แล้วบอกว่าคุณช่วยงานวิจัยใน Workspace นี้ได้อย่างไร 3 ข้อ โดยยังไม่แก้ไขไฟล์ใด</code><button type="button" data-copy>คัดลอก prompt</button></div></div></li>
-        <li><span>02</span><div><strong>ส่งให้ AI</strong><br>วางข้อความใน <span data-agent-panel>Codex panel</span> แล้วกด Enter</div></li>
-        <li><span>03</span><div><strong>ตรวจคำตอบ</strong><br>ต้องได้รับคำแนะนำ 3 ข้อ และ AI ต้องยังไม่สร้างหรือแก้ไขไฟล์</div></li>
+        <li><span>01</span><div><strong>คัดลอก Prompt สัมภาษณ์</strong><br>แก้ตัวเลือกใน <code>{{…}}</code> ก่อนส่ง หากยังไม่ทราบให้คงคำว่า “ถามฉัน” ไว้<p class="prompt-edit-note">✎ แก้ก่อนส่ง: เปลี่ยนข้อความใน {{…}} ให้ตรงกับคุณ หรือปล่อยให้ AI ถามทีละข้อ</p><div class="command markdown-command prompt-template"><code>ช่วยสัมภาษณ์ฉันเพื่อสร้าง Learner Profile สำหรับใช้ใน AI for Research โดยถามครั้งละหนึ่งคำถามและรอคำตอบ ห้ามสร้างหรือแก้ไขไฟล์จนกว่าฉันจะตรวจ profile และอนุมัติ
+
+ข้อมูลที่ฉันต้องการให้ถามหรือยืนยัน:
+1. ชื่อภาษาไทย: {{ถามฉัน — ข้ามได้}}
+2. ชื่อภาษาอังกฤษ: {{ถามฉัน — ข้ามได้}}
+3. สังกัด/หน่วยงาน: {{ถามฉัน — ระบุเท่าที่จำเป็น}}
+4. บทบาทหรือระดับการศึกษา: {{เช่น นิสิตปริญญาโท อาจารย์ นักวิจัย หรือบุคคลทั่วไป}}
+5. สาขาหรือความเชี่ยวชาญ: {{ถามฉัน}}
+6. ชื่ออาจารย์ที่ปรึกษา: {{ถามฉันถ้ามีและฉันยินยอมให้ระบุ มิฉะนั้นบันทึกว่าไม่ระบุ}}
+7. หัวข้อวิจัยหรือประเด็นที่สนใจ: {{ถามฉัน}}
+8. ระยะของงานตอนนี้: {{เริ่มหาโจทย์ / ทำ proposal / เก็บข้อมูล / วิเคราะห์ / เขียนเผยแพร่ / อื่น ๆ}}
+9. ผลงานที่อยากได้จากการเรียน: {{ถามฉัน}}
+10. ภาษาที่ต้องการใช้ทำงาน: {{ไทย / อังกฤษ / สองภาษา}}
+11. ข้อจำกัดด้านเวลา เครื่องมือ หรือการเข้าถึงข้อมูล: {{ถามฉัน}}
+12. ระดับความอ่อนไหวของข้อมูล: {{public / internal / confidential / sensitive / ยังไม่แน่ใจ}}
+
+ก่อนถาม เตือนฉันว่าไม่ต้องให้รหัสนิสิต เบอร์โทร อีเมล ที่อยู่ credential หรือข้อมูลส่วนบุคคลที่ไม่จำเป็น เมื่อถามครบให้แสดง Learner Profile ฉบับร่าง แยก “ข้อมูลที่ฉันยืนยัน” “ยังไม่ทราบ” และ “ไม่ประสงค์ระบุ” แล้วถามว่าต้องแก้อะไรก่อนบันทึก ห้ามเดาหรือเติมข้อมูลแทนฉัน</code><button type="button" data-copy>คัดลอก Prompt สร้าง Learner Profile</button></div></div></li>
+        <li><span>02</span><div><strong>ตอบทีละคำถาม</strong><br>วาง Prompt ใน <span data-agent-panel>Codex panel</span> แล้วตอบเฉพาะข้อมูลที่เกี่ยวข้อง คุณสามารถพิมพ์ “ข้าม” หรือ “ไม่ประสงค์ระบุ” ได้ทุกข้อ</div></li>
+        <li><span>03</span><div><strong>ตรวจ Profile ก่อนอนุมัติ</strong><br>ตรวจการสะกดชื่อ สังกัด บทบาท หัวข้อ เป้าหมาย และระดับความอ่อนไหว แก้สิ่งที่ AI เข้าใจผิด และยืนยันว่า AI ยังไม่สร้างหรือแก้ไขไฟล์</div></li>
       </ol>
-      <div class="plain-note"><strong>Prompt แรกผ่านเมื่อ:</strong> AI ตอบกลับได้และทำตามเงื่อนไข “ยังไม่แก้ไขไฟล์ใด” จากนั้นจึงเริ่มทดลอง Markdown</div>
+      <div class="plain-note"><strong>กิจกรรมผ่านเมื่อ:</strong> AI ถามทีละข้อ ไม่เดาข้อมูล สรุป Learner Profile แยกข้อมูลที่ยืนยัน/ยังไม่ทราบ/ไม่ประสงค์ระบุ และยังไม่แก้ไขไฟล์ จากนั้นจึงเริ่มทดลอง Markdown</div>
       <h3 class="section-zone-heading">ทดลองไฟล์ Markdown แรก</h3>
       <ol class="readiness-steps">
         <li><span>01</span><div><strong>เปิดและแก้ Markdown</strong><br>คลิก <code>content.md</code> แล้วแก้ข้อความตัวอย่าง</div></li>
@@ -253,7 +270,7 @@
       <div class="checklist" data-checklist="practice">
         <label><input type="checkbox"> เปิด workspace ใน <span data-workspace-app>VS Code</span> ได้</label>
         <label><input type="checkbox"> <span data-agent-panel>Codex panel</span> sign in ได้</label>
-        <label><input type="checkbox"> AI ตอบ Prompt แรกครบ 3 ข้อโดยไม่แก้ไขไฟล์</label>
+        <label><input type="checkbox"> AI ถามบริบททีละข้อและฉันตรวจ Learner Profile แล้ว โดยยังไม่แก้ไขไฟล์</label>
         <label><input type="checkbox"> เปิด อ่าน แก้ และ Preview <code>content.md</code> ได้</label>
         <label><input type="checkbox"> AI อ่าน <code>content.md</code> และสร้าง <code>output/content.pdf</code> ได้</label>
         <label><input type="checkbox"> เปิด PDF แล้วตรวจว่าเป็น A4 ภาษาไทยและรูปแบบถูกต้อง</label>
