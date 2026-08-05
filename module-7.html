@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-7">
-  <script src="assets/site-shell.js?v=20260805-2"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-8">
+  <script src="assets/site-shell.js?v=20260805-1"></script>
   <script src="assets/app.js?v=20260805-4" defer></script>
 </head>
 <body>
@@ -482,7 +482,13 @@
 </blockquote>
 </div></section>
 <section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือวิเคราะห์และสร้างภาพด้วย AI</h2>
-</div><div class="markdown-body"><div class="command markdown-command"><code>พาฉันวิเคราะห์ข้อมูลทีละ gate เริ่มจากถามคำถามวิจัย ชนิดแฟ้ม สิทธิการใช้ และ data dictionary ก่อนตรวจ environment และนำเข้าแบบอ่านอย่างเดียว ถามครั้งละหนึ่งคำถามและรอคำตอบ ห้ามติดตั้งแพ็กเกจ เขียนทับข้อมูลดิบ เลือกวิธีสถิติ หรือสรุปผลแทนฉัน ทุก gate ให้แสดงไฟล์/ตาราง/คำเตือนที่ใช้ตรวจ แยกผลจากการตีความ และให้ฉันอนุมัติก่อนสร้างตารางหรือภาพขั้นถัดไป</code><button type="button" data-copy="">คัดลอก</button></div><h3 id="1-hypothesis-clinic">1. Hypothesis Clinic</h3>
+</div><div class="markdown-body"><p class="prompt-edit-note">✎ แก้ก่อนส่ง: เปลี่ยนข้อความใน {{…}} ให้เป็นข้อมูลของคุณ แล้วจึงคัดลอก Prompt ไปให้ AI</p><div class="command markdown-command prompt-template"><code>ข้อมูลที่ฉันกำหนด:
+- RESEARCH_QUESTION: {{พิมพ์คำถามที่ต้องการให้ข้อมูลช่วยตอบ}}
+- DATA_FILE: {{พิมพ์ชื่อและตำแหน่งแฟ้มข้อมูล}}
+- DATA_RIGHTS: {{ระบุสิทธิหรือข้อจำกัดในการใช้ข้อมูล}}
+- OUTPUT_AUDIENCE: {{พิมพ์ว่าตาราง/ภาพนี้ทำให้ใครอ่าน}}
+
+พาฉันวิเคราะห์ข้อมูลทีละ gate เริ่มจากถามคำถามวิจัย ชนิดแฟ้ม สิทธิการใช้ และ data dictionary ก่อนตรวจ environment และนำเข้าแบบอ่านอย่างเดียว ถามครั้งละหนึ่งคำถามและรอคำตอบ ห้ามติดตั้งแพ็กเกจ เขียนทับข้อมูลดิบ เลือกวิธีสถิติ หรือสรุปผลแทนฉัน ทุก gate ให้แสดงไฟล์/ตาราง/คำเตือนที่ใช้ตรวจ แยกผลจากการตีความ และให้ฉันอนุมัติก่อนสร้างตารางหรือภาพขั้นถัดไป</code><button type="button" data-copy="">คัดลอก</button></div><h3 id="1-hypothesis-clinic">1. Hypothesis Clinic</h3>
 <p>นำคำถามของคุณหรือคำถามตัวอย่างจากงานวิทยาศาสตร์และสังคมศาสตร์มาจำแนกว่าเป็นงานพรรณนา สำรวจ เปรียบเทียบ ความสัมพันธ์ พยากรณ์ หรือเชิงสาเหตุ จากนั้นเติมแบบประโยคสมมติฐานหรือระบุเหตุผลว่าไม่ควรตั้งสมมติฐาน</p>
 <h3 id="2-data-intake-and-quality-gate">2. Data Intake and Quality Gate</h3>
 <p>นำเข้าแฟ้มข้อมูลด้วยภาษาธรรมชาติ แล้วให้ AI จัดทำ</p>

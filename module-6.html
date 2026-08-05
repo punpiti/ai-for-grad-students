@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-7">
-  <script src="assets/site-shell.js?v=20260805-2"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-8">
+  <script src="assets/site-shell.js?v=20260805-1"></script>
   <script src="assets/app.js?v=20260805-4" defer></script>
 </head>
 <body>
@@ -155,7 +155,12 @@
 <li><strong>Red-team/compliance recorder:</strong> พยายามหักล้าง design และบันทึก ethics/permission trigger</li>
 </ul>
 <p>หากเรียนคนเดียว ให้สั่ง AI สลับมุมตรวจทั้งสามบทบาท แต่คุณต้องเป็นผู้ตัดสินและเปิดหลักฐานตรวจทุกข้อ</p>
-<div class="command markdown-command"><code>พาฉันทำ Experiment Design Stress Test ทีละช่วง ถามครั้งละหนึ่งคำถามและรอคำตอบ ใช้เฉพาะไฟล์และข้อมูลที่ฉันให้ แยก learner decision, verified evidence, assumption และ TBD — owner/source/date ห้ามเลือก methodology, sample size, statistical test, instrument, parameter, ethics category หรือข้อสรุปแทนฉัน ทุกช่วงให้สรุปสิ่งที่ฉันยืนยัน จุดที่ยังขาด และไฟล์ที่อัปเดต ก่อนถามว่าจะไปช่วงถัดไปหรือแก้ของเดิม</code><button type="button" data-copy="">คัดลอก</button></div><h3 id="ช่วง-1--intake-and-claim-freeze">ช่วง 1 — Intake and claim freeze</h3>
+<p class="prompt-edit-note">✎ แก้ก่อนส่ง: เปลี่ยนข้อความใน {{…}} ให้เป็นข้อมูลของคุณ แล้วจึงคัดลอก Prompt ไปให้ AI</p><div class="command markdown-command prompt-template"><code>ข้อมูลที่ฉันกำหนด:
+- TRACK: {{A งานของตนเอง / B reverse-engineer / C กรณีตัวอย่าง}}
+- CANDIDATE_CLAIM: {{พิมพ์ claim หนึ่งข้อที่ต้องการทดสอบ}}
+- TARGET_VENUE: {{พิมพ์ venue ที่สนใจ หรือเขียนว่า ยังไม่ทราบ}}
+
+พาฉันทำ Experiment Design Stress Test ทีละช่วง ถามครั้งละหนึ่งคำถามและรอคำตอบ ใช้เฉพาะไฟล์และข้อมูลที่ฉันให้ แยก learner decision, verified evidence, assumption และ TBD — owner/source/date ห้ามเลือก methodology, sample size, statistical test, instrument, parameter, ethics category หรือข้อสรุปแทนฉัน ทุกช่วงให้สรุปสิ่งที่ฉันยืนยัน จุดที่ยังขาด และไฟล์ที่อัปเดต ก่อนถามว่าจะไปช่วงถัดไปหรือแก้ของเดิม</code><button type="button" data-copy="">คัดลอก</button></div><h3 id="ช่วง-1--intake-and-claim-freeze">ช่วง 1 — Intake and claim freeze</h3>
 <p>เลือก Track A/B/C แล้วเขียน candidate claim เพียงหนึ่งข้อ ระบุ scope และคำที่ยังนิยามไม่ได้ ให้ AI ถามกลับเพื่อหาคำที่กว้างหรือรวมหลาย claim แล้วคุณเป็นผู้ตัดสินว่าจะแคบ claim อย่างไร</p>
 <h3 id="ช่วง-2--claim-to-hypothesis-decomposition">ช่วง 2 — Claim-to-hypothesis decomposition</h3>
 <p>แตก claim เป็น hypothesis/necessary condition ทุกกลุ่ม พร้อมบอก observation ที่ต้องเห็นและผลที่ทำให้แต่ละข้อไม่ผ่าน ใช้ ID เช่น <code>H-C1</code>, <code>H-M1</code>, <code>H-V1</code>, <code>H-B1</code>, <code>H-S1</code> เพื่อ trace ต่อไปทุกตาราง</p>

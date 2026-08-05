@@ -9,8 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-7">
-  <script src="assets/site-shell.js?v=20260805-2"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-8">
+  <script src="assets/site-shell.js?v=20260805-1"></script>
   <script src="assets/app.js?v=20260805-4" defer></script>
 </head>
 <body>
@@ -160,7 +160,13 @@
 </ul>
 <p>ทั้งสองทางต้องมีไฟล์ต้นทางให้เปิดตรวจได้ และจะมาพบกันที่ <code>output/module-5-intake.md</code> ก่อนเริ่มขั้นที่ 1</p>
 <h3 id="prompt-เริ่มบทเรียน--ให้-ai-ตรวจของที่มีและถามทีละคำถาม">Prompt เริ่มบทเรียน — ให้ AI ตรวจของที่มีและถามทีละคำถาม</h3>
-<div class="command markdown-command"><code>เราจะทำ Module 5 แบบเรียนด้วยตนเอง เป้าหมายคือสร้าง research-argument-map ที่ตรวจย้อนกลับได้
+<p class="prompt-edit-note">✎ แก้ก่อนส่ง: เปลี่ยนข้อความใน {{…}} ให้เป็นข้อมูลของคุณ แล้วจึงคัดลอก Prompt ไปให้ AI</p><div class="command markdown-command prompt-template"><code>เราจะทำ Module 5 แบบเรียนด้วยตนเอง เป้าหมายคือสร้าง research-argument-map ที่ตรวจย้อนกลับได้
+
+ข้อมูลที่ฉันกำหนด:
+- LEARNING_PATH: {{A ต่อจาก Module 3–4 หรือ B แบบ Standalone}}
+- RESEARCH_TOPIC_OR_RQ: {{พิมพ์หัวข้อหรือคำถามวิจัยของคุณ}}
+- TARGET_VENUE: {{Nature — เปลี่ยนเป็นวารสาร/การประชุมที่คุณสนใจ หรือเขียนว่า ยังไม่ทราบ}}
+- INTENDED_AUDIENCE: {{พิมพ์กลุ่มผู้อ่านหรือผู้ใช้ผลที่ต้องการ}}
 
 1. ตรวจรายชื่อไฟล์ใน workspace แบบอ่านอย่างเดียวก่อน
 2. ถามฉันว่าเลือกทาง A ต่อจาก Module 3–4 หรือทาง B แบบ Standalone
