@@ -77,6 +77,16 @@ h1 span { color: var(--accent); }
 .intro-copy { font-size: 1.16rem; }
 .intro-copy p:first-child { margin-top: 0; }
 .module-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.course-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.course-card { min-height: 360px; padding: 1.6rem; border: 1px solid rgba(135,199,178,.38); border-radius: 1.2rem; background: #173a34; display: flex; flex-direction: column; }
+.course-number { margin-bottom: 1.5rem; color: var(--mint); font-family: Inter, sans-serif; font-size: .84rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.course-card h3 { font-size: 1.65rem; }
+.course-card > p { color: rgba(255,253,248,.78); }
+.course-output { margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.16); }
+.course-output strong { display: block; color: var(--white); }
+.course-enrollment { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+.course-enrollment p { margin: 0; padding: 1.1rem 1.25rem; border: 1px solid var(--line); border-radius: .8rem; background: var(--surface); color: var(--ink-soft); }
+.course-enrollment strong { color: var(--ink); }
 .module-card { min-height: 245px; padding: 1.4rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); display: flex; flex-direction: column; }
 .module-card.setup-card { background: #173a34; border-color: rgba(135,199,178,.45); }
 .module-number, .module-time, .platform-label { font-family: Inter, sans-serif; font-size: .84rem; letter-spacing: .07em; text-transform: uppercase; }
@@ -211,6 +221,7 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
   .hero { padding-top: 4rem; }
   .hero-panel { box-shadow: .7rem .7rem 0 var(--mint); }
   .module-grid { grid-template-columns: 1fr 1fr; }
+  .course-grid { grid-template-columns: 1fr; }
   .check-grid { grid-template-columns: 1fr 1fr; }
   .platform-grid, .concept-grid, .homework-grid, .level-grid { grid-template-columns: 1fr; }
   .markdown-toc ol { columns: 1; }
@@ -221,7 +232,7 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
   .brand { font-size: .9rem; }
   h1 { font-size: 3.1rem; }
   .section { padding-top: 4rem; padding-bottom: 4rem; }
-  .module-grid, .platform-grid, .check-grid { grid-template-columns: 1fr; }
+  .module-grid, .platform-grid, .check-grid, .course-enrollment { grid-template-columns: 1fr; }
   .terminal-rules { grid-template-columns: 1fr; }
   footer { display: block; }
   .footer-credit { margin-top: 1rem; text-align: left; }
