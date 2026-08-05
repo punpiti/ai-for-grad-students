@@ -9,15 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-3">
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-4">
   <script src="assets/site-shell.js?v=20260805-1"></script>
-  <script src="assets/app.js?v=20260805-3" defer></script>
+  <script src="assets/app.js?v=20260805-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
   <site-header current="6"></site-header>
   <main id="main">
-    <section class="prepare-hero module-hero"><p class="eyebrow">Module 6 · Self-paced lesson</p><h1>Module 6 — Experiment Design Stress Test: แบบที่ออกแบบไว้พิสูจน์สิ่งที่เคลมได้หรือไม่</h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
+    <section class="prepare-hero module-hero"><p class="eyebrow">Module 6 · Self-paced lesson</p><h1 aria-label="Module 6 — Experiment Design Stress Test: แบบที่ออกแบบไว้พิสูจน์สิ่งที่เคลมได้หรือไม่">Experiment Design<br><span>Stress Test</span></h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
     <div id="module-content">
 <section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><h2 id="start-heading">ก่อนเริ่ม: เลือกทางเรียนและเตรียมสิ่งที่ใช้</h2>
 </div><div class="markdown-body"><ul>
@@ -66,13 +66,12 @@
 <section class="section markdown-section" id="แนวคิดหลัก" aria-labelledby="แนวคิดหลัก-heading"><div class="section-heading compact"><h2 id="แนวคิดหลัก-heading">แนวคิดหลัก</h2>
 </div><div class="markdown-body"><h3 id="1-เริ่มจาก-claim-แล้วถอยกลับ">1. เริ่มจาก claim แล้วถอยกลับ</h3>
 <p>ไม่เริ่มจากรายการเครื่องมือ เริ่มจากประโยคที่อยากสรุป แล้วถามย้อนกลับ:</p>
-<pre class="text"><code>Candidate claim
+<div class="command markdown-command"><code>Candidate claim
   -&gt; ต้องมีข้อสรุปย่อยอะไรจึงกล่าวได้
   -&gt; แต่ละข้อสรุปต้องเห็น observation/evidence อะไร
   -&gt; observation ต้องวัด construct ใด
   -&gt; ต้องใช้ comparator, sample, instrument และ environment แบบใด
-  -&gt; ผลแบบใดทำให้ claim ไม่ผ่านหรือยังสรุปไม่ได้</code></pre>
-<h3 id="2-สมมุติฐานไม่ได้มีเพียงประโยคเดียว">2. สมมุติฐานไม่ได้มีเพียงประโยคเดียว</h3>
+  -&gt; ผลแบบใดทำให้ claim ไม่ผ่านหรือยังสรุปไม่ได้</code><button type="button" data-copy="">คัดลอก</button></div><h3 id="2-สมมุติฐานไม่ได้มีเพียงประโยคเดียว">2. สมมุติฐานไม่ได้มีเพียงประโยคเดียว</h3>
 <p>แยก hypothesis/necessary condition อย่างน้อยห้ากลุ่ม:</p>
 <ul>
 <li><strong>Core effect/performance:</strong> ผลหลักที่ claim ต้องการ</li>
@@ -156,8 +155,7 @@
 <li><strong>Red-team/compliance recorder:</strong> พยายามหักล้าง design และบันทึก ethics/permission trigger</li>
 </ul>
 <p>หากเรียนคนเดียว ให้สั่ง AI สลับมุมตรวจทั้งสามบทบาท แต่คุณต้องเป็นผู้ตัดสินและเปิดหลักฐานตรวจทุกข้อ</p>
-<pre class="text"><code>พาฉันทำ Experiment Design Stress Test ทีละช่วง ถามครั้งละหนึ่งคำถามและรอคำตอบ ใช้เฉพาะไฟล์และข้อมูลที่ฉันให้ แยก learner decision, verified evidence, assumption และ TBD — owner/source/date ห้ามเลือก methodology, sample size, statistical test, instrument, parameter, ethics category หรือข้อสรุปแทนฉัน ทุกช่วงให้สรุปสิ่งที่ฉันยืนยัน จุดที่ยังขาด และไฟล์ที่อัปเดต ก่อนถามว่าจะไปช่วงถัดไปหรือแก้ของเดิม</code></pre>
-<h3 id="ช่วง-1--intake-and-claim-freeze">ช่วง 1 — Intake and claim freeze</h3>
+<div class="command markdown-command"><code>พาฉันทำ Experiment Design Stress Test ทีละช่วง ถามครั้งละหนึ่งคำถามและรอคำตอบ ใช้เฉพาะไฟล์และข้อมูลที่ฉันให้ แยก learner decision, verified evidence, assumption และ TBD — owner/source/date ห้ามเลือก methodology, sample size, statistical test, instrument, parameter, ethics category หรือข้อสรุปแทนฉัน ทุกช่วงให้สรุปสิ่งที่ฉันยืนยัน จุดที่ยังขาด และไฟล์ที่อัปเดต ก่อนถามว่าจะไปช่วงถัดไปหรือแก้ของเดิม</code><button type="button" data-copy="">คัดลอก</button></div><h3 id="ช่วง-1--intake-and-claim-freeze">ช่วง 1 — Intake and claim freeze</h3>
 <p>เลือก Track A/B/C แล้วเขียน candidate claim เพียงหนึ่งข้อ ระบุ scope และคำที่ยังนิยามไม่ได้ ให้ AI ถามกลับเพื่อหาคำที่กว้างหรือรวมหลาย claim แล้วคุณเป็นผู้ตัดสินว่าจะแคบ claim อย่างไร</p>
 <h3 id="ช่วง-2--claim-to-hypothesis-decomposition">ช่วง 2 — Claim-to-hypothesis decomposition</h3>
 <p>แตก claim เป็น hypothesis/necessary condition ทุกกลุ่ม พร้อมบอก observation ที่ต้องเห็นและผลที่ทำให้แต่ละข้อไม่ผ่าน ใช้ ID เช่น <code>H-C1</code>, <code>H-M1</code>, <code>H-V1</code>, <code>H-B1</code>, <code>H-S1</code> เพื่อ trace ต่อไปทุกตาราง</p>

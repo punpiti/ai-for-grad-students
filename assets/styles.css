@@ -124,6 +124,7 @@ footer { max-width: var(--max); margin: auto; padding: 2rem 1.25rem 3rem; border
 .concept-grid p, .homework-grid p { margin-bottom: 0; color: var(--ink-soft); }
 .command { display: grid; grid-template-columns: 1fr auto; gap: .75rem; margin: .8rem 0; padding: .85rem; border: 1px solid var(--line); border-radius: .6rem; background: var(--surface-strong); color: var(--white); }
 .command code { overflow-wrap: anywhere; font-size: .98rem; line-height: 1.55; }
+.markdown-command code { min-width: 0; white-space: pre-wrap; }
 .command button { align-self: start; border: 0; background: transparent; color: var(--mint); font: inherit; font-size: .92rem; cursor: pointer; }
 .checklist { display: grid; gap: .7rem; margin-top: 2rem; padding: 1.25rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); }
 .checklist label { display: flex; gap: .75rem; align-items: flex-start; }

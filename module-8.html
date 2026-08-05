@@ -9,15 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-3">
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-4">
   <script src="assets/site-shell.js?v=20260805-1"></script>
-  <script src="assets/app.js?v=20260805-3" defer></script>
+  <script src="assets/app.js?v=20260805-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
   <site-header current="8"></site-header>
   <main id="main">
-    <section class="prepare-hero module-hero"><p class="eyebrow">Module 8 · Self-paced lesson</p><h1>Module 8 — การผลิตบทความวิจัยและสื่อการนำเสนอตามรูปแบบของแหล่งเผยแพร่</h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
+    <section class="prepare-hero module-hero"><p class="eyebrow">Module 8 · Self-paced lesson</p><h1 aria-label="Module 8 — การผลิตบทความวิจัยและสื่อการนำเสนอตามรูปแบบของแหล่งเผยแพร่">Document<br><span>Production</span></h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
     <div id="module-content">
 <section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><h2 id="start-heading">ก่อนเริ่ม: เลือกทางเรียนและเตรียมสิ่งที่ใช้</h2>
 </div><div class="markdown-body"><ul>
@@ -109,7 +109,7 @@
 </div></section>
 <section class="section markdown-section" id="no-code-latex-หมายถึงอะไร" aria-labelledby="no-code-latex-หมายถึงอะไร-heading"><div class="section-heading compact"><h2 id="no-code-latex-หมายถึงอะไร-heading">No-code LaTeX หมายถึงอะไร</h2>
 </div><div class="markdown-body"><p>ผู้เรียนไม่ต้องเขียนหรือท่องคำสั่ง LaTeX แต่ต้องเข้าใจโครงสร้างพอที่จะสั่ง AI ตรวจไฟล์ที่ถูกชั้น และไม่แก้ <code>.cls</code> หรือ <code>.sty</code> เพียงเพื่อให้เอกสารผ่าน</p>
-<pre class="text"><code>Markdown sections + bibliography + figures + tables
+<div class="command markdown-command"><code>Markdown sections + bibliography + figures + tables
                 ↓
       AI conversion/integration
                 ↓
@@ -119,8 +119,7 @@
                 ↓
         PDF + log + auxiliary files
                 ↓
-       content QA + visual QA</code></pre>
-<h3 id="โครงสร้าง-latex-ที่ควรรู้">โครงสร้าง LaTeX ที่ควรรู้</h3>
+       content QA + visual QA</code><button type="button" data-copy="">คัดลอก</button></div><h3 id="โครงสร้าง-latex-ที่ควรรู้">โครงสร้าง LaTeX ที่ควรรู้</h3>
 <table>
 <thead>
 <tr class="header">
@@ -180,7 +179,7 @@
 <p>ผู้เรียนต้องรู้ว่า <code>.cls/.sty/.bst</code> เป็นชั้นแม่แบบ, Markdown เป็นชั้นเนื้อหา, <code>.tex</code> ที่ AI สร้างเป็นชั้นประกอบ และ PDF เป็นผลลัพธ์ ห้ามแก้ PDF หรือ generated <code>.tex</code> เพื่อซ่อนปัญหาโดยไม่แก้ source ที่แท้จริง</p>
 </div></section>
 <section class="section markdown-section" id="โครงสร้างโครงการที่แนะนำ" aria-labelledby="โครงสร้างโครงการที่แนะนำ-heading"><div class="section-heading compact"><h2 id="โครงสร้างโครงการที่แนะนำ-heading">โครงสร้างโครงการที่แนะนำ</h2>
-</div><div class="markdown-body"><pre class="text"><code>paper/
+</div><div class="markdown-body"><div class="command markdown-command"><code>paper/
 ├── venue-original/           # ชุดแม่แบบเดิม ห้ามแก้
 ├── venue-working/            # สำเนาแม่แบบที่ใช้ประกอบงาน
 ├── source/
@@ -198,8 +197,7 @@
 ├── tables/
 ├── generated/                # tex ที่ AI สร้าง
 ├── build/                    # PDF, log และไฟล์กลาง
-└── checks/                   # venue, content และ visual QA</code></pre>
-<p>ชื่อและจำนวนส่วนต้องปรับตามประเภทบทความและแม่แบบจริง ไม่บังคับโครง IMRaD หากสาขาหรือ venue ใช้โครงอื่น</p>
+└── checks/                   # venue, content และ visual QA</code><button type="button" data-copy="">คัดลอก</button></div><p>ชื่อและจำนวนส่วนต้องปรับตามประเภทบทความและแม่แบบจริง ไม่บังคับโครง IMRaD หากสาขาหรือ venue ใช้โครงอื่น</p>
 </div></section>
 <section class="section markdown-section" id="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง" aria-labelledby="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง-heading"><div class="section-heading compact"><h2 id="build-ladder--ทำเป็นขั้นเพื่อไม่ให้พัง-heading">Build Ladder — ทำเป็นขั้นเพื่อไม่ให้พัง</h2>
 </div><div class="markdown-body"><p>กฎสำคัญคือ <strong>เปลี่ยนงานเพียงหนึ่งประเภท แล้ว compile ทันที</strong> เมื่อพังจะรู้ว่าปัญหาเกิดจากขั้นใด</p>
@@ -282,7 +280,7 @@
 </table>
 <h3 id="paragraph-contract">Paragraph Contract</h3>
 <p>ก่อนให้ AI เขียน ผู้เรียนกรอก</p>
-<pre class="text"><code>Section/purpose:
+<div class="command markdown-command"><code>Section/purpose:
 Statement:
 Evidence and exact numbers:
 Figure/table/citation references:
@@ -291,8 +289,7 @@ Alternative explanation or limitation:
 Uncertainty and scope:
 Terms that must remain unchanged:
 Claims that must not be added:
-Target length and tone:</code></pre>
-<p>จากนั้นใช้คำสั่ง</p>
+Target length and tone:</code><button type="button" data-copy="">คัดลอก</button></div><p>จากนั้นใช้คำสั่ง</p>
 <blockquote>
 <p>เขียนหนึ่งย่อหน้าจาก Paragraph Contract นี้เท่านั้น เริ่มด้วย statement เชื่อม evidence และคำอธิบายตามลำดับ รักษาตัวเลข หน่วย ทิศทาง ความไม่แน่นอน และ reference marker ทุกจุด ระบุ limitation/boundary ตามที่ให้ ห้ามเพิ่ม mechanism, citation, result, causal language หรือ generalization ที่ไม่มีใน contract หากข้อมูลไม่พอให้แทรก <code>[ข้อมูลไม่พอ: ...]</code> แทนการเดา</p>
 </blockquote>
@@ -488,8 +485,7 @@ Target length and tone:</code></pre>
 </table>
 </div></section>
 <section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือผลิตเอกสารกับ AI ทีละ Gate</h2>
-</div><div class="markdown-body"><pre class="text"><code>พาฉันผลิตเอกสารทีละ Gate และหยุดรอการตรวจทุกครั้ง เริ่มจาก official guideline/author kit และ pristine build ก่อนแตะเนื้อหา ใช้เฉพาะ verified claims, paragraph contracts, citations, figures และ tables ที่ฉันให้ ห้ามแก้ template ต้นฉบับ แต่ง citation/result หรือถือว่า compile ผ่านเท่ากับเนื้อหาถูกต้อง ทุก Gate ให้รายงาน source ที่เปลี่ยน build log ผลตรวจ PDF และสิ่งที่ฉันต้องตัดสินใจก่อนเดินต่อ</code></pre>
-<ol type="1">
+</div><div class="markdown-body"><div class="command markdown-command"><code>พาฉันผลิตเอกสารทีละ Gate และหยุดรอการตรวจทุกครั้ง เริ่มจาก official guideline/author kit และ pristine build ก่อนแตะเนื้อหา ใช้เฉพาะ verified claims, paragraph contracts, citations, figures และ tables ที่ฉันให้ ห้ามแก้ template ต้นฉบับ แต่ง citation/result หรือถือว่า compile ผ่านเท่ากับเนื้อหาถูกต้อง ทุก Gate ให้รายงาน source ที่เปลี่ยน build log ผลตรวจ PDF และสิ่งที่ฉันต้องตัดสินใจก่อนเดินต่อ</code><button type="button" data-copy="">คัดลอก</button></div><ol type="1">
 <li><strong>Word or LaTeX Decision:</strong> เปรียบเทียบ author kits จริงและเลือกสายจากหลักฐานของ venue</li>
 <li><strong>Template Autopsy:</strong> แกะแม่แบบเพื่อชี้ <code>.tex/.cls/.sty/.bst/.bib</code>, master file และ citation engine โดยไม่แก้ syntax</li>
 <li><strong>Pristine Build:</strong> compile template เดิมและเก็บ baseline</li>

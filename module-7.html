@@ -9,15 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-3">
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-4">
   <script src="assets/site-shell.js?v=20260805-1"></script>
-  <script src="assets/app.js?v=20260805-3" defer></script>
+  <script src="assets/app.js?v=20260805-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
   <site-header current="7"></site-header>
   <main id="main">
-    <section class="prepare-hero module-hero"><p class="eyebrow">Module 7 · Self-paced lesson</p><h1>Module 7 — การวิเคราะห์ข้อมูลและการนำเสนอข้อมูลด้วยภาพโดยใช้ AI</h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
+    <section class="prepare-hero module-hero"><p class="eyebrow">Module 7 · Self-paced lesson</p><h1 aria-label="Module 7 — การวิเคราะห์ข้อมูลและการนำเสนอข้อมูลด้วยภาพโดยใช้ AI">Analysis &amp;<br><span>Visualization</span></h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
     <div id="module-content">
 <section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><h2 id="start-heading">ก่อนเริ่ม: เลือกทางเรียนและเตรียมสิ่งที่ใช้</h2>
 </div><div class="markdown-body"><ul>
@@ -127,15 +127,14 @@
 </div></section>
 <section class="section markdown-section" id="python-ทำงานอยู่เบื้องหลังอย่างไร" aria-labelledby="python-ทำงานอยู่เบื้องหลังอย่างไร-heading"><div class="section-heading compact"><h2 id="python-ทำงานอยู่เบื้องหลังอย่างไร-heading">Python ทำงานอยู่เบื้องหลังอย่างไร</h2>
 </div><div class="markdown-body"><p>ผู้เรียนไม่ต้องจำไวยากรณ์ แต่ต้องอธิบายสายงานต่อไปนี้ได้</p>
-<pre class="text"><code>แฟ้มต้นฉบับ
+<div class="command markdown-command"><code>แฟ้มต้นฉบับ
   → ไลบรารีอ่านแฟ้ม
   → DataFrame ในหน่วยความจำ
   → ตรวจชนิดตัวแปร/ข้อมูลสูญหาย/ข้อมูลซ้ำ
   → สร้างข้อมูลวิเคราะห์โดยไม่แก้แฟ้มต้นฉบับ
   → เรียกฟังก์ชันสถิติหรือแบบจำลอง
   → สร้างตารางและภาพจากผลตัวเลขชุดเดียวกัน
-  → ส่งออกแฟ้มผลลัพธ์พร้อมบันทึกไลบรารี รุ่น และค่าพารามิเตอร์</code></pre>
-<p>คำสำคัญที่ต้องเข้าใจ</p>
+  → ส่งออกแฟ้มผลลัพธ์พร้อมบันทึกไลบรารี รุ่น และค่าพารามิเตอร์</code><button type="button" data-copy="">คัดลอก</button></div><p>คำสำคัญที่ต้องเข้าใจ</p>
 <ul>
 <li><strong>Python environment:</strong> ชุด Python และไลบรารีที่ติดตั้งและกำหนดรุ่นไว้ งานเดิมควรเรียกใช้ environment เดิมเพื่อให้ทำซ้ำได้</li>
 <li><strong>library/package:</strong> ชุดเครื่องมือเฉพาะงานซึ่ง Python เรียกใช้ เช่น อ่าน Excel วิเคราะห์สถิติ หรือสร้างกราฟ</li>
@@ -483,8 +482,7 @@
 </blockquote>
 </div></section>
 <section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือวิเคราะห์และสร้างภาพด้วย AI</h2>
-</div><div class="markdown-body"><pre class="text"><code>พาฉันวิเคราะห์ข้อมูลทีละ gate เริ่มจากถามคำถามวิจัย ชนิดแฟ้ม สิทธิการใช้ และ data dictionary ก่อนตรวจ environment และนำเข้าแบบอ่านอย่างเดียว ถามครั้งละหนึ่งคำถามและรอคำตอบ ห้ามติดตั้งแพ็กเกจ เขียนทับข้อมูลดิบ เลือกวิธีสถิติ หรือสรุปผลแทนฉัน ทุก gate ให้แสดงไฟล์/ตาราง/คำเตือนที่ใช้ตรวจ แยกผลจากการตีความ และให้ฉันอนุมัติก่อนสร้างตารางหรือภาพขั้นถัดไป</code></pre>
-<h3 id="1-hypothesis-clinic">1. Hypothesis Clinic</h3>
+</div><div class="markdown-body"><div class="command markdown-command"><code>พาฉันวิเคราะห์ข้อมูลทีละ gate เริ่มจากถามคำถามวิจัย ชนิดแฟ้ม สิทธิการใช้ และ data dictionary ก่อนตรวจ environment และนำเข้าแบบอ่านอย่างเดียว ถามครั้งละหนึ่งคำถามและรอคำตอบ ห้ามติดตั้งแพ็กเกจ เขียนทับข้อมูลดิบ เลือกวิธีสถิติ หรือสรุปผลแทนฉัน ทุก gate ให้แสดงไฟล์/ตาราง/คำเตือนที่ใช้ตรวจ แยกผลจากการตีความ และให้ฉันอนุมัติก่อนสร้างตารางหรือภาพขั้นถัดไป</code><button type="button" data-copy="">คัดลอก</button></div><h3 id="1-hypothesis-clinic">1. Hypothesis Clinic</h3>
 <p>นำคำถามของคุณหรือคำถามตัวอย่างจากงานวิทยาศาสตร์และสังคมศาสตร์มาจำแนกว่าเป็นงานพรรณนา สำรวจ เปรียบเทียบ ความสัมพันธ์ พยากรณ์ หรือเชิงสาเหตุ จากนั้นเติมแบบประโยคสมมติฐานหรือระบุเหตุผลว่าไม่ควรตั้งสมมติฐาน</p>
 <h3 id="2-data-intake-and-quality-gate">2. Data Intake and Quality Gate</h3>
 <p>นำเข้าแฟ้มข้อมูลด้วยภาษาธรรมชาติ แล้วให้ AI จัดทำ</p>

@@ -9,15 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260805-3">
+  <link rel="stylesheet" href="assets/styles.css?v=20260805-4">
   <script src="assets/site-shell.js?v=20260805-1"></script>
-  <script src="assets/app.js?v=20260805-3" defer></script>
+  <script src="assets/app.js?v=20260805-4" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
   <site-header current="9"></site-header>
   <main id="main">
-    <section class="prepare-hero module-hero"><p class="eyebrow">Module 9 · Self-paced lesson</p><h1>Module 9 — Personal AI Research Workflow Kit</h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
+    <section class="prepare-hero module-hero"><p class="eyebrow">Module 9 · Self-paced lesson</p><h1 aria-label="Module 9 — Personal AI Research Workflow Kit">Personal AI<br><span>Research Workflow</span></h1><p>เลือกเรียนต่อจากโมดูลก่อนหน้าหรือเริ่มแบบ Standalone แล้วให้ AI ช่วยถาม จัดโครง และตรวจทีละขั้น โดยคุณเป็นผู้เลือกและยืนยันหลักฐาน</p></section>
     <div id="module-content">
 <section class="section markdown-section" id="start" aria-labelledby="start-heading"><div class="section-heading compact"><h2 id="start-heading">ก่อนเริ่ม: เลือกทางเรียนและเตรียมสิ่งที่ใช้</h2>
 </div><div class="markdown-body"><ul>
@@ -50,7 +50,7 @@
 </div></section>
 <section class="section markdown-section" id="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว" aria-labelledby="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว-heading"><div class="section-heading compact"><h2 id="หลักคิด-framework-เดียว-แต่ไม่ใช่-workflow-เดียว-heading">หลักคิด: Framework เดียว แต่ไม่ใช่ Workflow เดียว</h2>
 </div><div class="markdown-body"><p>ทุกคนใช้กรอบร่วมเพื่อให้ตรวจสอบได้ แต่เลือกค่าเริ่มต้นและเครื่องมือให้เหมาะกับสาขา งาน และข้อจำกัดของตน</p>
-<pre class="text"><code>Shared Framework
+<div class="command markdown-command"><code>Shared Framework
   ├─ โครงสร้างงานและจุดตรวจเหมือนกัน
   ├─ หลักฐานต้องย้อนกลับได้
   ├─ มี human/external decision และ stop condition
@@ -61,8 +61,7 @@ Personal Choices
   ├─ แหล่งค้นและโปรแกรมจัดการเอกสารอ้างอิง
   ├─ เครื่องมือวิเคราะห์/สร้างภาพ
   ├─ รูปแบบ Word/LaTeX และ venue ที่ใช้บ่อย
-  └─ ค่าเริ่มต้น ข้อยกเว้น และทางเลือกสำรอง</code></pre>
-<p>ความเป็นส่วนบุคคลไม่ได้หมายถึงลดมาตรฐาน ตัวเลือกของผู้เรียนเปลี่ยนได้เฉพาะส่วนที่เจ้าของงานมีอำนาจตัดสิน ข้อกำหนด IRB, privacy, copyright, institutional policy, data-use agreement และ venue guideline ยังคงอยู่เหนือค่าเริ่มต้นส่วนตัว</p>
+  └─ ค่าเริ่มต้น ข้อยกเว้น และทางเลือกสำรอง</code><button type="button" data-copy="">คัดลอก</button></div><p>ความเป็นส่วนบุคคลไม่ได้หมายถึงลดมาตรฐาน ตัวเลือกของผู้เรียนเปลี่ยนได้เฉพาะส่วนที่เจ้าของงานมีอำนาจตัดสิน ข้อกำหนด IRB, privacy, copyright, institutional policy, data-use agreement และ venue guideline ยังคงอยู่เหนือค่าเริ่มต้นส่วนตัว</p>
 </div></section>
 <section class="section markdown-section" id="personal-ai-research-workflow-framework" aria-labelledby="personal-ai-research-workflow-framework-heading"><div class="section-heading compact"><h2 id="personal-ai-research-workflow-framework-heading">Personal AI Research Workflow Framework</h2>
 </div><div class="markdown-body"><p>workflow ทุกใบต้องมี 12 ส่วน</p>
@@ -161,13 +160,12 @@ Personal Choices
 </table>
 <h3 id="กฎชนกันของตัวเลือก">กฎชนกันของตัวเลือก</h3>
 <p>เมื่อค่าเริ่มต้นส่วนตัวขัดกับเงื่อนไขเฉพาะงาน ให้ใช้ลำดับความสำคัญดังนี้</p>
-<pre class="text"><code>กฎหมาย/จริยธรรม/สิทธิข้อมูล
+<div class="command markdown-command"><code>กฎหมาย/จริยธรรม/สิทธิข้อมูล
   &gt; ข้อกำหนดสถาบันและโครงการ
   &gt; ข้อกำหนดของ venue หรือแหล่งข้อมูล
   &gt; ระเบียบวิธีและหลักฐานเฉพาะงาน
   &gt; ค่าเริ่มต้นส่วนบุคคล
-  &gt; ความสะดวกของเครื่องมือ</code></pre>
-</div></section>
+  &gt; ความสะดวกของเครื่องมือ</code><button type="button" data-copy="">คัดลอก</button></div></div></section>
 <section class="section markdown-section" id="personal-research-profile" aria-labelledby="personal-research-profile-heading"><div class="section-heading compact"><h2 id="personal-research-profile-heading">Personal Research Profile</h2>
 </div><div class="markdown-body"><p>ก่อนสร้าง workflow ให้กำหนดบริบทที่ใช้บ่อย</p>
 <ul>
@@ -187,7 +185,7 @@ Personal Choices
 </div></section>
 <section class="section markdown-section" id="personal-ai-research-kit" aria-labelledby="personal-ai-research-kit-heading"><div class="section-heading compact"><h2 id="personal-ai-research-kit-heading">Personal AI Research Kit</h2>
 </div><div class="markdown-body"><p>ชุดที่ส่งต้องเป็นโฟลเดอร์ standalone ซึ่งเปิดแล้วรู้ว่าจะเริ่มอย่างไร</p>
-<pre class="text"><code>my-ai-research-kit/
+<div class="command markdown-command"><code>my-ai-research-kit/
 ├── README.md                  # เริ่มใช้อย่างไรและขอบเขตของชุด
 ├── profile.md                 # บริบทและความต้องการส่วนบุคคล
 ├── defaults.md                # DEFAULT / ASK / NEVER / ESCALATE
@@ -204,14 +202,13 @@ Personal Choices
 ├── examples/                  # ตัวอย่างที่ไม่มีข้อมูลลับ
 ├── tests/                     # test cases และ expected decisions
 ├── records/                   # run log ตัวอย่าง
-└── CHANGELOG.md               # รุ่น เหตุผล และผลกระทบของการแก้</code></pre>
-<p>ชุดนี้ต้องเป็น tool-neutral ก่อน กล่าวคืออ่านและใช้ได้แม้เปลี่ยน AI frontend จากนั้นจึงมี adapter หรือคำแนะนำเฉพาะเครื่องมือเมื่อจำเป็น</p>
+└── CHANGELOG.md               # รุ่น เหตุผล และผลกระทบของการแก้</code><button type="button" data-copy="">คัดลอก</button></div><p>ชุดนี้ต้องเป็น tool-neutral ก่อน กล่าวคืออ่านและใช้ได้แม้เปลี่ยน AI frontend จากนั้นจึงมี adapter หรือคำแนะนำเฉพาะเครื่องมือเมื่อจำเป็น</p>
 </div></section>
 <section class="section markdown-section" id="research-operations--ให้-workflow-อยู่รอดในงานจริง" aria-labelledby="research-operations--ให้-workflow-อยู่รอดในงานจริง-heading"><div class="section-heading compact"><h2 id="research-operations--ให้-workflow-อยู่รอดในงานจริง-heading">Research Operations — ให้ Workflow อยู่รอดในงานจริง</h2>
 </div><div class="markdown-body"><p>Personal Kit ต้องครอบคลุมการจัดแฟ้ม การจดบันทึก การทำงานร่วมกัน และการกู้คืนข้อมูล ไม่ใช่เฉพาะคำสั่งให้ AI ผลิตผลลัพธ์</p>
 <h3 id="1-ให้-ai-ช่วยจัดโฟลเดอร์อย่างปลอดภัย">1. ให้ AI ช่วยจัดโฟลเดอร์อย่างปลอดภัย</h3>
 <p>โครงเริ่มต้นปรับได้ตามสาขา แต่ควรแยกข้อมูลต้นฉบับ งานระหว่างทำ บันทึก และผลส่งออก</p>
-<pre class="text"><code>research-project/
+<div class="command markdown-command"><code>research-project/
 ├── README.md
 ├── governance/                # permission, ethics, data-use, venue rules
 ├── sources/original/          # เอกสารต้นฉบับ ห้ามเขียนทับ
@@ -235,8 +232,7 @@ Personal Choices
 │   ├── drafts/
 │   └── final/
 ├── shared/                    # ชุดที่ตรวจแล้วสำหรับผู้ร่วมงาน
-└── archive/                   # รุ่นเก่าที่เก็บตามนโยบาย</code></pre>
-<p>AI เป็นผู้สำรวจและจัดให้ได้ แต่ต้องทำตามลำดับ</p>
+└── archive/                   # รุ่นเก่าที่เก็บตามนโยบาย</code><button type="button" data-copy="">คัดลอก</button></div><p>AI เป็นผู้สำรวจและจัดให้ได้ แต่ต้องทำตามลำดับ</p>
 <ol type="1">
 <li>ทำรายการแฟ้มและขนาดโดยไม่แก้ไข</li>
 <li>เสนอ <code>folder-plan.md</code> ซึ่งแสดง source → destination, เหตุผล, collision และแฟ้มที่ไม่แน่ใจ</li>
@@ -506,8 +502,7 @@ Personal Choices
 <p>ห้ามบันทึก credential, token, password หรือข้อมูลลับลงใน kit</p>
 </div></section>
 <section class="section markdown-section" id="activity" aria-labelledby="activity-heading"><div class="section-heading compact"><h2 id="activity-heading">ลงมือสร้าง Personal AI Research Kit</h2>
-</div><div class="markdown-body"><pre class="text"><code>พาฉันสร้าง Personal AI Research Kit จากงานซ้ำหนึ่งเรื่อง ถามทีละหนึ่งคำถามและรอคำตอบ เริ่มจาก trigger, input, output, data classification, decision owner และความเสี่ยง ก่อนช่วยจัด DEFAULT/ASK/NEVER/ESCALATE ห้ามย้ายไฟล์ ส่งข้อมูล เปลี่ยน permission เชื่อมบริการภายนอก หรือเก็บ credential ทำทีละ artifact แล้วให้ฉันทดสอบ happy path และ failure case ก่อน freeze Version 1.0</code></pre>
-<ol type="1">
+</div><div class="markdown-body"><div class="command markdown-command"><code>พาฉันสร้าง Personal AI Research Kit จากงานซ้ำหนึ่งเรื่อง ถามทีละหนึ่งคำถามและรอคำตอบ เริ่มจาก trigger, input, output, data classification, decision owner และความเสี่ยง ก่อนช่วยจัด DEFAULT/ASK/NEVER/ESCALATE ห้ามย้ายไฟล์ ส่งข้อมูล เปลี่ยน permission เชื่อมบริการภายนอก หรือเก็บ credential ทำทีละ artifact แล้วให้ฉันทดสอบ happy path และ failure case ก่อน freeze Version 1.0</code><button type="button" data-copy="">คัดลอก</button></div><ol type="1">
 <li><strong>Pain-point Inventory:</strong> เลือกงานซ้ำที่มีประโยชน์จริงหนึ่งเรื่อง</li>
 <li><strong>Framework Mapping:</strong> เติมกรอบ 12 ส่วนโดยยังไม่เลือก AI tool</li>
 <li><strong>Choice Clinic:</strong> จัดตัวเลือกเป็น DEFAULT/ASK/NEVER/ESCALATE และตรวจลำดับอำนาจ</li>
